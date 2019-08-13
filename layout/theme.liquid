@@ -150,6 +150,19 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   
 {% include 'google-fonts' %}
 
+  <!-- Hotjar Tracking Code for www.daymondjohn.com -->
+<script>
+    (function(h,o,t,j,a,r){
+        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+        h._hjSettings={hjid:1437195,hjsv:6};
+        a=o.getElementsByTagName('head')[0];
+        r=o.createElement('script');r.async=1;
+        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+        a.appendChild(r);
+    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+</script>
+  
+  
 </head>
 
   <body>
@@ -199,7 +212,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 	</div><!-- /.utility -->
 	<div class="main">
 		<div class="contain">
-			{%include 'navigation' %}
+		{% include 'navigation' %}
 			<div class="cart cart-count" data-action="cart-open">
 				<span class="text">Your Cart</span>
 				<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 27.8 28" xml:space="preserve"><polyline class="st0" points="5.2,5.9 25.9,5.9 23.3,15.5 7,18.8 "/><polyline class="st0" points="0,1.5 4.7,1.5 7.4,22.4 23.1,22.4 "/><circle class="st0" cx="8.1" cy="24.8" r="1.7"/><circle class="st0" cx="19.8" cy="24.8" r="1.7"/></svg>
@@ -212,11 +225,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </nav><!-- /nav.header -->
 
 {{content_for_layout}}
-<nav class="header">
-	<div class="main">
-		{% include 'sub-footer'%}
-	</div>
-</nav>
+
 <footer>
 	<div class="contain">
 		<a href="#hero" class="logo">Daymond John - The Peoples Shark</a>
@@ -248,13 +257,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 				<span class="number">{{ cart.item_count }}</span>
 			{% endif %}
 		</div><!-- /.cart -->
-		<ul class="main-links">
-				{% for link in linklists.main-menu.links %}
-					  	<li>
-				     	 <a href="{{ link.url }}" {% if link.active%}class="active"{%endif%}>{{ link.title }}</a>
-				     </li>
-				{% endfor %}
-		</ul>
+		{% include 'navigation' %}
 	</div><!-- /.main-items -->
 </nav><!-- /.sidecar -->
 <span class="sidecar-overlay" data-action="sidecar-close"></span>
@@ -317,7 +320,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 	</span>
 </div>{% endcomment %}
 
-{{ 'ajaxinate.min.js' | asset_url | script_tag }}
+{{ 'tsdig-smf.js' | asset_url | script_tag }}
 <script type="text/javascript">
     jQuery(function() {
         CartJS.init({{ cart | json }});

@@ -1,30 +1,40 @@
 <style>
+  
   .main-links{
   	overflow: visible !important;
-    z-index: 1;
+    z-index: 99;
   }
-  
   .sub-main-links{
   	position: absolute !important;
     top: 80px;
     float: left;
-    width: fit-content;
+    width: 260px;
     margin-left: -2em !important;
     padding: 0px 2em !important;
     overflow: visible !important;
     background-color: #3a3a3a;
     display:none;
   }
+  .sub-main-links li{
+  	margin-left: 0px !important;
+  }
   
   .show{
-  	display: block !important ;
+  	display: grid !important ;
   }
-
-
+  .mobile-menu{
+  	position: relative !important;
+    top: 20px;
+    left:20px;
+    margin-bottom: 20px;
+    z-index: 99;
+   
+  }
+  
 </style>
 
 
-<ul class="main-links">
+<ul class="main-links" >
   {% for link in linklists.main-menu.links %}
   <li {% if link.links != blank %} class="{{ link.title }}" {% endif %}>
     <a href="{{ link.url }}" {% if link.active%}class="active"{%endif%}>{{ link.title }}</a>
@@ -50,20 +60,41 @@
   {%endcomment%}
 </ul>
 
-
 <script>
+  
   (function(){
   	
     {% for link in linklists.main-menu.links %}
-    {% if link.links != blank %}
-    $('.main-links .{{ link.title }}').mouseover(function(){
-      $('.sub-main-links').addClass('show');
-    });
-    $('.main-links .{{ link.title }}').mouseout(function(){
-      $('.sub-main-links').removeClass('show');
-    });
-    {% endif %}
+      {% if link.links != blank %}
+    
+        var menu_link = $(`nav.header .main .main-links .{{ link.title }}`)
+        var sub_menu = $('nav.header .main .sub-main-links')
+        var mobile_menu_link = $(`.sidecar .main .main-links .{{ link.title }}`)
+        var mobile_sub_menu = $('.sidecar .main .sub-main-links')
+    
+        menu_link.mouseover(function(){
+          sub_menu.addClass('show');
+        });
+		
+        menu_link.mouseout(function(){
+          sub_menu.removeClass('show');
+        });
+    
+        mobile_menu_link.on('click', function(){
+          if (mobile_sub_menu.hasClass('mobile-menu')){
+            mobile_sub_menu.removeClass('show mobile-menu');
+          	mobile_menu_link.css('marginBottom', '20px');
+          } else {
+            mobile_menu_link.css('marginBottom', `calc(` + mobile_sub_menu.height() + `px + 20px)`);
+            mobile_sub_menu.addClass('show mobile-menu')
+          }
+        });
+
+
+
+      {% endif %}
     {% endfor %}
     
   })()
+
 </script>
