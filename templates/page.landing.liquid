@@ -1,0 +1,41 @@
+<div id="content" class="group">
+	<article id="mainContent landingBG" class="floatLeft" style="background-image: url('{{ article.metafields.page.landingbg }}')">
+		<header id="pageHeader">
+			{% include 'breadcrumbs' %}
+			<h1>{{ page.title }}</h1>
+		</header><!-- pageHeader -->
+		<div class="textile">
+    		{{page.content}}
+      	<div class="social-footer">
+<form name="form8" class="infusionsoft" accept-charset="UTF-8" autocomplete="off" enctype="multipart/form-data" method="post" novalidate="" action="<script type="text/javascript" 
+       src="https://daymondjohn.infusionsoft.com/app/form/iframe/f28874d51eab71fc2f1ff99849a8e1ca</script>"><input type="text" name="Field1" placeholder="First name" /> <input type="text" name="Field2" placeholder="Last name" /> <input type="email" name="Field3" placeholder="Email Address" /> <input type="hidden" id="idstamp" name="idstamp" value="u5d2vr1iaH/+XGbrE73N+hUe/IPEmw4tRa9rW1TihRU=" /> <input type="submit" class="button wide" value="submit" /></form>
+</div>  
+      </div><!-- textile -->	
+	</article><!-- mainCol -->
+	<aside id="sidebar" class="floatRight">
+		<span id="topBar">&nbsp;</span>
+		<div id="sidebarBkgd">
+            {% if settings.useSubPageNavigation == true %}
+            {% capture page_handle %}{{ page.handle }}{% endcapture %}
+            {% if linklists[page_handle] and linklists[page_handle].links.size > 0 %}
+            <nav id="subPages">
+                <ul>
+                    {% for link in linklists[page_handle].links %}
+                    <li><a href="{{ link.url }}">{{ link.title }}</a></li>
+                    {% endfor %}
+                </ul>    
+            </nav><!-- subPages -->
+            {% endif %}
+            {% endif %}
+        	{% unless settings.pageWidget == '' %}
+    			{% include settings.pageWidget %}
+    		{% endunless %}
+    		{% unless settings.pageWidgetTwo == '' %}
+    			{% include settings.pageWidgetTwo %}
+    		{% endunless %}	
+        	{% unless settings.pageWidgetThree == '' %}
+    			{% include settings.pageWidgetThree %}
+    		{% endunless %}            
+		</div><!-- sidebarBkgd -->	
+	</aside><!-- sidebar -->
+</div><!-- content -->

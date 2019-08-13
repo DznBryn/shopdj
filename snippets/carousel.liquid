@@ -1,0 +1,86 @@
+<style media="screen">
+.circle {
+border-radius: 50%;
+/* width and height can be anything, as long as they're equal */
+  max-height: 200px;
+}
+.circle img{
+  visibility: hidden;
+  width: 200px;
+  max-height: 200px;
+
+}
+.slick-slide{
+  padding:0 20px ;
+}
+
+.section-container{padding-bottom: 1.5rem;}
+  .slick-prev:before {
+  color: black;
+  content: "<i class="fa fa-chevron-left!important"></i>";
+}
+.slick-next:before {
+  color: black;
+  content: "<i class="fa fa-chevron-right!important"></i>";
+}
+</style>
+
+{% if settings.carousel_image_1 != blank %}
+
+<div class="container section-container">
+<h6 class="text-center" style="color:black; text-transform:uppercase; padding-top:20px;padding-bottom:10px;">Some of the people interviewed include:</h6>
+ <div class="slider3" >
+   {% if settings.carousel_image_1 != blank %} <a href= "{{ settings.carousel_link_1 }}"><img src='{{ settings.carousel_image_1 | img_url: '1024x1024' }}' class="circle"/></a>{% endif %}
+   {% if settings.carousel_image_2 != blank %}<a href= "{{ settings.carousel_link_2 }}"><img src='{{ settings.carousel_image_2 | img_url: '1024x1024' }}' class="circle"/></a>{% endif %}
+   {% if settings.carousel_image_3 != blank %}<a href= "{{ settings.carousel_link_3 }}"><img src='{{ settings.carousel_image_3 | img_url: '1024x1024' }}' class="circle"/></a>{% endif %}
+   {% if settings.carousel_image_4 != blank %}<a href= "{{ settings.carousel_link_4 }}"><img src='{{ settings.carousel_image_4 | img_url: '1024x1024' }}' class="circle"/></a>{% endif %}
+   {% if settings.carousel_image_5 != blank %}<a href= "{{ settings.carousel_link_5 }}"><img src='{{ settings.carousel_image_5 | img_url: '1024x1024' }}' class="circle"/></a>{% endif %}
+   {% if settings.carousel_image_6 != blank %}<a href= "{{ settings.carousel_link_6 }}"><img src='{{ settings.carousel_image_6 | img_url: '1024x1024' }}' class="circle"/></a>{% endif %}
+   {% if settings.carousel_image_7 != blank %}<a href= "{{ settings.carousel_link_7 }}"><img src='{{ settings.carousel_image_7 | img_url: '1024x1024' }}' class="circle"/></a>{% endif %}
+   {% if settings.carousel_image_8 != blank %} <a href= "{{ settings.carousel_link_8 }}"><img src='{{ settings.carousel_image_8 | img_url: '1024x1024' }}' class="circle"/></a>{% endif %}
+   {% if settings.carousel_image_9 != blank %} <a href= "{{ settings.carousel_link_9 }}"><img src='{{ settings.carousel_image_9 | img_url: '1024x1024' }}' class="circle"/></a>{% endif %}
+   {% if settings.carousel_image_10 != blank %} <a href= "{{ settings.carousel_link_10 }}"><img src='{{ settings.carousel_image_10 | img_url: '1024x1024' }}' class="circle"/></a>{% endif %}
+   {% if settings.carousel_image_11 != blank %} <a href= "{{ settings.carousel_link_11 }}"><img src='{{ settings.carousel_image_11 | img_url: '1024x1024' }}' class="circle"/></a>{% endif %}
+   {% if settings.carousel_image_12 != blank %} <a href= "{{ settings.carousel_link_12 }}"><img src='{{ settings.carousel_image_12 | img_url: '1024x1024' }}' class="circle"/></a>{% endif %}
+   {% if settings.carousel_image_13 != blank %} <a href= "{{ settings.carousel_link_13 }}"><img src='{{ settings.carousel_image_13 | img_url: '1024x1024' }}' class="circle"/></a>{% endif %}
+   {% if settings.carousel_image_14 != blank %} <a href= "{{ settings.carousel_link_14 }}"><img src='{{ settings.carousel_image_14 | img_url: '1024x1024' }}' class="circle"/></a>{% endif %}
+ </div>
+</div>
+{% endif %}
+
+<script type="text/javascript" src="//cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.1/slick/slick.min.js"></script>
+ <script>
+ (function(){
+   $('.slider3').slick({
+    slidesToScroll: 1,
+    centerPadding: '50px',
+    slidesToShow: 5,
+    nextArrow: '<i class="fa fa-chevron-right!important slick-next"></i>',
+    prevArrow: '<i class="fa fa-chevron-left!important slick-prev"></i>',
+    responsive: [
+      {
+        breakpoint: 768,
+        settings: {
+          arrows: true,
+          centerMode: true,
+          centerPadding: '1px',
+          slidesToShow: 3,
+        }
+      },
+      ]
+      /*
+      {
+        breakpoint: 480,
+        settings: {
+          arrows: false,
+          centerPadding: '50px',
+          slidesToShow: 3,
+          autoplay: true,
+          speed: 200,
+          centerMode: true,
+        }
+      }
+    ]*/
+});
+})();
+</script>

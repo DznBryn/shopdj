@@ -1,0 +1,33 @@
+<style>
+
+html, body, #content{
+  background-color: {{block.settings.backcolor}} !important;
+  }
+p {
+    background-color: {{block.settings.backcolor}} ;
+    color: {{block.settings.textcolor}} ;
+
+  }
+.social-icons{
+    color: {{block.settings.textcolor}} ;
+}
+</style>
+<div class="container section-container">
+  <div class="row">
+    <div class="medium-6 columns">
+        {% if block.settings.image_profile != blank %}
+            {{ block.settings.image_profile | img_url: '1000x1000' | img_tag: section.settings.image.alt, 'logo-bar__image' }}
+
+           {% else %}
+           <img src="http://via.placeholder.com/600x600" />
+          {% endif %}
+
+
+    </div>
+    <div class="medium-6 columns">
+          <p>  {{page.content}} </p>
+          <p>  {{block.settings.more-page-text}} </p>
+    </div>
+
+  </div>
+</div>

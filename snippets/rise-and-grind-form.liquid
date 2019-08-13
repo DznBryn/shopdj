@@ -1,0 +1,73 @@
+<div class="container">
+<div class="formwrapper">
+<h4 class="text-center">What is your #RISE<small style="color:black;">AND</small>GRIND?</h4>
+{% if form.posted_successfully? %}
+    Comment posted successfully!
+{% else %}
+    {{ form.errors | default_errors }}
+{% endif %}
+
+
+
+<form accept-charset="UTF-8" action="https://daymondjohn.infusionsoft.com/app/form/process/e454b58fc7fa7f3626f978ded80da69e" class="infusion-form" id="inf_form_e454b58fc7fa7f3626f978ded80da69e" method="POST">
+    <input name="inf_form_xid" type="hidden" value="e454b58fc7fa7f3626f978ded80da69e" />
+    <input name="inf_form_name" type="hidden" value="Web Form submitted" />
+    <input name="infusionsoft_version" type="hidden" value="1.70.0.56144" />
+    <div class="form-row">
+        <div class="col-md-6">
+
+              <!-- <label class="hidden" for="inf_field_FirstName">First Name *</label> -->
+              <input class="infusion-field-input-container" id="inf_field_FirstName" name="inf_field_FirstName" placeholder="First Name *" type="text" />
+
+        </div>
+        <div class="col-md-6">
+
+              <!-- <label class="hidden" for="inf_field_FirstName">Last Name *</label> -->
+              <input class="infusion-field-input-container" id="inf_field_LastName" name="inf_field_LastName" placeholder="Last Name *" type="text" />
+
+        </div>
+        <div class="col-md-12">
+
+              <!-- <label class="hidden" for="inf_field_Email">Email *</label> -->
+              <input class="infusion-field-input-container" id="inf_field_Email" name="inf_field_Email" placeholder="Email *" type="text" />
+
+        </div>
+    </div>
+    <div class="form-row">
+      <div class="col-md-12">
+      <div>
+        <textarea class="form-control" class="infusion-field-textarea-container" id="inf_custom_Comment" name="inf_custom_Comment" placeholder="What's your Rise And Grind? *" rows="3" name="inf_field_Message" placeholder="Message *" type="textarea"></textarea>
+      </div>
+      </div>
+    </div>
+      <div class="form-row">
+    <div class="col-md-12 infusion-submit">
+        <button class="infusion-recaptcha" id="recaptcha_e454b58fc7fa7f3626f978ded80da69e" type="submit">Submit</button>
+    </div>
+  </div>
+</form>
+</div>
+</div>
+
+
+<script type="text/javascript" src="https://daymondjohn.infusionsoft.com/app/webTracking/getTrackingCode"></script>
+<script type="text/javascript" src="https://daymondjohn.infusionsoft.com/resources/external/recaptcha/production/recaptcha.js?b=1.70.0.56144-hf-201807162024"></script>
+<script src="https://www.google.com/recaptcha/api.js?onload=onloadInfusionRecaptchaCallback&render=explicit" async="async" defer="defer"></script>
+<script type="text/javascript" src="https://daymondjohn.infusionsoft.com/app/timezone/timezoneInputJs?xid=e454b58fc7fa7f3626f978ded80da69e"></script>
+<style media="screen">
+  .formwrapper{
+    max-width:600px;
+    margin:0 auto;
+    padding:20px;
+    display: block;
+
+  }
+  .container{margin-bottom: 30px!important;}
+  h4{
+    color:black;
+    margin:10px;
+  }
+  button{background:black;}
+  .infusion-field-input-container{width:100%!important;}
+  .plyr--video .plyr__controls{z-index:0!important;}
+</style>

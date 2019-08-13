@@ -1,0 +1,17 @@
+<section id="facebookLike">	
+		{% if settings.facebookLikeTitle != '' %}  
+        <h1>{{ settings.facebookLikeTitle }}</h1>
+    {% endif %}
+    {% unless settings.facebookLikeURL == '' %}
+    <div id="fb-root"></div>
+    <div class="fb-like-box" data-href="{{ settings.facebookLikeURL }}" data-width="216" data-height="300" data-show-faces="true" data-border-color="#cccccc" data-stream="false" data-header="true"></div>
+    <script>(function(d){
+      var js, id = 'facebook-jssdk'; if (d.getElementById(id)) {return;}
+      js = d.createElement('script'); js.id = id; js.async = true;
+      js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+      d.getElementsByTagName('head')[0].appendChild(js);
+    }(document));</script>
+    {% else %}
+         <p>Please add your Facebook Page URL in your <a href="/admin/themes/{{ theme.id }}/settings">theme settings</a>.</p>
+    {% endunless %}
+</section><!-- facebookLike -->

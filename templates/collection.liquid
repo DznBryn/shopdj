@@ -1,0 +1,98 @@
+<div id="content" class="group">
+    <section id="collectionContent">
+        {% paginate collection.products by settings.paginateBy %}
+        <header id="collectionHeader">
+			{% include 'breadcrumbs' %}
+			<h1>{{collection.title}}</h1>
+            {% if collection.all_tags.size > 0 %}
+            <nav id="subCollections" class="floatLeft">
+				<a {% unless current_tags %}class="activeSubCollection"{% endunless %} {% if collection.handle %}
+			    href="/collections/{{ collection.handle }}"
+			    {% elsif collection.products.first.type == collection.title %}
+			    href="{{ collection.title | url_for_type }}"
+			    {% elsif collection.products.first.vendor == collection.title %}
+			    href="{{ collection.title | url_for_vendor }}"
+			    {% endif %}>All</a>
+                {% for tag in collection.all_tags %}
+            		{% if current_tags contains tag %}
+            		<a class="activeSubCollection" href="{% unless collection.handle == 'all' %}{{ collection.url }}/{{ tag | handle }}{% else %}/collections/all/{{ tag | handle }}{% endunless %}">{{ tag | capitalize}}</a>
+            		{% else %}
+            		<a href="{% unless collection.handle == 'all' %}{{ collection.url }}/{{ tag | handle }}{% else %}/collections/all/{{ tag | handle }}{% endunless %}">{{ tag | capitalize}}</a>
+            		{% endif %} 
+            	{% endfor %}
+            </nav><!-- subCollections -->
+            {% endif %}
+        </header><!-- collectionHeader -->
+        {% if collection.description != '' %}
+    	    <div id="collectionDescription" class="textile">
+                {% if collection.image %}
+                <div id="collectionImageWrapper">
+                    {{ collection.image.src | collection_img_url: 'original' | img_tag: collection_title }}
+                </div><!-- collectionImageWrapper -->
+                {% endif %}
+			    {{ collection.description }}
+		    </div><!-- collectionDescription -->
+        {% elsif collection.image %}
+                <div id="collectionDescription" class="textile">
+                <div id="collectionImageWrapper">
+                    {{ collection.image.src | collection_img_url: 'original' | img_tag: collection_title }}
+                </div><!-- collectionImageWrapper -->
+		    </div><!-- collectionDescription -->
+        {% endif %}
+		<div id="collectionProducts" class="group">
+            {% for product in collection.products %}
+            <article class="collectionProduct{% if settings.collectionLayout == 'Large' %}Large{% elsif settings.collectionLayout == 'Featured' %}{% unless current_tags %}{% unless collection.products.first.type == collection.title or collection.products.first.vendor == collection.title %}{% if forloop.index < 4 %}{% if paginate.current_offset == 0 %}Large{% endif %}{% endif %}{% endunless %}{% endunless %}{% endif %}" itemscope itemtype="http://schema.org/Product">
+				{% if product.compare_at_price_max > product.price %}<span class="onSale">SALE</span>{% endif %}
+                {% if product.handle contains 'the-power-of-broke'%}
+                <a class="productWrapperLink" href="{{shop.url}}/pages/pobpreorder" title="View {{ product.title | escape }}">
+					<div class="collectionProductImageWrapper">
+                      {% unless product.available %}
+                      <span class="circle sold-out">Sold Out</span>
+                      {% endunless %}
+                        <img itemprop="image" src="{{ product.featured_image | product_img_url: 'original' }}" alt="{{ image.alt | escape }}"/>
+                    </div><!-- collectionProductImageWrapper -->
+				</a>	
+                {% else%}
+                        <a class="productWrapperLink" href="{{ product.url | within: collection }}" title="View {{ product.title | escape }}">
+                    <div class="collectionProductImageWrapper">
+                      {% unless product.available %}
+                      <span class="circle sold-out">Sold Out</span>
+                      {% endunless %}
+                        <img itemprop="image" src="{{ product.featured_image | product_img_url: 'original' }}" alt="{{ image.alt | escape }}"/>
+                    </div><!-- collectionProductImageWrapper -->
+                    <header>
+                        <h2 itemprop="name">{{product.title}}</h2>
+                        <div class="group">
+                        <span class="productVendor floatLeft" itemprop="manufacturer">by {{ product.vendor }}</span><span class="collectionProductPrice floatRight" itemprop="offers" itemscope itemtype="http://schema.org/Offer"><span itemprop="price">{% if product.compare_at_price_max > product.price %}<span class="oldPriceCollection"> {{ product.compare_at_price_max | money }}</span>{% endif %}</span>{{ product.price | money }}</span>
+                        </div><!-- group -->    
+                    </header>
+                </a>
+                {%endif%}
+			</article><!-- collectionProductFeatured -->
+			{% endfor %}
+		</div><!-- collectionProducts -->
+		{% if paginate.pages > 1 %}
+        <div id="pagination">
+			{% if paginate.previous %}
+		    <span id="paginationPrev">{{ paginate.previous.title | link_to: paginate.previous.url }}</span>
+            {% else %}
+            <span id="paginationNoPrev">No Previous</span>
+			{% endif %}
+		    {% for part in paginate.parts %}
+		    {% if part.is_link %}
+	        <span class="paginationLink">{{ part.title | link_to: part.url }}</span>
+		    {% else %}
+	        <span id="paginationCurrent">{{ part.title }}</span>
+		    {% endif %}        
+			{% endfor %}      
+			{% if paginate.next %}
+		    <span id="paginationNext">{{ paginate.next.title | link_to: paginate.next.url }}</span>
+		    {% else %}
+            <span id="paginationNoNext">No Next</span>
+    		{% endif %}
+        	<span id="showingNumbers">Showing items {{ paginate.current_offset | plus: 1 }}-{% if paginate.next %}{{ paginate.current_offset | plus: paginate.page_size }}{% else %}{{ paginate.items }}{% endif %} of {{ paginate.items }}</span>
+		</div><!-- pagination -->
+        {% endif %}
+		{% endpaginate %}
+	</section><!-- collectionContent -->
+</div><!-- content -->

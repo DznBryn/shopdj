@@ -1,0 +1,85 @@
+<div id="content">
+{% if settings.sliderStatus == '1' %}
+    {% include 'slider' %}
+{% endif %}
+{% if settings.adsStatus == '1' %}
+    {% include 'ads' %}
+{% endif %}
+{% if settings.contentStatus == '1' %}
+    <div id="contentSections" class="group">
+    	<div id="welcomeCol" class="floatLeft">
+            {% if settings.leftContent != 'latestNewsRotator' %}
+            <section id="welcomeContent">
+                <h1>{{settings.welcomeHeader }}</h1>
+                <div class="textile">
+                    {{ pages[settings.homePage].content }}
+                </div><!-- textile -->
+            </section><!-- welcomeContent -->
+            {% else %}
+            <section id="latestNews">
+                <nav id="latestNewsRotatorNav">
+                    <a href="#" id="latestNewsPrev" title="Previous">Previous</a>
+                    <a href="#" id="latestNewsNext" title="Next">Next</a>
+                </nav><!-- latestNewsRotatorNav -->    
+                {% if settings.latestNewsTitle == blank %}  
+                <h1>Latest News</h1>
+                {% else %}
+                <h1>{{ settings.latestNewsTitle }}</h1>
+                {% endif %}
+            	{% if settings.mainBlog != '' %}
+                    {% assign blog = blogs[settings.mainBlog] %}
+                {% else %}
+                    {% assign blog = blogs.news %}
+                {% endif %}
+                <div id="latestNewsRotator">
+                {% for article in blog.articles limit:3 %}
+                	<article class="articleWrapper">
+            			<header>
+                            <time class="articleDate" pubdate="{{ article.created_at | date: "%B %d, %Y" }}"  itemprop="datePubished"><span class="dateMonth">{{ article.created_at | date: "%b" }}</span><span class="dateDay">{{ article.created_at | date: "%d" }}</span></time>
+            				<h2><a href="{{ article.url }}" rel="bookmark" title="{{ article.title }}">{{ article.title }}</a></h2>
+                	        <p class="articleMeta">posted by <span itemprop="author">{{ article.author }}</span> {% for tag in article.tags %}{% if forloop.first %}in {% endif %}<a href="{{ shop.url}}/blogs/{{ blog.handle }}/tagged/{{ tag | handleize }}">{{ tag }}</a>{% unless forloop.last %},&nbsp;{% endunless %}{% endfor %}{% if blog.comments_enabled? %}
+            						{% if settings.use_disqus_comments == false %}
+    									&nbsp;&nbsp;|&nbsp;&nbsp;<a class="articleComments" href="{{article.url}}#comments">{{ article.comments_count }} Comments</a>
+    								{% else %}
+    									&nbsp;&nbsp;|&nbsp;&nbsp;<a class="articleComments" href="{{article.url}}#comments" data-disqus-identifier="{{ artilce.id }}_identifier"></a>
+    									<script type="text/javascript">
+    									    var disqus_shortname = '{{ settings.disqus_username }}';
+    									    /* * * DON'T EDIT BELOW THIS LINE * * */
+    									    (function () {
+    									        var s = document.createElement('script'); s.async = true;
+    									        s.type = 'text/javascript';
+    									        s.src = 'http://' + disqus_shortname + '.disqus.com/count.js';
+    									        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    									    }());
+    									</script>
+    								{% endif %}
+    							{% endif %}</p>
+            			</header>
+            			<div class="articleSummary">
+                        	{% if article.excerpt.size > 0 %}
+            				  <p>{{ article.excerpt }}</p>
+            				{% else %}
+            				  <p>{{ article.content | strip_html | truncatewords: 40, ".."}} &nbsp;<a href="{{article.url}}" title="Read More">- Read More</a></p>
+            				{% endif %}
+                        </div><!-- articleSummary -->
+            		</article><!-- articleWrapper -->
+                {% endfor %}
+                </div><!-- latestNewRotator -->
+            </section><!-- latestNews -->
+            {% endif %}
+    	</div><!-- welcomeCol -->
+    	<div id="middleCol" class="floatLeft">
+            {% include settings.middleContent %}
+    	</div><!-- middleCol -->
+    	<div id="sidebar" class="floatRight">
+            <span id="topBar">&nbsp;</span><!-- topBar -->
+    		<div id="sidebarBkgd">
+                {% include settings.rightContent %}	
+            </div><!-- sidebarBkgd -->    
+    	</div><!-- rightCol -->				
+    </div><!-- contentSections -->
+{% endif %}
+{% if settings.useFeaturedCollection == '1' %}
+    {% include 'home-featured' %}
+{% endif %}
+</div><!-- content -->

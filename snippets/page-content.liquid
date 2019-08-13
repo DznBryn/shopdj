@@ -1,0 +1,17 @@
+<style>
+
+htnml, body, #content{
+  background-color: {{block.settings.backcolor}} !important;
+  }
+p{
+    background-color: {{block.settings.backcolor}} ;
+    color: {{block.settings.textcolor}} ;
+  }
+@media (max-width: 768px){
+h1, .h1 {
+    font-size: 20px!important;
+}
+}
+</style>
+
+<div class="container">{{page.content}} <p>{{block.settings.more-page-text}}</p></div>

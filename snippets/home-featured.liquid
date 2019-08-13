@@ -1,0 +1,48 @@
+<div id="featuredProducts">
+    <nav id="featuredProductsNav">
+        {% unless settings.featuredCollection == '' %}
+        <a href="#" id="featuredProductsLink" class="featuredProductsActive">{{ settings.featuredCollectionTitle }}</a>
+        {% endunless %}
+        {% unless settings.bestSellersCollection == '' %}
+        <a href="#" id="bestSellersLink" {% if settings.featuredCollection == '' %}class="featuredProductsActive"{% endif %}>{{ settings.bestSellersTitle }}</a>
+        {% endunless %}
+    </nav><!-- featuredProductsNav -->
+    {% unless settings.featuredCollection == '' %}
+    <div id="featuredProductsList" class="group">
+    {% for product in collections[settings.featuredCollection].products limit:4 %}
+    <article class="collectionProduct {% cycle 'productOne', 'productTwo', 'productThree', 'productFour' %}" itemscope itemtype="http://schema.org/Product">
+        <a href="{{ product.url }}" title="View {{ product.title | escape }}">
+    		<div class="collectionProductImageWrapper">
+                <img itemprop="image" src="{{ product.featured_image | product_img_url: 'large' }}" alt="{{ image.alt | escape }}" />
+            </div><!-- collectionProductImageWrapper -->
+    		<header>
+    			<h2 itemprop="name">{{product.title}}</h2>
+    			<div class="group">
+    			<span class="productVendor floatLeft" itemprop="manufacturer">by {{ product.vendor }}</span><span class="collectionProductPrice floatRight" itemprop="offers" itemscope itemtype="http://schema.org/Offer"><span itemprop="price">{% if product.compare_at_price_max > product.price %}<span class="oldPriceCollection"> {{ product.compare_at_price_max | money }}</span>{% endif %}</span>{{ product.price | money }}</span>
+    			</div><!-- group -->	
+    		</header>
+    	</a>	
+    </article><!-- collectionProductFeatured -->
+    {% endfor %}
+    </div><!-- featuredProductsList -->
+    {% endunless %}
+    {% unless settings.bestSellersCollection == '' %}
+    <div id="bestSellersList" class="group">
+    {% for product in collections[settings.bestSellersCollection].products limit:4 %}
+    <article class="collectionProduct {% cycle 'productOne', 'productTwo', 'productThree', 'productFour' %}" itemscope itemtype="http://schema.org/Product">
+        <a href="{{ product.url }}" title="View {{ product.title | escape }}">
+    		<div class="collectionProductImageWrapper">
+                <img itemprop="image" src="{{ product.featured_image | product_img_url: 'large' }}" alt="{{ image.alt | escape }}"/>
+            </div><!-- collectionProductImageWrapper -->
+    		<header>
+    			<h2 itemprop="name">{{product.title}}</h2>
+    			<div class="group">
+    			<span class="productVendor floatLeft" itemprop="manufacturer">by {{ product.vendor }}</span><span class="collectionProductPrice floatRight" itemprop="offers" itemscope itemtype="http://schema.org/Offer"><span itemprop="price">{% if product.compare_at_price_max > product.price %}<span class="oldPriceCollection"> {{ product.compare_at_price_max | money }}</span>{% endif %}</span>{{ product.price | money }}</span>
+    			</div><!-- group -->	
+    		</header>
+    	</a>	
+    </article><!-- collectionProductFeatured -->
+    {% endfor %}
+    </div><!-- bestSellersList -->
+    {% endunless %}
+</div><!-- featuredProducts -->

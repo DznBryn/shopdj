@@ -1,0 +1,91 @@
+<div style=" padding:2em 0;">
+  {% form 'customer' %}
+        {{ form.errors | default_errors }}
+        {% if form.posted_successfully? %}
+          <h2 class="form--success text-center sr-only" style="margin-bottom:2rem;"> SUCCESS!</h2>
+         <div style="text-align:center; border:2px solid #C2B174; color:#000;width:50%;padding:20px;text-transform:uppercase;margin:0 auto;"> <a href="https://cdn.shopify.com/s/files/1/0274/9575/files/GRIND_POINT_GUIDE_2.pdf?6317307466951147331 " style="color:black;">Download your Grind Points here!</a></div>
+        {% else %}
+          <div class="input-group password__input-group">
+            {% if page.handle contains "rise-and-grind-with-al-brittani-baker" %}
+
+              <input type="hidden" name="contact[tags]" value="rise-and-grind-with-al-brittani-baker">
+             {% elsif page.handle contains "rise-and-grind-with-brian-lee" %}
+              <input type="hidden" name="contact[tags]" value="rise-and-grind-with-brian-lee">
+
+             {% elsif page.handle contains "rise-and-grind-with-carlos-santana"%}
+             <input type="hidden" name="contact[tags]" value="rise-and-grind-with-carlos-santana">
+
+             {% elsif page.handle contains "rise-and-grind-with-catherine-zeta-jones"%}
+             <input type="hidden" name="contact[tags]" value="rise-and-grind-with-catherine-zeta-jones">
+
+             {% elsif page.handle contains "rise-and-grind-with-gary-vaynerchuk"%}
+             <input type="hidden" name="contact[tags]" value="rise-and-grind-with-gary-vaynerchuk">
+
+             {% elsif page.handle contains "rise-and-grind-with-grant-cardone"%}
+             <input type="hidden" name="contact[tags]" value="rise-and-grind-with-grant-cardone">
+
+             {% elsif page.handle contains "rise-and-grind-with-jake-kassan-kramer-laplante"%}
+             <input type="hidden" name="contact[tags]" value="rise-and-grind-with-kramer-laplante">
+
+             {% elsif page.handle contains "rise-and-grind-with-joel-osteen"%}
+             <input type="hidden" name="contact[tags]" value="rise-and-grind-with-joel-osteen">
+
+             {% elsif page.handle contains "rise-and-grind-with-kristina-guerrero"%}
+             <input type="hidden" name="contact[tags]" value="rise-and-grind-with-kristina-guerrero">
+
+             {% elsif page.handle contains "rise-and-grind-with-kyle-maynard"%}
+             <input type="hidden" name="contact[tags]" value="rise-and-grind-with-kyle-maynard">
+
+             {% elsif page.handle contains "rise-and-grind-with-lola-alvarez"%}
+             <input type="hidden" name="contact[tags]" value="rise-and-grind-with-lola-alvarez">
+
+             {% elsif page.handle contains "rise-and-grind-with-michael-parrella"%}
+             <input type="hidden" name="contact[tags]" value="rise-and-grind-with-michael-parrella">
+
+             {% elsif page.handle contains "rise-and-grind-with-nely-galan"%}
+             <input type="hidden" name="contact[tags]" value="rise-and-grind-with-nely-galan">
+
+             {% elsif page.handle contains "rise-and-grind-with-russell-simmons"%}
+             <input type="hidden" name="contact[tags]" value="rise-and-grind-with-russell-simmons">
+
+             {% elsif page.handle contains "rise-and-grind-with-tyler-the-creator"%}
+             <input type="hidden" name="contact[tags]" value="rise-and-grind-with-tyler-the-creator">
+
+             {% elsif page.handle contains "rise-and-grind-with-wendy-williams"%}
+             <input type="hidden" name="contact[tags]" value="rise-and-grind-with-wendy-williams">
+
+             {% else %}
+             <input type="hidden" name="contact[tags]" value="Grind-Points">
+
+            {% endif %}
+            <div class="row"style="max-width:400px;margin:0 auto;">
+            <div class="medium-6 columns">
+              <input type="text" value="{% if customer %}{{ customer.first_name }}{% endif %}" name="contact[first_name]" id="first_name" class="large" size="35" placeholder="First Name*" required/>
+            </div>
+            <div class="medium-6 columns">
+              <input type="text" value="{% if customer %}{{ customer.last_name }}{% endif %}" name="contact[first_name]" id="last_name" class="large" size="35" placeholder="Last Name*" required/>
+            </div>
+            <div class="medium-6 columns">
+
+            <input type="email"
+              name="contact[email]"
+              id="Email"
+              class="input-group__field newsletter__input"
+              value="{% if customer %}{{ customer.email }}{% endif %}"
+              placeholder="Email Address*"
+              autocorrect="off"
+              autocapitalize="off">
+            </div>
+            <div class="medium-6 columns">
+
+            <span class="input-group__btn">
+              <button type="submit" class="btn newsletter__submit" name="commit" id="Subscribe" style="border:2px solid #C2B174; color:#000;width:100%;">
+                <span class="newsletter__submit-text--large">SUBMIT</span>
+              </button>
+            </span>
+              </div>
+            </div>
+          </div>
+        {% endif %}
+      {% endform %}
+</div>

@@ -1,0 +1,16 @@
+<style>
+.nav-footer{
+    margin: 0 auto !important;
+    width: fit-content;
+    float: none !important;
+}
+</style>
+
+<ul class="nav-footer main-links">
+    {% for link in linklists.footer.links%}
+    <li {% if link.links != blank %} class="{{ link.title }}" {% endif %}>
+        <a href="{{ link.url }}" {%if link.active %} class="active" {% endif %}>{{ link.title }}</a>
+    </li>
+    
+    {% endfor %}
+</ul>

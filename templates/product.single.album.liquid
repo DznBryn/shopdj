@@ -1,0 +1,379 @@
+{% comment %}
+<!--
+Copyright (c) 2019 Single, LLC
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+-->
+{% endcomment %}
+{{ '//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js' | script_tag }}
+{% comment %}
+<!-- Single Default Styles - Can be edited in assets/single.css -->
+{% endcomment %}
+{{ 'single.css' | asset_url | stylesheet_tag }}
+{%- comment -%}
+<!-- Release Date Logic for Presale products -->
+{%- endcomment -%}
+{% capture releaseDateString %}{{ product.metafields.album.release_date }}{% endcapture %}
+{% assign dateParts =  releaseDateString | split: "/" %}
+{% capture releaseDateFormatted %}{{ dateParts[2] }}-{{ dateParts[0] }}-{{ dateParts[1] }}{% endcapture %}
+{% assign releaseDate = releaseDateFormatted | date: "%s" | plus: 0 %}
+{% assign now = "now" | date: "%s" | plus: 0 %}
+{% capture trackOnSale %}{% if releaseDate <= now %}true{% endif %}{% endcapture %}
+{% capture presale %}{% if releaseDate > now %}true{% endif %}{% endcapture %}
+{%- comment -%}
+<!-- END Release Date Logic for Presale products -->
+{%- endcomment -%}
+<div class="single-product-wrap {{ theme.name | handleize }}" itemscope itemtype="http://schema.org/Product">
+  <div class="single-inner-wrap">
+    <!-- Product Metatags -->
+    <meta itemprop="url" content="{{ shop.url }}{{ product.url }}">
+    <meta itemprop="image" content="{{ product.featured_image.src | img_url: 'grande' }}">
+    <meta property="og:title" content="{{ product.title }}"/>
+    <meta property="og:image" content="{{ product.featured_image.src | img_url: 'grande' }}"/>
+    <meta property="og:url" content="{{ shop.url }}{{ product.url }}"/>
+    <!-- Left Column-->
+    <div class="single-col single-col-l">
+      <div class="single-album-art">
+        <img src="{{ product.featured_image.src | img_url: 'grande' }}" alt="{{ featured_img_alt }}">
+      </div>
+      {% if product.metafields.album.track_count > 1 %}
+      {% if presale == "true" %}
+      <div class="single-album-release-date">Pre-order: Expected {{ releaseDateFormatted | time_tag: '%B %d, %Y' }}</div>
+      <div class="single-presale-note">Pre-order contents may change without notice. You'll receive items from this pre-order as they become available.</div>
+      {% else %}
+      <div class="single-album-release-date">
+        <p>Release Date: {{ releaseDateFormatted | time_tag: '%B %d, %Y' }}</p>
+      </div>
+      {% endif %}
+      <div class="single-album-description desktop-desc" itemprop="description">
+        <p>Downloads include choice of MP3, WAV, or FLAC</p>
+        <p>{{ product.description }}</p>
+        {% include 'single-share-menu' %}
+      </div>
+      {% endif %}
+    </div>
+    <!--End Left Column-->
+    <!--Right Column-->
+    <div class="single-col single-col-r">
+      <!-- Begin Single Header -->
+      <div class="single-album-header">
+        <h1 class="single-album-title" itemprop="name">
+          {% if product.metafields.album.featured_artist_names %}
+            <span>{{ product.title }} (feat. {{product.metafields.album.featured_artist_names}})</span>
+          {% else %}
+            <span>{{ product.title }}</span>
+          {% endif %}
+        </h1>
+        <p class="single-album-artist">{{ product.metafields.album.artist_name }}</p>
+        {% if product.variants.size == 1 %}
+        <h3 class="single-album-price">
+          {% if product.metafields.album.track_count == 1 and trackOnSale == "true" %}
+            {% assign collection_key = product.metafields.album.collection_handle %}
+            {% assign track = collections[collection_key].products.first %}
+            {% capture trackTime %}{% if track.metafields.track.track_time != '' %}<span class="single-track-preview-timer">{{track.metafields.track.track_time}}</span>{% endif %}{% endcapture %}
+            {% capture previewAvailable %}{% if track.metafields.track.preview == "true" %}true{% endif %}{% endcapture %}
+            {% assign previewLink = track.metafields.track.preview_link %}
+            {% if previewAvailable == "true" %}
+              <span class="single-album-track-play" onclick="togglePlayingSingleTrack('{{ track.id }}', '{{ previewLink }}')">
+                <i class="material-icons">play_circle_outline</i>
+              </span>
+            {% endif %}
+          {% endif %}
+          <span>{{ product.variants.first.price | money }}</span>
+          {% if track.metafields.track.explicit == "true" %}
+          <span class="single-track-explicit">
+            <span>e</span>
+          </span>
+          {% endif %}
+          <span class="single-track-time">{{trackTime}}</span>
+        </h3>
+        {% endif %}
+        <meta itemprop="priceCurrency" content="{{ shop.currency }}">
+        <!-- Add to Cart -->
+        <form action="/cart/add" method="post" enctype="multipart/form-data">
+        {% if product.variants.size > 1 %}
+          <div class="single-field-label">Select Format</div>
+          <select name="id" class="single-select-field">
+            {% for variant in product.variants %}
+              {% if variant.available == true %}
+                <option value="{{variant.id}}"> {{ variant.title }} - {{ variant.price | money }}</option>
+              {% else %}
+                <option disabled="disabled"> {{ variant.title }} - sold out!</option>
+              {% endif %}
+            {% endfor %}
+          </select>
+        {% else %}
+          <input name="id" value="{{ product.variants.first.id }}" type="hidden" />
+        {% endif %}
+          <div class="single-album-add-to-cart">
+            <button type="submit" name="add" id="AddToCart" class="btn btn--fill btn--regular btn--color">
+              <span id="AddToCartText">Add{% if presale == "true" %} Pre-order{% endif %} to Cart</span>
+            </button>
+          </div>
+        </form>
+      </div>
+      <!-- End Single Header -->
+      <!-- Begin Tracklist -->
+      {% assign collection_key = product.metafields.album.collection_handle %}
+      {% assign products = collections[collection_key].products %}
+      {% capture productsExist %}{% if products != '' and products.length != 0 %}true{% endif %}{% endcapture %}
+      {% if product.metafields.album.track_count != 1 and productsExist == 'true' %}
+        <div class="single-tracklist">
+          <h3 class="single-tracklist-title">Tracklist</h3>
+          <hr class="single-hr">
+          {% for track in products %}
+            {% if track.type == 'Digital Track' %}
+              {% include 'single-track' with track %}
+            {% endif %}
+          {% endfor %}
+          <div class="single-tracklist-footer">
+            <hr class="single-hr">
+            <a class="single-branding" href="//singlemusic.com/powered-by-single" target="_blank">
+              <img src="{{ 'single_logo-arrow.svg' | asset_url }}" alt="Powered by Single" target="_blank"/>
+            </a>
+          </div>
+        </div>
+      {% endif %}
+      <!-- End Tracklist -->
+      <!-- Single Track Info-->
+      {% if product.metafields.album.track_count == 1 %}
+        {% if presale == "true" %}
+          <div class="single-album-release-date">Pre-order: Expected {{ releaseDateFormatted | time_tag: '%B %d, %Y' }}</div>
+          <div class="single-presale-note">Pre-order contents may change without notice. You'll receive items from this pre-order as they become available.</div>
+        {% else %}
+          <div class="single-album-release-date">
+            <p>Release Date: {{ releaseDateFormatted | time_tag: '%B %d, %Y' }}</p>
+          </div>
+        {% endif %}
+        <div class="single-album-description desktop-desc" itemprop="description">
+          <p>Downloads include choice of MP3, WAV, or FLAC</p>
+          <p>{{ product.description }}</p>
+          {% include 'single-share-menu' %}
+        </div>
+      {% endif %}
+      <!-- Mobile Description -->
+      <div class="single-album-description mobile-desc" itemprop="description">
+        <p>Downloads include choice of MP3, WAV, or FLAC</p>
+        <p>{{ product.description }}</p>
+        {% include 'single-share-menu' %}
+      </div>
+    </div>
+    <!-- End Right Column -->
+  </div>
+  <!-- End Inner Wrap -->
+</div>
+<!-- End Product Wrap -->
+
+<!-- Single Ajax Scripts -->
+<script>
+{% comment %}
+/*
+This adds the provided track variant to the shopping cart,
+fetches the cart, and updates the cart item count.
+*/
+{% endcomment %}
+addTrackToCart = function addTrackToCart(variantId, trackId) {
+  $.post('/cart/add.json', { quantity: 1, id: variantId },
+  function(variant) {
+    var elem = $('#single-add-track-to-cart-icon-' + trackId);
+    elem.replaceWith('<a href="/cart"><i class="material-icons animated pulse">check_circle</i></a>');
+    $.get('/cart.json', function(cart) {
+      var cartElem  = $($('span.cart-count')[0]);
+      if (!cartElem) {
+        return;
+      }
+      cartElem.text(cart.item_count);
+      cartElem.removeClass('__web-inspector-hide-shortcut__');
+      cartElem.removeClass('hidden-count');
+      cartElem.prev().removeClass('hidden-count');
+    });
+  }).fail(function() {
+    {% comment %} // This happens if track fails to add. --> {% endcomment %}
+    alert('Failed to add track to cart!');
+  });
+};
+</script>
+
+{% comment %} Track Preview Player {% endcomment %}
+{{ 'audio-player.js' | asset_url | script_tag }}
+<script>
+(function() {
+  document.addEventListener("DOMContentLoaded", function (loadEvent) {
+    var audioPlayer = new AudioPlayer({ html5: true });
+
+    var trackTimeCountdown;
+    var trackStopIcon = '<i class="material-icons">stop</i>';
+    var trackPlayingClass = 'single-preview-playing';
+
+    var getTimeLeft = function(seek, duration) {
+      if (seek === 0 && duration === 0) {
+        return '';
+      }
+      var minutes = Math.floor((duration - seek) / 60) || 0;
+      var seconds = Math.ceil(((duration - seek) - minutes * 60)) || 0;
+
+      return '-' + minutes + ':' + ('0' + seconds).slice(-2);
+    };
+
+    var getPreviewURL = function(previewLink, callback) {
+      $.ajax({
+        url: previewLink,
+        dataType: 'text',
+        type: 'GET',
+        success: function(previewURL) {
+          callback(previewURL);
+        },
+        error: function(XMLHttpRequest) {
+          alert('Error playing track');
+        }
+      })
+    };
+
+    // Single track release
+    var singleTrackPlaying = false;
+
+    var singleTrackStoppedPlaying = function(trackId) {
+      singleTrackPlaying = false;
+      $('.single-track-preview-timer').html(trackData[trackId].trackTime);
+      $('.single-album-track-play').html(trackData[trackId].previewHtml);
+      clearInterval(trackTimeCountdown);
+      delete trackData[trackId];
+    };
+
+    updateSingleTrackTimer = function() {
+      var timeLeft = getTimeLeft(audioPlayer.player.seek(), audioPlayer.player.duration());
+      $('.single-track-preview-timer').html(timeLeft);
+    };
+
+    playSingleTrack = function(trackId, previewLink) {
+      getPreviewURL(previewLink, function(previewURL) {
+        singleTrackPlaying = true;
+        var singleTrackPreviewElem = $('.single-album-track-play');
+        trackData[trackId] = {
+          previewHtml: singleTrackPreviewElem.html(),
+          trackTime: $('.single-track-preview-timer').html()
+        };
+        singleTrackPreviewElem.html(trackStopIcon);
+        audioPlayer.play(previewURL);
+        audioPlayer.player.on('end', function() {
+          singleTrackStoppedPlaying(trackId);
+        });
+        audioPlayer.player.on('play', function() {
+          updateSingleTrackTimer();
+          trackTimeCountdown = setInterval(function() {
+            updateSingleTrackTimer();
+          }, 500);
+        });
+      });
+    };
+
+    stopSingleTrack = function(trackId) {
+      audioPlayer.stop();
+      singleTrackStoppedPlaying(trackId);
+    };
+
+    window.togglePlayingSingleTrack = function(trackId, previewLink) {
+      if (singleTrackPlaying) {
+        stopSingleTrack(trackId);
+      } else {
+        playSingleTrack(trackId, previewLink);
+      }
+    };
+
+    // Album tracks
+    var trackData = {};
+
+    var updateAlbumTrackTimer = function(trackId) {
+      var elem = $('[data-track-id="' + trackId + '"]');
+      var trackTime = elem.find('.single-track-time');
+      var timeLeft = getTimeLeft(audioPlayer.player.seek(), audioPlayer.player.duration());
+      trackTime.html(timeLeft);
+    };
+
+    var trackPlaying = function() {
+      var trackPlayers = Object.keys(trackData).map(key => {
+        return trackData[key];
+      });
+
+      return trackPlayers.length !== 0;
+    }
+
+    var trackStoppedPlaying = function(trackId) {
+      if (trackData[trackId]) {
+        var elem = $('[data-track-id="' + trackId + '"]');
+        var trackNumber = $('[data-track-id="' + trackId + '"] .single-track-order p');
+        var trackTime = elem.find('.single-track-time');
+        elem.removeClass(trackPlayingClass);
+        trackNumber.html(trackData[trackId].trackNumber);
+        trackTime.html(trackData[trackId].trackTime);
+        clearInterval(trackTimeCountdown);
+        delete trackData[trackId];
+      }
+    };
+
+    var playTrack = function(trackId, previewLink) {
+      Object.keys(trackData).forEach(function(key) {
+        trackStoppedPlaying(key);
+      });
+      var elem = $('[data-track-id="' + trackId + '"]');
+      var trackNumber = $('[data-track-id="' + trackId + '"] .single-track-order p');
+      var trackTime = elem.find('.single-track-time');
+      trackData[trackId] = {
+        trackNumber: trackNumber.html(),
+        trackTime: trackTime.html()
+      };
+      getPreviewURL(previewLink, function(previewURL) {
+        audioPlayer.play(previewURL);
+        audioPlayer.player.on('play', function() {
+          updateAlbumTrackTimer(trackId);
+          elem.addClass(trackPlayingClass);
+          trackNumber.html(trackStopIcon);
+          trackTimeCountdown = setInterval(function() {
+            updateAlbumTrackTimer(trackId);
+          }, 500);
+        });
+        audioPlayer.player.on('end', function() {
+          trackStoppedPlaying(trackId);
+        });
+      });
+    };
+
+    var stopTrack = function(trackId) {
+      audioPlayer.stop();
+      Object.keys(trackData).forEach(function(key) {
+        trackStoppedPlaying(key);
+      });
+    };
+
+    window.togglePlayingTrack = function(trackId, previewLink) {
+      if (trackPlaying() && typeof trackData[trackId] !== 'undefined') {
+        stopTrack(trackId);
+      } else if (trackPlaying()) {
+        stopTrack(trackId);
+        playTrack(trackId, previewLink);
+      } else {
+        playTrack(trackId, previewLink);
+      }
+    };
+
+  });
+})();
+</script>
+
+{% include 'single-ajaxify-album' %}

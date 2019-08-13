@@ -1,0 +1,18 @@
+<section id="latestNewsWidget">
+	{% if settings.latestNewsTitle == blank %}  
+    <h1>Latest News</h1>
+    {% else %}
+    <h1>{{ settings.latestNewsTitle }}</h1>
+    {% endif %}
+	{% if settings.mainBlog != '' %}
+        {% assign blog = blogs[settings.mainBlog] %}
+    {% else %}
+        {% assign blog = blogs.news %}
+    {% endif %}
+    {% for article in blog.articles limit:3 %}
+    <article class="articleSidebar">
+		<h2><a href="{{ article.url }}" rel="bookmark" title="{{ article.title }}">{{ article.title }}</a></h2>
+		<p class="articleMeta">posted on {{ article.created_at | date: "%B %d, %Y" }}</p>
+	</article><!-- articleSidebar -->
+    {% endfor %}
+</section><!-- latestNewsWidget -->

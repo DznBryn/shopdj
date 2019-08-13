@@ -1,0 +1,70 @@
+
+{% assign feature_displayed = false %}
+{% assign feature_displayed_id = 0 %}
+
+{% for article in blog.articles %}
+	{% assign display_post = false %}
+	{% for tag in article.tags %}
+		{% if tag == '__featured' %}
+			{% assign display_post = true %}
+		{% endif %}
+	{% endfor %}
+	
+	{% if display_post == false %}
+		{% continue %}
+	{% endif %}
+	
+	{% assign feature_displayed = true %}
+	{% assign feature_displayed_id = article.id %}
+	
+	{% include 'featured-post' %}
+	
+	{% break %}
+{% endfor %}
+
+{% if feature_displayed == false %}
+	{% for article in blog.articles %}
+				
+		{% assign feature_displayed = true %}
+		{% assign feature_displayed_id = article.id %}
+		
+		{% include 'featured-post' %}
+		
+		{% break %}
+	{% endfor %}
+
+{% endif %}
+{% paginate blog.articles by 7 %}
+
+<div class="link-grid">
+	<div class="row no-gutter">
+		{% for article in blog.articles  %}
+			{% if article.id == feature_displayed_id %}
+				{% continue %}
+			{% endif %}			
+<div class="col-md-3 col-sm-6 col-xs-6 col-xl-2">
+{% if article.image %}
+
+<a href="{{ article.url }}" style="background-image: url({{ article.image | img_url: 'original' }});">
+{%elsif article.content contains "<img" %}
+{% assign src = article.content | split: 'src="' %}
+{% assign src = src[1] | split: '"' | first | replace: '//cdn', 'http://cdn';; | replace: 'http:http://';;, 'http://';; | remove: 'https:' %}
+<a href="{{ article.url }}" style="background-image: url({{src}});">
+{%else%}
+<a href="{{ article.url }}" style="background-image: url({{ 'blog-imagenotfound.jpg' | asset_url }});">
+{% endif %}
+			
+				<span><strong>{{ article.title }}</strong></span></a>
+			</div><!-- /.col -->
+		{% endfor %}
+	</div><!-- / .row -->
+</div><!-- /.link-grid -->
+
+{% if paginate.pages > 1 %}
+<div class="container">
+  <div class="pagination">
+    {{ paginate | default_pagination | replace: 'Previous', 'Newer' | replace: 'Next', 'Older' }}
+  </div>
+</div>
+{% endif %}
+{% endpaginate %}

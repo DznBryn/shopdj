@@ -1,0 +1,22 @@
+<div class="medium-6 medium-push-6">
+<ul class="social-icons">
+{% unless block.settings.twitter_tag == blank %}
+<li><a href="https://twitter.com/{{ block.settings.twitter_tag }}" target="_blank" rel="noopener noreferrer"><i class="fa fa-twitter"></i></a></li>
+{% endunless %}
+{% unless block.settings.facebook_tag == blank %}
+<li><a href="https://www.facebook.com/{{ block.settings.facebook_tag }}" target="_blank" rel="noopener noreferrer"><i class="fa fa-facebook"></i></a></li>
+{% endunless %}
+{% unless block.settings.instagram_tag == blank %}
+<li><a href="https://instagram.com/{{ block.settings.instagram_tag }}" target="_blank" rel="noopener noreferrer"><i class="fa fa-instagram"></i></a></li>
+{% endunless %}
+{% unless block.settings.youtube_tag == blank %}
+<li><a href="https://www.youtube.com/user/{{ block.settings.youtube_tag }}" target="_blank" rel="noopener noreferrer"><i class="fa fa-youtube-play"></i></a></li>
+{% endunless %}
+{% unless block.settings.google_tag == blank %}
+<li><a href="https://plus.google.com/{{ block.settings.google_tag }}" target="_blank" rel="noopener noreferrer"><i class="fa fa-google-plus"></i></a></li>
+{% endunless %}
+{% unless block.settings.linkedin_tag == blank %}
+<li><a href="https://www.linkedin.com/in/{{ block.settings.linkedin_tag }}" target="_blank" rel="noopener noreferrer"><i class="fa fa-linkedin-square"></i></a></li>
+{% endunless %}
+</ul>
+</div>

@@ -1,0 +1,90 @@
+{% if block.settings.sliderimage != blank %}
+<div class="container">
+<div class="row">
+ <div class="hardcover col-md-12" >
+   <label class="label label-default"> Hardcover:</label>
+   {% if block.settings.sliderimage != blank %} <a href= "{{ block.settings.slide_link }}"><img src='{{ block.settings.sliderimage | img_url: '600x600' }}' class="img-size1 img-responsive"/></a>{% endif %}
+   {% if block.settings.sliderimage2 != blank %}<a href= "{{ block.settings.slide2_link }}"><img src='{{ block.settings.sliderimage2 | img_url: '600x600' }}' class="img-size1 img-responsive"/></a>{% endif %}
+   {% if block.settings.sliderimage3 != blank %}<a href= "{{ block.settings.slide3_link }}"><img src='{{ block.settings.sliderimage3 | img_url: '600x600' }}' class="img-size1 img-responsive"/></a>{% endif %}
+   {% if block.settings.sliderimage4 != blank %}<a href= "{{ block.settings.slide4_link }}"><img src='{{ block.settings.sliderimage4 | img_url: '600x600' }}' class="img-size1 img-responsive"/></a>{% endif %}
+   {% if block.settings.sliderimage5 != blank %}<a href= "{{ block.settings.slide5_link }}"><img src='{{ block.settings.sliderimage5 | img_url: '600x600' }}' class="img-size1 img-responsive"/></a>{% endif %}
+   {% if block.settings.sliderimage6 != blank %}<a href= "{{ block.settings.slide6_link }}"><img src='{{ block.settings.sliderimage6 | img_url: '600x600' }}' class="img-size1 img-responsive"/></a>{% endif %}
+   {% if block.settings.sliderimage8 != blank %} <a href= "{{ block.settings.slide8_link }}"><img src='{{ block.settings.sliderimage8 | img_url: '600x600' }}' class="img-size1 img-responsive"/></a>{% endif %}
+   {% if block.settings.sliderimage9 != blank %} <a href= "{{ block.settings.slide9_link }}"><img src='{{ block.settings.sliderimage9 | img_url: '600x600' }}' class="img-size1 img-responsive"/></a>{% endif %}
+    </div>
+
+</div>
+<div class="row">
+  <div class="digital col-md-4" >
+    <label class="label label-default"> eBook:</label>
+    {% if block.settings.sliderimage != blank %} <a href= "{{ block.settings.slide_link }}"><img src='{{ block.settings.sliderimage | img_url: '600x600' }}' class="img-size img-responsive"/></a>{% endif %}
+
+    {% if block.settings.sliderimage7 != blank %}<a href= "{{ block.settings.slide7_link }}"><img src='{{ block.settings.sliderimage7 | img_url: '600x600' }}' class="img-size img-responsive"/></a>{% endif %}
+
+    </div>
+ <div class="audible col-md-4 " >
+   <label class="label label-default"> Audiobook:</label>
+   {% if block.settings.sliderimage10 != blank %} <a href= "https://www.audible.com/pd/Business/Rise-and-Grind-Audiobook/B077F87XML?ref=a_pd_Busine_c5_lProduct_1_1&pf_rd_p=69c485e8-e33b-471c-b905-1c3a178e1994&pf_rd_r=WBGAK30HV89J3KGR5ZCN&"><img src='{{ block.settings.sliderimage10 | img_url: '600x600' }}' class="img-size img-responsive"/></a>{% endif %}
+   </div>
+ <div class="col-md-4 podcast" >
+   <label class="label label-default"> Podcast:</label>
+   {% if block.settings.sliderimage11 != blank %} <a href= "{{ block.settings.slide11_link }}"><img src='{{ block.settings.sliderimage11 | img_url: '600x600' }}' class="img-size img-responsive"/></a>
+    {%else%}
+   <h5 style="color:black!important;padding: 20px 30px;">COMING SOON!</h5>
+   {% endif %}
+   {% if block.settings.sliderimage12 != blank %} <a href= "{{ block.settings.slide12_link }}"><img src='{{ block.settings.sliderimage12 | img_url: '600x600' }}' class="img-size img-responsive"/></a>{% endif %}
+   </div>
+</div>
+</div>
+{% endif %}
+
+<!-- <script type="text/javascript" src="//cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.1/slick/slick.min.js"></script>
+ <script>
+ (function(){
+   $('.slider2').slick({
+    slidesToScroll: 1,
+    centerPadding: '0px',
+    slidesToShow: 9,
+    responsive: [
+      {
+        breakpoint: 768,
+        settings: {
+          ars: false,
+          centerMode: true,
+          centerPadding: '40px',
+          slidesToShow: 3,
+        }
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          ars: false,
+          centerPadding: '50px',
+          slidesToShow: 1,
+          autoplay: true,
+          speed: 200,
+        }
+      }
+    ]
+});
+ })(); -->
+
+ </script>
+ <style media="screen">
+ .wrapper{
+   padding-bottom:20px;
+ }
+ .label{
+   color: #C2B174;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 1px;
+    font-size: .7em;
+ }
+  .img-size1{     width: 11%; min-width: 72px;}
+  .img-size{    max-width: 130px; }
+  .hardcover{
+    padding:20px;
+  }
+
+ </style>

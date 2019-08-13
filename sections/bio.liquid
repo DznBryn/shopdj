@@ -1,0 +1,162 @@
+<section id="bio" class="hidden-xs">
+	<div class="slide slide-1" style="background-image: url('{{ 'img_daymond-yellow.jpg' | asset_url}}');">
+		<div class="contain">
+			<div class="row">
+              {% if settings.first-slide-content-position == 'left' %}
+				<div class="col-sm-6 bio-content">
+              {% elsif settings.first-slide-content-position == 'center' %}
+                <div class="col-sm-6 col-sm-offset-3 bio-content">
+              {% else %}
+                <div class="col-sm-6 col-sm-offset-6 bio-content">
+              {% endif %}
+					<h3 style="color:{{ settings.first-slide-text-color}};">{{settings.first-slide-cat}}</h3>
+					<h2 style="color:{{ settings.first-slide-text-color}};">{{settings.first-slide-title}}</h2>
+
+                  	<p style="color:{{ settings.first-slide-text-color}};">{{settings.first-slide-text}}</p>
+					<span class="button open-modal" data-modal="contact">{{settings.first-slide-button-text}}</span>
+				</div><!-- /.col -->
+			</div><!-- /.row -->
+		</div><!-- /.contain -->
+	</div><!-- /.slide -->
+
+	<div class="slide slide-2" style="background-image: url('{{ 'img_daymond-speaking.jpg' | asset_url}}');">
+		<div class="contain">
+			<div class="row">
+              {% if settings.second-slide-content-position == 'left' %}
+				<div class="col-sm-6 bio-content">
+              {% elsif settings.second-slide-content-position == 'center' %}
+                <div class="col-sm-6 col-sm-offset-3 bio-content">
+              {% else %}
+                <div class="col-sm-6 col-sm-offset-6 bio-content">
+              {% endif %}
+					<h3 style="color:{{ settings.second-slide-text-color}};">{{settings.second-slide-cat}}</h3>
+					<h2 style="color:{{ settings.second-slide-text-color}};">{{settings.second-slide-title}}</h2>
+				
+                  	<p style="color:{{ settings.second-slide-text-color}};">{{settings.second-slide-text}}</p>
+					<span class="button open-modal" data-modal="contact">{{settings.second-slide-button-text}}</span>
+				</div><!-- /.col -->
+			</div><!-- /.row -->
+		</div><!-- /.contain -->
+	</div><!-- /.slide -->
+
+	<div class="slide slide-3" style="background-image: url('{{ 'img_daymond-godfather.jpg' | asset_url}}');">
+		<div class="contain">
+			<div class="row">
+              {% if settings.third-slide-content-position == 'left' %}
+				<div class="col-sm-6 bio-content">
+              {% elsif settings.third-slide-content-position == 'center' %}
+                <div class="col-sm-6 col-sm-offset-3 bio-content">
+              {% else %}
+                <div class="col-sm-6 col-sm-offset-6 bio-content">
+              {% endif %}
+                  <h3 style="color:{{ settings.third-slide-text-color}};">{{settings.third-slide-cat}}</h3>
+                  <h2 style="color:{{ settings.third-slide-text-color}};">{{settings.third-slide-title}}</h2>
+
+                  <p style="color:{{ settings.third-slide-text-color}};">{{settings.third-slide-text}}</p>
+                  <span class="button open-modal" data-modal="contact">{{settings.third-slide-button-text}}</span>
+				</div><!-- /.col -->
+			</div><!-- /.row -->
+		</div><!-- /.contain -->
+	</div><!-- /.slide -->
+
+	<div class="slide slide-4" style="background-image: url('{{ 'img_daymond-framing.jpg' | asset_url}}');">
+		<div class="contain">
+			<div class="row">
+              {% if settings.fourth-slide-content-position == 'left' %}
+				<div class="col-sm-6 bio-content">
+              {% elsif settings.fourth-slide-content-position == 'center' %}
+                <div class="col-sm-6 col-sm-offset-3 bio-content">
+              {% else %}
+                <div class="col-sm-6 col-sm-offset-6 bio-content">
+              {% endif %}
+					<h3 style="color:{{ settings.fourth-slide-text-color}};">{{settings.fourth-slide-cat}}</h3>
+					<h2 style="color:{{ settings.fourth-slide-text-color}};">{{settings.fourth-slide-title}}</h2>
+				
+					<p style="color:{{ settings.fourth-slide-text-color}};">{{settings.fourth-slide-text-1}}</p>
+					<p style="color:{{ settings.fourth-slide-text-color}};">{{settings.fourth-slide-text-2}}</p>
+
+					<span class="button open-modal" data-modal="book">{{settings.fourth-slide-button-text}}</span>
+				</div><!-- /.col -->
+			</div><!-- /.row -->
+		</div><!-- /.contain -->
+	</div><!-- /.slide -->
+
+</section><!-- /#book -->
+
+<!-- speaking-section goes here -->    
+      
+<!-- MOBILE ONLY -->
+<div id="mobile-bio" class="hidden-sm hidden-md hidden-lg">
+<section >
+	  <div class="slide slide-1" style="background-image: url('{{ 'img_daymond-yellow.jpg' | asset_url}}'); min-height:400px;">
+
+	     </div><!-- /.slide -->
+    <div class="contain" style="padding:20px;">
+        <h3 style="color:white;">{{settings.first-slide-cat}}</h3>
+          <h2 style="color:white;">{{settings.first-slide-title}}</h2>
+
+              <p style="color:white; font-size:1.1em;">{{settings.first-slide-text}}</p>
+              <span class="button open-modal" data-modal="contact" style="background:rgba(0, 0, 0, 1.0);">{{settings.first-slide-button-text}}</span>
+
+      </div> <!--contain -->
+
+	<div class="slide slide-2" style="background-image: url('{{ 'img_daymond-speaking.jpg' | asset_url}}'); min-height:400px; background-position: left;">
+
+	</div><!-- /.slide -->
+  <div class="contain" style="padding:20px;">
+      <h3 style="color:white;">{{settings.second-slide-cat}}</h3>
+        <h2 style="color:white;">{{settings.second-slide-title}}</h2>
+
+            <p style="color:white; font-size:1.1em;">{{settings.second-slide-text}}</p>
+            <span class="button open-modal" data-modal="contact" style="background:rgba(0, 0, 0, 1.0);">{{settings.second-slide-button-text}}</span>
+
+    </div> <!--contain -->
+
+	<div class="slide slide-3" style="background-image: url('{{ 'img_daymond-godfather.jpg' | asset_url}}'); min-height:400px;">
+
+	</div><!-- /.slide -->
+  <div class="contain" style="padding:20px;">
+      <h3 style="color:white;">{{settings.third-slide-cat}}</h3>
+        <h2 style="color:white;">{{settings.third-slide-title}}</h2>
+
+            <p style="color:white; font-size:1.1em;">{{settings.third-slide-text}}</p>
+            <span class="button open-modal" data-modal="contact" style="background:rgba(0, 0, 0, 1.0);">{{settings.third-slide-button-text}}</span>
+
+    </div> <!--contain -->
+
+	<div class="slide slide-4" style="background-image: url('{{ 'img_daymond-framing.jpg' | asset_url}}'); min-height:400px;">
+
+	</div><!-- /.slide -->
+  <div class="contain" style="padding:20px;">
+      <h3 style="color:white;">{{settings.fourth-slide-cat}}</h3>
+        <h2 style="color:white;">{{settings.fourth-slide-title}}</h2>
+
+            <p style="color:white; font-size:1.1em;">{{settings.fourth-slide-text-1}}</p>
+              <p style="color:white; font-size:1.1em;">{{settings.fourth-slide-text-2}}</p>
+            <span class="button open-modal" data-modal="contact" style="background:rgba(0, 0, 0, 1.0);">{{settings.fourth-slide-button-text}}</span>
+
+    </div> <!--contain -->
+</section><!-- /#book -->
+
+<!-- speaking-section goes here -->
+
+</div>
+      
+      
+      
+
+{% schema %}
+  {
+    "name": "Section name",
+    "settings": [
+      
+      
+      ]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

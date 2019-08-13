@@ -1,0 +1,23 @@
+{% unless blog %}
+    {% if settings.mainBlog != '' %}
+        {% assign blog = blogs[settings.mainBlog] %}
+    {% else%}
+        {% assign blog = blogs.news %}
+    {% endif %}
+{% endunless %}
+{% unless blog.all_tags.size == 0 %} 
+<section id="blogTagsWidget">
+    {% if settings.blogTagsTitle == blank %}  
+    	<h1>Blog Topics</h1>
+	{% else %}
+		<h1>{{ settings.blogTagsTitle }}</h1>
+	{% endif %}
+    <ul id="blogTags" class="group" itemprop="keywords">
+    {% for tag in blog.all_tags limit:30 %}
+        <li {% if current_tags contains tag %}class="activeTag"{% endif %}>
+		    <a href="{{ shop.url}}/blogs/{{ blog.handle }}/tagged/{{ tag | handleize }}">{{ tag }}</a>
+	    </li>
+	{% endfor %}
+    </ul><!-- blogTags -->						
+</section>
+{% endunless %}       

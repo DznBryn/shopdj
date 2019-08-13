@@ -1,0 +1,59 @@
+<div id="content" class="group">
+	<article id="mainContent" class="floatLeft">
+		<header id="pageHeader">
+			{% include 'breadcrumbs' %}
+			<h1>{{ page.title }}</h1>
+		</header><!-- pageHeader -->
+		<div class="textile">
+    		{{page.content}}
+            {% if page.handle == settings.contactPage %}
+                {% form 'contact' %}
+            		{% if form.posted_successfully? %}
+            			<p class="successForm">Thanks for contacting us! We'll get back to you as soon as possible.</p>
+            		{% endif %}
+            
+            		{% if form.errors %}
+            			{% for field in form.errors %}
+            				<p class="errorForm">{{ field }} - {{ form.errors.messages[field] }}</p>
+            			{% endfor %}
+            		{% endif %} 
+            		<div id="contactWrapper">
+            			<p><label>Your Name</label><br/>
+            			<input type="text" id="contact_name" size="40" name="contact[name]"/></p>
+            			<p><label>Your Email</label><br/>
+            			<input type="text" id="contact_email" size="40" name="contact[email]"/></p>
+            			<p><label>Your Message</label><br/>
+            			<textarea rows="15" cols="75" id="contact_message" name="contact[body]"></textarea></p>
+            		   	<p><input type="submit" id="contactFormSubmit" class="pieMe btnStyle" value="Submit"/></p>			
+            		</div><!-- contactWrapper -->
+            	{% endform %}
+            {% endif %}
+		</div><!-- textile -->	
+	</article><!-- mainCol -->
+	<aside id="sidebar" class="floatRight">
+		<span id="topBar">&nbsp;</span>
+		<div id="sidebarBkgd">
+            {% if settings.useSubPageNavigation == true %}
+            {% capture page_handle %}{{ page.handle }}{% endcapture %}
+            {% if linklists[page_handle] and linklists[page_handle].links.size > 0 %}
+            <nav id="subPages">
+                <ul>
+                    {% for link in linklists[page_handle].links %}
+                    <li><a href="{{ link.url }}">{{ link.title }}</a></li>
+                    {% endfor %}
+                </ul>    
+            </nav><!-- subPages -->
+            {% endif %}
+            {% endif %}
+        	{% unless settings.pageWidget == '' %}
+    			{% include settings.pageWidget %}
+    		{% endunless %}
+    		{% unless settings.pageWidgetTwo == '' %}
+    			{% include settings.pageWidgetTwo %}
+    		{% endunless %}	
+        	{% unless settings.pageWidgetThree == '' %}
+    			{% include settings.pageWidgetThree %}
+    		{% endunless %}            
+		</div><!-- sidebarBkgd -->	
+	</aside><!-- sidebar -->
+</div><!-- content -->

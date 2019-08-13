@@ -1,0 +1,226 @@
+
+
+{% comment %}ly_global_begin{% endcomment %}{% include 'ly-global' %}{% comment %}ly_global_end{% endcomment %}
+
+
+<!-- [powr-microblog id=d1ad83a7_1474808630] -->
+<div class="container-fluid">
+
+
+  <div class="team-grid ">
+
+
+<!--    <ul class="c12 blogGrid isoGrid thumbGrid"> -->
+{% for article in blog.articles%}
+<div class="col-sm-3 item">
+	{% if article.image %}
+		<div class="box" style="background-image:url(' {{ article | img_url: 'master'}} ')" >
+
+
+			{% endif %}
+				<div class="cover">
+
+						<h3 class="name"><a href="{{article.url}}">{% comment %}ly_code_replace_for_[ article.title ]_begin{% endcomment %}<ly-as-2437587>{{ article.title }}</ly-as-2437587>{% comment %}ly_code_replace_end{% endcomment %}</a></h3>
+					</div>
+		</div>
+</div>
+{%endfor%}
+<style>
+.team-grid {
+  color:#313437;
+  background-color:#fff;
+	margin-top: 25px;
+}
+
+.team-grid p {
+  color:#7d8285;
+}
+
+.team-grid h2 {
+  font-weight:bold;
+  margin-bottom:40px;
+  padding-top:40px;
+  color:inherit;
+}
+
+@media (max-width:767px) {
+  .team-grid h2 {
+    margin-bottom:25px;
+    padding-top:25px;
+    font-size:24px;
+  }
+}
+
+.team-grid .intro {
+  font-size:16px;
+  max-width:500px;
+  margin:0 auto;
+}
+
+.team-grid .intro p {
+  margin-bottom:0;
+}
+
+.team-grid .people {
+  padding:50px 0;
+}
+
+.team-grid .item {
+  margin-bottom:30px;
+}
+
+.team-grid .item .box {
+  text-align:center;
+  background-repeat:no-repeat;
+  background-size:cover;
+  background-position:center;
+  height:18vh;
+  position:relative;
+  overflow:hidden;
+}
+.box img{
+  text-align:center;
+  background-repeat:no-repeat;
+  background-size:cover;
+  background-position:center;
+  height:280px;
+  position:relative;
+  overflow:hidden;
+}
+
+.team-grid .item .cover {
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background-color:rgba(255,255,255,0.75);
+  transition:opacity 0.15s ease-in;
+  opacity:0;
+  padding-top:.7rem;
+  color:#fff;
+  text-shadow:1px 1px 1px rgba(0,0,0,0.15);
+}
+
+.team-grid .item:hover .cover {
+  opacity:1;
+}
+
+.team-grid .item .name {
+  font-weight:bold;
+  margin-bottom:8px;
+  font-size:17px;
+}
+
+.team-grid .item .title {
+  text-transform:uppercase;
+  font-weight:bold;
+  color:#bbd8fb;
+  letter-spacing:2px;
+  font-size:13px;
+  margin-bottom:20px;
+}
+
+.team-grid .social {
+  font-size:18px;
+  color:#000;
+}
+
+.team-grid .social a {
+  color:inherit;
+  margin:0 10px;
+  display:inline-block;
+  opacity:0.7;
+}
+
+.team-grid .social a:hover {
+  opacity:1;
+}
+
+
+
+
+
+</style>
+      <!-- <div class="col-md-3">
+        <a class="shdwwrp" href="{{article.url}}">
+          <span class="articleHiddenImage">{% comment %}ly_code_replace_for_[article.excerpt]_begin{% endcomment %}{% include 'ly-excerpt' with article %}{{ly_translation}}{% comment %}ly_code_replace_end{% endcomment %}</span>
+
+          <div class="imgWrap">
+            {% if article.image %}
+              {% assign image_alt = article.title | escape %}
+              {{ article | img_url: 'large' | img_tag: image_alt }}
+            {% endif %}
+          <div class="abOver trn2 inner">
+          <div class="table">
+          <div class="cell">
+          <p class="button"></p>
+          </div>
+          </div>
+          </div>
+
+
+          </div>
+
+          <div class="thumbCopy">
+
+
+            <div class="innerBlog">
+            <p class="blogDate">{{article.published_at | date: "%e %b %y"}}</p>
+            <h3 class="bld">{% comment %}ly_code_replace_for_[article.title]_begin{% endcomment %}{% include 'ly-title' with article %}{{ly_translation}}{% comment %}ly_code_replace_end{% endcomment %}</h3>
+            <p class="gCopy">{% comment %}ly_code_replace_for_[ article.excerpt | truncatewords:30 ]_begin{% endcomment %}{% include 'ly-excerpt' with article %}{{ ly_translation | truncatewords:30 }}{% comment %}ly_code_replace_end{% endcomment %}</p>
+            </div>
+
+          </div>
+
+
+
+        </a>
+
+    </div> -->
+
+
+
+  </div>
+</div><!--collectionWrap-->
+
+
+<!--
+<div class="row people">
+    <div class="col-md-3 col-sm-4 item">
+        <div class="box" style="background-image:url(1.jpg)">
+            <div class="cover">
+                <h3 class="name">Ben Johnson</h3>
+                <p class="title">Musician</p>
+                <div class="social"><a href="#"><i class="fa fa-facebook-official"></i></a><a href="#"><i class="fa fa-twitter"></i></a><a href="#"><i class="fa fa-instagram"></i></a></div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3 col-sm-4 item">
+        <div class="box" style="background-image:url(2.jpg)">
+            <div class="cover">
+                <h3 class="name">Emily Clark</h3>
+                <p class="title">Artist </p>
+                <div class="social"><a href="#"><i class="fa fa-facebook-official"></i></a><a href="#"><i class="fa fa-twitter"></i></a><a href="#"><i class="fa fa-instagram"></i></a></div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3 col-sm-4 item">
+        <div class="box" style="background-image:url(3.jpg)">
+            <div class="cover">
+                <h3 class="name">Carl Kent</h3>
+                <p class="title">Stylist </p>
+                <div class="social"><a href="#"><i class="fa fa-facebook-official"></i></a><a href="#"><i class="fa fa-twitter"></i></a><a href="#"><i class="fa fa-instagram"></i></a></div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3 col-sm-4 item">
+        <div class="box" style="background-image:url(4.jpg)">
+            <div class="cover">
+                <h3 class="name">Felicia Adams</h3>
+                <p class="title">Model </p>
+                <div class="social"><a href="#"><i class="fa fa-facebook-official"></i></a><a href="#"><i class="fa fa-twitter"></i></a><a href="#"><i class="fa fa-instagram"></i></a></div>
+            </div>
+        </div>
+    </div>
+</div> -->

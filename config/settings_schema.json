@@ -1,0 +1,3310 @@
+[
+  {
+    "name": "Welcome",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Instructions - Read This First"
+      },
+      {
+        "type": "paragraph",
+        "content": "This is a modified copy of the Shopaholla Reign theme to match daymondjohn.com."
+      }
+    ]
+  },
+  {
+    "name": "Typography",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Headers & Titles"
+      },
+      {
+        "type": "select",
+        "id": "headerFont",
+        "label": "Font",
+        "default": "'Gotham Bold', sans-serif",
+        "options": [
+          {
+            "value": "'Gotham Bold', sans-serif",
+            "label": "Gotham Bold",
+            "group": "Sans-serif"
+          },
+          {
+            "value": "'Avant Garde', Avantgarde, 'Century Gothic', CenturyGothic, 'AppleGothic', sans-serif",
+            "label": "Avant Garde",
+            "group": "Sans-serif"
+          },
+          {
+            "value": "'Gill Sans', 'Gill Sans MT', Calibri, sans-serif",
+            "label": "Gill Sans",
+            "group": "Sans-serif"
+          },
+          {
+            "value": "'HelveticaNeue', 'Helvetica Neue', Helvetica, Arial, sans-serif",
+            "label": "Helvetica Neue",
+            "group": "Sans-serif"
+          },
+          {
+            "value": "Arial, 'Helvetica Neue', Helvetica, sans-serif",
+            "label": "Arial",
+            "group": "Sans-serif"
+          },
+          {
+            "value": "Candara, Calibri, Segoe, 'Segoe UI', Optima, Arial, sans-serif",
+            "label": "Candara",
+            "group": "Sans-serif"
+          },
+          {
+            "value": "Geneva, Tahoma, Verdana, sans-serif",
+            "label": "Geneva",
+            "group": "Sans-serif"
+          },
+          {
+            "value": "Google_Droid+Sans_400_sans",
+            "label": "Droid Sans",
+            "group": "Sans-serif | Google Web Fonts"
+          },
+          {
+            "value": "Google_Lato_400_sans",
+            "label": "Lato",
+            "group": "Sans-serif | Google Web Fonts"
+          },
+          {
+            "value": "Google_Montserrat_400_sans",
+            "label": "Montserrat",
+            "group": "Sans-serif | Google Web Fonts"
+          },
+          {
+            "value": "Google_Nunito_400_sans",
+            "label": "Nunito",
+            "group": "Sans-serif | Google Web Fonts"
+          },
+          {
+            "value": "Google_Open+Sans_400_sans",
+            "label": "Open Sans",
+            "group": "Sans-serif | Google Web Fonts"
+          },
+          {
+            "value": "Google_PT+Sans_400_sans",
+            "label": "PT Sans",
+            "group": "Sans-serif | Google Web Fonts"
+          },
+          {
+            "value": "Google_Roboto_400_sans",
+            "label": "Roboto",
+            "group": "Sans-serif | Google Web Fonts"
+          },
+          {
+            "value": "Google_Source+Sans+Pro_400_sans",
+            "label": "Source Sans Pro",
+            "group": "Sans-serif | Google Web Fonts"
+          },
+          {
+            "value": "Google_Teko_400_sans",
+            "label": "Teko",
+            "group": "Sans-serif | Google Web Fonts"
+          },
+          {
+            "value": "Google_Titillium+Web_400_sans",
+            "label": "Titillium Web",
+            "group": "Sans-serif | Google Web Fonts"
+          },
+          {
+            "value": "Google_Ubuntu_400_sans",
+            "label": "Ubuntu",
+            "group": "Sans-serif | Google Web Fonts"
+          },
+          {
+            "value": "Google_Work+Sans_400_sans",
+            "label": "Work Sans",
+            "group": "Sans-serif | Google Web Fonts"
+          },
+          {
+            "value": "'Big Caslon', 'Book Antiqua', 'Palatino Linotype', Georgia, serif",
+            "label": "Big Caslon",
+            "group": "Serif"
+          },
+          {
+            "value": "'Calisto MT', 'Bookman Old Style', Bookman, 'Goudy Old Style', Garamond, 'Hoefler Text', 'Bitstream Charter', Georgia, serif",
+            "label": "Calisto MT",
+            "group": "Serif"
+          },
+          {
+            "value": "Baskerville MT, 'Baskerville Old Face', 'Hoefler Text', Garamond, 'Times New Roman', serif",
+            "label": "Baskerville MT",
+            "group": "Serif"
+          },
+          {
+            "value": "Garamond, Baskerville, 'Baskerville Old Face', 'Hoefler Text', 'Times New Roman', serif",
+            "label": "Garamond",
+            "group": "Serif"
+          },
+          {
+            "value": "TimesNewRoman, 'Times New Roman', Times, Baskerville, Georgia, serif",
+            "label": "Times New Roman",
+            "group": "Serif"
+          },
+          {
+            "value": "Google_Arvo_400_serif",
+            "label": "Arvo",
+            "group": "Serif | Google Web Fonts"
+          },
+          {
+            "value": "Google_Crimson+Text_400_serif",
+            "label": "Crimson Text",
+            "group": "Serif | Google Web Fonts"
+          },
+          {
+            "value": "Google_Droid+Serif_400_serif",
+            "label": "Droid Serif",
+            "group": "Serif | Google Web Fonts"
+          },
+          {
+            "value": "Google_Libre+Baskerville_400_serif",
+            "label": "Libre Baskerville",
+            "group": "Serif | Google Web Fonts"
+          },
+          {
+            "value": "Google_Lora_400_serif",
+            "label": "Lora",
+            "group": "Serif | Google Web Fonts"
+          },
+          {
+            "value": "Google_Old+Standard+TT_400_serif",
+            "label": "Old Standard",
+            "group": "Serif | Google Web Fonts"
+          },
+          {
+            "value": "Google_PT+Serif_400_serif",
+            "label": "PT Serif",
+            "group": "Serif | Google Web Fonts"
+          },
+          {
+            "value": "Google_Vollkorn_400_serif",
+            "label": "Vollkorn",
+            "group": "Serif | Google Web Fonts"
+          }
+        ]
+      },
+      {
+        "type": "header",
+        "content": "Body Text"
+      },
+      {
+        "type": "select",
+        "id": "paragraphFont",
+        "label": "Font",
+        "default": "'Gotham Book', sans-serif",
+        "options": [
+          {
+            "value": "'Gotham Book', sans-serif",
+            "label": "Gotham Book",
+            "group": "Sans-serif"
+          },
+          {
+            "value": "'Gotham Light', sans-serif",
+            "label": "Gotham Light",
+            "group": "Sans-serif"
+          },
+          {
+            "value": "'Avant Garde', Avantgarde, 'Century Gothic', CenturyGothic, 'AppleGothic', sans-serif",
+            "label": "Avant Garde",
+            "group": "Sans-serif"
+          },
+          {
+            "value": "'Gill Sans', 'Gill Sans MT', Calibri, sans-serif",
+            "label": "Gill Sans",
+            "group": "Sans-serif"
+          },
+          {
+            "value": "'HelveticaNeue', 'Helvetica Neue', Helvetica, Arial, sans-serif",
+            "label": "Helvetica Neue",
+            "group": "Sans-serif"
+          },
+          {
+            "value": "Arial, 'Helvetica Neue', Helvetica, sans-serif",
+            "label": "Arial",
+            "group": "Sans-serif"
+          },
+          {
+            "value": "Candara, Calibri, Segoe, 'Segoe UI', Optima, Arial, sans-serif",
+            "label": "Candara",
+            "group": "Sans-serif"
+          },
+          {
+            "value": "Geneva, Tahoma, Verdana, sans-serif",
+            "label": "Geneva",
+            "group": "Sans-serif"
+          },
+          {
+            "value": "Google_Droid+Sans_400_sans",
+            "label": "Droid Sans",
+            "group": "Sans-serif | Google Web Fonts"
+          },
+          {
+            "value": "Google_Lato_400_sans",
+            "label": "Lato",
+            "group": "Sans-serif | Google Web Fonts"
+          },
+          {
+            "value": "Google_Montserrat_400_sans",
+            "label": "Montserrat",
+            "group": "Sans-serif | Google Web Fonts"
+          },
+          {
+            "value": "Google_Nunito_400_sans",
+            "label": "Nunito",
+            "group": "Sans-serif | Google Web Fonts"
+          },
+          {
+            "value": "Google_Open+Sans_400_sans",
+            "label": "Open Sans",
+            "group": "Sans-serif | Google Web Fonts"
+          },
+          {
+            "value": "Google_PT+Sans_400_sans",
+            "label": "PT Sans",
+            "group": "Sans-serif | Google Web Fonts"
+          },
+          {
+            "value": "Google_Roboto_400_sans",
+            "label": "Roboto",
+            "group": "Sans-serif | Google Web Fonts"
+          },
+          {
+            "value": "Google_Source+Sans+Pro_400_sans",
+            "label": "Source Sans Pro",
+            "group": "Sans-serif | Google Web Fonts"
+          },
+          {
+            "value": "Google_Teko_400_sans",
+            "label": "Teko",
+            "group": "Sans-serif | Google Web Fonts"
+          },
+          {
+            "value": "Google_Titillium+Web_400_sans",
+            "label": "Titillium Web",
+            "group": "Sans-serif | Google Web Fonts"
+          },
+          {
+            "value": "Google_Ubuntu_400_sans",
+            "label": "Ubuntu",
+            "group": "Sans-serif | Google Web Fonts"
+          },
+          {
+            "value": "Google_Work+Sans_400_sans",
+            "label": "Work Sans",
+            "group": "Sans-serif | Google Web Fonts"
+          },
+          {
+            "value": "'Big Caslon', 'Book Antiqua', 'Palatino Linotype', Georgia, serif",
+            "label": "Big Caslon",
+            "group": "Serif"
+          },
+          {
+            "value": "'Calisto MT', 'Bookman Old Style', Bookman, 'Goudy Old Style', Garamond, 'Hoefler Text', 'Bitstream Charter', Georgia, serif",
+            "label": "Calisto MT",
+            "group": "Serif"
+          },
+          {
+            "value": "Baskerville MT, 'Baskerville Old Face', 'Hoefler Text', Garamond, 'Times New Roman', serif",
+            "label": "Baskerville MT",
+            "group": "Serif"
+          },
+          {
+            "value": "Garamond, Baskerville, 'Baskerville Old Face', 'Hoefler Text', 'Times New Roman', serif",
+            "label": "Garamond",
+            "group": "Serif"
+          },
+          {
+            "value": "TimesNewRoman, 'Times New Roman', Times, Baskerville, Georgia, serif",
+            "label": "Times New Roman",
+            "group": "Serif"
+          },
+          {
+            "value": "Google_Arvo_400_serif",
+            "label": "Arvo",
+            "group": "Serif | Google Web Fonts"
+          },
+          {
+            "value": "Google_Crimson+Text_400_serif",
+            "label": "Crimson Text",
+            "group": "Serif | Google Web Fonts"
+          },
+          {
+            "value": "Google_Droid+Serif_400_serif",
+            "label": "Droid Serif",
+            "group": "Serif | Google Web Fonts"
+          },
+          {
+            "value": "Google_Libre+Baskerville_400_serif",
+            "label": "Libre Baskerville",
+            "group": "Serif | Google Web Fonts"
+          },
+          {
+            "value": "Google_Lora_400_serif",
+            "label": "Lora",
+            "group": "Serif | Google Web Fonts"
+          },
+          {
+            "value": "Google_Old+Standard+TT_400_serif",
+            "label": "Old Standard",
+            "group": "Serif | Google Web Fonts"
+          },
+          {
+            "value": "Google_PT+Serif_400_serif",
+            "label": "PT Serif",
+            "group": "Serif | Google Web Fonts"
+          },
+          {
+            "value": "Google_Vollkorn_400_serif",
+            "label": "Vollkorn",
+            "group": "Serif | Google Web Fonts"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Navigation",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "stickyNav",
+        "label": "Use sticky\/fixed nav when scrolling"
+      },
+      {
+        "type": "link_list",
+        "id": "mainNavigation",
+        "label": "Main navigation link list"
+      },
+      {
+        "type": "link_list",
+        "id": "utilityNavigation",
+        "label": "Utility(top) navigation link list"
+      },
+      {
+        "type": "link_list",
+        "id": "footerNavigation",
+        "label": "Footer navigation link list"
+      },
+      {
+        "type": "checkbox",
+        "id": "useSubPageNavigation",
+        "label": "Use Sub-Page Navigation",
+        "info": "Setup instructions [here](http:\/\/support.shopaholla.com\/customer\/portal\/articles\/492150-theme-setup) ."
+      }
+    ]
+  },
+  {
+    "name": "DJ Home Page",
+    "settings": [
+      {
+        "type": "color",
+        "id": "spilt",
+        "default": "#e71010",
+        "label": "Parallax Background Color"
+      },
+      {
+        "type": "text",
+        "id": "cta_first",
+        "default": "REDEEM YOUR 'POWER OF BROKE' EXCLUSIVES",
+        "label": "First Call to Action"
+      },
+      {
+        "type": "text",
+        "id": "cta_first_button",
+        "default": "REDEEM",
+        "label": "First Call to Action Button Text"
+      },
+      {
+        "type": "text",
+        "id": "cta_first_button_link",
+        "default": "http:\/\/daymondjohndev.myshopify.com\/pages\/pobpreorder",
+        "label": "First Call to Action Button Link"
+      },
+      {
+        "type": "image",
+        "id": "img-power-of-broke-thumb.jpg",
+        "label": "Header Book Image"
+      },
+      {
+        "type": "image",
+        "id": "dj_bg.png",
+        "label": "Banner Background"
+      },
+      {
+        "type": "image",
+        "id": "logo_daymon_john_large.png",
+        "label": "Parallax Background"
+      },
+      {
+        "type": "image",
+        "id": "image_daymond-hero.png",
+        "label": "Parallax Foreground"
+      },
+      {
+        "type": "text",
+        "id": "first-slide-cat",
+        "default": "BIO",
+        "label": "First Slide Category"
+      },
+      {
+        "type": "text",
+        "id": "first-slide-title",
+        "default": "THE ENTREPRENEUR",
+        "label": "First Slide Title"
+      },
+      {
+        "type": "textarea",
+        "id": "first-slide-text",
+        "label": "First Slide Text",
+        "default": "An entrepreneur in every sense of the word, Daymond John has come a long way from his $40 budget by growing FUBU into a six billion dollar brand. The Founder of FUBU, Presidential Ambassador of Global Entrepreneurship and Co-star of ABC's Shark Tank, is a celebrated pioneer in the fashion industry, best-selling author, branding guru and highly sought after motivational speaker."
+      },
+      {
+        "type": "color",
+        "id": "first-slide-text-color",
+        "default": "#ffffff",
+        "label": "First Slide Text Color"
+      },
+      {
+        "type": "text",
+        "id": "first-slide-button-text",
+        "default": "WORK WITH ME",
+        "label": "First Slide Button Text"
+      },
+      {
+        "type": "image",
+        "id": "img_daymond-yellow.jpg",
+        "label": "First Slide Background"
+      },
+      {
+        "type": "select",
+        "id": "first-slide-content-position",
+        "label": "Content Position",
+        "options": [
+          {
+            "value": "left",
+            "label": "Left"
+          },
+          {
+            "value": "center",
+            "label": "Center"
+          },
+          {
+            "value": "right",
+            "label": "Right"
+          }
+        ],
+        "default": "left",
+        "info": "Determines where the text content for this slide will go."
+      },
+      {
+        "type": "text",
+        "id": "second-slide-cat",
+        "default": "BIO",
+        "label": "Second Slide Category"
+      },
+      {
+        "type": "text",
+        "id": "second-slide-title",
+        "default": "THE AWARD WINNER",
+        "label": "Second Slide Title"
+      },
+      {
+        "type": "textarea",
+        "id": "second-slide-text",
+        "label": "Second Slide Text",
+        "default": "John's track record as an award-winning entrepreneur includes receiving over 35 awards including the Brandweek Marketer of the Year, Advertising Age Marketing 1000 Award for Outstanding Ad Campaign, and Ernst & Young's New York Entrepreneur of the Year Award."
+      },
+      {
+        "type": "color",
+        "id": "second-slide-text-color",
+        "default": "#ffffff",
+        "label": "Second Slide Text Color"
+      },
+      {
+        "type": "text",
+        "id": "second-slide-button-text",
+        "default": "WORK WITH ME",
+        "label": "Second Slide Button Text"
+      },
+      {
+        "type": "image",
+        "id": "img_daymond-speaking.jpg",
+        "label": "Second Slide Background"
+      },
+      {
+        "type": "select",
+        "id": "second-slide-content-position",
+        "label": "Content Position",
+        "options": [
+          {
+            "value": "left",
+            "label": "Left"
+          },
+          {
+            "value": "center",
+            "label": "Center"
+          },
+          {
+            "value": "right",
+            "label": "Right"
+          }
+        ],
+        "default": "left",
+        "info": "Determines where the text content for this slide will go."
+      },
+      {
+        "type": "text",
+        "id": "third-slide-cat",
+        "default": "BIO",
+        "label": "Third Slide Category"
+      },
+      {
+        "type": "text",
+        "id": "third-slide-title",
+        "default": "THE SHARK",
+        "label": "Third Slide Title"
+      },
+      {
+        "type": "textarea",
+        "id": "third-slide-text",
+        "label": "Third Slide Text",
+        "default": "John's track record as an award-winning entrepreneur includes receiving over 35 awards including the Brandweek Marketer of the Year, Advertising Age Marketing 1000 Award for Outstanding Ad Campaign, and Ernst & Young's New York Entrepreneur of the Year Award."
+      },
+      {
+        "type": "color",
+        "id": "third-slide-text-color",
+        "default": "#ffffff",
+        "label": "Third Slide Text Color"
+      },
+      {
+        "type": "text",
+        "id": "third-slide-button-text",
+        "default": "WORK WITH ME",
+        "label": "Third Slide Button Text"
+      },
+      {
+        "type": "image",
+        "id": "img_daymond-godfather.jpg",
+        "label": "Third Slide Background"
+      },
+      {
+        "type": "select",
+        "id": "third-slide-content-position",
+        "label": "Content Position",
+        "options": [
+          {
+            "value": "left",
+            "label": "Left"
+          },
+          {
+            "value": "center",
+            "label": "Center"
+          },
+          {
+            "value": "right",
+            "label": "Right"
+          }
+        ],
+        "default": "left",
+        "info": "Determines where the text content for this slide will go."
+      },
+      {
+        "type": "text",
+        "id": "fourth-slide-cat",
+        "default": "BIO",
+        "label": "Fourth Slide Category"
+      },
+      {
+        "type": "text",
+        "id": "fourth-slide-title",
+        "default": "THE WORLD",
+        "label": "Fourth Slide Title"
+      },
+      {
+        "type": "textarea",
+        "id": "fourth-slide-text-1",
+        "label": "Fourth Slide Text 1",
+        "default": "In May 2015, the White House appointed John, Global Ambassador of Entrepreneurship as part of the PAGE Program. His signature initiative will be to work with underserved entrepreneurs and emerging digital influencers to help them build customer bases and brands."
+      },
+      {
+        "type": "textarea",
+        "id": "fourth-slide-text-2",
+        "label": "Fourth Slide Text 2",
+        "default": "John has also been tapped to work with President Obama on his My Brother's Keeper program, which will help create access and opportunity for underserved men of color via mentorship and education."
+      },
+      {
+        "type": "color",
+        "id": "fourth-slide-text-color",
+        "default": "#ffffff",
+        "label": "Fourth Slide Text Color"
+      },
+      {
+        "type": "text",
+        "id": "fourth-slide-button-text",
+        "default": "WORK WITH ME",
+        "label": "Third Slide Button Text"
+      },
+      {
+        "type": "image",
+        "id": "img_daymond-framing.jpg",
+        "label": "Fourth Slide Background"
+      },
+      {
+        "type": "select",
+        "id": "fourth-slide-content-position",
+        "label": "Content Position",
+        "options": [
+          {
+            "value": "left",
+            "label": "Left"
+          },
+          {
+            "value": "center",
+            "label": "Center"
+          },
+          {
+            "value": "right",
+            "label": "Right"
+          }
+        ],
+        "default": "left",
+        "info": "Determines where the text content for this slide will go."
+      },
+      {
+        "type": "text",
+        "id": "fifth-slide-title",
+        "default": "SPEAKING AND CONSULTING",
+        "label": "Fifth Slide Title"
+      },
+      {
+        "type": "textarea",
+        "id": "fifth-slide-text-1",
+        "label": "Fifth Slide Text 1",
+        "default": "As a consultant, Daymond will examine the needs of your business, dissect the problems, and create manageable solutions for brand growth. He will also help improve your business' profitability by enhancing the marketing structure and strategy."
+      },
+      {
+        "type": "textarea",
+        "id": "fifth-slide-text-2",
+        "label": "Fifth Slide Text 2",
+        "default": "As a motivational speaker, Daymond's quintessential rags-to-riches success story of sacrifice, hard work, and perseverance as well as the unique and charismatic way he communicates it, will inspire any audience."
+      },
+      {
+        "type": "color",
+        "id": "fifth-slide-text-color",
+        "default": "#000000",
+        "label": "Fifth Slide Text Color"
+      },
+      {
+        "type": "text",
+        "id": "fifth-slide-button-1-text",
+        "default": "SPEAKING",
+        "label": "Fifth Slide Button 1 Text"
+      },
+      {
+        "type": "text",
+        "id": "fifth-slide-button-1-link",
+        "default": "\/pages\/speaking",
+        "label": "Fifth Slide Button 1 Link"
+      },
+      {
+        "type": "text",
+        "id": "fifth-slide-button-2-text",
+        "default": "CONSULTING",
+        "label": "Fifth Slide Button 2 Text"
+      },
+      {
+        "type": "text",
+        "id": "fifth-slide-button-2-link",
+        "default": "\/pages\/consulting",
+        "label": "Fifth Slide Button 2 Link"
+      },
+      {
+        "type": "image",
+        "id": "bkg_speaking.jpg",
+        "label": "Fifth Slide Background"
+      },
+      {
+        "type": "select",
+        "id": "fifth-slide-content-position",
+        "label": "Content Position",
+        "options": [
+          {
+            "value": "left",
+            "label": "Left"
+          },
+          {
+            "value": "center",
+            "label": "Center"
+          },
+          {
+            "value": "right",
+            "label": "Right"
+          }
+        ],
+        "default": "left",
+        "info": "Determines where the text content for this slide will go."
+      },
+      {
+        "type": "text",
+        "id": "section-one-bubble",
+        "default": "BIO",
+        "label": "Section One Bubble"
+      },
+      {
+        "type": "text",
+        "id": "section-two-bubble",
+        "default": "SPEAKING",
+        "label": "Section Two Bubble"
+      },
+      {
+        "type": "text",
+        "id": "section-three-bubble",
+        "default": "PARTNERS",
+        "label": "Section Three Bubble"
+      },
+      {
+        "type": "text",
+        "id": "section-four-bubble",
+        "default": "SOCIAL",
+        "label": "Section Four Bubble"
+      },
+      {
+        "type": "text",
+        "id": "partner-1-link",
+        "default": "http:\/\/abc.go.com\/shows\/shark-tank",
+        "label": "Partner 1 Link"
+      },
+      {
+        "type": "image",
+        "id": "logo_shark-tank.png",
+        "label": "Partner 1 Image"
+      },
+      {
+        "type": "text",
+        "id": "partner-2-link",
+        "default": "http:\/\/www.foxbusiness.com\/",
+        "label": "Partner 2 Link"
+      },
+      {
+        "type": "image",
+        "id": "logo_fox-business.png",
+        "label": "Partner 2 Image"
+      },
+      {
+        "type": "text",
+        "id": "partner-3-link",
+        "default": "http:\/\/www.cnn.com\/",
+        "label": "Partner 3 Link"
+      },
+      {
+        "type": "image",
+        "id": "logo_cnn.png",
+        "label": "Partner 3 Image"
+      },
+      {
+        "type": "text",
+        "id": "partner-4-link",
+        "default": "http:\/\/www.cnbc.com\/",
+        "label": "Partner 4 Link"
+      },
+      {
+        "type": "image",
+        "id": "logo_cnbc.png",
+        "label": "Partner 4 Image"
+      },
+      {
+        "type": "text",
+        "id": "partner-5-link",
+        "default": "http:\/\/www.adweek.com",
+        "label": "Partner 5 Link"
+      },
+      {
+        "type": "image",
+        "id": "logo_adweek.png",
+        "label": "Partner 5 Image"
+      },
+      {
+        "type": "text",
+        "id": "partner-6-link",
+        "default": "http:\/\/www.nytimes.com",
+        "label": "Partner 6 Link"
+      },
+      {
+        "type": "image",
+        "id": "logo_new-york-times.png",
+        "label": "Partner 6 Image"
+      },
+      {
+        "type": "text",
+        "id": "partner-7-link",
+        "default": "http:\/\/www.usatoday.com\/",
+        "label": "Partner 7 Link"
+      },
+      {
+        "type": "image",
+        "id": "logo_usa-today.png",
+        "label": "Partner 7 Image"
+      },
+      {
+        "type": "text",
+        "id": "partner-8-link",
+        "default": "http:\/\/www.blackenterprise.com\/",
+        "label": "Partner 8 Link"
+      },
+      {
+        "type": "image",
+        "id": "logo_black-enterprise.png",
+        "label": "Partner 8 Image"
+      },
+      {
+        "type": "text",
+        "id": "partner-9-link",
+        "default": "http:\/\/mogulsmobile.com\/",
+        "label": "Partner 9 Link"
+      },
+      {
+        "type": "image",
+        "id": "logo_moguls-mobile.png",
+        "label": "Partner 9 Image"
+      },
+      {
+        "type": "text",
+        "id": "partner-10-link",
+        "default": "http:\/\/www.babson.edu\/",
+        "label": "Partner 10 Link"
+      },
+      {
+        "type": "image",
+        "id": "logo_babson.png",
+        "label": "Partner 10 Image"
+      },
+      {
+        "type": "text",
+        "id": "partner-11-link",
+        "default": "http:\/\/www.sharkbranding.com\/",
+        "label": "Partner 11 Link"
+      },
+      {
+        "type": "image",
+        "id": "logo_shartk-branding.png",
+        "label": "Partner 11 Image"
+      },
+      {
+        "type": "text",
+        "id": "partner-12-link",
+        "default": "https:\/\/www.shopify.com\/",
+        "label": "Partner 12 Link"
+      },
+      {
+        "type": "image",
+        "id": "logo_shopify.png",
+        "label": "Partner 12 Image"
+      }
+    ]
+  },
+  {
+    "name": "POB Home Page",
+    "settings": [
+      {
+        "type": "textarea",
+        "id": "pob_cta_text",
+        "label": "CTA Text",
+        "default": "FREE CHAPTER OF THE POWER OF BROKE AND A FREE GUIDE ON MY SHARK POINTS"
+      },
+      {
+        "type": "text",
+        "id": "pob_cta_button_text",
+        "default": "DOWNLOAD",
+        "label": "CTA Button Text"
+      },
+      {
+        "type": "image",
+        "id": "pob-header-image-small.jpg",
+        "label": "CTA Background Image"
+      }
+    ]
+  },
+  {
+    "name": "Speaking Page",
+    "settings": [
+      {
+        "type": "textarea",
+        "id": "quote_text",
+        "label": "Quote"
+      }
+    ]
+  },
+  {
+    "name": "Sidebar Ads",
+    "settings": [
+      {
+        "type": "text",
+        "id": "ad_a1_offer",
+        "default": "AUTOGRAPHED COPIES AVAILABLE",
+        "label": "Ad A1 Offer"
+      },
+      {
+        "type": "text",
+        "id": "ad_a1_title",
+        "default": "DISPLAY OF POWER",
+        "label": "Ad A1 Title"
+      },
+      {
+        "type": "text",
+        "id": "ad_a1_subtitle",
+        "default": "Limited Edition",
+        "label": "Ad A1 Subtitle"
+      },
+      {
+        "type": "image",
+        "id": "placeholder_book-small.jpg",
+        "label": "Ad A1 Image"
+      },
+      {
+        "type": "text",
+        "id": "ad_a1_link",
+        "default": "http:\/\/daymondjohndev.myshopify.com\/products\/display-of-power-paperback",
+        "label": "Ad A1 Link"
+      },
+      {
+        "type": "text",
+        "id": "ad_a1_offer_link",
+        "default": "http:\/\/daymondjohndev.myshopify.com\/products\/autographed-books-bundle",
+        "label": "Ad A1 Offer Link"
+      },
+      {
+        "type": "text",
+        "id": "ad_a2_offer",
+        "default": "E-BOOKS AVAILABLE",
+        "label": "Ad A2 Offer"
+      },
+      {
+        "type": "text",
+        "id": "ad_a2_title",
+        "default": "THE BRAND WITHIN",
+        "label": "Ad A2 Title"
+      },
+      {
+        "type": "text",
+        "id": "ad_a2_subtitle",
+        "label": "Ad A2 Subtitle"
+      },
+      {
+        "type": "image",
+        "id": "brand-within-book_small.jpg",
+        "label": "Ad A2 Image"
+      },
+      {
+        "type": "text",
+        "id": "ad_a2_link",
+        "default": "http:\/\/daymondjohndev.myshopify.com\/products\/the-brand-within-ebook",
+        "label": "Ad A2 Link"
+      },
+      {
+        "type": "text",
+        "id": "ad_a2_offer_link",
+        "default": "http:\/\/daymondjohndev.myshopify.com\/products\/the-brand-within-ebook",
+        "label": "Ad A2 Offer Link"
+      },
+      {
+        "type": "checkbox",
+        "id": "adBenable",
+        "label": "Use Second Ad?"
+      },
+      {
+        "type": "text",
+        "id": "ad_b1_offer",
+        "default": "AUTOGRAPHED COPIES AVAILABLE",
+        "label": "Ad B1 Offer"
+      },
+      {
+        "type": "text",
+        "id": "ad_b1_title",
+        "default": "DISPLAY OF POWER",
+        "label": "Ad B1 Title"
+      },
+      {
+        "type": "text",
+        "id": "ad_b1_subtitle",
+        "default": "Limited Edition",
+        "label": "Ad B1 Subtitle"
+      },
+      {
+        "type": "image",
+        "id": "adB1_img.jpg",
+        "label": "Ad B1 Image"
+      },
+      {
+        "type": "text",
+        "id": "ad_b1_link",
+        "default": "http:\/\/daymondjohndev.myshopify.com\/products\/display-of-power-paperback",
+        "label": "Ad A1 Link"
+      },
+      {
+        "type": "text",
+        "id": "ad_b1_offer_link",
+        "default": "http:\/\/daymondjohndev.myshopify.com\/products\/autographed-books-bundle",
+        "label": "Ad A1 Offer Link"
+      },
+      {
+        "type": "text",
+        "id": "ad_b2_offer",
+        "default": "E-BOOKS AVAILABLE",
+        "label": "Ad B2 Offer"
+      },
+      {
+        "type": "text",
+        "id": "ad_b2_title",
+        "default": "THE BRAND WITHIN",
+        "label": "Ad B2 Title"
+      },
+      {
+        "type": "text",
+        "id": "ad_b2_subtitle",
+        "label": "Ad B2 Subtitle"
+      },
+      {
+        "type": "image",
+        "id": "adB2_img.jpg",
+        "label": "Ad B2 Image"
+      },
+      {
+        "type": "text",
+        "id": "ad_b2_link",
+        "default": "http:\/\/daymondjohndev.myshopify.com\/products\/the-brand-within-ebook",
+        "label": "Ad B2 Link"
+      },
+      {
+        "type": "text",
+        "id": "ad_b2_offer_link",
+        "default": "http:\/\/daymondjohndev.myshopify.com\/products\/the-brand-within-ebook",
+        "label": "Ad B2 Offer Link"
+      }
+    ]
+  },
+  {
+    "name": "Home Page Featured Products\/Best Sellers",
+    "settings": [
+      {
+        "type": "select",
+        "id": "useFeaturedCollection",
+        "label": "Featured\/Best Sellers Section",
+        "options": [
+          {
+            "value": "1",
+            "label": "Active"
+          },
+          {
+            "value": "2",
+            "label": "Disabled"
+          }
+        ],
+        "default": "1"
+      },
+      {
+        "type": "text",
+        "id": "featuredCollectionTitle",
+        "label": "Featured Collection Title",
+        "default": "Featured"
+      },
+      {
+        "type": "collection",
+        "id": "featuredCollection",
+        "label": "Featured Collection",
+        "info": "Set to 'None' to only use best sellers"
+      },
+      {
+        "type": "text",
+        "id": "bestSellersTitle",
+        "label": "Best Sellers Title",
+        "default": "Best Sellers"
+      },
+      {
+        "type": "collection",
+        "id": "bestSellersCollection",
+        "label": "Best Sellers Collection",
+        "info": "Set to 'None' to only use featured products. Make sure to set this collection to sort by best sellers!"
+      }
+    ]
+  },
+  {
+    "name": "Collection Template",
+    "settings": [
+      {
+        "type": "paragraph",
+        "content": "Below can choose from three ways to display the products on your collections pages and the number to paginate each collection by."
+      },
+      {
+        "type": "paragraph",
+        "content": "All regular size with details below image. All larger size with details fixed on top of the image at bottom. Feature first three products larger with details on top of the image and the rest with regular sized images and details below the image. This option will only apply when viewing collections not in tags, types, or vendors views."
+      },
+      {
+        "type": "select",
+        "id": "collectionLayout",
+        "label": "Collection Layout",
+        "options": [
+          {
+            "value": "Small",
+            "label": "All products use regular size"
+          },
+          {
+            "value": "Large",
+            "label": "All products use large size"
+          },
+          {
+            "value": "Featured",
+            "label": "Featured first three products larger and rest regular"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "id": "paginateBy",
+        "label": "Paginate collections by"
+      }
+    ]
+  },
+  {
+    "name": "Product Template",
+    "settings": [
+      {
+        "type": "select",
+        "id": "ajaxProduct",
+        "label": "AJAX add to cart",
+        "options": [
+          {
+            "value": "1",
+            "label": "Active"
+          },
+          {
+            "value": "2",
+            "label": "Disabled"
+          }
+        ],
+        "default": "1",
+        "info": "Keeps from redirecting customer to cart when they add a product to their cart."
+      },
+      {
+        "type": "select",
+        "id": "productImages",
+        "label": "Product Image Galleries",
+        "options": [
+          {
+            "value": "zoom",
+            "label": "Main product image will zoom on hover"
+          },
+          {
+            "value": "enlarge",
+            "label": "Main product image will enlarge on click"
+          }
+        ],
+        "default": "zoom"
+      },
+      {
+        "type": "text",
+        "id": "variantImageLinking",
+        "label": "Variant title of variant used in image\/variant linking",
+        "default": "Color"
+      },
+      {
+        "type": "select",
+        "id": "useQuantity",
+        "label": "Show Quanity Option",
+        "options": [
+          {
+            "value": "1",
+            "label": "Active"
+          },
+          {
+            "value": "2",
+            "label": "Disabled"
+          }
+        ],
+        "default": "1"
+      },
+      {
+        "type": "select",
+        "id": "showProductTags",
+        "label": "Show Product Tags",
+        "options": [
+          {
+            "value": "1",
+            "label": "Active"
+          },
+          {
+            "value": "2",
+            "label": "Disabled"
+          }
+        ],
+        "default": "1"
+      },
+      {
+        "type": "select",
+        "id": "relatedProducts",
+        "label": "Related Products Section",
+        "options": [
+          {
+            "value": "1",
+            "label": "Active"
+          },
+          {
+            "value": "2",
+            "label": "Disabled"
+          }
+        ],
+        "default": "1",
+        "info": "Activating this will show related products as described [here](http:\/\/wiki.shopify.com\/Related_Products#Using_Product_Metafields) or default to products in same collection if you don't use the metafields app. If none are found it will hide."
+      },
+      {
+        "type": "text",
+        "id": "relatedProductsHeading",
+        "label": "Related Products Heading",
+        "default": "Related Products"
+      },
+      {
+        "type": "select",
+        "id": "socialSharing",
+        "label": "Social Sharing",
+        "options": [
+          {
+            "value": "1",
+            "label": "Active"
+          },
+          {
+            "value": "2",
+            "label": "Disabled"
+          }
+        ],
+        "default": "1",
+        "info": "Activating this will show sharing options."
+      },
+      {
+        "type": "select",
+        "id": "facebookComments",
+        "label": "Facebook Comments Wall",
+        "options": [
+          {
+            "value": "1",
+            "label": "Active"
+          },
+          {
+            "value": "2",
+            "label": "Disabled"
+          }
+        ],
+        "default": "1",
+        "info": "Activating this will show the Facebook Comments Wall below your product details."
+      },
+      {
+        "type": "text",
+        "id": "facebookCommentsAdmin",
+        "label": "Facebook Admin Account",
+        "info": "Should be your username or actual Facebook ID #."
+      }
+    ]
+  },
+  {
+    "name": "Blog\/Article Templates",
+    "settings": [
+      {
+        "type": "text",
+        "id": "paginateArticlesBy",
+        "label": "Paginate articles by"
+      },
+      {
+        "type": "checkbox",
+        "id": "use_disqus_comments",
+        "label": "Use [Disqus](http:\/\/disqus.com\/) commenting system"
+      },
+      {
+        "type": "text",
+        "id": "disqus_username",
+        "label": "Disqus username",
+        "info": "You must enter your Disqus username! [http:\/\/disqus.com\/](http:\/\/disqus.com\/)"
+      }
+    ]
+  },
+  {
+    "name": "Footer Options",
+    "settings": [
+      {
+        "type": "text",
+        "id": "mailOptinText",
+        "label": "Mail Opt-In Text"
+      }
+    ]
+  },
+  {
+    "name": "Book Popup",
+    "settings": [
+      {
+        "type": "text",
+        "id": "bookPopupTitle",
+        "label": "Book Popup Title"
+      },
+      {
+        "type": "text",
+        "id": "bookPopupOffer",
+        "label": "Book Popup Offer"
+      },
+      {
+        "type": "text",
+        "id": "bookPopupSubOffer",
+        "label": "Book Popup Sub Offer"
+      },
+      {
+        "type": "text",
+        "id": "bookPopupButton",
+        "label": "Book Popup Sub Button"
+      },
+      {
+        "type": "text",
+        "id": "bookPopupWidth",
+        "label": "New Popup Width (Number Only)"
+      },
+      {
+        "type": "text",
+        "id": "bookPopupHeight",
+        "label": "New Popup Height (Number Only)"
+      },
+      {
+        "type": "text",
+        "id": "bookPopupFormWidth",
+        "label": "New Popup Form Width (Number Only)"
+      },
+      {
+        "type": "text",
+        "id": "bookPopupFormLeft",
+        "label": "New Popup Form Left Offset"
+      },
+      {
+        "type": "text",
+        "id": "bookPopupFormTop",
+        "label": "New Popup Form Top Offset"
+      },
+      {
+        "type": "color",
+        "id": "bookPopupFormLabelColor",
+        "default": "#ffffff",
+        "label": "New Popup Form Label Color"
+      },
+      {
+        "type": "color",
+        "id": "bookPopupFormBGColor",
+        "default": "#000000",
+        "label": "New Popup Form Button Background Color"
+      },
+      {
+        "type": "color",
+        "id": "bookPopupFormButtonColor",
+        "default": "#ffffff",
+        "label": "New Popup Form Button Text Color"
+      },
+      {
+        "type": "image",
+        "id": "modal_background.jpg",
+        "label": "New Popup Background"
+      },
+      {
+        "type": "select",
+        "id": "bookPopupFormPosition",
+        "label": "Popup Form Position",
+        "options": [
+          {
+            "value": "bottom",
+            "label": "Bottom"
+          },
+          {
+            "value": "custom",
+            "label": "Custom"
+          }
+        ],
+        "default": "bottom",
+        "info": "Determines whether the form aligns with the bottom of the poup or is custom positioned."
+      }
+    ]
+  },
+  {
+    "name": "Cart Template",
+    "settings": [
+      {
+        "type": "select",
+        "id": "specialInstructionsNote",
+        "label": "Special Instructions Cart Notes",
+        "options": [
+          {
+            "value": "1",
+            "label": "Active"
+          },
+          {
+            "value": "2",
+            "label": "Disabled"
+          }
+        ],
+        "default": "1"
+      },
+      {
+        "type": "text",
+        "id": "specialInstructionsNoteHeading",
+        "label": "Special Instructions Heading",
+        "default": "Special Instructions"
+      },
+      {
+        "type": "select",
+        "id": "shipping_calculator",
+        "label": "Shipping Rates Calculator",
+        "options": [
+          {
+            "value": "1",
+            "label": "Active"
+          },
+          {
+            "value": "2",
+            "label": "Disabled"
+          }
+        ],
+        "default": "1"
+      },
+      {
+        "type": "text",
+        "id": "shipping_calculator_heading",
+        "label": "Shipping Rates Calculator",
+        "default": "Get shipping estimates"
+      },
+      {
+        "type": "text",
+        "id": "shipping_calculator_default_country",
+        "label": "Default country selection",
+        "default": "United States"
+      },
+      {
+        "type": "paragraph",
+        "content": "If your customer is logged-in, the country in his default shipping address will be selected. If you are not sure about the spelling to use here, refer to the first checkout page."
+      },
+      {
+        "type": "text",
+        "id": "shipping_calculator_submit_button_label",
+        "label": "Submit button label",
+        "default": "Calculate"
+      },
+      {
+        "type": "text",
+        "id": "shipping_calculator_submit_button_label_disabled",
+        "label": "Submit button label when calculating",
+        "default": "Calculating..."
+      }
+    ]
+  },
+  {
+    "name": "Contact Page",
+    "settings": [
+      {
+        "type": "page",
+        "id": "contactPage",
+        "label": "Page to use contact form on"
+      }
+    ]
+  },
+  {
+    "name": "Sidebars",
+    "settings": [
+      {
+        "type": "paragraph",
+        "content": "Choose what you would like to show up in each template's sidebar sections."
+      },
+      {
+        "type": "select",
+        "id": "pageWidget",
+        "label": "Page Widget 1:",
+        "options": [
+          {
+            "value": "",
+            "label": "None"
+          },
+          {
+            "value": "latest-news",
+            "label": "Latest News"
+          },
+          {
+            "value": "tag-cloud",
+            "label": "Tag Cloud"
+          },
+          {
+            "value": "twitter-widget",
+            "label": "Twitter Stream"
+          },
+          {
+            "value": "facebook-like",
+            "label": "Facebook Like Box"
+          }
+        ]
+      },
+      {
+        "type": "select",
+        "id": "pageWidgetTwo",
+        "label": "Page Widget 2:",
+        "options": [
+          {
+            "value": "",
+            "label": "None"
+          },
+          {
+            "value": "latest-news",
+            "label": "Latest News"
+          },
+          {
+            "value": "tag-cloud",
+            "label": "Tag Cloud"
+          },
+          {
+            "value": "twitter-widget",
+            "label": "Twitter Stream"
+          },
+          {
+            "value": "facebook-like",
+            "label": "Facebook Like Box"
+          }
+        ]
+      },
+      {
+        "type": "select",
+        "id": "pageWidgetThree",
+        "label": "Page Widget 3:",
+        "options": [
+          {
+            "value": "",
+            "label": "None"
+          },
+          {
+            "value": "latest-news",
+            "label": "Latest News"
+          },
+          {
+            "value": "tag-cloud",
+            "label": "Tag Cloud"
+          },
+          {
+            "value": "twitter-widget",
+            "label": "Twitter Stream"
+          },
+          {
+            "value": "facebook-like",
+            "label": "Facebook Like Box"
+          }
+        ]
+      },
+      {
+        "type": "select",
+        "id": "productWidget",
+        "label": "Products Widget 1:",
+        "options": [
+          {
+            "value": "",
+            "label": "None"
+          },
+          {
+            "value": "latest-news",
+            "label": "Latest News"
+          },
+          {
+            "value": "tag-cloud",
+            "label": "Tag Cloud"
+          },
+          {
+            "value": "twitter-widget",
+            "label": "Twitter Stream"
+          },
+          {
+            "value": "facebook-like",
+            "label": "Facebook Like Box"
+          }
+        ]
+      },
+      {
+        "type": "select",
+        "id": "productWidgetTwo",
+        "label": "Products Widget 2:",
+        "options": [
+          {
+            "value": "",
+            "label": "None"
+          },
+          {
+            "value": "latest-news",
+            "label": "Latest News"
+          },
+          {
+            "value": "tag-cloud",
+            "label": "Tag Cloud"
+          },
+          {
+            "value": "twitter-widget",
+            "label": "Twitter Stream"
+          },
+          {
+            "value": "facebook-like",
+            "label": "Facebook Like Box"
+          }
+        ]
+      },
+      {
+        "type": "select",
+        "id": "productWidgetThree",
+        "label": "Products Widget 3:",
+        "options": [
+          {
+            "value": "",
+            "label": "None"
+          },
+          {
+            "value": "latest-news",
+            "label": "Latest News"
+          },
+          {
+            "value": "tag-cloud",
+            "label": "Tag Cloud"
+          },
+          {
+            "value": "twitter-widget",
+            "label": "Twitter Stream"
+          },
+          {
+            "value": "facebook-like",
+            "label": "Facebook Like Box"
+          }
+        ]
+      },
+      {
+        "type": "select",
+        "id": "blogWidget",
+        "label": "Blog\/Article Widget 1:",
+        "options": [
+          {
+            "value": "",
+            "label": "None"
+          },
+          {
+            "value": "latest-news",
+            "label": "Latest News"
+          },
+          {
+            "value": "tag-cloud",
+            "label": "Tag Cloud"
+          },
+          {
+            "value": "twitter-widget",
+            "label": "Twitter Stream"
+          },
+          {
+            "value": "facebook-like",
+            "label": "Facebook Like Box"
+          }
+        ]
+      },
+      {
+        "type": "select",
+        "id": "blogWidgetTwo",
+        "label": "Blog\/Article Widget 2:",
+        "options": [
+          {
+            "value": "",
+            "label": "None"
+          },
+          {
+            "value": "latest-news",
+            "label": "Latest News"
+          },
+          {
+            "value": "tag-cloud",
+            "label": "Tag Cloud"
+          },
+          {
+            "value": "twitter-widget",
+            "label": "Twitter Stream"
+          },
+          {
+            "value": "facebook-like",
+            "label": "Facebook Like Box"
+          }
+        ]
+      },
+      {
+        "type": "select",
+        "id": "blogWidgetThree",
+        "label": "Blog\/Article Widget 3:",
+        "options": [
+          {
+            "value": "",
+            "label": "None"
+          },
+          {
+            "value": "latest-news",
+            "label": "Latest News"
+          },
+          {
+            "value": "tag-cloud",
+            "label": "Tag Cloud"
+          },
+          {
+            "value": "twitter-widget",
+            "label": "Twitter Stream"
+          },
+          {
+            "value": "facebook-like",
+            "label": "Facebook Like Box"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Widgets Setup",
+    "settings": [
+      {
+        "type": "paragraph",
+        "content": "Widgets can be used in sidebars and home content sections."
+      },
+      {
+        "type": "text",
+        "id": "blogTagsTitle",
+        "label": "Blog Tags Widget Title:",
+        "info": "Defaults to \"Blog Topics\"."
+      },
+      {
+        "type": "text",
+        "id": "latestNewsTitle",
+        "label": "Latest Blog Posts Widget Title:",
+        "info": "Defaults to \"Latest News\"."
+      },
+      {
+        "type": "blog",
+        "id": "mainBlog",
+        "label": "Blog to use for Blog Widgets"
+      },
+      {
+        "type": "text",
+        "id": "twitterTitle",
+        "label": "Twitter Widget Title:",
+        "info": "Defaults to link to Twitter Handle."
+      },
+      {
+        "type": "textarea",
+        "id": "twitter_widget_embed",
+        "label": "Twitter Widget Embed Code:",
+        "info": "Follow [these instructions](http:\/\/support.shopaholla.com\/customer\/portal\/articles\/934714-twitter-widget-setup) and paste your embed code here."
+      },
+      {
+        "type": "text",
+        "id": "facebookLikeTitle",
+        "label": "Facebook Widget Title:",
+        "info": "Defaults to \"Like us on Facebook\"."
+      },
+      {
+        "type": "text",
+        "id": "facebookLikeURL",
+        "label": "Facebook Page URL:",
+        "info": "URL to Facebook Page you want to be \"Liked\"."
+      },
+      {
+        "type": "text",
+        "id": "testimonial1",
+        "label": "Testimonial One"
+      },
+      {
+        "type": "text",
+        "id": "testimonial2",
+        "label": "Testimonial Two"
+      },
+      {
+        "type": "text",
+        "id": "testimonial3",
+        "label": "Testimonial Three"
+      }
+    ]
+  },
+  {
+    "name": "Ambassador Landing Page",
+    "settings": [
+      {
+        "type": "image",
+        "id": "page-banner.jpg",
+        "label": "Header Banner"
+      },
+      {
+        "type": "header",
+        "content": "Main Content"
+      },
+      {
+        "type": "text",
+        "id": "ambassador_title",
+        "label": "Header Title"
+      },
+      {
+        "type": "select",
+        "id": "heading_text_size",
+        "label": "Size",
+        "options": [
+          {
+            "value": "40px",
+            "label": "Extra Large"
+          },
+          {
+            "value": "32px",
+            "label": "Large"
+          },
+          {
+            "value": "28px",
+            "label": "Medium"
+          },
+          {
+            "value": "20px",
+            "label": "Small"
+          },
+          {
+            "value": "16px",
+            "label": "Extra Small"
+          }
+        ]
+      },
+      {
+        "type": "textarea",
+        "id": "ambassador_content",
+        "label": "Text for page"
+      },
+      {
+        "type": "header",
+        "content": "Call To Action Button 1"
+      },
+      {
+        "type": "text",
+        "id": "ambassador_btn_text",
+        "label": "Button Text",
+        "default": "Click Here"
+      },
+      {
+        "type": "text",
+        "id": "ambassador_btn_link",
+        "label": "Button Link"
+      },
+      {
+        "type": "text",
+        "id": "ambassador_title2",
+        "label": "Header Title"
+      },
+      {
+        "type": "textarea",
+        "id": "ambassador_content2",
+        "label": "More Text for page"
+      },
+      {
+        "type": "header",
+        "content": "Call To Action Button 2"
+      },
+      {
+        "type": "text",
+        "id": "ambassador_btn2_text",
+        "label": "Button Text",
+        "default": "Click Here"
+      },
+      {
+        "type": "text",
+        "id": "ambassador_btn2_link",
+        "label": "Button Link"
+      }
+    ]
+  },
+  {
+    "name": "Skematic Landing Page",
+    "settings": [
+      {
+        "type": "image",
+        "id": "page-logo.jpg",
+        "label": "Page Logo"
+      },
+      {
+        "type": "header",
+        "content": "Main Content"
+      },
+      {
+        "type": "text",
+        "id": "djod_1_header",
+        "label": "Header Title"
+      },
+      {
+        "type": "textarea",
+        "id": "djod-video",
+        "label": "Embed Video Code Here"
+      },
+      {
+        "type": "image_picker",
+        "id": "djod_1_main_image",
+        "label": "Featured Image"
+      },
+      {
+        "type": "checkbox",
+        "id": "djod_1_show_image",
+        "default": false,
+        "label": "Check to activate image and deactivate video"
+      },
+      {
+        "type": "header",
+        "content": "Call To Action Button"
+      },
+      {
+        "type": "text",
+        "id": "djod_1_btn_text",
+        "label": "Button Text",
+        "default": "Get Your Free Sample"
+      },
+      {
+        "type": "text",
+        "id": "djod_1_btn_link",
+        "label": "Button Link"
+      },
+      {
+        "type": "paragraph",
+        "content": "Leave blank to open DOD form"
+      },
+      {
+        "type": "select",
+        "id": "djod_1_btn_target",
+        "label": "Open Link In",
+        "options": [
+          {
+            "value": "_self",
+            "label": "Same Tab"
+          },
+          {
+            "value": "_blank",
+            "label": "New Tab"
+          }
+        ]
+      },
+      {
+        "type": "header",
+        "content": "Partners Section"
+      },
+      {
+        "type": "paragraph",
+        "content": "Dimensions for Partner Images = W 600px x H 600px"
+      },
+      {
+        "type": "image",
+        "id": "partner-1-image.png",
+        "label": "Partner Image 1"
+      },
+      {
+        "type": "image",
+        "id": "partner-2-image.png",
+        "label": "Partner Image 2"
+      },
+      {
+        "type": "image",
+        "id": "partner-3-image.png",
+        "label": "Partner Image 3"
+      },
+      {
+        "type": "image",
+        "id": "partner-4-image.png",
+        "label": "Partner Image 4"
+      },
+      {
+        "type": "image",
+        "id": "partner-5-image.png",
+        "label": "Partner Image 5"
+      },
+      {
+        "type": "header",
+        "content": "Below the Fold Content"
+      },
+      {
+        "type": "text",
+        "id": "djod_2_header",
+        "label": "Header Title"
+      },
+      {
+        "type": "textarea",
+        "id": "djod_2_textarea",
+        "label": "DJ on Demand Content"
+      },
+      {
+        "type": "image",
+        "id": "welcome_image.png",
+        "label": "Image of Daymond (.png)"
+      },
+      {
+        "type": "text",
+        "id": "djod_enroll_text",
+        "label": "Start Now Button Text"
+      },
+      {
+        "type": "text",
+        "id": "djod_enroll_link",
+        "label": "Start Now Button Link"
+      }
+    ]
+  },
+  {
+    "name": "Skematic 2 Landing Page",
+    "settings": [
+      {
+        "type": "image",
+        "id": "page-logo2.jpg",
+        "label": "Page Logo"
+      },
+      {
+        "type": "header",
+        "content": "Main Content"
+      },
+      {
+        "type": "text",
+        "id": "skematiclp2_1_header",
+        "label": "Header Title"
+      },
+      {
+        "type": "textarea",
+        "id": "skematiclp2-video",
+        "label": "Embed Video Code Here"
+      },
+      {
+        "type": "image_picker",
+        "id": "skematiclp2_1_main_image",
+        "label": "Featured Image"
+      },
+      {
+        "type": "checkbox",
+        "id": "skematiclp2_1_show_image",
+        "default": false,
+        "label": "Check to activate image and deactivate video"
+      },
+      {
+        "type": "header",
+        "content": "Call To Action Button"
+      },
+      {
+        "type": "text",
+        "id": "skematiclp2_1_btn_text",
+        "label": "Button Text",
+        "default": "Get Your Free Sample"
+      },
+      {
+        "type": "text",
+        "id": "skematiclp2_1_btn_link",
+        "label": "Button Link"
+      },
+      {
+        "type": "paragraph",
+        "content": "Leave blank to open DOD form"
+      },
+      {
+        "type": "select",
+        "id": "skematiclp2_1_btn_target",
+        "label": "Open Link In",
+        "options": [
+          {
+            "value": "_self",
+            "label": "Same Tab"
+          },
+          {
+            "value": "_blank",
+            "label": "New Tab"
+          }
+        ]
+      },
+      {
+        "type": "header",
+        "content": "Partners Section"
+      },
+      {
+        "type": "paragraph",
+        "content": "Dimensions for Partner Images = W 600px x H 600px"
+      },
+      {
+        "type": "image",
+        "id": "partner2-1-image.png",
+        "label": "Partner Image 1"
+      },
+      {
+        "type": "image",
+        "id": "partner2-2-image.png",
+        "label": "Partner Image 2"
+      },
+      {
+        "type": "image",
+        "id": "partner2-3-image.png",
+        "label": "Partner Image 3"
+      },
+      {
+        "type": "image",
+        "id": "partner2-4-image.png",
+        "label": "Partner Image 4"
+      },
+      {
+        "type": "image",
+        "id": "partner2-5-image.png",
+        "label": "Partner Image 5"
+      },
+      {
+        "type": "header",
+        "content": "Below the Fold Content"
+      },
+      {
+        "type": "text",
+        "id": "skematiclp2_2_header",
+        "label": "Header Title"
+      },
+      {
+        "type": "textarea",
+        "id": "skematiclp2_2_textarea",
+        "label": "DJ on Demand Content"
+      },
+      {
+        "type": "image",
+        "id": "welcome2_image.png",
+        "label": "Image of Daymond (.png)"
+      },
+      {
+        "type": "text",
+        "id": "skematiclp2_enroll_text",
+        "label": "Start Now Button Text"
+      },
+      {
+        "type": "text",
+        "id": "skematiclp2_enroll_link",
+        "label": "Start Now Button Link"
+      }
+    ]
+  },
+  {
+    "name": "Skematic 3 Landing Page",
+    "settings": [
+      {
+        "type": "image",
+        "id": "page-logo3.jpg",
+        "label": "Page Logo"
+      },
+      {
+        "type": "header",
+        "content": "Main Content"
+      },
+      {
+        "type": "text",
+        "id": "skematiclp3_1_header",
+        "label": "Header Title"
+      },
+      {
+        "type": "textarea",
+        "id": "skematiclp3-video",
+        "label": "Embed Video Code Here"
+      },
+      {
+        "type": "image_picker",
+        "id": "skematiclp3_1_main_image",
+        "label": "Featured Image"
+      },
+      {
+        "type": "checkbox",
+        "id": "skematiclp3_1_show_image",
+        "default": false,
+        "label": "Check to activate image and deactivate video"
+      },
+      {
+        "type": "header",
+        "content": "Call To Action Button"
+      },
+      {
+        "type": "text",
+        "id": "skematiclp3_1_btn_text",
+        "label": "Button Text",
+        "default": "Get Your Free Sample"
+      },
+      {
+        "type": "text",
+        "id": "skematiclp3_1_btn_link",
+        "label": "Button Link"
+      },
+      {
+        "type": "paragraph",
+        "content": "Leave blank to open DOD form"
+      },
+      {
+        "type": "select",
+        "id": "skematiclp3_1_btn_target",
+        "label": "Open Link In",
+        "options": [
+          {
+            "value": "_self",
+            "label": "Same Tab"
+          },
+          {
+            "value": "_blank",
+            "label": "New Tab"
+          }
+        ]
+      },
+      {
+        "type": "header",
+        "content": "Partners Section"
+      },
+      {
+        "type": "paragraph",
+        "content": "Dimensions for Partner Images = W 600px x H 600px"
+      },
+      {
+        "type": "image",
+        "id": "partner3-1-image.png",
+        "label": "Partner Image 1"
+      },
+      {
+        "type": "image",
+        "id": "partner3-2-image.png",
+        "label": "Partner Image 2"
+      },
+      {
+        "type": "image",
+        "id": "partner3-3-image.png",
+        "label": "Partner Image 3"
+      },
+      {
+        "type": "image",
+        "id": "partner3-4-image.png",
+        "label": "Partner Image 4"
+      },
+      {
+        "type": "image",
+        "id": "partner3-5-image.png",
+        "label": "Partner Image 5"
+      },
+      {
+        "type": "header",
+        "content": "Below the Fold Content"
+      },
+      {
+        "type": "text",
+        "id": "skematiclp3_2_header",
+        "label": "Header Title"
+      },
+      {
+        "type": "textarea",
+        "id": "skematiclp3_2_textarea",
+        "label": "DJ on Demand Content"
+      },
+      {
+        "type": "image",
+        "id": "welcome3_image.png",
+        "label": "Image of Daymond (.png)"
+      },
+      {
+        "type": "text",
+        "id": "skematiclp3_enroll_text",
+        "label": "Bottom Button Text"
+      },
+      {
+        "type": "text",
+        "id": "skematiclp3_enroll_link",
+        "label": "Bottom Button Link"
+      }
+    ]
+  },
+  {
+    "name": "Skematic 4 Landing Page",
+    "settings": [
+      {
+        "type": "image",
+        "id": "page-logo4.jpg",
+        "label": "Page Logo"
+      },
+      {
+        "type": "header",
+        "content": "Main Content"
+      },
+      {
+        "type": "text",
+        "id": "skematiclp4_1_header",
+        "label": "Header Title"
+      },
+      {
+        "type": "textarea",
+        "id": "skematiclp4-video",
+        "label": "Embed Video Code Here"
+      },
+      {
+        "type": "image_picker",
+        "id": "skematiclp4_1_main_image",
+        "label": "Featured Image"
+      },
+      {
+        "type": "checkbox",
+        "id": "skematiclp4_1_show_image",
+        "default": false,
+        "label": "Check to activate image and deactivate video"
+      },
+      {
+        "type": "header",
+        "content": "Call To Action Button"
+      },
+      {
+        "type": "textarea",
+        "id": "skematiclp4_1_btn_embed",
+        "label": "Embed Button REPLACE style with class='button submit-btn gradient-btn enroll-btn' "
+      },
+      {
+        "type": "text",
+        "id": "skematiclp4_1_btn_text",
+        "label": "Button Text",
+        "default": "Get Your Free Sample"
+      },
+      {
+        "type": "text",
+        "id": "skematiclp4_1_btn_link",
+        "label": "Button Link"
+      },
+      {
+        "type": "paragraph",
+        "content": "Leave blank to open DOD form"
+      },
+      {
+        "type": "select",
+        "id": "skematiclp4_1_btn_target",
+        "label": "Open Link In",
+        "options": [
+          {
+            "value": "_self",
+            "label": "Same Tab"
+          },
+          {
+            "value": "_blank",
+            "label": "New Tab"
+          }
+        ]
+      },
+      {
+        "type": "header",
+        "content": "Partners Section"
+      },
+      {
+        "type": "paragraph",
+        "content": "Dimensions for Partner Images = W 600px x H 600px"
+      },
+      {
+        "type": "image",
+        "id": "partner4-1-image.png",
+        "label": "Partner Image 1"
+      },
+      {
+        "type": "image",
+        "id": "partner4-2-image.png",
+        "label": "Partner Image 2"
+      },
+      {
+        "type": "image",
+        "id": "partner4-3-image.png",
+        "label": "Partner Image 3"
+      },
+      {
+        "type": "image",
+        "id": "partner4-4-image.png",
+        "label": "Partner Image 4"
+      },
+      {
+        "type": "image",
+        "id": "partner4-5-image.png",
+        "label": "Partner Image 5"
+      },
+      {
+        "type": "header",
+        "content": "Below the Fold Content"
+      },
+      {
+        "type": "text",
+        "id": "skematiclp4_2_header",
+        "label": "Header Title"
+      },
+      {
+        "type": "textarea",
+        "id": "skematiclp4_2_textarea",
+        "label": "DJ on Demand Content"
+      },
+      {
+        "type": "image",
+        "id": "welcome4_image.png",
+        "label": "Image of Daymond (.png)"
+      },
+      {
+        "type": "text",
+        "id": "skematiclp4_enroll_text",
+        "label": "Bottom Button Text"
+      },
+      {
+        "type": "text",
+        "id": "skematiclp4_enroll_link",
+        "label": "Bottom Button Link"
+      }
+    ]
+  },
+  {
+    "name": "Skematic 5 Landing Page",
+    "settings": [
+      {
+        "type": "image",
+        "id": "page-logo5.jpg",
+        "label": "Page Logo"
+      },
+      {
+        "type": "header",
+        "content": "Main Content"
+      },
+      {
+        "type": "text",
+        "id": "skematiclp5_1_header",
+        "label": "Header Title"
+      },
+      {
+        "type": "textarea",
+        "id": "skematiclp5-video",
+        "label": "Embed Video Code Here"
+      },
+      {
+        "type": "image_picker",
+        "id": "skematiclp5_1_main_image",
+        "label": "Featured Image"
+      },
+      {
+        "type": "checkbox",
+        "id": "skematiclp5_1_show_image",
+        "default": false,
+        "label": "Check to activate image and deactivate video"
+      },
+      {
+        "type": "header",
+        "content": "Call To Action Button"
+      },
+      {
+        "type": "textarea",
+        "id": "skematiclp5_1_btn_embed",
+        "label": "Embed Button REPLACE style with class='button submit-btn gradient-btn enroll-btn' "
+      },
+      {
+        "type": "text",
+        "id": "skematiclp5_1_btn_text",
+        "label": "Button Text",
+        "default": "Get Your Free Sample"
+      },
+      {
+        "type": "text",
+        "id": "skematiclp5_1_btn_link",
+        "label": "Button Link"
+      },
+      {
+        "type": "paragraph",
+        "content": "Leave blank to open DOD form"
+      },
+      {
+        "type": "select",
+        "id": "skematiclp5_1_btn_target",
+        "label": "Open Link In",
+        "options": [
+          {
+            "value": "_self",
+            "label": "Same Tab"
+          },
+          {
+            "value": "_blank",
+            "label": "New Tab"
+          }
+        ]
+      },
+      {
+        "type": "header",
+        "content": "Partners Section"
+      },
+      {
+        "type": "paragraph",
+        "content": "Dimensions for Partner Images = W 600px x H 600px"
+      },
+      {
+        "type": "image",
+        "id": "partner5-1-image.png",
+        "label": "Partner Image 1"
+      },
+      {
+        "type": "image",
+        "id": "partner5-2-image.png",
+        "label": "Partner Image 2"
+      },
+      {
+        "type": "image",
+        "id": "partner5-3-image.png",
+        "label": "Partner Image 3"
+      },
+      {
+        "type": "image",
+        "id": "partner5-4-image.png",
+        "label": "Partner Image 4"
+      },
+      {
+        "type": "image",
+        "id": "partner5-5-image.png",
+        "label": "Partner Image 5"
+      },
+      {
+        "type": "header",
+        "content": "Below the Fold Content"
+      },
+      {
+        "type": "text",
+        "id": "skematiclp5_2_header",
+        "label": "Header Title"
+      },
+      {
+        "type": "textarea",
+        "id": "skematiclp5_2_textarea",
+        "label": "DJ on Demand Content"
+      },
+      {
+        "type": "image",
+        "id": "welcome5_image.png",
+        "label": "Image of Daymond (.png)"
+      },
+      {
+        "type": "text",
+        "id": "skematiclp5_enroll_text",
+        "label": "Bottom Button Text"
+      },
+      {
+        "type": "text",
+        "id": "skematiclp5_enroll_link",
+        "label": "Bottom Button Link"
+      }
+    ]
+  },
+  {
+    "name": "Skematic 6 Landing Page",
+    "settings": [
+      {
+        "type": "image",
+        "id": "page-logo6.jpg",
+        "label": "Page Logo"
+      },
+      {
+        "type": "header",
+        "content": "Main Content"
+      },
+      {
+        "type": "text",
+        "id": "skematiclp6_1_header",
+        "label": "Header Title"
+      },
+      {
+        "type": "textarea",
+        "id": "skematiclp6-video",
+        "label": "Embed Video Code Here"
+      },
+      {
+        "type": "image_picker",
+        "id": "skematiclp6_1_main_image",
+        "label": "Featured Image"
+      },
+      {
+        "type": "checkbox",
+        "id": "skematiclp6_1_show_image",
+        "default": false,
+        "label": "Check to activate image and deactivate video"
+      },
+      {
+        "type": "header",
+        "content": "Call To Action Button"
+      },
+      {
+        "type": "textarea",
+        "id": "skematiclp6_1_btn_embed",
+        "label": "Embed Button REPLACE style with class='button submit-btn gradient-btn enroll-btn' "
+      },
+      {
+        "type": "text",
+        "id": "skematiclp6_1_btn_text",
+        "label": "Button Text",
+        "default": "Get Your Free Sample"
+      },
+      {
+        "type": "text",
+        "id": "skematiclp6_1_btn_link",
+        "label": "Button Link"
+      },
+      {
+        "type": "paragraph",
+        "content": "Leave blank to open DOD form"
+      },
+      {
+        "type": "select",
+        "id": "skematiclp6_1_btn_target",
+        "label": "Open Link In",
+        "options": [
+          {
+            "value": "_self",
+            "label": "Same Tab"
+          },
+          {
+            "value": "_blank",
+            "label": "New Tab"
+          }
+        ]
+      },
+      {
+        "type": "header",
+        "content": "Partners Section"
+      },
+      {
+        "type": "paragraph",
+        "content": "Dimensions for Partner Images = W 600px x H 600px"
+      },
+      {
+        "type": "image",
+        "id": "partner6-1-image.png",
+        "label": "Partner Image 1"
+      },
+      {
+        "type": "image",
+        "id": "partner6-2-image.png",
+        "label": "Partner Image 2"
+      },
+      {
+        "type": "image",
+        "id": "partner6-3-image.png",
+        "label": "Partner Image 3"
+      },
+      {
+        "type": "image",
+        "id": "partner6-4-image.png",
+        "label": "Partner Image 4"
+      },
+      {
+        "type": "image",
+        "id": "partner6-5-image.png",
+        "label": "Partner Image 5"
+      },
+      {
+        "type": "header",
+        "content": "Below the Fold Content"
+      },
+      {
+        "type": "text",
+        "id": "skematiclp6_2_header",
+        "label": "Header Title"
+      },
+      {
+        "type": "textarea",
+        "id": "skematiclp6_2_textarea",
+        "label": "DJ on Demand Content"
+      },
+      {
+        "type": "image",
+        "id": "welcome6_image.png",
+        "label": "Image of Daymond (.png)"
+      },
+      {
+        "type": "text",
+        "id": "skematiclp6_enroll_text",
+        "label": "Bottom Button Text"
+      },
+      {
+        "type": "text",
+        "id": "skematiclp6_enroll_link",
+        "label": "Bottom Button Link"
+      }
+    ]
+  },
+  {
+    "name": "Skematic 7 Landing Page",
+    "settings": [
+      {
+        "type": "image",
+        "id": "page-logo7.jpg",
+        "label": "Page Logo"
+      },
+      {
+        "type": "header",
+        "content": "Main Content"
+      },
+      {
+        "type": "text",
+        "id": "skematiclp7_1_header",
+        "label": "Header Title"
+      },
+      {
+        "type": "textarea",
+        "id": "skematiclp7-video",
+        "label": "Embed Video Code Here"
+      },
+      {
+        "type": "image_picker",
+        "id": "skematiclp7_1_main_image",
+        "label": "Featured Image"
+      },
+      {
+        "type": "checkbox",
+        "id": "skematiclp7_1_show_image",
+        "default": false,
+        "label": "Check to activate image and deactivate video"
+      },
+      {
+        "type": "header",
+        "content": "Call To Action Button"
+      },
+      {
+        "type": "textarea",
+        "id": "skematiclp7_1_btn_embed",
+        "label": "Embed Button REPLACE style with class='button submit-btn gradient-btn enroll-btn' "
+      },
+      {
+        "type": "text",
+        "id": "skematiclp7_1_btn_text",
+        "label": "Button Text",
+        "default": "Get Your Free Sample"
+      },
+      {
+        "type": "text",
+        "id": "skematiclp7_1_btn_link",
+        "label": "Button Link"
+      },
+      {
+        "type": "paragraph",
+        "content": "Leave blank to open DOD form"
+      },
+      {
+        "type": "select",
+        "id": "skematiclp7_1_btn_target",
+        "label": "Open Link In",
+        "options": [
+          {
+            "value": "_self",
+            "label": "Same Tab"
+          },
+          {
+            "value": "_blank",
+            "label": "New Tab"
+          }
+        ]
+      },
+      {
+        "type": "header",
+        "content": "Partners Section"
+      },
+      {
+        "type": "paragraph",
+        "content": "Dimensions for Partner Images = W 600px x H 600px"
+      },
+      {
+        "type": "image",
+        "id": "partner7-1-image.png",
+        "label": "Partner Image 1"
+      },
+      {
+        "type": "image",
+        "id": "partner7-2-image.png",
+        "label": "Partner Image 2"
+      },
+      {
+        "type": "image",
+        "id": "partner7-3-image.png",
+        "label": "Partner Image 3"
+      },
+      {
+        "type": "image",
+        "id": "partner7-4-image.png",
+        "label": "Partner Image 4"
+      },
+      {
+        "type": "image",
+        "id": "partner7-5-image.png",
+        "label": "Partner Image 5"
+      },
+      {
+        "type": "header",
+        "content": "Below the Fold Content"
+      },
+      {
+        "type": "text",
+        "id": "skematiclp7_2_header",
+        "label": "Header Title"
+      },
+      {
+        "type": "textarea",
+        "id": "skematiclp7_2_textarea",
+        "label": "DJ on Demand Content"
+      },
+      {
+        "type": "image",
+        "id": "welcome7_image.png",
+        "label": "Image of Daymond (.png)"
+      },
+      {
+        "type": "text",
+        "id": "skematiclp7_enroll_text",
+        "label": "Bottom Button Text"
+      },
+      {
+        "type": "text",
+        "id": "skematiclp7_enroll_link",
+        "label": "Bottom Button Link"
+      }
+    ]
+  },
+  {
+    "name": "Skematic 8 Landing Page",
+    "settings": [
+      {
+        "type": "image",
+        "id": "page-logo8.jpg",
+        "label": "Page Logo"
+      },
+      {
+        "type": "header",
+        "content": "Main Content"
+      },
+      {
+        "type": "text",
+        "id": "skematiclp8_1_header",
+        "label": "Header Title"
+      },
+      {
+        "type": "textarea",
+        "id": "skematiclp8-video",
+        "label": "Embed Video Code Here"
+      },
+      {
+        "type": "image_picker",
+        "id": "skematiclp8_1_main_image",
+        "label": "Featured Image"
+      },
+      {
+        "type": "checkbox",
+        "id": "skematiclp8_1_show_image",
+        "default": false,
+        "label": "Check to activate image and deactivate video"
+      },
+      {
+        "type": "header",
+        "content": "Call To Action Button"
+      },
+      {
+        "type": "textarea",
+        "id": "skematiclp8_1_btn_embed",
+        "label": "Embed Button REPLACE style with class='button submit-btn gradient-btn enroll-btn' "
+      },
+      {
+        "type": "text",
+        "id": "skematiclp8_1_btn_text",
+        "label": "Button Text",
+        "default": "Get Your Free Sample"
+      },
+      {
+        "type": "text",
+        "id": "skematiclp8_1_btn_link",
+        "label": "Button Link"
+      },
+      {
+        "type": "paragraph",
+        "content": "Leave blank to open DOD form"
+      },
+      {
+        "type": "select",
+        "id": "skematiclp8_1_btn_target",
+        "label": "Open Link In",
+        "options": [
+          {
+            "value": "_self",
+            "label": "Same Tab"
+          },
+          {
+            "value": "_blank",
+            "label": "New Tab"
+          }
+        ]
+      },
+      {
+        "type": "header",
+        "content": "Partners Section"
+      },
+      {
+        "type": "paragraph",
+        "content": "Dimensions for Partner Images = W 600px x H 600px"
+      },
+      {
+        "type": "image",
+        "id": "partner8-1-image.png",
+        "label": "Partner Image 1"
+      },
+      {
+        "type": "image",
+        "id": "partner8-2-image.png",
+        "label": "Partner Image 2"
+      },
+      {
+        "type": "image",
+        "id": "partner8-3-image.png",
+        "label": "Partner Image 3"
+      },
+      {
+        "type": "image",
+        "id": "partner8-4-image.png",
+        "label": "Partner Image 4"
+      },
+      {
+        "type": "image",
+        "id": "partner8-5-image.png",
+        "label": "Partner Image 5"
+      },
+      {
+        "type": "header",
+        "content": "Below the Fold Content"
+      },
+      {
+        "type": "text",
+        "id": "skematiclp8_2_header",
+        "label": "Header Title"
+      },
+      {
+        "type": "textarea",
+        "id": "skematiclp8_2_textarea",
+        "label": "DJ on Demand Content"
+      },
+      {
+        "type": "image",
+        "id": "welcome8_image.png",
+        "label": "Image of Daymond (.png)"
+      },
+      {
+        "type": "text",
+        "id": "skematiclp8_enroll_text",
+        "label": "Bottom Button Text"
+      },
+      {
+        "type": "text",
+        "id": "skematiclp8_enroll_link",
+        "label": "Bottom Button Link"
+      }
+    ]
+  },
+  {
+    "name": "Skematic 9 Landing Page",
+    "settings": [
+      {
+        "type": "image",
+        "id": "page-logo9.jpg",
+        "label": "Page Logo"
+      },
+      {
+        "type": "header",
+        "content": "Main Content"
+      },
+      {
+        "type": "text",
+        "id": "skematiclp9_1_header",
+        "label": "Header Title"
+      },
+      {
+        "type": "textarea",
+        "id": "skematiclp9-video",
+        "label": "Embed Video Code Here"
+      },
+      {
+        "type": "image_picker",
+        "id": "skematiclp9_1_main_image",
+        "label": "Featured Image"
+      },
+      {
+        "type": "checkbox",
+        "id": "skematiclp9_1_show_image",
+        "default": false,
+        "label": "Check to activate image and deactivate video"
+      },
+      {
+        "type": "header",
+        "content": "Call To Action Button"
+      },
+      {
+        "type": "textarea",
+        "id": "skematiclp9_1_btn_embed",
+        "label": "Embed Button REPLACE style with class='button submit-btn gradient-btn enroll-btn' "
+      },
+      {
+        "type": "text",
+        "id": "skematiclp9_1_btn_text",
+        "label": "Button Text",
+        "default": "Get Your Free Sample"
+      },
+      {
+        "type": "text",
+        "id": "skematiclp9_1_btn_link",
+        "label": "Button Link"
+      },
+      {
+        "type": "paragraph",
+        "content": "Leave blank to open DOD form"
+      },
+      {
+        "type": "select",
+        "id": "skematiclp9_1_btn_target",
+        "label": "Open Link In",
+        "options": [
+          {
+            "value": "_self",
+            "label": "Same Tab"
+          },
+          {
+            "value": "_blank",
+            "label": "New Tab"
+          }
+        ]
+      },
+      {
+        "type": "header",
+        "content": "Partners Section"
+      },
+      {
+        "type": "paragraph",
+        "content": "Dimensions for Partner Images = W 600px x H 600px"
+      },
+      {
+        "type": "image",
+        "id": "partner9-1-image.png",
+        "label": "Partner Image 1"
+      },
+      {
+        "type": "image",
+        "id": "partner9-2-image.png",
+        "label": "Partner Image 2"
+      },
+      {
+        "type": "image",
+        "id": "partner9-3-image.png",
+        "label": "Partner Image 3"
+      },
+      {
+        "type": "image",
+        "id": "partner9-4-image.png",
+        "label": "Partner Image 4"
+      },
+      {
+        "type": "image",
+        "id": "partner9-5-image.png",
+        "label": "Partner Image 5"
+      },
+      {
+        "type": "header",
+        "content": "Below the Fold Content"
+      },
+      {
+        "type": "text",
+        "id": "skematiclp9_2_header",
+        "label": "Header Title"
+      },
+      {
+        "type": "textarea",
+        "id": "skematiclp9_2_textarea",
+        "label": "DJ on Demand Content"
+      },
+      {
+        "type": "image",
+        "id": "welcome9_image.png",
+        "label": "Image of Daymond (.png)"
+      },
+      {
+        "type": "text",
+        "id": "skematiclp9_enroll_text",
+        "label": "Bottom Button Text"
+      },
+      {
+        "type": "text",
+        "id": "skematiclp9_enroll_link",
+        "label": "Bottom Button Link"
+      }
+    ]
+  },
+  {
+    "name": "Interview Carousel",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "carousel_image_1",
+        "label": "Al & Brittani Baker Image"
+      },
+      {
+        "type": "url",
+        "id": "carousel_link_1",
+        "label": "Link",
+        "info": "Link"
+      },
+      {
+        "type": "image_picker",
+        "id": "carousel_image_2",
+        "label": "Brain Lee Image"
+      },
+      {
+        "type": "url",
+        "id": "carousel_link_2",
+        "label": "Link",
+        "info": "Link"
+      },
+      {
+        "type": "image_picker",
+        "id": "carousel_image_3",
+        "label": "Carlos Santana Image"
+      },
+      {
+        "type": "url",
+        "id": "carousel_link_3",
+        "label": "Link",
+        "info": "Link"
+      },
+      {
+        "type": "image_picker",
+        "id": "carousel_image_4",
+        "label": "Catherine Zeta Jones Image"
+      },
+      {
+        "type": "url",
+        "id": "carousel_link_4",
+        "label": "Link",
+        "info": "Link"
+      },
+      {
+        "type": "image_picker",
+        "id": "carousel_image_5",
+        "label": "Gary Vaynerchuck Image"
+      },
+      {
+        "type": "url",
+        "id": "carousel_link_5",
+        "label": "Link",
+        "info": "Link"
+      },
+      {
+        "type": "image_picker",
+        "id": "carousel_image_6",
+        "label": "Grant Cardone Image"
+      },
+      {
+        "type": "url",
+        "id": "carousel_link_6",
+        "label": "Link",
+        "info": "Link"
+      },
+      {
+        "type": "image_picker",
+        "id": "carousel_image_7",
+        "label": "Jake Kassan & Kramar LaPlante Image"
+      },
+      {
+        "type": "url",
+        "id": "carousel_link_7",
+        "label": "Link",
+        "info": "Link"
+      },
+      {
+        "type": "image_picker",
+        "id": "carousel_image_8",
+        "label": "Joel Osteen Image"
+      },
+      {
+        "type": "url",
+        "id": "carousel_link_8",
+        "label": "Link",
+        "info": "Link"
+      },
+      {
+        "type": "image_picker",
+        "id": "carousel_image_9",
+        "label": "Kristina Guerrero Image"
+      },
+      {
+        "type": "url",
+        "id": "carousel_link_9",
+        "label": "Link",
+        "info": "Link"
+      },
+      {
+        "type": "image_picker",
+        "id": "carousel_image_10",
+        "label": "Kyle Maynard Image"
+      },
+      {
+        "type": "url",
+        "id": "carousel_link_10",
+        "label": "Link",
+        "info": "Link"
+      },
+      {
+        "type": "image_picker",
+        "id": "carousel_image_11",
+        "label": "Lola Alvarez Image"
+      },
+      {
+        "type": "url",
+        "id": "carousel_link_11",
+        "label": "Link",
+        "info": "Link"
+      },
+      {
+        "type": "image_picker",
+        "id": "carousel_image_12",
+        "label": "Michael Parrella Image"
+      },
+      {
+        "type": "url",
+        "id": "carousel_link_12",
+        "label": "Link",
+        "info": "Link"
+      },
+      {
+        "type": "image_picker",
+        "id": "carousel_image_13",
+        "label": "Nely Galan Image"
+      },
+      {
+        "type": "url",
+        "id": "carousel_link_13",
+        "label": "Link",
+        "info": "Link"
+      },
+      {
+        "type": "image_picker",
+        "id": "carousel_image_14",
+        "label": "Russell Simmons Image"
+      },
+      {
+        "type": "url",
+        "id": "carousel_link_14",
+        "label": "Link",
+        "info": "Link"
+      },
+      {
+        "type": "image_picker",
+        "id": "carousel_image_15",
+        "label": "Tyler, The Creator Image"
+      },
+      {
+        "type": "url",
+        "id": "carousel_link_15",
+        "label": "Link",
+        "info": "Link"
+      },
+      {
+        "type": "image_picker",
+        "id": "carousel_image_16",
+        "label": "Wendy Williams Image"
+      },
+      {
+        "type": "url",
+        "id": "carousel_link_16",
+        "label": "Link",
+        "info": "Link"
+      }
+    ]
+  }
+]

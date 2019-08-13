@@ -1,0 +1,6 @@
+<section id="twitterFeed">
+  {% if settings.twitterTitle != '' %}  
+  <h1><a id="twitterHeader" target="_blank" href="http://twitter.com/{{ settings.twitterHandle }}">@{{ settings.twitterHandle }}</a></h1>
+  {% endif %}
+  {{ settings.twitter_widget_embed }}
+</section><!-- twitterFeed -->

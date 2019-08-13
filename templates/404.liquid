@@ -1,0 +1,25 @@
+<div id="content" class="group">
+	<article id="mainContent" class="floatLeft">
+		<header id="pageHeader">
+			{% include 'breadcrumbs' %}
+			<h1>Nothing Found</h1>
+		</header><!-- pageHeader -->
+		<div class="textile">
+			<p>Sorry, looks like we couldn't find anything for that URL. Please try again.</p>
+		</div><!-- textile -->
+	</article><!-- mainCol -->
+	<aside id="sidebar" class="floatRight">
+		<span id="topBar">&nbsp;</span>
+		<div id="sidebarBkgd">
+            {% unless settings.pageWidget == '' %}
+    			{% include settings.pageWidget %}
+    		{% endunless %}
+    		{% unless settings.pageWidgetTwo == '' %}
+    			{% include settings.pageWidgetTwo %}
+    		{% endunless %}
+        	{% unless settings.pageWidgetThree == '' %}
+    			{% include settings.pageWidgetThree %}
+    		{% endunless %}
+		</div><!-- sidebarBkgd -->
+	</aside><!-- sidebar -->
+</div><!-- content -->

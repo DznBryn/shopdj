@@ -1,0 +1,204 @@
+<style>
+  #partners {
+    color: #FFF;
+    text-align: center;
+    padding: 40px 15px 0px;
+    background-color: #000;
+  }
+
+  .contain {
+    max-width: 1190px;
+    margin: 0 auto;
+    padding-left: 15px;
+    padding-right: 15px;
+    position: relative;
+    width: 100%;
+  }
+
+  #partners h3 {
+    margin: 0 0 15px;
+    padding: 0;
+    text-transform: uppercase;
+    letter-spacing: .2em;
+    font: bold 11px "Gotham Bold", sans-serif;
+    color: inherit;
+  }
+
+  #partners h2 {
+    margin: 0;
+    padding: 0;
+    text-transform: uppercase;
+    font: bold 29px "Gotham Bold", sans-serif;
+    color:inherit;
+  }
+
+  .logos {
+    text-align: center;
+    padding-top: 40px;
+    padding-bottom: 80px;
+    overflow: hidden;
+    clear: both;
+  }
+</style>
+
+<!-- MOBILE ONLY -->
+  <section id="partners">
+      <div class="contain">
+          <h3>Featured</h3>
+          <h2>Partners</h2>
+          <div class="logos">
+              <div class="contian">
+                  <ul class="logo-list">
+                      <li><a href="{{section.settings.partner-1-link}}" style="background-image: url('{{ section.settings.logo_1 | img_url }}'" target="_blank" class="shark-tank">Shark Tank</a></li>
+                      <li><a href="{{section.settings.partner-2-link}}" style="background-image: url('{{ section.settings.logo_2 | img_url }}'" target="_blank" class="fox-business">Fox Business</a></li>
+                      <li><a href="{{section.settings.partner-3-link}}" style="background-image: url('{{ section.settings.logo_3 | img_url }}'" target="_blank" class="cnn">CNN</a></li>
+                      <li><a href="{{section.settings.partner-4-link}}" style="background-image: url('{{ section.settings.logo_4 | img_url }}'" target="_blank" class="cnbc">CNBC</a></li>
+                      <li><a href="{{section.settings.partner-5-link}}" style="background-image: url('{{ section.settings.logo_5 | img_url }}'" target="_blank" class="adweek">ADWEEK</a></li>
+                      <li><a href="{{section.settings.partner-6-link}}" style="background-image: url('{{ section.settings.logo_6 | img_url }}'" target="_blank" class="new-york-times">New York Times</a></li>
+                      <li><a href="{{section.settings.partner-7-link}}" style="background-image: url('{{ section.settings.logo_7 | img_url }}'" target="_blank" class="usa-today">USA Today</a></li>
+                      <li><a href="{{section.settings.partner-8-link}}" style="background-image: url('{{ section.settings.logo_8 | img_url }}'" target="_blank" class="black-enterprise">Black Enterprise</a></li>
+                      <li><a href="{{section.settings.partner-9-link}}" style="background-image: url('{{ section.settings.logo_9 | img_url }}'" target="_blank" class="moguls-mobile">Moguls Mobile</a></li>
+                      <li><a href="{{section.settings.partner-10-link}}" style="background-image: url('{{ section.settings.logo_10 | img_url }}'" target="_blank" class="babson">Babson</a></li>
+                      <li><a href="{{section.settings.partner-11-link}}" style="background-image: url('{{ section.settings.logo_11 | img_url }}'" target="_blank" class="shark-branding">Shark Branding</a></li>
+                      <li><a href="{{section.settings.partner-12-link}}" style="background-image: url('{{ section.settings.logo_12 | img_url }}'" target="_blank" class="shopify">Shopify</a></li>
+                  </ul>
+              </div><!-- /.contain -->
+          </div><!--/.logos -->
+      </div><!-- /.contain -->
+  </section><!-- #partners -->
+
+
+
+{% schema %}
+  {
+    "name": "Partners Section",
+    "settings": [
+		{
+        "type": "text",
+        "id": "partner-1-link",
+        "label": "Partner 1 Link"
+      },
+      {
+
+        "type": "image_picker",
+        "id": "logo_1",
+        "label": "Partner 1 Image"
+      },
+      {
+        "type": "text",
+        "id": "partner-2-link",
+        "label": "Partner 2 Link"
+      },
+      {
+        "type": "image_picker",
+        "id": "logo_2",
+        "label": "Partner 2 Image"
+      },
+      {
+        "type": "text",
+        "id": "partner-3-link",
+        "label": "Partner 3 Link"
+      },
+      {
+        "type": "image_picker",
+        "id": "logo_3",
+        "label": "Partner 3 Image"
+      },
+      {
+        "type": "text",
+        "id": "partner-4-link",
+        "label": "Partner 4 Link"
+      },
+      {
+        "type": "image_picker",
+        "id": "logo_4",
+        "label": "Partner 4 Image"
+      },
+      {
+        "type": "text",
+        "id": "partner-5-link",
+        "label": "Partner 5 Link"
+      },
+      {
+        "type": "image_picker",
+        "id": "logo_5",
+        "label": "Partner 5 Image"
+      },
+      {
+        "type": "text",
+        "id": "partner-6-link",
+        "label": "Partner 6 Link"
+      },
+      {
+        "type": "image_picker",
+        "id": "logo_6",
+        "label": "Partner 6 Image"
+      },
+      {
+        "type": "text",
+        "id": "partner-7-link",
+        "label": "Partner 7 Link"
+      },
+      {
+        "type": "image_picker",
+        "id": "logo_7",
+        "label": "Partner 7 Image"
+      },
+      {
+        "type": "text",
+        "id": "partner-8-link",
+        "label": "Partner 8 Link"
+      },
+      {
+        "type": "image_picker",
+        "id": "logo_8",
+        "label": "Partner 8 Image"
+      },
+      {
+        "type": "text",
+        "id": "partner-9-link",
+        "label": "Partner 9 Link"
+      },
+      {
+        "type": "image_picker",
+        "id": "logo_9",
+        "label": "Partner 9 Image"
+      },
+      {
+        "type": "text",
+        "id": "partner-10-link",
+        "label": "Partner 10 Link"
+      },
+      {
+        "type": "image_picker",
+        "id": "logo_10",
+        "label": "Partner 10 Image"
+      },
+      {
+        "type": "text",
+        "id": "partner-11-link",
+        "label": "Partner 11 Link"
+      },
+      {
+        "type": "image_picker",
+        "id": "logo_11",
+        "label": "Partner 11 Image"
+      },
+      {
+        "type": "text",
+        "id": "partner-12-link",
+        "label": "Partner 12 Link"
+      },
+      {
+        "type": "image_picker",
+        "id": "logo_12",
+        "label": "Partner 12 Image"
+      }
+	]
+  }
+{% endschema %}
+
+
+{% javascript %}
+{% endjavascript %}
+

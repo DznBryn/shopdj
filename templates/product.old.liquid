@@ -1,0 +1,161 @@
+<div id="content" class="group">
+  <article id="mainContent" class="product">
+    <div class="group" itemscope itemtype="http://schema.org/Product">
+      {% if settings.productImages == 'zoom' %}
+      <div id="productImages" class="floatLeft group">
+        <a id="featuredThumb" href="{{ product.featured_image | product_img_url: 'original' }}" class="cloud-zoom" rel="position:'inside'">
+          <img itemprop="image" src="{{ product.featured_image | product_img_url: 'large' }}" alt="{{ product.featured_image.alt }}" width="298px">
+        </a>
+        {% for image in product.images %}
+        <a href="{{ image | product_img_url: 'original' }}" class="cloud-zoom-gallery productThumb {% if forloop.first %}activeThumb{% endif %} {% if forloop.last %}productThumbLast{% endif %}" {% if settings.productImages == 'zoom' %}rel="useZoom: 'featuredThumb', smallImage: '{{ image | product_img_url: "large" }}'"{% else %}rel="group"{% endif %}>
+          <img itemprop="image" src="{{ image | product_img_url: 'small' }}" alt="{{ image.alt | escape }}" />
+        </a>
+        {% endfor %}
+      </div><!-- productImages -->
+      {% else %}
+      <div id="productImages" class="floatLeft group">
+        {% for image in product.images %}
+        {% if forloop.first %}
+        <a id="featuredThumb" href="{{ product.featured_image | product_img_url: 'original' }}" rel="group" title="{{ product.featured_image.alt | escape }}">
+          <img itemprop="image" src="{{ product.featured_image | product_img_url: 'large' }}" alt="{{ product.featured_image.alt }}" width="298px">
+        </a>
+        {% endif %}
+        <a href="{{ image | product_img_url: 'original' }}" class="productThumb {% if forloop.last %}productThumbLast{% endif %}" rel="group">
+          <img itemprop="image" src="{{ image | product_img_url: 'small' }}" alt="{{ image.alt | escape }}" />
+        </a>
+        {% endfor %}
+      </div><!-- productImages -->
+      {% endif %}
+      
+      <div id="productDetails" class="floatLeft">
+        <header id="productHeader">
+          <h1 itemprop="name">{{ product.title }} </h1>
+          <span id="productVendor" itemprop="brand">by {{ product.vendor }}</span>
+          {% if product.compare_at_price_max > product.price %}<span class="productOnSale">SALE</span>{% endif %}
+        </header><!-- pageHeader -->
+        <div id="productOptions" itemprop="offers" itemscope itemtype="http://schema.org/AggregateOffer">
+          {% if product.available %}
+          <meta itemprop="price" content="{{ product.price | money_without_currency }}" />
+          <meta itemprop="priceCurrency" content="{{ shop.currency }}" />
+          <meta itemprop="availability" itemtype="http://schema.org/ItemAvailability" content="InStock" />  
+          <form method="post" action="/cart/add" id="add-item-form" name="add-item-form">
+            {% if product.variants.size > 1 %}
+            <div id="productVariants" class="group">
+              {% if product.options.size == 1 %}<label for="product-option">{{ product.options[0] }}</label>{% endif %}
+              <select name="id" id="productSelect" style="visibility:hidden;">
+                {% for variant in product.variants %}
+                {% if variant.available %}
+                <option value="{{ variant.id }}">{{ variant.title }} ({{ variant.price | money }})</option>
+                {% else %}
+                <option disabled="disabled">{{ variant.title }} ({{ variant.price | money }}) - SOLD OUT</option>
+                {% endif %} 
+                {% endfor %}
+              </select>                      
+              {% if settings.useQuantity == '1' %}
+              <label for="quantity">Qty: </label>
+              <select id="quantity" name="quantity">
+                {% for i in (1..10) %}
+                <option value="{{ i }}">{{ i }}</option>
+                {% endfor %}
+              </select>
+              {% endif %}    
+            </div><!-- productVariants -->
+            {% else %}
+            
+            {% if settings.useQuantity == '1' %}
+            <label for="quantity">Qty: </label>
+            <select id="quantity" name="quantity">
+              {% for i in (1..10) %}
+              <option value="{{ i }}">{{ i }}</option>
+              {% endfor %}
+            </select>
+            {% endif %}
+            
+            
+            
+            {% assign variant = product.variants.first %}
+            <input type="hidden" name="id" value="{{ variant.id }}" />
+            {% endif %}
+            <div id="purchaseWrapper" class="group">
+              <div id="productPriceWrapper" class="group">
+                <span id="priceTitle">Price</span>
+                {% assign variant = product.variants.first %}
+                <span id="productPrice">{{ variant.price | money }}</span>
+                {% if product.compare_at_price_max > product.price %}
+                <span id="oldPrice" class="floatRight">{% if variant.compare_at_price > 0 %}{{ variant.compare_at_price | money }}{% endif %}</span>
+                {% endif %}                               
+              </div><!-- productPriceWrapper -->
+              
+              
+              
+              
+              
+              <div id="productBuy">
+                <input type="submit" name="add" value="Add to Cart" class="addToCart pieMe" {% if settings.ajaxProduct == '1' %}onclick="Shopify.addItemFromForm('add-item-form'); return false" {% endif %}/>
+              </div><!-- productBuy -->
+            </div><!-- productPriceWrapper -->
+          </form>
+          {% else %}
+          <span class="sold-out">This product is not available</span>
+          {% endif %}
+        </div><!-- productOptions -->
+      </div><!-- productDetails -->
+    </div><!-- group -->
+    <div id="productContent">
+      <div id="productDescription" class="textile" itemprop="description">
+        {{ product.description }}	
+      </div><!-- productDescription -->
+      {% if settings.showProductTags == '1' %}
+      {% if product.tags != blank %}
+      <ul id="productTags" class="group" itemprop="keywords">
+        {% for tag in product.tags %}
+        {% capture url %}/collections/all/{{ tag | handle }}{% endcapture %}
+        <li>{{ tag | link_to: url }}<li>
+        {% endfor %}
+        </ul><!-- productTags -->
+      {% endif %}
+      {% endif %}
+      {% if settings.socialSharing == '1' %}
+      <div id="socialSharing">
+        <h3>Share This</h3>
+      <!-- AddThis Button BEGIN -->
+      <div class="addthis_toolbox addthis_default_style ">
+      <a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
+      <a class="addthis_button_tweet"></a>
+      <a class="addthis_button_pinterest_pinit"></a>
+      <a class="addthis_counter addthis_pill_style"></a>
+      </div>
+      <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js"></script>
+      <!-- AddThis Button END -->
+      </div><!-- socialSharing -->
+      {% endif %}
+      {% if settings.facebookComments == '1' %}
+      <div id="productReviews">
+        <h3>Leave a Comment</h3>
+        <div id="fb-root"></div>
+        <fb:comments href="{{ shop.url }}{{ product.url }}" num_posts="100" width="100%" {% if settings.mainTheme == 'omni' %}data-colorscheme="dark"{% endif %}></fb:comments>
+        <script src="//connect.facebook.net/en_US/all.js#xfbml=1"></script>
+      </div><!-- productReviews -->
+      {% endif %}
+    </div><!-- productContent -->
+  </article><!-- mainCol -->
+  <aside id="sidebar" class="floatRight">
+    <span id="topBar">&nbsp;</span>
+    {% comment %}
+    <div id="sidebarBkgd">
+      {% unless settings.productWidget == '' %}
+      {% include settings.productWidget %}
+      {% endunless %}
+      {% unless settings.productWidgetTwo == '' %}
+      {% include settings.productWidgetTwo %}
+      {% endunless %}
+      {% unless settings.productWidgetThree == '' %}
+      {% include settings.productWidgetThree %}
+      {% endunless %}
+    </div><!-- sidebarBkgd -->	
+       {%  endcomment %}
+  </aside><!-- sidebar -->
+  {% if settings.relatedProducts == '1' %}
+  {% include 'related-products' %}
+  {% endif %}    
+</div><!-- content -->

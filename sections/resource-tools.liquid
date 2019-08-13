@@ -1,0 +1,243 @@
+<style>
+.hero-{{ section.id }}{
+    width: 100%;
+    min-height: 600px;
+    padding: 1em 0 45em;
+    background: none ;
+}
+.section-title{
+    width: fit-content;
+    margin: 0 auto;
+    padding: 2em 0;
+}
+.col-container{
+    width: 100%;
+    margin: 0 auto;
+}
+.col{
+    max-width: 100%;
+    max-height: 100%;
+    padding: 1em 0;
+    float: left;
+
+}
+@media screen and (min-width: 480px){
+    .hero-{{ section.id }}{
+        padding: 1em 0 0em;
+        margin: 0 0 3em;
+    }
+    .col{
+        max-width: 50%;
+        padding: 2em 1em 2em 0em;
+    }
+    .col-container{
+        width: 1000px;
+        
+    }
+}
+.col div{
+    width: 100%;
+}
+.col div img{
+    width: 100%;
+}
+.col .icon-container{
+    padding-left: 5%;
+    margin-bottom: .5em;
+    min-height: 100px;
+
+}
+
+.col-1 div {
+    margin: 0 auto;
+    overflow: hidden;
+}
+.col-1 .image-container{
+    float: right;
+}
+.col-2{
+    width: 100%;
+    padding: 2em 0;
+}
+.col-2 div img{
+    width: 80px;
+}
+.col-2 .icon-img-container,
+.col-2 .icon-content-area{
+    float: left;
+    width: fit-content;
+}
+.col-2 .icon-content-area{
+    padding-left: 1em;
+    width: 75%;
+}
+@media screen and (min-width: 480px){
+    .col-2 .icon-content-area{
+        width: 80%;
+    }
+}
+.hide{
+    display: none;
+}
+
+
+</style>
+
+
+<div class="hero hero-{{ section.id }}">
+    {% for block in section.blocks %}
+    <div class="section-title">
+        <h2>{{ block.settings.section_title }}</h2>
+    </div>
+    <div class="col-container">
+        <div class="col col-1">
+            <div class="image-container">
+                <img src="{{ block.settings.section_image | img_url: 'master' }}">
+            </div>
+        </div>
+        <div class="col col-2">
+            {% for num in (1..4) %}
+                {% capture show_icon %}show_{{ num }}_icon{% endcapture %}
+                {% capture icon %}icon_{{ num }}_image{% endcapture %}
+                {% capture icon_title %}icon_{{ num }}_title{% endcapture %}
+                {% capture icon_text %}icon_{{ num }}_text{% endcapture %}
+                {% if block.settings[show_icon] %}
+                <div class="icon-container">
+                    <div class="icon-img-container">
+                        <img src="{{ block.settings[icon] | img_url: 'small' }}">
+                    </div>
+                    <div class="icon-content-area">
+                        <div class="icon-title"><h2>{{ block.settings[icon_title] }}</h2></div>
+                        <div class="icon-body-text"><p>{{ block.settings[icon_text] }}</p></div>
+                    </div>
+                </div>
+                {% else %}
+                <div class="icon-container hide">
+                        <div class="icon-img-container">
+                            <img src="{{ block.settings[icon] | img_url: 'small' }}">
+                        </div>
+                        <div class="icon-title">{{ block.settings[icon_text] }}</div>
+                    </div>
+                {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+
+
+{% schema %}
+    {
+        "name" : "Resource Tools",
+        "settings":[],
+        "blocks":[
+            {
+                "type": "block_section",
+                "name": "Tools",
+                "settings": [
+                    {
+                        "type": "text",
+                        "id": "section_title",
+                        "label": "Section Title",
+                        "default": "Section Title goes here..."
+                    },{
+                        "type" : "header",
+                        "content": "Background"
+                    },{
+                        "type": "image_picker",
+                        "id": "background_image",
+                        "label": "Section Background Image"
+                    },{
+                        "type" : "header",
+                        "content": "Section Image"
+                    },{
+                        "type": "image_picker",
+                        "id": "section_image",
+                        "label": "Section Image"
+                    },{
+                        "type" : "header",
+                        "content": "Icon Section"
+                    },{
+                        "type": "checkbox",
+                        "id": "show_1_icon",
+                        "label": "Show Icon"
+                    },{
+                        "type": "image_picker",
+                        "id": "icon_1_image",
+                        "label": "Icon Image"
+                    },{
+                        "type": "text",
+                        "id": "icon_1_title",
+                        "label": "Icon Title",
+                        "default": "Title goes here..."
+                    },{
+                        "type": "text",
+                        "id": "icon_1_text",
+                        "label": "Icon Text",
+                        "default": "Body text in a short summary"
+                    },{
+                        "type": "checkbox",
+                        "id": "show_2_icon",
+                        "label": "Show Icon"
+                    },{
+                        "type": "image_picker",
+                        "id": "icon_2_image",
+                        "label": "Icon Image"
+                    },{
+                        "type": "text",
+                        "id": "icon_2_title",
+                        "label": "Icon Title",
+                        "default": "Title goes here..."
+                    },{
+                        "type": "text",
+                        "id": "icon_2_text",
+                        "label": "Icon Text",
+                        "default": "Body text in a short summary"
+                    },{
+                        "type": "checkbox",
+                        "id": "show_3_icon",
+                        "label": "Show Icon"
+                    },{
+                        "type": "image_picker",
+                        "id": "icon_3_image",
+                        "label": "Icon Image"
+                    },{
+                        "type": "text",
+                        "id": "icon_3_title",
+                        "label": "Icon Title",
+                        "default": "Title goes here..."
+                    },{
+                        "type": "text",
+                        "id": "icon_3_text",
+                        "label": "Icon Text",
+                        "default": "Body text in a short summary"
+                    },{
+                        "type": "checkbox",
+                        "id": "show_4_icon",
+                        "label": "Show Icon"
+                    },{
+                        "type": "image_picker",
+                        "id": "icon_4_image",
+                        "label": "Icon Image"
+                    },{
+                        "type": "text",
+                        "id": "icon_4_title",
+                        "label": "Icon Title",
+                        "default": "Title goes here..."
+                    },{
+                        "type": "text",
+                        "id": "icon_4_text",
+                        "label": "Icon Text",
+                        "default": "Body text in a short summary"
+                    },{
+                        "type": "url",
+                        "id": "cta_button",
+                        "label": "CTA Button"
+                    }
+                    
+                ]
+            }
+        ]
+    }
+{% endschema %}

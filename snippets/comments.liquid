@@ -1,0 +1,42 @@
+<div id="commentForm" class="textile">
+    {% form article %}
+      <h3>Leave a comment</h3><br />
+      {% if form.posted_successfully? %}
+      {% if blog.moderated? %}
+        <div class="noticeSuccess">
+          <p>Your comment was successfully posted.<br />It will have to be approved before showing up.</p>
+        </div><!-- noticeSuccess -->
+        {% else %}
+        <div class="noticeSuccess">
+          <p>Your comment was successfully posted.</p>
+        </div><!-- noticeSuccess -->
+      {% endif %}
+      {% endif %}
+      {% if form.errors %}
+        <div class="noticeError">
+          <p>Not all the fields have been filled out correctly!</p>
+        </div><!-- noticeError -->
+      {% endif %}
+      <div id="commentFormFields">
+        <p class="commentFieldRow {% if form.errors contains 'author' %}error{% endif %}">
+          	<label for="commentAuthor">Your Name</label><br/>
+          	<input type="text" id="commentAuthor" name="comment[author]" size="40" value="{% if shop.customer_accounts_enabled %}{% if customer  %}{{customer.name}}{% else %}{{form.author}}{% endif %}{% endif %}" class="{% if form.errors contains 'author' %}input-error{% endif %}" />
+        	<div class="clearFix"></div>
+        </p>
+        <p class="commentFieldRow {% if form.errors contains 'email' %}error{% endif %}">
+          <label for="commentEmail">Your Email</label><br/>
+          <input type="text" id="commentEmail" name="comment[email]" size="40" value="{% if shop.customer_accounts_enabled %}{% if customer  %}{{customer.email}}{% else %}{{form.email}}{% endif %}{% endif %}" class="{% if form.errors contains 'email' %}input-error{% endif %}" />
+          <div class="clearFix"></div>
+        </p>
+      	<p class="commentFieldRow {% if form.errors contains 'body' %}error{% endif %}">
+          <label for="commentBody">Your Comment</label><br/>
+          <textarea id="commentBody" name="comment[body]" cols="75" rows="15" class="{% if form.errors contains 'body' %}input-error{% endif %}">{{form.body}}</textarea>
+          <div class="clearFix"></div>
+      	</p>
+      </div><!-- commentFormFields -->
+    {% if blog.moderated? %}
+		<p class="hint">Comments have to be approved before showing up</p>
+    {% endif %}
+    <input type="submit" value="Submit" id="commentSubmit" class="pieMe btnStyle" />
+  {% endform %}
+</div><!-- commentForm -->

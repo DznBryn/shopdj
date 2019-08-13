@@ -1,0 +1,198 @@
+<body class="front-page">
+<div class="site-wrap">
+<section id="hero" >
+  <div class="dj-banner"></div>
+	<div class="split parallax" style="background-color:{{ 'spilt' | asset_url}};" data-layer="1"><h1 class="logo parallax" data-layer="2">Daymond John</h1></div>
+	<div class="contain">
+		<span class="daymond parallax" style="background-image: ('{{ 'image_daymond-hero.png' | asset_url}}')" data-layer="3"></span>
+	</div><!-- /.contain -->
+	<span class="vignette"></span>
+	<div class="cta parallax" data-layer="4">
+		<div class="contain">
+			<div class="cta-inner">
+				<div class="left">
+					<h2 class="open-modal">{{settings.cta_first}}</h2>
+					<a href="{{settings.cta_first_button_link}}" class="button">{{settings.cta_first_button}}</a>
+				</div><!-- /.left -->
+				<div class="right">
+					<img src="{{ 'img-power-of-broke-thumb.jpg' | asset_url}}" alt="Display of Power" title="Download Display of Power" class="open-modal" data-modal="downloadNew" />
+				</div><!-- /.right --> 
+			</div><!-- /.cta-inner -->
+		</div><!-- /.contian -->
+	</div><!-- /.cta -->
+	<a href="#bio" class="arrow bounce parallax" data-layer="5">r</a>
+</section><!-- /#hero -->
+
+<span id="bio-top"></span>
+<section id="bio">
+	<div class="slide slide-1" style="background-image: url('{{ 'img_daymond-yellow.jpg' | asset_url}}');">
+		<div class="contain">
+			<div class="row">
+              {% if settings.first-slide-content-position == 'left' %}
+				<div class="col-sm-6">
+              {% elsif settings.first-slide-content-position == 'center' %}
+                <div class="col-sm-6 col-sm-offset-3">
+              {% else %}
+                  <div class="col-sm-6 col-sm-offset-6">
+              {% endif %}
+					<h3 style="color:{{ settings.first-slide-text-color}};">{{settings.first-slide-cat}}</h3>
+					<h2 style="color:{{ settings.first-slide-text-color}};">{{settings.first-slide-title}}</h2>
+					
+                  	<p style="color:{{ settings.first-slide-text-color}};">{{settings.first-slide-text}}</p>
+					<span class="button open-modal" data-modal="contact">{{settings.first-slide-button-text}}</span>
+				</div><!-- /.col -->
+			</div><!-- /.row -->
+		</div><!-- /.contain -->
+	</div><!-- /.slide -->
+		
+	<div class="slide slide-2" style="background-image: url('{{ 'img_daymond-speaking.jpg' | asset_url}}');">
+		<div class="contain">
+			<div class="row">
+				
+				<div class="col-md-6">
+					<h3 style="color:{{ settings.second-slide-text-color}};">{{settings.second-slide-cat}}</h3>
+					<h2 style="color:{{ settings.second-slide-text-color}};">{{settings.second-slide-title}}</h2>
+				</div><!-- /.col -->
+				
+				<div class="col-md-6 content">
+                  <p style="color:{{ settings.second-slide-text-color}};">{{settings.second-slide-text}}</p>
+					<span class="button open-modal" data-modal="contact">{{settings.second-slide-button-text}}</span>
+				</div><!-- /.col -->
+			</div><!-- /.row -->
+		</div><!-- /.contain -->
+	</div><!-- /.slide -->
+		
+	<div class="slide slide-3" style="background-image: url('{{ 'img_daymond-godfather.jpg' | asset_url}}');">
+		<div class="contain">
+			<div class="row">
+				<div class="col-md-6">
+					<h3 style="color:{{ settings.third-slide-text-color}};">{{settings.third-slide-cat}}</h3>
+					<h2 style="color:{{ settings.third-slide-text-color}};">{{settings.third-slide-title}}</h2>
+				</div><!-- /.col -->
+				<div class="col-md-6 content">
+                  <p style="color:{{ settings.third-slide-text-color}};">{{settings.third-slide-text}}</p>
+					<span class="button open-modal" data-modal="contact">{{settings.third-slide-button-text}}</span>
+				</div><!-- /.col -->
+			</div><!-- /.row -->
+		</div><!-- /.contain -->
+	</div><!-- /.slide -->
+		
+	<div class="slide slide-4" style="background-image: url('{{ 'img_daymond-framing.jpg' | asset_url}}');">
+		<div class="contain">
+			<div class="row">
+				<div class="col-md-3">
+					<h3 style="color:{{ settings.fourth-slide-text-color}};">{{settings.fourth-slide-cat}}</h3>
+					<h2 style="color:{{ settings.fourth-slide-text-color}};">{{settings.fourth-slide-title}}</h2>
+				</div><!-- /.col -->
+				<div class="col-md-6 content">
+					<p style="color:{{ settings.fourth-slide-text-color}};">{{settings.fourth-slide-text-1}}</p>
+					<p style="color:{{ settings.fourth-slide-text-color}};">{{settings.fourth-slide-text-2}}</p>
+					
+					<span class="button open-modal" data-modal="book">{{settings.fourth-slide-button-text}}</span>
+				</div><!-- /.col -->
+			</div><!-- /.row -->
+		</div><!-- /.contain -->
+	</div><!-- /.slide -->
+		
+</section><!-- /#book -->
+
+
+<section id="speaking" style="background-image: url('{{ 'bkg_speaking.jpg' | asset_url}}'); background-repeat: no-repeat;">
+	<div class="row">
+		<div class="col-xs-12 col-sm-6 photo-half slave-col"></div><!-- /.col -->
+		<div class="col-xs-12 col-sm-6 text-half master-col">
+			<div class="contain-half pad-right">
+				<div class="inner">
+					<h2 style="color:{{ settings.fifth-slide-text-color}};">{{settings.fifth-slide-title}}</h2>
+					<div class="content">
+						<p style="color:{{ settings.fifth-slide-text-color}};">{{settings.fifth-slide-text-1}}</p>
+                      <p style="color:{{ settings.fifth-slide-text-color}};">{{settings.fifth-slide-text-2}}</p>
+					</div><!-- /.content -->
+					<a href="{{ settings.fifth-slide-button-1-link }}" class="button on-light">{{settings.fifth-slide-button-1-text}}</a>
+					<a href="{{ settings.fifth-slide-button-2-link }}" class="button on-light">{{settings.fifth-slide-button-2-text}}</a>
+				</div><!-- /.inner -->
+			</div><!-- /.contain-half -->
+		</div><!-- /.col -->
+	</div><!-- /.row -->
+</section><!-- /#speaking -->
+
+
+
+<section id="partners">
+	<div class="contain">
+		<h3>Featured</h3>
+		<h2>Partners</h2>
+		<div class="logos">
+			<div class="contian">
+				<ul class="logo-list">
+					<li><a href="{{settings.partner-1-link}}" style="background-image: url('{{ 'logo_shark-tank.png' | asset_url}}'" target="_blank" class="shark-tank">Shark Tank</a></li>
+					<li><a href="{{settings.partner-2-link}}" style="background-image: url('{{ 'logo_fox-business.png' | asset_url}}'" target="_blank" class="fox-business">Fox Business</a></li>
+					<li><a href="{{settings.partner-3-link}}" style="background-image: url('{{ 'logo_cnn.png' | asset_url}}'" target="_blank" class="cnn">CNN</a></li>
+					<li><a href="{{settings.partner-4-link}}" style="background-image: url('{{ 'logo_cnbc.png' | asset_url}}'" target="_blank" class="cnbc">CNBC</a></li>
+					<li><a href="{{settings.partner-5-link}}" style="background-image: url('{{ 'logo_adweek.png' | asset_url}}'" target="_blank" class="adweek">ADWEEK</a></li>
+					<li><a href="{{settings.partner-6-link}}" style="background-image: url('{{ 'logo_new-york-times.png' | asset_url}}'" target="_blank" class="new-york-times">New York Times</a></li>
+					<li><a href="{{settings.partner-7-link}}" style="background-image: url('{{ 'logo_usa-today.png' | asset_url}}'" target="_blank" class="usa-today">USA Today</a></li>
+					<li><a href="{{settings.partner-8-link}}" style="background-image: url('{{ 'logo_black-enterprise.png' | asset_url}}'" target="_blank" class="black-enterprise">Black Enterprise</a></li>
+					<li><a href="{{settings.partner-9-link}}" style="background-image: url('{{ 'logo_moguls-mobile.png' | asset_url}}'" target="_blank" class="moguls-mobile">Moguls Mobile</a></li>
+					<li><a href="{{settings.partner-10-link}}" style="background-image: url('{{ 'logo_babson.png' | asset_url}}'" target="_blank" class="babson">Babson</a></li>
+					<li><a href="{{settings.partner-11-link}}" style="background-image: url('{{ 'logo_shartk-branding.png' | asset_url}}'" target="_blank" class="shark-branding">Shark Branding</a></li>
+					<li><a href="{{settings.partner-12-link}}" style="background-image: url('{{ 'logo_shopify.png' | asset_url}}'" target="_blank" class="shopify">Shopify</a></li>
+				</ul>
+			</div><!-- /.contain -->
+		</div><!--/.logos -->
+	</div><!-- /.contain -->
+</section><!-- #partners -->
+
+
+<section id="social">
+	<div class="row no-gutter">
+		<div class="col-xs-12 col-sm-12 col-md-6">
+			<div class="inner twitter">
+				<div class="header">
+					<h2><em>Twitter</em> <a href="https://twitter.com/TheSharkDaymond" target="_blank">@thesharkdaymond</a></h2>
+				</div><!-- /.header -->
+				<div class="content">
+					<a class="twitter-timeline" href="https://twitter.com/TheSharkDaymond" data-widget-id="645868088060084224"></a>
+					<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+				</div><!-- /.content -->
+			</div><!-- /.inner -->
+		</div><!-- /.div -->
+		<div class="col-xs-12 col-sm-12 col-md-6">
+			<div class="inner instagram">
+				<div class="header">
+					<h2><em>Instagram</em> <a href="https://instagram.com/thesharkdaymond/" target="_blank">@thesharkdaymond</a></h2>
+				</div><!-- /.header -->
+				<div class="content">
+					<div id="instafeed"></div>
+				</div><!-- /.content -->
+			</div><!-- /.inner -->
+		</div><!-- /.div -->
+	</div><!-- /.row -->
+</section><!-- /.social -->
+
+<div class="social-footer">
+	<h2><strong>Follow</strong> #THEPEOPLESSHARK</h2>
+	<ul class="social-icons">
+		<li><a href="https://twitter.com/TheSharkDaymond" target="_blank"><i class="fa fa-twitter"></i></a></li>
+		<li><a href="https://www.facebook.com/TheSharkDaymond" target="_blank"><i class="fa fa-facebook"></i></a></li>
+		<li><a href="https://instagram.com/thesharkdaymond/" target="_blank"><i class="fa fa-instagram"></i></a></li>
+		<li><a href="https://www.youtube.com/user/TheSharkDaymond" target="_blank"><i class="fa fa-youtube-play"></i></a></li>
+		<li><a href="https://plus.google.com/116793923309011299273" target="_blank"><i class="fa fa-google-plus"></i></a></li>
+		<li><a href="https://www.linkedin.com/in/daymondjohn" target="_blank"><i class="fa fa-linkedin-square"></i></a></li>
+	</ul><!-- .social-icons -->
+</div><!-- /.social-footer -->
+
+<ul class="location-indicator">
+	<li><a href="#hero" class="active">Home</a></li>
+	<li><a href="#bio">{{settings.section-one-bubble}}</a></li>
+	<li><a href="#speaking">{{settings.section-two-bubble}}</a></li>
+	<li><a href="#partners">{{settings.section-three-bubble}}</a></li>
+	<li><a href="#social">{{settings.section-four-bubble}}</a></li>
+</ul>
+
+<div class="menu-button open-menu">
+	<span class="menu-button-inner"><span></span></span>
+</div>
+
+</body>
+</html>

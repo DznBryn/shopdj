@@ -1,0 +1,384 @@
+{% layout none %}
+<!DOCTYPE html>
+<html>
+<head>
+
+{% if template == 'index' %}
+<title>{{ shop.name }} | {{ page_title }}</title>
+{% elsif template == '404' %}
+<title>Nothing Found | {{ shop.name }}</title>
+{% elsif template == 'cart' %}
+<title>Cart | {{ shop.name }}</title>
+{% elsif template == 'search' %}
+<title>Search | {{ shop.name }}</title>
+{% elsif template == 'list-collections'%}
+<title>Shop | {{ shop.name }}</title>
+{% elsif template contains 'register' %}
+<title>Register | {{ shop.name }}</title>
+{% elsif template contains 'login' %}
+<title>Login | {{ shop.name }}</title>
+{% elsif template contains 'address' %}
+<title>Manage Addresses | {{ shop.name }}</title>
+{% elsif template contains 'account' %}
+<title>Account | {{ shop.name }}</title>
+{% elsif template contains 'order' %}
+<title>Order - {{ order.name }} | {{ shop.name }}</title>
+{% else %}
+<title>{{ page_title }} | {{ shop.name }}</title>
+{% endif %}
+{% if page_description %}
+<meta name="description" content="{{ page_description }}" />
+{% endif %}
+
+{% if settings.facebookComments == '1' %}
+{% if settings.facebookCommentsAdmin != '' %}
+<meta property="fb:admins" content="{{ settings.facebookCommentsAdmin }}"/>
+{% endif %}
+{% endif %}
+<meta property="og:title" content="{{ page_title }}" />
+<meta property="og:site_name" content="{{ shop.name }}" />
+{% if page_description %}
+<meta property="og:description" content="{{ page_description }}" />
+{% endif %}
+{% if template contains 'product' %}
+<meta property="og:type" content="product" />
+<meta property="og:brand" content="{{ product.vendor }}" />
+<meta property="og:url" content="{{ shop.url }}{{ product.url }}" />
+<meta property="og:image" content="{{ product.featured_image | product_img_url: 'large' }}" />
+<meta property="og:price:amount" content="{{ product.price | money_without_currency }}" />
+<meta property="og:price:currency" content="{{ shop.currency }}" />
+{% if product.available %}
+<meta property="og:availability" content="instock" />
+{% else %}
+<meta property="og:availability" content="out of stock" />
+{% endif %}
+{% elsif template contains 'article' %}
+<meta property="og:type" content="article" />
+<meta property="og:url" content="{{ shop.url }}{{ article.url }}" />
+{% if article.content contains "<img" %}
+{% assign src = article.content | split: 'src="' %}
+{% assign src = src[1] | split: '"' | first | replace: '//cdn', 'http://cdn' | replace: 'http:http://', 'http://' | remove: 'https:'  %}
+{% if src %}<meta property="og:image" content="{{ src }}" />{% endif %}
+{% endif %}
+{% else %}
+<meta property="og:image" content="{{ 'og_image.png' | asset_url }}" />
+{% endif %}
+
+
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<meta http-equiv="imagetoolbar" content="no" />
+<meta name="title" content="{{ shop.name }}"/>
+<meta name="copyright" content="Copyright (c) {{ "now" | date: "%Y" }} {{ shop.name }}" />
+
+<!--[if lt IE 9]>
+    <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+
+{% if template contains 'customers' %}
+{{ "shopify_common.js" | shopify_asset_url | script_tag }}
+{{ "customer_area.js"  | shopify_asset_url | script_tag }}
+{% endif %}
+
+<link href="{{'apple-touch-icon-57x57.png' | asset_url }}" sizes="57x57" rel="apple-touch-icon">
+<link href="{{'apple-touch-icon-72x72.png' | asset_url }}" sizes="72x72" rel="apple-touch-icon">
+<link href="{{'apple-touch-icon-114x114.png' | asset_url }}" sizes="114x114" rel="apple-touch-icon">
+<link href="{{'apple-touch-icon-144x144.png' | asset_url }}" sizes="144x144" rel="apple-touch-icon">
+<link href="{{'apple-touch-startup-image-320x460.png' | asset_url }}" media="(device-width: 320px)" rel="apple-touch-startup-image">
+<link href="{{'apple-touch-startup-image-640x920.png' | asset_url }}" media="(device-width: 320px) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image">
+<link href="{{'apple-touch-startup-image-768x1004.png' | asset_url }}" media="(device-width: 768px) and (orientation: portrait)" rel="apple-touch-startup-image">
+<link href="{{'apple-touch-startup-image-748x1024.png' | asset_url }}" media="(device-width: 768px) and (orientation: landscape)" rel="apple-touch-startup-image">
+<link href="{{'apple-touch-startup-image-1536x2008.png' | asset_url }}" media="(device-width: 1536px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image">
+<link href="{{'apple-touch-startup-image-1496x2048.png' | asset_url }}" media="(device-width: 1536px)  and (orientation: landscape) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image">
+
+{% if settings.useFavicon == true %}
+    <link rel="shortcut icon" type="image/x-icon" href="{{ 'favicon.ico' | asset_url }}" />
+{% endif %}
+
+<link rel="canonical" href="{{ canonical_url }}" />
+
+
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, minimal-ui=0">
+
+
+<!--                                                                                              
+~~~~~~ ~~~~~~~~ ~~~~~~~ ~~~~~~~~~ ~~~~~~~ ~~~~~~~~~~~ ~~~~~~ ~~~~~~~~~~~~~~ ~~~~ ~~~~~~~ ~~~~~~ ~~~~~~~~ ~~~~ ~~~~~~~~~~~~~ ~~~~~~ ~~~~~~~~~~~~~~~~~~~ ~~~~~~~~~~~~~~~~ ~~~~~~~~~~~~~~~~~~~~~ ~~~~~~~~~~~~~~~~~~ ~~~~~
+~~~ ~~~~~~~ ~~~~~~~~~~ ~~~~~~~~~~~~~ ~~~~~~~~~~~~~~~~ ~~~~~~~~ ~~~~~~ ~~~~~~~~~~~~~ ~~~~~~~~~~~~ ~~~~~~ ~~~~ ~~~~~~~ ~~~~~~~~~ ~~~~~~~~~~ ~~~~~~~~~~~~~ ~~~~~~~~~~~~~~~~~~~ ~~~~~~~~~~~~~~~~~ ~~~~~~~~~~ ~~~~~~~~~~~~~
+~~~~~~ ~~~~~~~~~ ~~~~~ ~~~~~~~ ~~~~~~~~~~ ~~~~~~~ ~~~~~~~~ ~~~~~~~~~~~~~~ ~~~~~~~~ ~~~~~~~~~~ ~~~~~~~~~~~~~ ~~~~~~~ ~~~~~~~ ~~~~~~~~~~~~~~ ~~~~~~~~~ ~~~~~~ ~~~~~ ~~~~~~~~~~~ ~~~~~~~~~~ ~~~~~~~~~~~ ~~~~~~~~~ ~~~~~~~
+      ,|                                            
+     / ;									        
+    /  \									        
+   : ,'(                                                    _            _    _        _         _   _         _            _             _                      _        _            _       _    _          
+   |( `.\                                                 /\ \         / /\ /\ \     /\_\      /\_\/\_\ _    /\ \         /\ \     _    /\ \                   /\ \     /\ \         / /\    / /\ /\ \     _  
+   : \  `\       \.                                      /  \ \____   / /  \\ \ \   / / /     / / / / //\_\ /  \ \       /  \ \   /\_\ /  \ \____              \ \ \   /  \ \       / / /   / / //  \ \   /\_\
+    \ `.         | `.                                   / /\ \_____\ / / /\ \\ \ \_/ / /     /\ \/ \ \/ / // /\ \ \     / /\ \ \_/ / // /\ \_____\             /\ \_\ / /\ \ \     / /_/   / / // /\ \ \_/ / /
+     \  `-._     ;   \                                 / / /\/___  // / /\ \ \\ \___/ /     /  \____\__/ // / /\ \ \   / / /\ \___/ // / /\/___  /            / /\/_// / /\ \ \   / /\ \__/ / // / /\ \___/ / 
+      \     ``-.'.. _ `._                             / / /   / / // / /  \ \ \\ \ \_/     / /\/________// / /  \ \_\ / / /  \/____// / /   / / /    _       / / /  / / /  \ \_\ / /\ \___\/ // / /  \/____/  
+       `. `-.            ```-...__                   / / /   / / // / /___/ /\ \\ \ \     / / /\/_// / // / /   / / // / /    / / // / /   / / /    /\ \    / / /  / / /   / / // / /\/___/ // / /    / / /   
+        .'`.        -..           ``-..____         / / /   / / // / /_____/ /\ \\ \ \   / / /    / / // / /   / / // / /    / / // / /   / / /     \ \_\  / / /  / / /   / / // / /   / / // / /    / / /    
+      ,'.-'`,_-._            ((((   <o.   ,'        \ \ \__/ / // /_________/\ \ \\ \ \ / / /    / / // / /___/ / // / /    / / / \ \ \__/ / /      / / /_/ / /  / / /___/ / // / /   / / // / /    / / /     
+           `' `-.)``-._-...__````  ____.-'           \ \___\/ // / /_       __\ \_\\ \_\\/_/    / / // / /____\/ // / /    / / /   \ \___\/ /      / / /__\/ /  / / /____\/ // / /   / / // / /    / / /      
+        SSt    ,'    _,'.- ,_________'                \/_____/ \_\___\     /____/_/ \/_/        \/_/ \/_________/ \/_/     \/_/     \/_____/       \/_______/   \/_________/ \/_/    \/_/ \/_/     \/_/       
+           _.-' _..-'   ),'
+          ``_-''        `
+
+~~~~~~ ~~~~~~~~~ ~~~~~ ~~~~~~~ ~~~~~~~~~~ ~~~~~~~ ~~~~~~~~ ~~~~~~~~~~~~~~ ~~~~~~~~ ~~~~~~~~~~ ~~~~~~~~~~~~~ ~~~~~~~ ~~~~~~~ ~~~~~~~~~~~~~~ ~~~~~~~~~ ~~~~~~ ~~~~~ ~~~~~~~~~~~ ~~~~~~~~~~ ~~~~~~~~~~~ ~~~~~~~~~ ~~~~~~~                                                                                                                                                                                       
+~~~~~~ ~~~~~~~~ ~~~~~~~ ~~~~~~~~~ ~~~~~~~ ~~~~~~~~~~~ ~~~~~~ ~~~~~~~~~~~~~~ ~~~~ ~~~~~~~ ~~~~~~ ~~~~~~~~ ~~~~ ~~~~~~~~~~~~~ ~~~~~~ ~~~~~~~~~~~~~~~~~~~ ~~~~~~~~~~~~~~~~ ~~~~~~~~~~~~~~~~~~~~~ ~~~~~~~~~~~~~~~~~~ ~~~~~
+~~~ ~~~~~~~ ~~~~~~~~~~ ~~~~~~~~~~~~~ ~~~~~~~~~~~~~~~~ ~~~~~~~~ ~~~~~~ ~~~~~~~~~~~~~ ~~~~~~~~~~~~ ~~~~~~~~ ~~~~ #THEPEOPLESSHARK ~~~~~~~~~~~~ ~~~~~~~~~~~~~ ~~~~~~~~~~~~~~~~~~~~ ~~~~~~~~~~~~~~ ~~~~~~~~~~ ~~~~~~~~~~~~
+~~~~~~ ~~~~~~~~~ ~~~~~ ~~~~~~~ ~~~~~~~~~~ ~~~~~~~ ~~~~~~~~ ~~~~~~~~~~~~~~ ~~~~~~~~ ~~~~~~~~~~ ~~~~~~~~~~~~~ ~~~~~~~ ~~~~~~~ ~~~~~~~~~~~~~~ ~~~~~~~~~ ~~~~~~ ~~~~~ ~~~~~~~~~~~ ~~~~~~~~~~ ~~~~~~~~~~~ ~~~~~~~~~ ~~~~~~~
+~~~~~~ ~~~~~~~~ ~~~~~~~ ~~~~~~~~~ ~~~~~~~ ~~~~~~~~~~~ ~~~~~~ ~~~~~~~~~~~~~~ ~~~~ ~~~~~~~ ~~~~~~ ~~~~~~~~ ~~~~ ~~~~~~~~~~~~~ ~~~~~~ ~~~~~~~~~~~~~~~~~~~ ~~~~~~~~~~~~~~~~ ~~~~~~~~~~~~~~~~~~~~~ ~~~~~~~~~~~~~~~~~~ ~~~~~
+-->
+
+
+
+<link rel="shortcut icon" href="{{ 'favicon.png' | asset_url }}" type="image/x-icon" />
+<link rel="icon" href="{{ 'favicon.png' | asset_url }}" type="image/x-icon" />
+
+<link rel="stylesheet" href="{{ 'new-theme.scss.css' | asset_url }}" type="text/css" />
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/ScrollMagic.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.0/TweenMax.min.js"></script>
+<script src="{{ 'new-theme.js' | asset_url }}" type="text/javascript"></script>
+
+{{ content_for_header }}
+
+</head>
+<body class="front-page">
+<div class="site-wrap">
+<section id="hero">
+	<div class="split parallax" data-layer="1"><h1 class="logo parallax" data-layer="2">Daymond John</h1></div>
+	<div class="contain">
+		<span class="daymond parallax" data-layer="3"></span>
+	</div><!-- /.contain -->
+	<span class="vignette"></span>
+	<div class="cta parallax" data-layer="4">
+		<div class="contain">
+			<div class="cta-inner">
+				<div class="left">
+					<h2 class="open-modal" data-modal="download">Download Display of Power</h2>
+					<a href="#book" class="button open-modal" data-modal="download">Download</a>
+				</div><!-- /.left -->
+				<div class="right">
+					<img src="{{ 'img_book-hero.jpg' | asset_url}}" alt="Display of Power" title="Download Display of Power" class="open-modal" data-modal="download" />
+				</div><!-- /.right --> 
+			</div><!-- /.cta-inner -->
+		</div><!-- /.contian -->
+	</div><!-- /.cta -->
+	<a href="#bio" class="arrow bounce parallax" data-layer="5">r</a>
+</section><!-- /#hero -->
+
+<span id="bio-top"></span>
+<section id="bio">
+	<div class="slide slide-1">
+		<div class="contain">
+			<div class="row">
+				<div class="col-sm-6">
+					<h3>Bio</h3>
+					<h2>The Entrepreneur</h2>
+					
+					<p>An entrepreneur in every sense of the word, Daymond John has come a long way from his $40 budget by growing FUBU into a six billion dollar brand. The Founder of FUBU, Presidential Ambassador of Global Entrepreneurship and Co-star of ABC's Shark Tank, is a celebrated pioneer in the fashion industry, best-selling author, branding guru and highly sought after motivational speaker.</p>
+					
+					<span class="button open-modal" data-modal="contact">Speak to me</span>
+				</div><!-- /.col -->
+			</div><!-- /.row -->
+		</div><!-- /.contain -->
+	</div><!-- /.slide -->
+		
+	<div class="slide slide-2">
+		<div class="contain">
+			<div class="row">
+				
+				<div class="col-md-6">
+					<h3>Bio</h3>
+					<h2>The Award Winner</h2>
+				</div><!-- /.col -->
+				
+				<div class="col-md-6 content">
+					<p>John's track record as an award-winning entrepreneur includes receiving over 35 awards including the Brandweek Marketer of the Year, Advertising Age Marketing 1000 Award for Outstanding Ad Campaign, and Ernst & Young's New York Entrepreneur of the Year Award.</p>
+					
+					<span class="button open-modal" data-modal="contact">Speak to me</span>
+				</div><!-- /.col -->
+			</div><!-- /.row -->
+		</div><!-- /.contain -->
+	</div><!-- /.slide -->
+		
+	<div class="slide slide-3">
+		<div class="contain">
+			<div class="row">
+				<div class="col-md-6">
+					<h3>Bio</h3>
+					<h2>The Shark</h2>
+				</div><!-- /.col -->
+				<div class="col-md-6 content">
+					<p>His firm Shark Branding offers advice on how to effectively communicate to consumers through innovative means and connects brands with the world's top celebrities for everything from endorsements to product extensions. John has two best-selling books Display of Power and The Brand Within and a third book, The Power of Broke being released in 2016.</p>
+					
+					<span class="button open-modal" data-modal="contact">Speak to me</span>
+				</div><!-- /.col -->
+			</div><!-- /.row -->
+		</div><!-- /.contain -->
+	</div><!-- /.slide -->
+		
+	<div class="slide slide-4">
+		<div class="contain">
+			<div class="row">
+				<div class="col-md-3">
+					<h3>Bio</h3>
+					<h2>The World</h2>
+				</div><!-- /.col -->
+				<div class="col-md-6 content">
+					<p>In May 2015, the White House appointed John, Global Ambassador of Entrepreneurship as part of the PAGE Program. His signature initiative will be to work with underserved entrepreneurs and emerging digital influencers to help them build customer bases and brands.</p>
+					<p>John has also been tapped to work with President Obama on his My Brother's Keeper program, which will help create access and opportunity for underserved men of color via mentorship and education.</p>
+					
+					<span class="button open-modal" data-modal="book">Book Mr. John</span>
+				</div><!-- /.col -->
+			</div><!-- /.row -->
+		</div><!-- /.contain -->
+	</div><!-- /.slide -->
+		
+</section><!-- /#book -->
+
+
+<section id="speaking">
+	<div class="row">
+		<div class="col-xs-12 col-sm-6 photo-half slave-col"></div><!-- /.col -->
+		<div class="col-xs-12 col-sm-6 text-half master-col">
+			<div class="contain-half pad-right">
+				<div class="inner">
+					<h2>Speaking <em>and</em><br /> Consulting</h2>
+					<div class="content">
+						<p>As a consultant, Daymond will examine the needs of your business, dissect the problems, and create manageable solutions for brand growth. He will also help improve your business' profitability by enhancing the marketing structure and strategy.</p>
+						<p>As a motivational speaker, Daymond's quintessential rags-to-riches success story of sacrifice, hard work, and perseverance as well as the unique and charismatic way he communicates it, will inspire any audience.</p>
+					</div><!-- /.content -->
+					<span class="button on-light open-modal" data-modal="book">Schedule an engagement</span>
+				</div><!-- /.inner -->
+			</div><!-- /.contain-half -->
+		</div><!-- /.col -->
+	</div><!-- /.row -->
+</section><!-- /#speaking -->
+
+
+<section id="partners">
+	<div class="contain">
+		<h3>Featured</h3>
+		<h2>Partners</h2>
+		<div class="contian">
+			<ul class="partner-list">
+				<li><a href="http://abc.go.com/shows/shark-tank" target="_blank" class="shark-tank">Shark Tank</a></li>
+				<li><a href="http://www.foxbusiness.com" target="_blank" class="fox-business">Fox Business</a></li>
+				<li><a href="http://www.cnn.com" target="_blank" class="cnn">CNN</a></li>
+				<li><a href="http://www.cnbc.com" target="_blank" class="cnbc">CNBC</a></li>
+				<li><a href="http://www.adweek.com" target="_blank" class="adweek">ADWEEK</a></li>
+				<li><a href="http://www.nytimes.com" target="_blank" class="new-york-times">New York Times</a></li>
+				<li><a href="http://www.usatoday.com" target="_blank" class="usa-today">USA Today</a></li>
+				<li><a href="http://www.blackenterprise.com" target="_blank" class="black-enterprise">Black Enterprise</a></li>
+				<li><a href="http://mogulsmobile.com" target="_blank" class="moguls-mobile">Moguls Mobile</a></li>
+				<li><a href="http://www.babson.edu" target="_blank" class="babson">Babson</a></li>
+				<li><a href="http://www.sharkbranding.com" target="_blank" class="shark-branding">Shark Branding</a></li>
+				<li><a href="https://www.shopify.com" target="_blank" class="shopify">Shopify</a></li>
+			</ul>
+		</div><!-- /.contain -->
+	</div><!-- /.contain -->
+</section><!-- #partners -->
+
+
+<section id="social">
+	<div class="row no-gutter">
+		<div class="col-xs-12 col-sm-12 col-md-6">
+			<div class="inner twitter">
+				<div class="header">
+					<h2><em>Twitter</em> <a href="https://twitter.com/TheSharkDaymond" target="_blank">@thesharkdaymond</a></h2>
+				</div><!-- /.header -->
+				<div class="content">
+					<a class="twitter-timeline" href="https://twitter.com/TheSharkDaymond" data-widget-id="645868088060084224"></a>
+					<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+				</div><!-- /.content -->
+			</div><!-- /.inner -->
+		</div><!-- /.div -->
+		<div class="col-xs-12 col-sm-12 col-md-6">
+			<div class="inner instagram">
+				<div class="header">
+					<h2><em>Instagram</em> <a href="https://instagram.com/thesharkdaymond/" target="_blank">@thesharkdaymond</a></h2>
+				</div><!-- /.header -->
+				<div class="content">
+					<div id="instafeed"></div>
+				</div><!-- /.content -->
+			</div><!-- /.inner -->
+		</div><!-- /.div -->
+	</div><!-- /.row -->
+	<div class="social-footer">
+		<h3>Follow</h3>
+		<h2>#THEPEOPLESSHARK</h2>
+		<ul class="social-icons">
+			<li><a href="https://twitter.com/TheSharkDaymond" target="_blank"><i class="fa fa-twitter"></i></a></li>
+			<li><a href="https://www.facebook.com/TheSharkDaymond" target="_blank"><i class="fa fa-facebook"></i></a></li>
+			<li><a href="https://instagram.com/thesharkdaymond/" target="_blank"><i class="fa fa-instagram"></i></a></li>
+			<li><a href="https://www.youtube.com/user/TheSharkDaymond" target="_blank"><i class="fa fa-youtube-play"></i></a></li>
+			<li><a href="https://plus.google.com/116793923309011299273" target="_blank"><i class="fa fa-google-plus"></i></a></li>
+			<li><a href="https://www.linkedin.com/in/daymondjohn" target="_blank"><i class="fa fa-linkedin-square"></i></a></li>
+		</ul><!-- .social-icons -->
+	</div><!-- /.social-footer -->
+</section><!-- /.social -->
+
+
+<footer>
+	<div class="contain">
+		<a href="#hero" class="logo">Daymond John - The Peoples Shark</a>
+		<form id="form1" name="form1" class="wufoo topLabel page email-signup" accept-charset="UTF-8" autocomplete="off" enctype="multipart/form-data" method="post" novalidate action="https://daymondjohn.wufoo.com/forms/zpfdsam12b876k/#public">
+			<label for="Field1">Get weekly tips from Daymond John</label>
+			<input id="Field1" name="Field1" type="email" spellcheck="false" class="field text medium" placeholder="Enter Email" maxlength="255" tabindex="1" required />
+			<input type="hidden" id="idstamp" name="idstamp" value="oe+GPnmAGbJx9LCn1EN55lVBizr3Dowb61tj/Tvl3fQ=" />
+		<input type="submit" class="button" value="Submit" />
+		</form>
+	</div><!-- /.contain -->
+</footer>
+{% comment %}<div class="copyright">
+	<span class="street-cred">
+		<a href="#" class="cred-link">Site Credit</a>
+		<a href="http://www.bvaccel.com" target="_blank" class="bva"></a>
+	</span>
+</div>{% endcomment %}
+
+<ul class="location-indicator">
+	<li><a href="#hero" class="active">Top</a></li>
+	<li><a href="#bio">Bio</a></li>
+	<li><a href="#speaking">Speaking</a></li>
+	<li><a href="#partners">Partners</a></li>
+	<li><a href="#social">Follow</a></li>
+</ul>
+
+<div class="menu-button open-menu">
+	<span class="menu-button-inner"><span></span></span>
+</div>
+
+<nav>
+	<span class="overlay close-menu"></span>
+	<div class="menu">
+		<div class="menu-inner">
+			<div class="logo"><h1 class="logo">Daymond John - the peoples shark</h1></div>
+			<span class="menu-close close-menu"></span>
+			<div class="row no-gutter menu-items">
+				<div class="col-md-4 col-sm-6 col-xs-6"><a href="#hero" class="link link-hero active close-menu"><span><span><strong>Daymond</strong></span></span></a></div>
+				<div class="col-md-4 col-sm-6 col-xs-6"><a href="#bio-top" class="link link-bio close-menu"><span><span><em>Biography</em></span></span></a></div>
+				<div class="col-md-4 col-sm-6 col-xs-6"><a href="#speaking" class="link link-speaking close-menu"><span><span><strong>Speaking &amp; Consulting</strong></span></span></a></div>
+				<div class="col-md-4 col-sm-6 col-xs-6"><a href="#partners" class="link link-partners close-menu"><span><span><em>Partners</em></span></span></a></div>
+				<div class="col-md-4 col-sm-6 col-xs-6"><a href="#social" class="link link-social close-menu"><span><span><strong>Social</strong></span></span></a></div>
+				<div class="col-md-4 col-sm-6 col-xs-6"><span class="link link-book open-modal close-menu" data-modal="book"><span><span><em>Book Mr. John</em></span></span></a></div>
+			</div><!-- /.row -->
+		</div><!-- /.menu-inner -->
+	</div><!-- /.menu -->
+</nav>
+
+
+<div class="modals">
+	<div class="overlay close-modal"></div>
+
+	{% include 'modal-book' %}
+	{% include 'modal-contact' %}
+</div><!-- /.modals -->
+
+<a id="thanks-trigger" href="#thanks" class="button open-modal" data-modal="thanks">thanks</a>
+
+</body>
+</html>

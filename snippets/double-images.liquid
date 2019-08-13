@@ -1,0 +1,116 @@
+
+<style>
+{% comment %} html, body{ background: black !important; color: #fff !important; } {% endcomment %}
+
+h1{padding-bottom: 15px;}
+.no-gutter > [class*='col-'] {
+    padding-right:0 !important;
+    padding-left:0 !important;
+}
+
+.btn-custom{
+	border: 0 none;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  padding: 12px 30px;
+  border-radius: 0;
+  background: {{ settings.add-to-cart-background-colour }};
+  color: {{ settings.add-to-cart-text-colour }};
+	font-family: 'Cabin';
+}
+.btn-custom1 {
+  margin-bottom: 0;
+  color: #fff;
+  background: rgba(0, 0, 0, .65);
+  font-size: 1.3em;
+  padding: 15px 70px;
+  border: 1px solid #f378ad;
+  position:absolute;
+  top:50%;
+  left:30%;
+
+}
+.btn-custom2 {
+  margin-bottom: 0;
+  color: #fff;
+  background: rgba(0, 0, 0, .65);
+  font-size: 1.3em;
+  padding: 15px 70px;
+  border: 1px solid #f378ad;
+  position:absolute;
+  top:50%;
+  right:30%;
+}
+img.logo-bar__image{ max-width:99%!important;}
+.book {
+    position: relative;
+    width: 200px!important;
+    height: 300px!important;
+    -webkit-perspective: 1000px;
+    -moz-perspective: 1000px;
+    perspective: 1000px;
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+}
+
+.align {
+    clear: both;
+    margin: 20px auto 20px!important;
+    width: 100%;
+    max-width: 1170px;
+    text-align: center;
+}
+@media (min-width:992px) and (max-width:1200px) {
+    #bookview2{min-height:  319px!important;}
+
+}
+@media (max-width:991px) {
+   #bookview2{min-height: 273px!important;} 
+    .adjustment{
+    height: 267px!important;
+    background-position-x: -3rem!important;
+    background-position-y: -1rem!important;
+    }
+}
+#bookview2{min-height:  395px;}
+
+@media only screen
+and (min-width : 375px)
+and (max-width : 667px) { #bookview2{min-height: 395px!important;margin: .6rem;} }
+
+.adjustment{background-image: url('https://cdn.shopify.com/s/files/1/0274/9575/files/Daymond_John_White_Background.png?1860315649202202274'); background-size:cover;background-repeat: no-repeat;}
+</style>
+
+
+
+
+<div class="container-fluid wow fadeIn" style="padding-top:20px;">
+  <div class=" page-video-wrapper" >
+
+
+
+			{% if block.settings.image3 != blank %}
+			<div class="rng-img"><img src="{{ block.settings.image3 | img_url: '1024x1024'}}"/></div>
+
+			{% else %}
+      <div class="video-container col-md-pull-4 col-md-8  col-sm-pull-4 col-sm-8 col-xs-12 wow fadeIn" id="myvideo">
+			{%- include 'video' -%}
+      </div>
+
+			{% endif %}
+      <div id="bookview2" class="adjustment rng-img col-md-push-8 col-md-4 col-sm-push-8 col-sm-4  col-xs-12">{% include "book" %}</div>
+      {% if block.settings.button_label_1 != blank and block.settings.button_link_1 != blank %}
+        <a href="{{ block.settings.button_link_1 }}" class="btn btn-custom1" style="border: 1px solid {{ block.settings.button_border_1 }}">
+          {{ block.settings.button_label_1 }}
+        </a>
+      {% endif %}
+      {% if block.settings.button_label_2 != blank and block.settings.button_link_2 != blank %}
+        <a href="{{ block.settings.button_link_2 }}" class="btn btn-custom2" style="border: 1px solid {{ block.settings.button_border_2 }}">
+          {{ block.settings.button_label_2 }}
+				 </a>
+      {% endif %}
+
+
+  </div>
+</div>

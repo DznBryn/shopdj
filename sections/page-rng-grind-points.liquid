@@ -1,0 +1,344 @@
+
+<div>
+  {% for block in section.blocks %}
+  <div  {{ block.shopify_attributes }}>
+      {% case block.type %}
+
+      {% when 'Title' %}
+
+      {% include 'title-header-text-section' %}
+
+      {% when 'SubTitle' %}
+
+      {% include 'Title-H2-Text-Section'%}
+
+      {% when 'image' %}
+
+      {% include 'full-image-banner' %}
+
+      {% when 'page-content' %}
+
+      {% include 'page-content' %}
+
+      {% when 'Double' %}
+
+      {% include 'double-images'%}
+
+      {% when 'Book' %}
+
+      {% include 'books'%}
+
+      {% when 'Influencers' %}
+
+      {% include 'influencers'%}
+
+      {% when 'form' %}
+
+      {% include 'form'%}
+
+      {% when 'extra-text' %}
+
+      {% include 'extra-text' %}
+
+      {% endcase %}
+
+
+  </div>
+  {% endfor %}
+</div>
+
+
+{% schema %}
+{
+    "blocks": [
+
+    {
+      "type": "Title",
+      "name": "Title Text Header",
+      "settings": [
+        {
+
+          "id": "title",
+          "type": "text",
+          "label": "Title",
+          "default": "RISE and GRIND"
+
+        },
+        {
+            "type": "color",
+            "id": "headercolor",
+            "label": "Text Color",
+            "default": "#FFF"
+        }
+      ]
+    },
+    {
+      "type": "SubTitle",
+      "name": "Sub Title Text Header",
+      "settings": [
+        {
+
+          "id": "subtitle",
+          "type": "text",
+          "label": "H2 Title",
+          "default": "Pre-order"
+
+        },
+        {
+            "type": "color",
+            "id": "headercolor2",
+            "label": "Text Color",
+            "default": "#FFF"
+        }
+      ]
+    },
+    {
+      "type": "image",
+      "name": "Full-Image",
+      "settings":[
+        {
+
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Link",
+          "info": "Optional"
+        }
+        ]
+      },
+      {
+        "type": "page-content",
+        "name": "Page Options",
+        "settings":[
+          {
+              "type": "color",
+              "id": "textcolor",
+              "label": "Page Text Color",
+              "default": "#FFF"
+          },
+          {
+              "type": "color",
+              "id": "backcolor",
+              "label": "Page Background Color",
+              "default": "#000"
+          },
+          {
+            "type": "textarea",
+            "id": "more-page-text",
+            "label": "More page text",
+            "info": "Optional"
+          }
+
+        ]
+      },
+      {
+        "type": "Double",
+        "name": "Double section",
+        "settings": [
+          {
+            "type":      "radio",
+            "id":        "left",
+            "label":     "Image on the Left or Right",
+            "options": [
+             { "value": "left", "label": "Left" },
+             { "value": "right", "label": "Right" }
+            ],
+            "default":   "left",
+            "info":      "Left Default"
+          },
+          {
+            "type":      "radio",
+            "id":        "video-on",
+            "label":     "Use a Video",
+            "options": [
+             { "value": "on", "label": "On" },
+             { "value": "off", "label": "Off" }
+            ],
+            "default":   "on",
+            "info":      "Video on by Default"
+          },
+          {
+            "type": "text",
+            "id": "vimeo-video-id",
+            "label": "Vimeo Video ID"
+          },
+          {
+            "type": "image_picker",
+            "id": "image2",
+            "label": "Image"
+          },
+          {
+            "type": "image_picker",
+            "id": "image3",
+            "label": "Image if Video not used"
+          }
+        ]
+      },
+      {
+        "type": "Book",
+        "name": "Book",
+        "settings": [
+          {
+            "type": "url",
+            "id": "download_button_link",
+            "label": "Download Button link"
+          }
+
+         ]
+      },
+      {
+        "type": "Influencers",
+        "name": "Vendors Carousel",
+        "settings": [
+
+        {
+          "type": "image_picker",
+          "id": "sliderimage",
+          "label": "Image"
+        },
+        {
+          "type": "url",
+          "id": "slide_link",
+          "label": "Link",
+          "info": "Link"
+        },
+        {
+          "type": "image_picker",
+          "id": "sliderimage2",
+          "label": "Image"
+        },
+        {
+          "type": "url",
+          "id": "slide2_link",
+          "label": "Link",
+          "info": "Link to influencer page"
+        },
+        {
+          "type": "image_picker",
+          "id": "sliderimage3",
+          "label": "Image"
+        },
+        {
+          "type": "url",
+          "id": "slide3_link",
+          "label": "Link",
+          "info": "Link to influencer page"
+        },
+        {
+          "type": "image_picker",
+          "id": "sliderimage4",
+          "label": "Image"
+        },
+        {
+          "type": "url",
+          "id": "slide4_link",
+          "label": "Link",
+          "info": "Link to influencer page"
+        },
+        {
+          "type": "image_picker",
+          "id": "sliderimage5",
+          "label": "Image"
+        },
+        {
+          "type": "url",
+          "id": "slide5_link",
+          "label": "Link",
+          "info": "Link to influencer page"
+        },
+        {
+          "type": "image_picker",
+          "id": "sliderimage6",
+          "label": "Image"
+        },
+        {
+          "type": "url",
+          "id": "slide6_link",
+          "label": "Link",
+          "info": "Link to influencer page"
+        }
+        ,
+        {
+          "type": "image_picker",
+          "id": "sliderimage7",
+          "label": "Image"
+        },
+        {
+          "type": "url",
+          "id": "slide7_link",
+          "label": "Link",
+          "info": "Link to influencer page"
+        }
+        ,
+        {
+          "type": "image_picker",
+          "id": "sliderimage8",
+          "label": "Image"
+        },
+        {
+          "type": "url",
+          "id": "slide8_link",
+          "label": "Link",
+          "info": "Link to influencer page"
+        }
+        ,
+        {
+          "type": "image_picker",
+          "id": "sliderimage9",
+          "label": "Image"
+        },
+        {
+          "type": "url",
+          "id": "slide9_link",
+          "label": "Link",
+          "info": "Link to influencer page"
+        }
+
+        ]
+      },
+      {
+        "type": "video",
+        "name": "Video",
+        "settings": [
+          {
+            "type": "text",
+            "id": "vimeo-video-id",
+            "label": "Vimeo Video ID"
+          }
+        ]
+      },
+      {
+        "type": "form",
+        "name": "Form",
+        "settings": [
+          {
+            "type": "text",
+            "id": "interview_btn_text",
+            "label": "Text for Button"
+          },
+          {
+            "type": "text",
+            "id": "interview_btn_link",
+            "label": "Link for Button"
+          }
+        ]
+      },
+      {
+        "type": "extra-text",
+        "name": "Extra Text",
+        "settings": [
+          {
+            "type": "textarea",
+            "id": "extra_page_text",
+            "label": "Extra Text for Page"
+          }
+        ]
+      }
+  ]
+}
+{% endschema %}

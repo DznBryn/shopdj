@@ -1,0 +1,29 @@
+
+
+
+<style>
+#bookview{ float:right!important;}
+</style>
+
+<script src="//static.leadpages.net/leadboxes/current/embed.js" async defer></script>
+<div class="container-fluid" style="padding-top:20px;">
+  <div class=" page-video-wrapper" >
+
+
+			{% if block.settings.image3 != blank %}
+      <div id="bookview" class="rng-img col-md-6 col-sm-12" style="vertical-align:middle;padding-bottom:15px;"><a href="{{ block.settings.linkage2 }}" class="hidden-xs"><img src="{{ block.settings.image2 | img_url: '800x800'}}"/></a> <a href="{{ block.settings.linkage21 }}" class="hidden-sm hidden-md hidden-lg"><img src="{{ block.settings.image2 | img_url: '800x800'}}"/></a></div>
+      <div class="rng-img col-md-6 col-sm-12"><a href="{{ block.settings.linkage3 }}" data-leadbox-popup="akwaGWhNheWbzu9L6LKcd3" data-leadbox-domain="daymondjohn.lpages.co"><img src="{{ block.settings.image3 | img_url: '800x800'}}"/></a></div>
+
+			{% else %}
+      <div id="bookview" class="rng-img col-xs-4" style="vertical-align:middle;"><a href="{{ block.settings.linkage2 }}"><img src="{{ block.settings.image2 | img_url: '800x800'}}"/></a></div>
+
+      <div class="video-container col-xs-8" id="myvideo">
+			{% include 'video' %}
+      </div>
+
+			{% endif %}
+
+
+
+  </div>
+</div>

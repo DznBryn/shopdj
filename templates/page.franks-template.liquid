@@ -1,0 +1,76 @@
+<<div id="content" class="group landing-{{page.id}} container">
+	<article id="mainContent landingBG" class="floatLeft" style="background-image: url('{{ page.metafields.landingbg }}')">
+		<header id="pageHeader">
+			{% include 'breadcrumbs' %}
+			
+		</header><!-- pageHeader -->
+      	<div class="landing_total">
+          <div class="responsive-embed">
+            {% assign video_embed_code = page.metafields.video_embed_code %}
+            {{ video_embed_code.video_embed_code }}
+          </div>
+          
+          {% assign landing_page_hdr = page.metafields.landing_page_hdr %}
+ 
+			<h1 style="font-size: {{landing_page_hdr.landing_page_hdr}}px">{{ page.title }}</h1>
+            <div class="landing_content">
+              {{page.content}}
+          	</div>
+          
+           {% assign Text_Body_Cpy = page.metafields.Text_Body_Cpy %}
+ 
+			<h1 style="font-size: {{Text_Body_Cpy.Text_Body_Cpy}}px">{{ page.Body }}</h1>
+            <div class="landing_content">
+              {{page.content}}
+          </div>
+          	<div class="landing_btn">
+              <script src="//static.leadpages.net/leadboxes/current/embed.js" async="" defer=""></script>
+              {% assign button_code = page.metafields.button_code %}
+              
+            	{{button_code.button_code}}
+          	</div>
+        </div>
+        <div class="landing_logos">
+          
+          {% assign landing_page_log_1 = page.metafields.landing_page_log_1 %}
+          
+          {% assign landing_page_log_2 = page.metafields.landing_page_log_2 %}
+          
+          {% assign landing_page_log_3 = page.metafields.landing_page_log_3 %}
+          
+          {% assign landing_page_log_4 = page.metafields.landing_page_log_4 %}
+          
+          {% assign landing_page_log_5 = page.metafields.landing_page_log_5 %}
+
+          
+          
+          {% if landing_page_log_1.landing_page_log_1 != null %}
+        	<img src="{{ landing_page_log_1.landing_page_log_1 }}" />
+          {% endif %}
+          
+          {% if landing_page_log_2.landing_page_log_2 != null %}
+          	<img src="{{ landing_page_log_2.landing_page_log_2 }}" />
+          {% endif %}
+          
+          {% if landing_page_log_3.landing_page_log_3 != null %}
+          	<img src="{{ landing_page_log_3.landing_page_log_3 }}" />
+          {% endif %}
+          
+          {% if landing_page_log_4.landing_page_log_4 != null %}
+          	<img src="{{ landing_page_log_4.landing_page_log_4 }}" />
+          {% endif %}
+          
+           {% if landing_page_log_5.landing_page_log_5 != null %}
+            <img src="{{ landing_page_log_5.landing_page_log_5 }}" />
+           {% endif %}
+
+      	</div>
+		<div class="textile">
+    		
+      	<div class="social-footer">
+		
+</div>  
+      </div><!-- textile -->	
+	</article><!-- mainCol -->
+	
+</div><!-- content -->

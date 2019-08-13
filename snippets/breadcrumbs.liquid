@@ -1,0 +1,93 @@
+<nav id="breadcrumbs">
+	<a href="/" class="homepage-link" title="Back to the frontpage">Home</a>
+	{% if template contains "product" %}
+		<span class="separator">&nbsp;/&nbsp;</span>
+   		{% if collection.handle == 'all' %}
+			{{ collection.title | link_to: '/collections/all' }}
+		{% elsif collection.handle %}
+			{% capture url %}/collections/{{ collection.handle }}{% endcapture %}
+			{{ collection.title | link_to: url }}
+		{% elsif collection.all_products_count > 0 and collection.products.first.type == collection.title %}
+			{% capture url %}/collections/{{ collection.handle }}{% endcapture %}
+			{{ collection.title | link_to_type }}                
+		{% elsif collection.all_products_count > 0 and collection.products.first.vendor == collection.title %}
+			{{ collection.title | link_to_vendor }}
+        {% else %}
+            {{ product.type | link_to_type }}
+		{% endif %} 
+	{% endif %}
+	{% if template contains "article" %}
+		<span class="separator">&nbsp;/&nbsp;</span>
+		{{ blog.title | link_to: blog.url }}
+	{% endif %}
+	{% if current_tags %}
+		{% if template contains 'collection' %}
+			<span class="separator">&nbsp;/&nbsp;</span>
+	   		{% if collection.handle == 'all' %}
+				{{ collection.title | link_to: '/collections/all' }}
+			{% elsif collection.handle %}
+				{% capture url %}/collections/{{ collection.handle }}{% endcapture %}
+				{{ collection.title | link_to: url }}
+			{% elsif collection.all_products_count > 0 and collection.products.first.type == collection.title %}
+				{% capture url %}/collections/{{ collection.handle }}{% endcapture %}
+				{{ collection.title | link_to_type }}                
+			{% elsif collection.all_products_count > 0 and collection.products.first.vendor == collection.title %}
+				{{ collection.title | link_to_vendor }}
+			{% endif %}
+		{% endif %}
+		{% if template contains 'blog' %}
+			<span class="separator">&nbsp;/&nbsp;</span>
+			{{ blog.title | link_to: blog.url }}
+		{% endif %}
+	{% endif %}
+    {% if template contains 'customers' %}
+        {% unless template == 'customers/account' %}
+            <span class="separator">&nbsp;/&nbsp;</span>
+		    <a href="/account">Account</a>
+        {% endunless %}    
+	{% endif %}
+    <span class="separator">&nbsp;/&nbsp;</span>
+	<span class="page-title">
+	{% if template contains 'blog' %}
+    	{% unless current_tags %}
+        {{ blog.title }}
+        {% endunless %}
+	{% endif %}
+    {% if template contains 'article' %}
+		{{ article.title }}
+	{% endif %}
+    {% if current_tags %}
+    {% unless collection %}Tagged with {% endunless %}
+    {{ current_tags.first | capitalize }}
+    {% else %}
+	{% if collection %}
+        {{ collection.title }}
+    {% endif %}    
+    {% if page %}
+        {{ page.title }}
+    {% endif %}    
+    {% if product %}
+        {{ product.title  }}
+    {% endif %}
+    {% if template == '404' %}Nothing Found{% endif %}
+    {% endif %}
+    {% if template == 'search' %}
+        Search
+	{% endif %} 
+    {% if template contains 'customer' %}
+        {% if template contains 'order' %}
+            Order {{ order.name }}
+        {% endif %}
+        {% if template contains 'address' %}
+            Manage Addresses
+				{% elsif template contains 'register' %}
+            Create Account
+        {% else %}
+            Account {% if template contains 'login' %}Login {% endif %}
+        {% endif %}
+    {% endif %}
+    {% if template == 'cart' %}
+    Your Shopping Cart
+    {% endif %}
+    </span>
+</nav><!-- breadcrumbs -->

@@ -1,0 +1,27 @@
+<div id="content" class="group">
+    <section id="collectionContent">
+    	<header id="collectionHeader">
+			{% include 'breadcrumbs' %}
+			<h1>{{page_title}}</h1>
+		</header><!-- collectionHeader -->
+		<div id="collectionProducts" class="group">
+            {% for collection in collections %}
+            {% capture collection_title %}{{ collection.title | escape }}{% endcapture %}
+            <article class="collectionProduct">
+				<a href="{{ collection.url }}" title="View {{ collection.title | escape }}">
+					<div class="collectionProductImageWrapper">
+                        {% if collection.image %}
+                            {{ collection.image.src | collection_img_url: 'large' | img_tag: collection_title }}
+                        {% else %}
+                            <img src="{{ collection.products.first.featured_image | product_img_url: 'large' }}" alt="{{ image.alt | escape }}" />
+                        {% endif %}
+                    </div><!-- collectionProductImageWrapper -->
+					<header>
+						<h2>{{collection.title}}</h2>
+					</header>
+				</a>	
+			</article><!-- collectionProduct -->
+			{% endfor %}
+		</div><!-- collectionProducts -->
+	</section><!-- collectionContent -->
+</div><!-- content -->

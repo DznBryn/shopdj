@@ -1,0 +1,107 @@
+<style>
+  #promo-sidebar{
+    background: inherit;
+    width: 100%;
+    padding: 25px 0px 30px;
+    
+  }
+  #promo-sidebar h6{
+    padding: 0px 35px;
+  }
+  .fixed-promo-bar{
+  	position: fixed;
+    top: 0;
+  }
+  .ad-container{
+  	width: 100%;
+  }
+  .ad-container a img{
+  	width: 324px;
+  	max-width: 100%;
+  }
+  
+</style>
+
+
+<div class="sidebar" data-layout="col">
+	<aside id="promo-sidebar" class="promo">
+      <h6>{{ section.settings.ad_title }}</h6>
+      {% for block in section.blocks %}
+        <div class="ad-container">
+          <a href="{{ block.settings.ad_link }}"><img src="{{ block.settings.ad_image | img_url: 'master' }}" ></a>
+
+        </div>
+      {% endfor %}      
+      
+      
+	</aside><!-- /.promo -->
+	{% if blogs.ads.articles.size > 0 %}
+	<aside class="advertisements"> 
+		{% for ad in blogs.ads.articles %}
+		<a href="{{ ad.metafields.advertisement.url }}">
+			<img src="{{ ad.image | img_url: 'grande' }}" />
+		</a>
+		{% endfor %}
+		<script type="text/javascript">
+			window.sharkm0de.methods.ads._select_ad();
+		</script>
+	</aside><!-- /.advertisement -->
+	{% endif %}
+	
+</div><!-- /.sidebar -->
+
+
+{% schema %}
+  {
+    "name": "Advertisement Banners",
+    "settings": [
+		{
+			"type": "text",
+			"id" : "ad_title",
+			"label" : "Sidebar AD Header"
+		}
+	],
+	"max_blocks": 4,
+	"blocks": [
+	{
+		"type": "text",
+		"name" : "Ad Banner",
+		"settings" : [
+			{
+				"type":"image_picker",
+				"id" : "ad_image",
+				"label": "Banner"
+			},
+			{
+				"type" : "text",
+				"id" : "ad_link",
+				"label" : "Advertisement URL"
+			}
+		]
+	}
+	]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+<script>
+  
+  (function(){
+    const sidebar = $('#promo-sidebar');
+    const sidebarTop = sidebar.offset();
+
+    function handleScroll(){
+      if(window.scrollY > sidebarTop.top ){
+        sidebar.addClass('fixed-promo-bar')     
+      }else{
+        sidebar.removeClass('fixed-promo-bar')
+      }
+    }
+
+
+    window.addEventListener('scroll', handleScroll);
+  })(jQuery);
+  
+</script>

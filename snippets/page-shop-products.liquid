@@ -1,0 +1,72 @@
+
+<div class="tabs contain mobile">
+	
+	<div class="tabs-contain">
+	{% for collection in collections %}
+    {% if collection.title != 'All' %}
+    {% if collection.title != 'Digital Tracks' %}
+    {% if collection.title != 'Shark Bites' %}
+      <h2>{{collection.title}}</h2>
+      	<div class="tabB {% if forloop.index0 == 1 %}active{% elsif forloop.index0 < 1%}slide-left{% elsif forloop.index0 > 1 %}slide-right{% endif %} ">
+			<div class="collection">
+				<div class="row">
+					{% for product in collection.products %}
+					<div class="col-xs-6">
+						<div class="product">
+					   {% if product.handle contains 'the-power-of-broke'%}
+							<a href="{{shop.url}}/powerofbroke">
+								{% for image in product.images %}
+									<img src="{{ image | img_url: 'grande' }}" />
+									{% break %}
+								{% endfor %}
+								<span class="product-meta">
+									
+									<em>
+										{% for tag in product.tags %}
+										{% assign check = tag | slice: 0, 2 %}
+											{% if check == '__' %}
+												{{ tag | remove: '__' }}
+												{% break %}
+											{% endif %}
+										{% endfor %}
+									</em>
+									<strong>{{ product.title }}</strong>
+									<span>BUY TODAY</span>
+								</span><!-- /.product-meta -->
+							</a>
+							{%else%}
+							<a href="{{ product.url }}">
+								{% for image in product.images %}
+									<img src="{{ image | img_url: 'grande' }}" />
+									{% break %}
+								{% endfor %}
+								<span class="product-meta">
+									
+									<em>
+										{% for tag in product.tags %}
+										{% assign check = tag | slice: 0, 2 %}
+											{% if check == '__' %}
+												{{ tag | remove: '__' }}
+												{% break %}
+											{% endif %}
+										{% endfor %}
+									</em>
+									<strong>{{ product.title }}</strong>
+									<span>{{ product.price | money }}</span>
+								</span><!-- /.product-meta -->
+							</a>
+							{%endif%}
+						</div><!-- /.product -->
+					</div><!-- /.col -->
+					{% endfor %}
+				</div><!-- /.row -->
+			</div><!-- /.collection -->
+		</div><!-- /.tab -->
+      		{% endif %}
+			{% endif %}
+            {% endif %}
+		{% endfor %}
+	</div><!-- /.tab-content -->
+</div><!-- /.tabs -->
+
+{% include 'social-footer' %}

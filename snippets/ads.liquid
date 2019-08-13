@@ -1,0 +1,32 @@
+<div id="spotlightsWrapper" class="group">
+    <figure id="largeSpotlight" class="floatLeft">
+		<a href="{{ settings.largeAdLinkURL }}" title="{{ settings.largeAdHeading }}">
+			<img src="{{ 'largeSpotlight.jpg' | asset_url }}" alt="{{ settings.largeAdHeading }}">
+			{% if settings.largeAdTextStatus == '1' %}
+			<figcaption id="largeSpotlightText">
+                <h2>{{ settings.largeAdHeading }}</h2>
+			</figcaption>
+            {% endif %}
+		</a>	
+	</figure><!-- largeSpotlight -->
+	<figure id="middleSpotlight" class="floatLeft">
+		<a href="{{ settings.middleAdLinkURL }}" title="{{ settings.middleAdHeading }}">
+			<img src="{{ 'middleSpotlight.jpg' | asset_url }}" alt="{{ settings.middleAdHeading }}">
+			{% if settings.middleAdTextStatus == '1' %}
+            <figcaption id="middleSpotlightText">
+				<h2>{{ settings.middleAdHeading }}</h2>
+			</figcaption>
+            {% endif %}
+		</a>	
+	</figure><!-- middleSpotlight -->
+    <figure id="rightSpotlight" class="floatLeft">
+		<a href="{{ settings.rightAdLinkURL }}" title="{{ settings.rightAdHeading }}">
+			<img src="{{ 'rightSpotlight.jpg' | asset_url }}" alt="{{ settings.rightAdHeading }}">
+			{% if settings.rightAdTextStatus == '1' %}
+            <figcaption id="rightSpotlightText">
+				<h2>{{ settings.rightAdHeading }}</h2>
+			</figcaption>
+            {% endif %}
+		</a>	
+	</figure><!-- rightSpotlight -->
+</div><!-- spotlightsWrapper -->

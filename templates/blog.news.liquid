@@ -1,0 +1,53 @@
+{% paginate blog.articles by 8 %}
+<div class="content-columns dark">
+	<div class="contain wide no-mobile-adjust" data-layout="balance">
+		<div class="content" data-layout="col">
+			<ul class="post-list">
+				{% for article in blog.articles %}
+				<li data-layout="balance">
+	{% if article.image %}
+
+
+	<div class="image-header" data-layout="col" style="background-image: url({{ article.image | img_url: 'grande' }});">
+{%elsif article.content contains "<img" %}
+{% assign src = article.content | split: 'src="' %}
+{% assign src = src[1] | split: '"' | first | replace: '//cdn', 'http://cdn';; | replace: 'http:http://';;, 'http://';; | remove: 'https:' %}
+<div class="image-header" data-layout="col" style="background-image: url({{ src }});">
+{%else%}
+<div class="image-header" data-layout="col" style="background-image: url({{ 'blog-imagenotfound.jpg'  | asset_url }});">
+{% endif %}
+					<a href="{{ article.url }}"><span>Read More</span></a></div><!-- /.image-header -->
+					<div class="post-data" data-layout="col">
+						<h2><a href="{{ article.url }}">{{ article.title }}</a></h2>
+						<p>{{ article.excerpt }}</p>
+						<div class="user-actions">
+							{% include 'social-share-blank' %}
+						</div><!-- /.user-actions -->
+					</div><!-- /.post-data -->
+				</li>
+				{% endfor %}
+			</ul><!-- /.post-list -->
+		</div><!-- /.content -->
+		{% section 'sidebar' %}
+	</div><!-- /.contain -->
+</div><!-- /.content-columns -->
+
+<div class="pagination dark">
+	<div class="contain narrow">
+		{% if paginate.previous.is_link %}
+			<span class="prev-link left"><a href="{{ paginate.previous.url }}">Previous</a></span>
+		{% endif %}
+		{% if paginate.next.is_link %}
+			<span class="next-link right"><a href="{{ paginate.next.url }}">Next</a></span>
+		{% endif %}
+		<ul class="page-links">
+		{% for part in paginate.parts %}
+		    {% if part.is_link %}
+	        <li>{{ part.title | link_to: part.url}}</li>
+		    {% endif %}
+		{% endfor %}
+		</ul><!-- ./page-links -->
+	</div><!-- /.contain -->
+</div><!-- /.pagination -->
+
+{% endpaginate %}

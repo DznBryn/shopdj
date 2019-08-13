@@ -1,0 +1,414 @@
+<div class="modals">
+	<div class="overlay close-modal"></div>
+	<div class="modal" id="download">
+		<div class="modal-inner">
+			<span class="close-modal modal-close"></span>
+			<h3>{{settings.bookPopupTitle}}</h3>
+			<h2>{{settings.bookPopupOffer}}</h2>
+			<p>{{settings.bookPopupSubOffer}}</p>
+			<form name="form2" class="wufoo topLabel page" accept-charset="UTF-8" autocomplete="off" enctype="multipart/form-data" method="post" novalidate action="https://daymondjohn.wufoo.com/forms/m8kbyz41ocp59v/#public">
+				<ul>
+					<li class="notranslate">
+						<label class="desc" for="email_download"> Email Address <span class="req">*</span>
+						</label>
+						<div>
+							<input id="email_download" name="Field1" type="email" spellcheck="false" class="field text medium" value="" maxlength="255" tabindex="1" required />
+						</div>
+					</li>
+					<li class="buttons">
+						<div>
+							<input name="saveForm" class="button" type="submit" value="{{settings.bookPopupButton}}" />
+						</div>
+					</li>
+				</ul>
+				<input type="hidden" name="idstamp" value="cQEO8u7AS7GpzMtBpCOdsM6T6cp9l8JhusT9zlD0vkc=" />
+			</form>
+		</div><!-- /.modal-inner -->
+	</div><!-- /.modal -->
+
+	<!-- <div class="modal open" id="contact">
+		<div class="modal-inner">
+			<span class="close-modal modal-close"></span>
+			<h2>Get in contact</h2>
+			<h3 style="padding-top:20px;font-size: .9em;opacity: .5;">or call 1-888-806-6302</h3>
+          	{% include 'contact-us-form' %}
+    </div> 
+  </div> -->
+	
+	
+  <!--===============
+  Book Daymond Modal
+  ================-->
+  <div class="modal" id="book">
+    <div class="modal-inner">
+      <span class="close-modal modal-close"></span>
+      <h2>Speaking Request</h2>
+      {% include 'speaking-form' %}
+    </div><!-- /.modal-inner -->
+  </div><!-- #book.modal -->
+
+  <!--=========
+  Thanks Modal
+  ==========-->
+  <div class="modal" id="thank-you">
+    <div class="modal-inner">
+      <span class="close-modal modal-close"></span>
+      <h3></h3> 
+      <h2>Thank you</h2>
+      <p>You'll hear from us soon.</p>
+    </div><!-- /.modal-inner --> 
+  </div>
+
+  <!--=========
+  Thanks Modal Download Chapter + Guide
+  ==========-->
+  <div class="modal" id="thank-you-download-pob">
+    <div class="modal-inner">
+      <span class="close-modal modal-close"></span>
+      <h3></h3>
+      <h2>Thank you</h2>
+      <p>Download Sharkpoint Guide:</p>
+      <a href="https://cdn.shopify.com/s/files/1/0274/9575/files/SharkpointGuide.pdf?9212383959923204217" target="_blank" class="button" download>Download</a>
+      <br/>
+      <p>Download Power of Broke Sample Chapter:</p>
+      <a href="https://cdn.shopify.com/s/files/1/0274/9575/files/ThePowerofBroke_SampleChapter.pdf?9212383959923204217" target="_blank" class="button" download>Download</a>
+    </div><!-- /.modal-inner -->
+  </div>
+
+  <!--====================
+  Default Redemption Form
+  =====================-->
+  <div class="modal" id="redemption">
+    <div class="modal-inner">
+      <span class="close-modal modal-close"></span>
+      <h3>Redeem</h3>
+      <h2>Your Exclusives</h2>
+      <p>for Daymond's book, "The Power of Broke"</p>
+      <form name="form3" class="wufoo topLabel page" accept-charset="UTF-8" autocomplete="off" enctype="multipart/form-data" method="post" novalidate="" action="https://daymondjohn.wufoo.com/forms/w13gdviw1lvnvxo/#public">
+        <ul>
+          <li class="notranslate">
+            <label class="desc" for="redeem1_first_name">First Name<span class="req">*</span></label>
+            <div>
+              <input id="redeem1_first_name" name="Field1" type="text" class="field text medium" value="" maxlength="255" tabindex="1" onkeyup="" required="">
+            </div>
+          </li>
+          <li class="notranslate">
+            <label class="desc" for="redeem1_last_name">Last Name<span class="req">*</span></label>
+            <div>
+              <input id="redeem1_last_name" name="Field2" type="text" class="field text medium" value="" maxlength="255" tabindex="2" onkeyup="" required="">
+            </div>
+          </li>
+          <li class="notranslate">
+            <label class="desc" for="redeem1_email_address">Email Address <span class="req">*</span></label>
+            <div>
+              <input id="redeem1_email_address" name="Field4" type="email" spellcheck="false" class="field text medium" value="" maxlength="255" tabindex="6" required="">
+            </div>
+          </li>
+          <li class="notranslate">
+            <label class="desc" for="redeem1_date">Today's Date <span class="req">*</span></label>
+            <div>
+              <input id="redeem1_date" name="Field13" type="text" spellcheck="false" class="field text medium" value="" placeholder="DD/MM/YY" maxlength="255" tabindex="6" required="">
+            </div>
+          </li>
+          <li class="notranslate">
+            <label class="desc" for="redeem1_number_books">Number of Books Purchased <span class="req">*</span></label>
+            <div>
+              <input id="redeem1_number_books" name="Field21" type="text" spellcheck="false" class="field text medium" value="" maxlength="255" tabindex="6" required="">
+            </div>
+          </li>
+
+
+
+          <li class="notranslate no-border checkboxes">
+            <h4 class="label">Choose Retailer</h4>
+            <div>
+
+              <span>
+                <input type="checkbox" id="redeem1_retailer_amazon" name="Field15" value="Amazon">
+                <label for="redeem1_retailer_amazon"><img src="//cdn.shopify.com/s/files/1/0274/9575/t/7/assets/retailer-icon-amazon.png?10441978674922734624"></label>
+              </span>
+              <span>
+                <input type="checkbox" id="redeem1_retailer_bam" name="Field15" value="Books A Million">
+                <label for="redeem1_retailer_bam"><img src="//cdn.shopify.com/s/files/1/0274/9575/t/7/assets/retailer-icon-bam.png?10441978674922734624"></label>
+              </span>
+              <span>
+                <input type="checkbox" id="redeem1_retailer_barnes_noble" name="Field15" value="Barnes &amp; Noble">
+                <label for="redeem1_retailer_barnes_noble"><img src="//cdn.shopify.com/s/files/1/0274/9575/t/7/assets/retailer-icon-barnes-noble.png?10441978674922734624"></label>
+              </span>
+              <span>
+                <input type="checkbox" id="redeem1_retailer_indie_bound" name="Field15" value="Indie Bound">
+                <label for="redeem1_retailer_indie_bound"><img src="//cdn.shopify.com/s/files/1/0274/9575/t/7/assets/retailer-icon-indie-bound.png?10441978674922734624"></label>
+              </span>
+              <span>
+                <input type="checkbox" id="redeem1_retailer_powells" name="Field15" value="Powell's">
+                <label for="redeem1_retailer_powells"><img src="//cdn.shopify.com/s/files/1/0274/9575/t/7/assets/retailer-icon-powells.png?10441978674922734624"></label>
+              </span>
+              <span>
+                <input type="checkbox" id="redeem1_retailer_ibooks" name="Field15" value="iBooks">
+                <label for="redeem1_retailer_ibooks"><img src="//cdn.shopify.com/s/files/1/0274/9575/t/7/assets/retailer-icon-ibooks.png?10441978674922734624"></label>
+              </span>
+              <span>
+                <input type="checkbox" id="redeem1_retailer_google_play" name="Field15" value="Google Play">
+                <label for="redeem1_retailer_google_play"><img src="//cdn.shopify.com/s/files/1/0274/9575/t/7/assets/retailer-icon-google-play.png?10441978674922734624"></label>
+              </span>
+              <span>
+                <input type="checkbox" id="redeem1_retailer_800_ceo" name="Field15" value="800 CEO">
+                <label for="redeem1_retailer_800_ceo"><img src="//cdn.shopify.com/s/files/1/0274/9575/t/7/assets/retailer-icon-800-ceo.png?10441978674922734624"></label>
+              </span>
+              <span>
+                <input type="checkbox" id="redeem1_retailer_bookpal" name="Field15" value="bookpal">
+                <label for="redeem1_retailer_bookpal"><img src="//cdn.shopify.com/s/files/1/0274/9575/t/7/assets/retailer-icon-book-pal.png?10441978674922734624"></label>
+              </span>
+
+            </div>
+          </li>
+
+
+
+          <li class="notranslate">
+            <label class="desc" for="redeem1_other_retailer">Other Retailer</label>
+            <div>
+              <input id="redeem1_other_retailer" name="Field17" type="text" class="field text medium" value="" maxlength="255" tabindex="33" onkeyup="">
+            </div>
+          </li>
+          <li class="notranslate">
+            <label class="desc" for="redeem1_receipt">Pre-Order Receipt or Pre-Order Confirmation Number</label>
+            <div>
+              <input id="redeem1_receipt" name="Field19" type="text" class="field text medium" value="" maxlength="255" tabindex="33" onkeyup="">
+            </div>
+          </li>
+          <li class="buttons ">
+            <div>
+              <input id="saveForm" name="saveForm" class="button" type="submit" value="Redeem">
+            </div>
+          </li>
+          </ul>
+          <div>
+            <a class="contact" href="mailto:POB@Daymondjohn.com">For Questions Please Email POB@Daymondjohn.com</a>
+          </div>
+          <div style="display:none;">
+            <input type="hidden" name="currentPage" id="currentPage" value="zVdQkoYfXNLcUrRWdQjmS77wuBe5CX1ebWnPOTpFRkLbBY=">
+            <input type="hidden" id="idstamp" name="idstamp" value="2sxTraLD0yVavPpOVzRZZ4d0kgI/p75+GQ2rCSxxWVw=">
+          </div>
+        </form>
+    </div><!-- /.modal-inner -->
+  </div><!-- /.modal -->
+
+  <!--===============
+  Bulk Purchase Form
+  ================-->
+  <div class="modal" id="bulk-purchase">
+    <div class="modal-inner">
+      <span class="close-modal modal-close"></span>
+      <h3>Bulk Order</h3>
+      <h2>The Power of Broke</h2>
+      <!-- <p>for Daymond's book, "The Power of Broke"</p> -->
+
+      <form id="form7" name="form7" class="wufoo topLabel page1" accept-charset="UTF-8" autocomplete="off" enctype="multipart/form-data" method="post" novalidate="" action="https://daymondjohn.wufoo.com/forms/pn61ck10je0rwl/">
+        <ul>
+          <li id="fo7li1" class="notranslate">
+            <label class="desc" id="title1" for="Field1">
+              First Name
+              <span id="req_1" class="req">*</span>
+            </label>
+            <div>
+              <input id="Field1" name="Field1" type="text" class="field text medium" value="" maxlength="255" tabindex="1" onkeyup="handleInput(this); " onchange="handleInput(this);" required="">
+            </div>
+          </li>
+          <li id="fo7li2" class="notranslate      ">
+            <label class="desc" id="title2" for="Field2">
+              Last Name
+              <span id="req_2" class="req">*</span>
+            </label>
+            <div>
+              <input id="Field2" name="Field2" type="text" class="field text medium" value="" maxlength="255" tabindex="2" onkeyup="handleInput(this); " onchange="handleInput(this);" required="">
+            </div>
+          </li>
+          <li id="fo7li4" class="notranslate      ">
+            <label class="desc" id="title4" for="Field4">
+              Email Address
+              <span id="req_4" class="req">*</span>
+            </label>
+            <div>
+              <input id="Field4" name="Field4" type="email" spellcheck="false" class="field text medium" value="" maxlength="255" tabindex="3" onkeyup="handleInput(this);" onchange="handleInput(this);" required="">
+            </div>
+          </li>
+          <li id="fo7li25" class="notranslate       focused">
+            <label class="desc" id="title25" for="Field25">
+              Company
+            </label>
+            <div>
+              <input id="Field25" name="Field25" type="text" class="field text medium" value="" maxlength="255" tabindex="4" onkeyup="handleInput(this); " onchange="handleInput(this);">
+            </div>
+          </li>
+          <li id="fo7li27" class="notranslate focused no-border radios">
+            <label for="booking_company_type_self">Number of Books to Purchase</label>
+
+            <div>
+              <input id="radioDefault_27" name="Field27" type="hidden" value="">
+              <span>
+                <input id="Field27_0" name="Field27" type="radio" class="field radio" value="500" tabindex="5" onchange="handleInput(this);" onmouseup="handleInput(this);" checked="checked">
+                <label class="choice" for="Field27_0">
+                  <span class="choice__text">500</span>
+                  <span class="choice__qty">
+                  </span>
+                </label>
+              </span>
+              <span>
+                <input id="Field27_1" name="Field27" type="radio" class="field radio" value="1000" tabindex="6" onchange="handleInput(this);" onmouseup="handleInput(this);">
+                <label class="choice" for="Field27_1">
+                  <span class="choice__text">1000</span>
+                  <span class="choice__qty">
+                  </span>
+                </label>
+              </span>
+              <span>
+                <input id="Field27_2" name="Field27" type="radio" class="field radio" value="4000" tabindex="7" onchange="handleInput(this);" onmouseup="handleInput(this);">
+                <label class="choice" for="Field27_2">
+                  <span class="choice__text">4000</span>
+                  <span class="choice__qty">
+                  </span>
+                </label>
+              </span>
+            </div>
+          </li>
+          <li class="buttons ">
+            <div>
+              <input type="hidden" name="currentPage" id="currentPage" value="zVdQkoYfXNLcUrRWdQjmS77wuBe5CX1ebWnPOTpFRkLbBY=">
+              <input id="saveForm" name="saveForm" class="btTxt submit button" type="submit" value="Submit" onmousedown="doSubmitEvents();">
+            </div>
+          </li>
+        </ul>
+        <div style="display:none;">
+          <input type="hidden" id="idstamp" name="idstamp" value="gLKyrcl3tpWNNRRBIqSYNxIotQ4KJguKF85NNAC+MPg=">
+        </div>
+      </form>
+    </div><!-- .modal-inner -->
+  </div><!-- .modal#bulk-purchase -->
+	
+  <!--===============
+  POB Chapter + Guide Download
+  ================-->
+<div class="modal" id="pob-chapter-download">
+        <div class="modal-inner">
+            <span class="close-modal modal-close"></span>
+            <h3>Download</h3>
+            <h2>Shark Point Guide</h2>
+            <p>Sharpen Your Shark Points</p>
+ <form accept-charset="UTF-8" action="https://daymondjohn.wufoo.com/forms/k1v1u3xd0r32u20/#public" autocomplete="off" class="wufoo topLabel page" enctype="multipart/form-data" id="form9"
+    method="post" name="form9" novalidate="">
+        <ul>
+            <li class="notranslate" id="foli1">
+                <label class="desc" for="Field1" id="title1">First Name<span class="req" id="req_1">*</span></label>
+                <div>
+                    <input class="field text medium" id="Field1" maxlength=
+                    "255" name="Field1" onkeyup="" required="" tabindex="1"
+                    type="text" value="">
+                </div>
+            </li>
+            <li class="notranslate" id="foli2">
+                <label class="desc" for="Field2" id="title2">Last Name
+                <span class="req" id="req_2">*</span></label>
+                <div>
+                    <input class="field text medium" id="Field2" maxlength=
+                    "255" name="Field2" onkeyup="" required="" tabindex="2"
+                    type="text" value="">
+                </div>
+            </li>
+            <li class="notranslate" id="foli4">
+                <label class="desc" for="Field4" id="title4">Email Address
+                <span class="req" id="req_4">*</span></label>
+                <div>
+                    <input class="field text medium" id="Field4" maxlength=
+                    "255" name="Field4" required="" spellcheck="false"
+                    tabindex="3" type="email" value="">
+                </div>
+            </li>
+            <li class="notranslate" id="foli15">
+                <fieldset>
+                  <h4>How did you hear about the Power of Broke?</h4>
+                    <div>
+                        <input id="radioDefault_15" name="Field15" type=
+                        "hidden" value=""> <span><input checked="checked"
+                        class="field radio" id="Field15_0" name="Field15"
+                        required="" tabindex="4" type="radio" value=
+                        "Search Engine"> <label class="choice" for=
+                        "Field15_0"><span class="choice__text">Search
+                        Engine</span> <span class=
+                        "choice__qty"></span></label></span>
+                        <span><input class="field radio" id="Field15_1" name=
+                        "Field15" required="" tabindex="5" type="radio" value=
+                        "Social Media"> <label class="choice" for=
+                        "Field15_1"><span class="choice__text">Social
+                        Media</span> <span class=
+                        "choice__qty"></span></label></span>
+                        <span><input class="field radio" id="Field15_2" name=
+                        "Field15" required="" tabindex="6" type="radio" value=
+                        "Friend"> <label class="choice" for=
+                        "Field15_2"><span class="choice__text">Friend</span>
+                        <span class="choice__qty"></span></label></span>
+                        <span><input class="field radio" id="Field15_3" name=
+                        "Field15" required="" tabindex="7" type="radio" value=
+                        "Advertisement"> <label class="choice" for=
+                        "Field15_3"><span class=
+                        "choice__text">Advertisement</span> <span class=
+                        "choice__qty"></span></label></span>
+                        <span><input class="field radio" id="Field15_4" name=
+                        "Field15" required="" tabindex="8" type="radio" value=
+                        "Bookstore"> <label class="choice" for=
+                        "Field15_4"><span class="choice__text">Bookstore</span>
+                        <span class="choice__qty"></span></label></span>
+                        <span><input class="field radio" id="Field15_5" name=
+                        "Field15" required="" tabindex="9" type="radio" value=
+                        "Event"> <label class="choice" for=
+                        "Field15_5"><span class="choice__text">Event</span>
+                        <span class="choice__qty"></span></label></span>
+                        <span><input class="field radio" id="Field15_6" name=
+                        "Field15" required="" tabindex="10" type="radio" value=
+                        "Forum or Blog"> <label class="choice" for=
+                        "Field15_6"><span class="choice__text">Forum or
+                        Blog</span> <span class=
+                        "choice__qty"></span></label></span>
+                        <span><input class="field radio" id="Field15_7" name=
+                        "Field15" required="" tabindex="11" type="radio" value=
+                        "Other"> <label class="choice" for=
+                        "Field15_7"><span class="choice__text">Other</span>
+                        <span class="choice__qty"></span></label></span>
+                    </div>
+                </fieldset>
+            </li>
+            <li class="notranslate" id="foli23">
+                <fieldset>
+                 <h4>Do you own a copy of the book?</h4>
+                    <div>
+                        <input id="radioDefault_23" name="Field23" type=
+                        "hidden" value=""> <span><input checked="checked"
+                        class="field radio" id="Field23_0" name="Field23"
+                        required="" tabindex="12" type="radio" value="Yes">
+                        <label class="choice" for="Field23_0"><span class=
+                        "choice__text">Yes</span> <span class=
+                        "choice__qty"></span></label></span>
+                        <span><input class="field radio" id="Field23_1" name=
+                        "Field23" required="" tabindex="13" type="radio" value=
+                        "No"> <label class="choice" for=
+                        "Field23_1"><span class="choice__text">No</span>
+                        <span class="choice__qty"></span></label></span>
+                    </div>
+                </fieldset>
+            </li>
+            <li class="buttons">
+                <div>
+                    <input class="btTxt submit button" id="saveForm" name="saveForm"
+                    type="submit" value="Submit">
+                </div>
+            </li>
+<input id="idstamp" name="idstamp" type="hidden" value="8g388sXXFev6C+wOO26EmKqGxdoy4z7ryqWexpKl7Ik=">
+        </ul>
+    </form>
+        </div><!-- /.modal-inner -->
+    </div><!-- /.modal -->
+
+
+</div><!-- /.modals -->
+
+<a id="thanks-trigger" href="#thanks" class="button open-modal" data-modal="thanks" style="display:none;">thanks</a>

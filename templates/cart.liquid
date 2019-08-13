@@ -1,0 +1,128 @@
+<div id="content" class="group">
+    <section id="collectionContent">
+		<header id="collectionHeader">
+			{% include 'breadcrumbs' %}
+			<h1>{{page_title}}</h1>
+		</header><!-- collectionHeader -->
+        <div id="cartContent">
+        	{% if cart.item_count == 0 %}
+    			<h3 id="cartEmpty">Your shopping cart is empty. Here's a few of our featured products:</h3>				
+				<div id="collectionProducts" class="group">
+				{% for product in collections[settings.featuredCollection].products limit:12 %}
+                <article class="collectionProduct{% if settings.collectionLayout == 'Large' %}Large{% endif %}" itemscope itemtype="http://schema.org/Product">
+        			<a href="{{ product.url }}" title="View {{ product.title | escape }}">
+    					<div class="collectionProductImageWrapper">
+                            <img itemprop="image" src="{{ product.featured_image | product_img_url: 'large' }}" alt="{{ image.alt | escape }}" />
+                        </div><!-- collectionProductImageWrapper -->
+    					<header>
+    						<h2 itemprop="name">{{product.title}}</h2>
+    						<div class="group">
+    							<span class="productVendor floatLeft" itemprop="manufacturer">by {{ product.vendor }}</span><span class="collectionProductPrice floatRight" itemprop="offers" itemscope itemtype="http://schema.org/Offer"><span itemprop="price">{{ product.price | money }}{% if product.compare_at_price_max > product.price %}<span class="oldPriceCollection"> {{ product.compare_at_price_max | money }}</span>{% endif %}</span></span>
+    						</div><!-- group -->	
+    					</header>
+    				</a>	
+    			</article><!-- collectionProductFeatured -->
+    			{% endfor %} 
+    			</div>        
+    		{% else %}    
+    		<div id="cartStuff">
+    			<script type="text/javascript">
+    			  function remove_item(id) {
+    			      document.getElementById('updates_'+id).value = 0;
+    			      document.getElementById('cartform').submit();
+    			  }
+    			</script>
+    			<form action="/cart" method="post" id="cartform">
+    				<ul id="basket">
+    					<li id="basketHeader" class="group">
+    						<div id="itemsHeader">Items</div>
+    						<div id="priceHeader">Price</div>
+    						<div id="qtyHeader">Qty</div>
+    						<div id="totalHeader">Total</div>
+    						<div id="deleteHeader">Delete</div>
+    					</li><!-- headerRow -->
+                        {% for item in cart.items %}
+    					<li class="basket{% cycle 'Odd', 'Even' %} group">
+    						<div class="basketColumn titleCol">
+    							<div class="basketImages">
+									{% assign option_index = 0 %}
+									{% assign image_index = 0 %}
+									{% assign found_image = false %}
+                                    
+									{% capture option_to_match %}
+									{{ settings_variantImageLinking }}
+									{% endcapture %}
+									
+									{% for option in item.product.options %}
+									{% assign downcased_option = option | downcase %}
+									{% if downcased_option == option_to_match %}
+									{% assign option_index = forloop.index0 %}
+									{% endif %}
+									{% endfor %}
+									{% for image in item.product.images %}
+									{% unless found_image %}
+									{% if image.alt == item.variant.options[option_index] %}
+									{% assign image_index = forloop.index0 %}
+									{% assign found_image = true %}
+									{% endif %}
+									{% endunless %}
+									{% endfor %}
+									<img src="{{ item.product.images[image_index].src | product_img_url: 'thumb' }}" alt="{{ item.title | escape }}" />
+    							</div>
+    							<div class="basketDesc">
+    								<h6><a href="{{ item.product.url }}">{{ item.title }}</a></h6>
+                          
+ {% comment %}                                 
+  {% if item.product.handle == "autographed-books-bundle" %}                    
+                                  <div class="autographs">
+ {% for i in (1..item.quantity) %}
+  <p>  
+    {% capture attribute %}autograph-{{ item.title | handle }}-{{ i }}{% endcapture %}
+    <label for="{{ attribute }}">Personalized message for item {{ i }}:</label><br />
+    <input id="{{ attribute }}" type="text" name="attributes[{{ attribute }}]" value="{{ cart.attributes[attribute] }}" />
+  </p>
+  {% endfor %}            
+                                </div>
+                                  {% endif %}{% endcomment %}
+                                  
+                                  
+    							</div>
+    						</div>
+    						<div class="basketColumn priceCol">{{ item.price | money }}</div>
+    						<div class="basketColumn quantityCol"><input type="number" style="text-align:center !important" size="4" name="updates[{{item.variant.id}}]" id="updates_{{ item.variant.id }}" value="{{ item.quantity }}" onfocus="this.select();"/></div>
+    						<div class="basketColumn linePriceCol">{{ item.line_price | money }}</div>
+    						<div class="basketColumn deleteCol"><a href="#" class="remove fader" onclick="remove_item({{ item.variant.id }}); return false;">{% if settings.mainTheme == 'omni' %}<img src="{{ 'removeOmni.png' | asset_url }}"/>{% else %}<img src="{{ 'remove.gif' | asset_url }}"/>{% endif %}</a></div>
+    					</li>
+                        {% endfor %}
+    				</ul><!-- basket -->
+              {% if settings.shipping_calculator == '1' %}
+              {% include 'shipping-calculator' %}
+              {% endif %}
+              <div id="basketRight" class="textile floatRight">
+                
+                  {% if settings.specialInstructionsNote == '1' %}
+                  <div id="specialInstructions" class="textile">
+                      <p>
+                          <label for="notes">{{ settings.specialInstructionsNoteHeading }}</label><br>
+                          <textarea id="notes" name="note" rows="4" cols="60">{{ cart.note }}</textarea>
+                      </p>
+                  </div><!-- specialInstructions -->
+    					{% endif %}
+              <h3 id="subTotal">Subtotal - <span>{{ cart.total_price | money }}</span></h3><!-- subTotal -->
+    					<input type="submit" id="checkout" class="addToCart pieMe floatRight" name="checkout" value="Checkout" />
+    					<input type="submit" id="updateCart"  class="btnStyle pieMe floatRight" name="update" value="Update" />
+    					<div class="clearFix"></div>
+    					{% if additional_checkout_buttons %}
+    				    	<div class="additional-checkout-buttons">
+    					      <p>- or -</p>
+    					      {{ content_for_additional_checkout_buttons }}
+    					    </div>  
+    				    {% endif %}   
+    				</div><!-- basketRight -->
+    				<div class="clearFix"></div>
+    			</form>
+    		</div><!-- cartStuff -->
+    		{% endif %}
+    	</div><!-- cartContent -->
+    </section>    
+</div><!-- content -->

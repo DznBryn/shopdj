@@ -1,0 +1,69 @@
+<style>
+  .main-links{
+  	overflow: visible !important;
+    z-index: 1;
+  }
+  
+  .sub-main-links{
+  	position: absolute !important;
+    top: 80px;
+    float: left;
+    width: fit-content;
+    margin-left: -2em !important;
+    padding: 0px 2em !important;
+    overflow: visible !important;
+    background-color: #3a3a3a;
+    display:none;
+  }
+  
+  .show{
+  	display: block !important ;
+  }
+
+
+</style>
+
+
+<ul class="main-links">
+  {% for link in linklists.main-menu.links %}
+  <li {% if link.links != blank %} class="{{ link.title }}" {% endif %}>
+    <a href="{{ link.url }}" {% if link.active%}class="active"{%endif%}>{{ link.title }}</a>
+    {% if link.links != blank %}
+      <ul class="sub-main-links">
+        {% for child_link in link.links %}
+        <li><a href="{{ child_link.url }}" {% if child_link.active%}class="active"{%endif%}>{{ child_link.title }}</a></li>
+        {% endfor %}
+      </ul>
+    {% endif %}
+  </li>
+  {% endfor %}
+  {%comment%}
+  <li><a href="{{ shop.url }}" {% if template == 'index' %}class="active"{% endif %}>Home</a></li>
+  <li><a href="{{ pages.shop.url }}" {% if template == 'page.shop' or template == 'product' %}class="active"{% endif %}>Shop</a></li>
+  <li><a href="{{ blogs.blog.url }}" {% if template == 'blog' or template == 'article' %}class="active"{% endif %}>Blog</a></li>
+  <li><a href="{{ blogs.news.url }}" {% if template == 'blog.news' or template == 'article.news' %}class="active"{% endif %}>News</a></li>
+  <li><a href="{{ pages.speaking.url }}" {% if template == 'page.speaking' %}class="active"{% endif %}>Speaking</a></li>
+  <li><a href="{{ pages.consulting.url }}" {% if template == 'page.consulting' %}class="active"{% endif %}>Consulting</a></li>
+  <li><a href="{{ shop.url }}/#bio">Bio</a></li>
+  <li><a href="{{ pages.power-of-broke.url }}" {% if template == 'page.power-of-broke' %}class="active"{% endif %}>Power of Broke</a></li>
+  <li><a href="{{ pages.shark-tools.url }}" {% if template == 'page.shark-tools' %}class="active"{% endif %}>Shark Tools</a></li>
+  {%endcomment%}
+</ul>
+
+
+<script>
+  (function(){
+  	
+    {% for link in linklists.main-menu.links %}
+    {% if link.links != blank %}
+    $('.main-links .{{ link.title }}').mouseover(function(){
+      $('.sub-main-links').addClass('show');
+    });
+    $('.main-links .{{ link.title }}').mouseout(function(){
+      $('.sub-main-links').removeClass('show');
+    });
+    {% endif %}
+    {% endfor %}
+    
+  })()
+</script>

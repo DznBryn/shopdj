@@ -1,0 +1,53 @@
+{% assign content = page.content | split: '<!-- split -->'  %}
+<header>
+	<div class="contain narrow">
+		<h2>Engagement</h2>
+		<h1>{{ page.title }}</h1>
+	</div><!-- /.contain -->
+	{% capture featured_image %}featured-{{page.handle}}.jpg{%endcapture%}
+	<div class="header-image" style="background-image: url({{ featured_image | file_url  }});"></div><!-- /.header-image -->
+</header>
+<div>
+	<div class="post-content contain narrow">
+		{{ content[0] }}
+		<span class="button on-light open-modal" data-modal="contact">Book Daymond</span>
+	</div><!-- .post-content -->
+</div><!-- /.contain -->
+
+{%comment%}
+<div style="overflow: hidden;">
+	{% if content[1] and content[2]%}
+	<div class="tabs contain" id="tab">
+		<ul class="tab-nav">
+			{% if content[1] %}<li class="active"><span>{{ content[1] }}</span></li>{% endif %}
+			{% if content[3] %}<li><span>{{ content[3] }}</span></li>{% endif %}
+			{% if content[5] %}<li><span>{{ content[5] }}</span></li>{% endif %}
+		</ul><!-- /.tab-nav -->
+		<div class="tabs-contain">
+			{% if content[1] and content[2] %}
+			<div class="tab active">
+				<span class="tab-header">{{ content[1] }}</span>
+				{{ content[2] }}
+			</div><!-- /.tab -->
+			{% endif %}
+			{% if content[3] and content[4] %}
+			<div class="tab slide-right">
+				<span class="tab-header">{{ content[3] }}</span>
+				{{ content[4] }}
+			</div><!-- /.tab -->
+			{% endif %}
+			{% if content[5] and content[6] %}
+			<div class="tab slide-right">
+				<span class="tab-header">{{ content[5] }}</span>
+				{{ content[6] }}
+			</div><!-- /.tab -->
+			{% endif %}
+		</div><!-- /.tab-content -->
+	</div><!-- /.tabs -->
+	{% endif %}
+</div>
+{%endcomment%}
+
+{% include 'partners' %}
+
+{% include 'social-footer' %}

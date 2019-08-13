@@ -1,0 +1,35 @@
+<strong>Share</strong>
+<div class="left">
+  <ul class="social-icons"> 
+    <li><a class="twitter-share" href="https://twitter.com/share?url={{shop.url}}{{ article.url }}&amp;text={{ article.title }}"><i class="fa fa-twitter"></i></a>
+    <li><a class="facebook-share" href="http://www.facebook.com/sharer/sharer.php?u={{shop.url}}{{ article.url }}"><i class="fa fa-facebook"></i></a>
+    <li><a class="linkedIn-share" href="https://www.linkedin.com/shareArticle?mini=true&url={{shop.url}}{{ article.url }}&title={{ article.title }}"><i class="fa fa-linkedin-square"></i></a>
+  </ul><!-- /.share-icons -->
+</div><!-- /.left -->
+<script>
+  (function(){
+    
+   	let params = `scrollbars=no,resizable=no,status=no,location=no,toolbar=no,menubar=no,
+		width=600,height=600,left=100,top=100`;
+    
+    $('.twitter-share').on('click',function(e){
+    	e.preventDefault();
+      	window.open($('.linkedIn-share').attr('href'), 'linkedIn', params);
+    
+    });
+    
+    $('.facebook-share').on('click',function(e){
+    	e.preventDefault();
+      	window.open($('.linkedIn-share').attr('href'), 'linkedIn', params);
+    
+    });
+
+    $('.linkedIn-share').on('click',function(e){
+    	e.preventDefault();
+      	window.open($('.linkedIn-share').attr('href'), 'linkedIn', params);
+    
+    });
+    
+   
+   })(jQuery);
+</script>

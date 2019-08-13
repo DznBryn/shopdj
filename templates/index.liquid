@@ -1,0 +1,75 @@
+<body class="front-page">
+  <div class="site-wrap">
+      <section id="hero" >
+        <div class="dj-banner"></div>
+          <div class="split parallax" style="background-color:{{ 'spilt' | asset_url}};" data-layer="1"><h1 class="logo parallax" data-layer="2">Daymond John</h1></div>
+            <div class="contain">
+                <span class="daymond parallax" style="background-image: ('{{ 'image_daymond-hero.png' | asset_url}}')" data-layer="3"></span>
+            </div><!-- /.contain -->
+          <span class="vignette"></span>
+          <div class="cta parallax" data-layer="4">
+              <div class="contain">
+                  <div class="cta-inner">
+                      <div class="left">
+                          <h2 class="open-modal">{{settings.cta_first}}</h2>
+                          <a href="{{settings.cta_first_button_link}}" class="button">{{settings.cta_first_button}}</a>
+                      </div><!-- /.left -->
+                      <div class="right">
+                          <img src="{{ 'img-power-of-broke-thumb.jpg' | asset_url}}" alt="Display of Power" title="Download Display of Power" id="keybizterm" data-modal="downloadNew" />
+                      </div><!-- /.right -->
+                  </div><!-- /.cta-inner -->
+              </div><!-- /.contian -->
+          </div><!-- /.cta -->
+          <a href="#bio" class="arrow bounce parallax" data-layer="5">r</a>
+      </section><!-- /#hero -->
+
+      <span id="bio-top"></span>
+
+    {% section 'bio' %}
+
+	{% section 'partners' %}
+
+
+  <section id="social">
+      <div class="row no-gutter">
+          <div class="col-xs-12 col-sm-12 col-md-6">
+              <div class="inner twitter">
+                  <div class="header">
+                      <h2><em>Twitter</em> <a href="https://twitter.com/TheSharkDaymond" target="_blank">@thesharkdaymond</a></h2>
+                  </div><!-- /.header -->
+                  <div class="content">
+                      <a class="twitter-timeline" href="https://twitter.com/TheSharkDaymond" data-widget-id="645868088060084224"></a>
+                      <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+                  </div><!-- /.content -->
+              </div><!-- /.inner -->
+          </div><!-- /.div -->
+          <div class="col-xs-12 col-sm-12 col-md-6">
+              <div class="inner instagram">
+                  <div class="header">
+                      <h2><em>Instagram</em> <a href="https://instagram.com/thesharkdaymond/" target="_blank">@thesharkdaymond</a></h2>
+                  </div><!-- /.header -->
+                  <div class="content">
+                    <div id="insta-feed"></div>
+                  </div><!-- /.content -->
+              </div><!-- /.inner -->
+          </div><!-- /.div -->
+      </div><!-- /.row -->
+  </section><!-- /.social -->
+
+  {% include 'social-footer' %}
+
+<!--   <ul class="location-indicator">
+      <li><a href="#hero" class="active">Home</a></li>
+      <li><a href="#bio">{{settings.section-one-bubble}}</a></li>
+      <li><a href="#speaking">{{settings.section-two-bubble}}</a></li>
+      <li><a href="#partners">{{settings.section-three-bubble}}</a></li>
+      <li><a href="#social">{{settings.section-four-bubble}}</a></li>
+  </ul> -->
+
+  <div class="menu-button open-menu">
+      <span class="menu-button-inner"><span></span></span>
+  </div>
+
+    </div>    
+</body>
+

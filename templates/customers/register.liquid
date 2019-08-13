@@ -1,0 +1,35 @@
+<div class="contain">
+	<div class="account-layout account-login">
+	<header>
+		<h1>Register</h1>
+	</header>
+	{% form 'create_customer' %}
+	      {{ form.errors | default_errors }}
+
+	      <div id="first_name" class="clearfix textile">
+	        <label for="first_name" class="login">First Name</label><br>
+	        <input type="text" value="" name="customer[first_name]" id="first_name" class="large" size="35" />
+	      </div>
+
+	      <div id="last_name" class="clearfix textile">
+	        <label for="last_name" class="login">Last Name</label><br>
+	        <input type="text" value="" name="customer[last_name]" id="last_name" class="large" size="35" />
+	      </div>
+
+	      <div id="email" class="clearfix textile">
+	        <label for="email" class="login">Email Address</label><br>
+	        <input type="email" value="" name="customer[email]" id="email" class="large" size="35" />
+	      </div>
+
+	      <div id="password" class="clearfix textile">
+	        <label for="password" class="login">Password</label><br>
+	        <input type="password" value="" name="customer[password]" id="password" class="large password" size="35" />
+	      </div>
+
+	      <div class="action_bottom textile">
+	        <input class="button" type="submit" value="Create" /><br>
+	        <span class="note">or <a href="{{ shop.url }}">Return to Store</a></span>
+	      </div>
+	    {% endform %}
+	</div><!-- account-layout -->
+</div><!-- contain -->

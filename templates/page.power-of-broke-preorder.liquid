@@ -1,0 +1,75 @@
+<header>
+	<div class="contain row">
+		<div class="col-md-6 image">
+			<img src="{{ 'daymondUntitled-1.png' | asset_url }}" />
+		</div><!-- /.col -->
+		<div class="col-md-6 text">
+			<div class="content">
+				<h2></h2>
+				<h1>Exclusives for Daymond John Insiders</h1>
+				<p>Daymond On Demand is your personal access to Daymond's business teachings. From Branding, to Business Credit, and everything in betweem, Daymond and his team of business experts teach the lessons needed to get any business to the next level.</p>
+				{%comment%}<a href="@#TODO" class="button medium">Buy Now</a>{%endcomment%}
+			</div><!-- /.content -->
+		</div><!-- /.col -->
+	</div><!-- /.row -->
+</header>
+
+
+
+{% comment %}
+<section class="call-out">
+		<div class="call-out-inner">
+		<div class="headlines">
+			<h3>Get the latest book</h3>
+			<h2>Power of Broke</h2>
+		</div><!-- /.headlines -->
+	</div><!-- /.call-out-inner -->
+</section><!-- /.call-out -->
+{% endcomment %}
+
+<section class="book-purchase dark">
+	
+	<div class="contain wide">
+		<div class="row no-gutter no-mobile-adjust" data-layout="balance">
+			<div class="col-md-7 text" data-layout="col">
+				<div class="content">
+					<iframe src="https://player.vimeo.com/video/205120270" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe		
+	</div><!-- /.contain -->
+</section>
+<section>
+  
+  <section class="book-purchase dark">
+	
+	<div class="contain wide">
+		<div class="row no-gutter no-mobile-adjust" data-layout="balance">
+			<div class="col-md-7 text" data-layout="col">
+				<div class="content">
+					<h3>Buy 4000 Books</h3>
+					<h4>Digital Event for Your Company</h4>
+					<div class="tabs mobile">
+						<div class="tabs-contain">
+							<div class="tab active">
+								<p>A celebrity investor, a global fashion icon, a Presidential Ambassador for Global Entrepreneurship, and more, Daymond is regarded as one of the most sought after branding experts and keynote speakers in the world. This is an exclusive chance for you to converse with Daymond directly and bring 4 (four) other executives, team members, friends, or family members in on the private Q&amp;A. Daymond John will field questions collected from your audience and advise on how to harness the <em>Power of Broke</em> today!</p>
+							</div><!-- /.tab -->
+							<div class="tab slide-right">
+								<div class="purchase">
+									{% include 'power-of-broke-purchase-links' %}
+								</div><!-- /.purchase -->
+							</div><!-- /.tab -->
+						</div><!-- /.tab-content -->
+						<ul class="tab-nav">
+							<li data-tab-request="1" data-action="purchase-toggle"  data-change-request="true"><span class="button medium red">Buy Now</span></li>
+							<li data-tab-request="0" data-action="purchase-toggle" data-change-request="false"><span class="button medium open-modal" data-modal="redemption">Redeem</span></li>
+						</ul>
+					</div><!-- /.tabs -->
+				</div><!-- /.content -->
+			</div><!-- /.col -->
+			<div class="col-md-5 image" data-layout="col">
+				<div class="picture" style="background-image:url('{{ 'pob_4000.jpg' | asset_url }}')"></div>
+			</div><!-- /.col -->
+		</div><!-- /.row -->
+	</div><!-- /.contain -->
+</section>
+<section>
+
+{% include 'social-footer' %}

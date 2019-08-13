@@ -1,0 +1,216 @@
+{% comment %}
+** shop page - custom view **
+- Page template
+- Uses blocks
+{% endcomment %}
+<h1 class="logo-dark"><span>Daymond John - The Peoples Shark</span></h1>
+
+{% assign images_per_row = section.settings.grid-size %}
+<div class="container contain collection">
+  <h2 class="out-link-title">Books on Amazon</h2>
+    {% unless section.settings.full_width %}
+      <div class="container-fluid shop-content">
+    {% endunless %}
+
+      <div  id="shop_section-{{section.id}}" class="shop-section {% if section.settings.full_width %}shop-full{% else %}container{% endif %} shop-{{ section.settings.shop_type }}">
+        <div class="shop-break"></div>
+        {% if section.blocks.size > 0 %}
+
+          {% for block in section.blocks %}
+            {% if block.settings.image != blank %}
+              <div class="shop-image-wrapper {% if images_per_row == 2 %}col-xs-6{% elsif images_per_row == 3 %}col-xs-4{% elsif images_per_row == 4 %}col-xs-3{% else %}col-xs-6{% endif %}">
+              
+                
+              <div class="product">
+                <a href="{{block.settings.link}}" class="out-link"target="_blank">
+                  <i class="image-{{ block.id }}"></i>
+                  {{ block.settings.image |  img_url: '1000x', crop: 'center' | img_tag: block.settings.image.alt , block.id }}
+                
+                    <span class="product-meta">
+                      
+                      <strong>{{block.settings.heading}}</strong> <br/>
+                      <span class="product-price">{{block.settings.price | money }}</span>
+                    </span>
+                  </a> 
+                </div>
+                   
+              </div>
+            {% else %}
+              
+              <div class="shop-empty-wrapper {% if images_per_row == 2 %}col-xs-6{% elsif images_per_row == 3 %}col-xs-4{% elsif images_per_row == 4 %}col-xs-4{% else %}col-xs-6{% endif %}" {{ block.shopify_attributes }}
+              {{ placeholder_sizing }}>
+                {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+              </div>
+              </div>
+            {% endif %}
+          {% endfor %}
+
+        {% endif %}
+      </div>
+ </div>
+    {% if section.settings.show_divider %}
+          <div class="feature_divider"></div>
+        {% endif %}
+
+    {% unless section.settings.full_width %}
+</div>
+    {% endunless %}
+</div>
+
+
+<style>
+{% if section.settings.shop_type == 'classic' and section.settings.full_width %}
+  .image-shop-section {
+    line-height: 0;
+  }
+{% endif %}
+
+.logo-dark span {
+    display: block;
+    height: 0;
+    padding-top: 21%;
+    line-height: 10000px;
+    overflow: hidden;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+body.collections h1 {
+    max-width: 410px;
+    margin: 90px auto 50px;
+    padding: 0 15px;
+}
+img{width:100%;}
+.product-meta{
+
+    line-height: 1em;
+    margin-bottom: 25px;
+    margin-top: 62px;
+    font-family: "Gotham Bold", sans-serif;
+    text-transform: uppercase;
+    color:#000;
+}
+.product-price{
+
+}
+.spacer{
+  padding: 1.5rem;
+  }
+.out-link-title{
+  padding-bottom: 1rem;
+  }
+.feature_divider{
+  background-image: url(//cdn.shopify.com/s/files/1/0031/2564/1329/files/Screen_Shot_2018-08-23_at_2.13.55_AM.png?6632973608642939496);
+    min-height: 68px;
+    padding: 2rem;
+    margin-top: 2rem;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 300px;
+}
+a:-webkit-any-link{text-decoration:none;
+}
+</style>
+<div class="clearfix spacer"></div>
+
+{% include 'page-shop-products' %}
+
+{% schema %}
+  {
+    "name": "Amazon Images with Links",
+    "class": "image-shop-section",
+    "settings": [
+      {
+        "type": "select",
+        "id": "shop_type",
+        "label": "shop style",
+        "options": [
+          {
+            "value": "classic",
+            "label": "Classic"
+          }
+        ],
+        "default": "classic"
+      },
+      {
+        "type": "checkbox",
+        "id": "full_width",
+        "label": "Wide display"
+      },
+      {
+        "type": "range",
+        "id": "grid-size",
+        "label": "Images per row",
+        "min": 2,
+        "max": 2,
+        "step": 1,
+        "default": 2
+      },
+      {
+        "type": "checkbox",
+        "id": "show_divider",
+        "label": "Show divider"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "image",
+        "name": "Image",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Image",
+            "info": "800 x 800px recommended"
+          },
+          {
+            "type": "url",
+            "id": "link",
+            "label": "Link",
+            "info": "Paste in link"
+          },
+          {
+            "type": "text",
+            "id": "heading",
+            "label": "Link Name",
+            "info": "Name link here"
+          },
+          {
+            "type": "text",
+            "id": "price",
+            "label": "Price",
+            "info": "Example 99 = $.99"
+          }
+        ] 
+      }
+    ], 
+    "default": {
+      "blocks": [
+        {
+          "type": "image"
+        },
+        {
+          "type": "image"
+        },
+        {
+          "type": "image"
+        },
+        {
+          "type": "image"
+        },
+        {
+          "type": "image"
+        },
+        {
+          "type": "image"
+        }
+      ]
+    }
+  }
+{% endschema %}
+
+
+
+
+
+

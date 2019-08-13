@@ -1,0 +1,72 @@
+{% if product.metafields.recommendations.productHandles %}
+    {% assign image_size = 'large' %} 
+    <div class="clearFix"></div><!-- clearFix -->
+    <aside id="relatedProducts"> 
+        <div id="relatedProductsBar"></div><!-- relatedProductsBar -->
+        <h3 id="relatedProductsTitle">{{ settings.relatedProductsHeading }}</h3>
+        <div id="relatedProductsListing" class="group"></div>
+	</aside><!-- relatedProducts -->
+
+    <script>!window.$ && document.write('<script src="//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"><\/script>')</script>
+	{{ 'api.jquery.js' | shopify_asset_url | script_tag }}
+	<script type="text/javascript" charset="utf-8">
+	//<![CDATA[
+	  var recommendations = [];
+	  {% if product.metafields.recommendations.productHandles %}
+	  recommendations = $.trim({{ product.metafields.recommendations.productHandles | json }}).split(/[\s,;]+/);
+	  {% endif %}
+	  if (recommendations.length && recommendations[0] !== '') {
+	    var list = $('#relatedProductsListing');
+	    for (var i=0; i<recommendations.length; i++) {
+    		$.getJSON('/products/' + recommendations[i] + '.js', function(product) {
+		    list.append('<article class="relatedProduct {% cycle 'productOne', 'productTwo', 'productThree', 'productFour' %}" itemscope itemtype="http://schema.org/Product"><a href="' + product.url +'"><div class="relatedProductImageWrapper"><img itemprop="image" src="' + product.images[0].replace(/(\.jpg|\.png|\.jpeg|\.gif)/, '_{{ image_size }}$1') + '" /></div><header><h2 itemprop="name">' + product.title + '</h2><div class="group"><span class="productVendor floatLeft" itemprop="manufacturer">by ' + product.vendor + '</span><span class="collectionProductPrice floatRight" itemprop="offers" itemscope itemtype="http://schema.org/Offer"><span itemprop="price">' + Shopify.formatMoney(product.price, '{{ shop.money_format }}') + '</span></div></header></a></article>');
+	    });
+		} 
+	  }  
+	//]]>
+	</script> 
+{% else %}
+    {% assign number_of_related_products_to_show = 4 %}
+    {% assign image_size = 'large' %}
+    {% capture number_of_related_products_to_fetch %}{{ number_of_related_products_to_show | plus: 1 }}{% endcapture %}
+    {% if collection == null or collection.handle == 'frontpage' or collection.handle == 'all' %}
+    {% assign found_a_collection = false %}
+    {% for c in product.collections %}
+    {% if found_a_collection == false and c.handle != 'frontpage' and c.handle != 'all' %}
+    {% assign found_a_collection = true %}
+    {% assign collection = c %}
+    {% endif %}
+    {% endfor %}
+    {% endif %}
+    {% if collection %}
+    <div class="clearFix"></div><!-- clearFix -->
+    <aside id="relatedProducts"> 
+        <div id="relatedProductsBar"></div><!-- relatedProductsBar -->
+        <h3 id="relatedProductsTitle">{{ settings.relatedProductsHeading }}</h3>
+        <div id="relatedProductsListing" class="group">
+        {% assign current_product_found = false %}
+    	{% for prod in collection.products limit: number_of_related_products_to_fetch %}
+    	{% if prod.title == product.title %}
+    	   {% assign current_product_found = true %}
+    	{% else %}
+    	    {% unless current_product_found == false and forloop.last %}
+            <article class="relatedProduct {% cycle 'productOne', 'productTwo', 'productThree', 'productFour' %}" itemscope itemtype="http://schema.org/Product">
+    			<a href="{{ prod.url | within: collection }}" title="View {{ prod.title | escape }}">
+    				<div class="relatedProductImageWrapper">
+                        <img itemprop="image" src="{{ prod.featured_image | product_img_url: image_size }}" alt="{{ image.alt | escape }}"/>
+                    </div><!-- relatedProductImageWrapper -->
+    				<header>
+    					<h2 itemprop="name">{{prod.title}}</h2>
+    					<div class="group">
+    						<span class="productVendor floatLeft" itemprop="manufacturer">by {{ prod.vendor }}</span><span class="collectionProductPrice floatRight" itemprop="offers" itemscope itemtype="http://schema.org/Offer"><span itemprop="price">{% if prod.compare_at_price_max > prod.price %}<span class="oldPriceCollection"> {{ product.compare_at_price_max | money }}</span>{% endif %}</span>{{ prod.price | money }}</span>
+    					</div><!-- group -->	
+    				</header>
+    			</a>	
+    		</article><!-- relatedProduct -->
+    	   {% endunless %}
+    	{% endif %}
+    	{% endfor %}
+    	</div>
+    </aside><!-- relatedProducts -->
+    {% endif %}
+{% endif %}

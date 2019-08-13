@@ -1,0 +1,46 @@
+<section class="video-container"  id="myvideo">
+  <div  data-type="vimeo" data-video-id="{{ section.settings.vimeo-video-id }}"></div>
+</section>
+
+
+{% schema %}
+{
+  "name": "Featured Video",
+  "class": "index-section featured-video-section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "vimeo-video-id",
+      "label": "Vimeo Video ID"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Featured Video",
+      "category": "Video"
+    }
+  ]
+}
+{% endschema %}
+
+{% javascript %}
+_player = plyr.setup({
+  autoplay: true,
+  controls: ['fullscreen']
+});
+_player[0].on('ready', function(event){
+  event.detail.plyr.getEmbed().setLoop(true);
+});
+{% endjavascript %}
+
+{% stylesheet 'scss' %}
+.plyr--video .plyr__controls button.tab-focus:focus, .plyr--video .plyr__controls button:hover {
+  background: #686868 !important;
+}
+.plyr__progress--played, .plyr__volume--display {
+  color: #686868 !important;
+}
+.plyr__video-embed {
+  padding-bottom: 56.2% !important;
+}
+{% endstylesheet %}

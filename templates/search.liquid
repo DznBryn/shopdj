@@ -1,0 +1,51 @@
+<div id="content" class="group">
+	<article id="mainContent">
+		<header id="pageHeader">
+			{% include 'breadcrumbs' %}
+			<h1>{{ page_title }}</h1>
+		</header><!-- pageHeader -->
+		<div class="textile">
+	    	<div id="searchResults">
+    			{% if search.performed %}
+        		<form action="/search" method="get">
+    				<p>
+                        <input type="text" name="q" value="{{search.terms  | escape}}" size="25" id="searchAgainInput" class="floatLeft" />
+                        <input type="submit" class="floatLeft pieMe btnStyle" value="Search Again" />
+                        <div class="clearFix"></div><!-- clearFix -->    
+                    </p>
+    			</form>
+                <h3 id="searchResultsTitle">Search Results</h3>
+    				{% paginate search.results by 10 %}  
+    					{% if search.results == empty %}  
+    						<p>Sorry, your search for "{{search.terms | escape}}" did not get any results.</p>
+    					{% else %}  
+    				  	  <ul id="searchResultsListings">
+    						{% for item in search.results %}      
+    						<li class="{% cycle 'odd', 'even' %}">
+    							{% if item.featured_image %}
+    								<div class="searchResultsImage floatLeft">
+    									<a href="{{item.url}}" title="">{{ item.featured_image | product_img_url: 'small' | img_tag }}</a>
+    								</div><!-- searchResultsImage -->
+    							{% endif %}
+    							<h3>{{ item.title | link_to: item.url }}</h3>
+    							<p>{{ item.content | strip_html | truncatewords: 40 | highlight: search.terms }}</p>
+    							<div class="clearFix"></div><!-- clearFix -->     		
+    						</li>         
+    						{% endfor %}
+    						</ul><!-- searchResultsListings -->                                     
+    					{% endif %}   
+    				<p>{{ paginate | default_pagination }}</p>
+    				{% endpaginate %}    
+    			{% else %}
+                <form action="/search" method="get">
+    				<p>
+                        <input type="text" name="q" size="25" value="{{search.terms  | escape}}" id="searchAgainInput" class="floatLeft" />
+                        <input type="submit" class="floatLeft pieMe btnStyle" value="Search" />
+    				    <div class="clearFix"></div><!-- clearFix -->
+                    </p>
+    			</form>
+                {% endif %}
+    		</div><!-- searchResults -->
+		</div><!-- textile -->	
+	</article><!-- mainCol -->
+</div><!-- content -->

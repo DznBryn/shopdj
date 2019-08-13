@@ -1,0 +1,14 @@
+<section class="testimonials">
+    <blockquote><p id="testimonialContent"></p><!-- testimonialContent --></blockquote>
+    <script type="text/javascript">
+    var testimonalArr = ["{{settings.testimonial1}}", "{{settings.testimonial2}}", "{{settings.testimonial3}}"];
+    for (var i = 0; i < testimonalArr.length; i++) {
+        if (testimonalArr[i] === "") {         
+        testimonalArr.splice(i, 1);
+        i--;
+        }
+    }
+    var randomTestimonial = '<span>' + testimonalArr[Math.floor(Math.random() * testimonalArr.length)] + '</span>';
+    document.getElementById('testimonialContent').innerHTML = randomTestimonial;
+    </script>
+</section><!-- testimonials -->

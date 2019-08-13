@@ -1,0 +1,63 @@
+<div class="sidebar" data-layout="col">
+	<aside class="twitter-feed">
+		<a class="twitter-timeline" href="https://twitter.com/TheSharkDaymond" data-widget-id="677309336297693185">Tweets by @TheSharkDaymond</a>
+		<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+	</aside><!-- /.twitter-feed -->
+	<aside class="promo">
+		<h6>Check Out Daymond's Books!</h6>
+		<ul class="promo-list">
+			<li>
+				<div class="left">
+					<a href="{{shop.url}}/products/display-of-power-paperback"><img src="{{ 'placeholder_book-small.jpg' | asset_url }}" /></a>
+				</div><!-- /.left -->
+				<div class="right">
+					<a href="{{shop.url}}/products/autographed-books-bundle"><strong>Autographed Copies Available</strong></a>
+					<a href="{{shop.url}}/products/display-of-power-paperback">
+						<h5>Display of Power</h5>
+						<h6>Limited Edition</h6>
+					</a>
+				</div><!-- /.right -->
+			</li>
+			<li>
+				<div class="left">
+					<a href="{{shop.url}}/products/the-brand-within-ebook"><img src="{{ 'brand-within-book_small.jpg' | asset_url }}" /></a>
+				</div><!-- /.left -->
+				<div class="right">
+					<a href="{{shop.url}}/products/the-brand-within-ebook"><strong>E-Books Available</strong></a>
+					<a href="{{shop.url}}/products/the-brand-within-ebook">
+						<h5>The Brand Within</h5>
+					</a>
+				</div><!-- /.right -->
+			</li>
+		</ul><!-- /.promo-list -->
+	</aside><!-- /.promo -->
+	{% if blogs.ads.articles.size > 0 %}
+	<aside class="advertisements"> 
+		{% for ad in blogs.ads.articles %}
+		<a href="{{ ad.metafields.advertisement.url }}">
+			<img src="{{ ad.image | img_url: 'grande' }}" />
+		</a>
+		{% endfor %}
+		<script type="text/javascript">
+			window.sharkm0de.methods.ads._select_ad();
+		</script>
+	</aside><!-- /.advertisement -->
+	{% endif %}
+	{% comment %}
+	<aside class="links">
+		<h6>Archive</h6>
+		<ul class="link-list">
+			<li><a href="#@TODO">2015</a></li>
+			<li><a href="#@TODO">2014</a></li>
+			<li><a href="#@TODO">2013</a></li>
+			<li><a href="#@TODO">2012</a></li>
+			<li><a href="#@TODO">2011</a></li>
+			<li><a href="#@TODO">2010</a></li>
+			<li><a href="#@TODO">2009</a></li>
+			<li><a href="#@TODO">2008</a></li>
+			<li><a href="#@TODO">2007</a></li>
+			<li><a href="#@TODO">2006</a></li>
+		</ul><!-- /.link-list -->
+	</aside><!-- /.links -->
+	{% endcomment %}
+</div><!-- /.sidebar -->

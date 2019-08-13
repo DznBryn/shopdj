@@ -1,0 +1,303 @@
+
+<div>
+  {% for block in section.blocks %}
+  <div  {{ block.shopify_attributes }}>
+      {% case block.type %}
+
+      {% when 'Title' %}
+
+      {% include 'title-header-text-section' %}
+
+      {% when 'SubTitle' %}
+
+      {% include 'Title-H2-Text-Section'%}
+
+      {% when 'image' %}
+
+      {% include 'full-image-banner' %}
+
+      {% when 'page-content-image' %}
+
+      {% include 'page-content-profile' %}
+
+      {% when 'split-view' %}
+
+      {% include 'split-view' %}
+
+      {% when 'Book' %}
+
+      {% include 'books'%}
+
+      {% when 'form' %}
+
+      {% include 'form'%}
+
+      {% when 'extra-text' %}
+
+      {% include 'extra-text' %}
+
+      {% when 'social_links' %}
+
+      {% include 'interview-social-links' %}
+
+      {% when 'Double' %}
+
+      {% include 'image-video'%}
+
+      {% endcase %}
+
+  </div>
+  {% endfor %}
+</div>
+
+
+{% schema %}
+{
+    "blocks": [
+
+    {
+      "type": "Title",
+      "name": "Title Text Header",
+      "settings": [
+        {
+
+          "id": "title",
+          "type": "text",
+          "label": "Title",
+          "default": "RISE and GRIND"
+
+        },
+        {
+            "type": "color",
+            "id": "headercolor",
+            "label": "Text Color",
+            "default": "#FFF"
+        }
+      ]
+    },
+    {
+      "type": "SubTitle",
+      "name": "Sub Title Text Header",
+      "settings": [
+        {
+
+          "id": "subtitle",
+          "type": "text",
+          "label": "H2 Title",
+          "default": "Pre-order"
+
+        },
+        {
+            "type": "color",
+            "id": "headercolor2",
+            "label": "Text Color",
+            "default": "#FFF"
+        }
+      ]
+    },
+    {
+      "type": "image",
+      "name": "Full-Image",
+      "settings":[
+        {
+
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Link",
+          "info": "Optional"
+        }
+        ]
+      },
+      {
+        "type": "page-content-image",
+        "name": "Page Options",
+        "settings":[
+          {
+              "type": "color",
+              "id": "textcolor",
+              "label": "Page Text Color",
+              "default": "#FFF"
+          },
+          {
+              "type": "color",
+              "id": "backcolor",
+              "label": "Page Background Color",
+              "default": "#000"
+          },
+          {
+            "type": "textarea",
+            "id": "more-page-text",
+            "label": "More page text",
+            "info": "Optional"
+          },
+          {
+            "type": "image_picker",
+            "id": "image_profile",
+            "label": "Square Image Max 1000px x 1000px"
+          }
+        ]
+      },
+      {
+        "type": "Book",
+        "name": "Book",
+        "settings": [
+          {
+            "type": "url",
+            "id": "download_button_link",
+            "label": "Download Button link"
+          }
+
+         ]
+      },
+      {
+        "type": "video",
+        "name": "Video",
+        "settings": [
+          {
+            "type": "text",
+            "id": "vimeo-video-id",
+            "label": "Vimeo Video ID"
+          }
+        ]
+      },
+      {
+        "type": "form",
+        "name": "Form",
+        "settings": [
+          {
+            "type": "text",
+            "id": "interview_btn_text",
+            "label": "Text for Button"
+          },
+          {
+            "type": "text",
+            "id": "interview_btn_link",
+            "label": "Link for Button"
+          }
+        ]
+      },
+      {
+        "type": "extra-text",
+        "name": "Extra Text",
+        "settings": [
+          {
+            "type": "textarea",
+            "id": "extra_page_text",
+            "label": "Extra Text for Page"
+          }
+        ]
+      },
+      {
+        "type": "social_links",
+        "name": "Social Media Links",
+        "settings": [
+          {
+            "type": "text",
+            "id": "twitter_tag",
+            "label": "Twitter Tag"
+          },
+          {
+            "type": "text",
+            "id": "facebook_tag",
+            "label": "Facebook Tag"
+          },
+          {
+            "type": "text",
+            "id": "instagram_tag",
+            "label": "Instagram Tag"
+          },
+          {
+            "type": "text",
+            "id": "youtube_tag",
+            "label": "YouTube Tag"
+          },
+          {
+            "type": "text",
+            "id": "google_tag",
+            "label": "Google Plus Tag"
+          },
+          {
+            "type": "text",
+            "id": "linkedin_tag",
+            "label": "Linkedin Tag"
+          }
+        ]
+      },
+      {
+        "type": "Double",
+        "name": "Image & Video",
+        "settings": [
+          {
+            "type":      "radio",
+            "id":        "left",
+            "label":     "Image on the Left or Right",
+            "options": [
+             { "value": "left", "label": "Left" },
+             { "value": "right", "label": "Right" }
+            ],
+            "default":   "left",
+            "info":      "Left Default"
+          },
+          {
+            "type":      "radio",
+            "id":        "video-on",
+            "label":     "Use a Video",
+            "options": [
+             { "value": "on", "label": "On" },
+             { "value": "off", "label": "Off" }
+            ],
+            "default":   "on",
+            "info":      "Video on by Default"
+          },
+          {
+            "type": "text",
+            "id": "vimeo-video-id",
+            "label": "Vimeo Video ID"
+          },
+          {
+            "type": "image_picker",
+            "id": "image2",
+            "label": "Image"
+          },
+          {
+            "type": "url",
+            "id": "linkage2",
+            "label": "Link",
+            "info": "link to zip for desktop"
+          },
+          {
+            "type": "url",
+            "id": "linkage21",
+            "label": "Link",
+            "info": "link to pdf for mobile"
+          },
+          {
+            "type": "image_picker",
+            "id": "image3",
+            "label": "Image if Video not used"
+          },
+          {
+            "type": "url",
+            "id": "linkage3",
+            "label": "Link",
+            "info": "Optional"
+          }
+        ]
+      }
+  ]
+}
+{% endschema %}
+
+<style>
+.section-container {
+  max-width: 1400px;
+  padding: .5em 0;
+  visibility: hidden;
+}
+</style>

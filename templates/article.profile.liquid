@@ -1,0 +1,74 @@
+<div class="content-columns dark">
+	<div class="contain wide no-mobile-adjust" data-layout="balance">
+		<div class="content" data-layout="col">
+			<div class="contain">
+				<div class="flex-columns head-cols" data-layout="balance">
+					<div class="col-fixed header-image" data-layout="col" style="background-image:url('{{ article.image | img_url: 'grande' }}');"></div><!-- /.col-fixed -->
+					<div class="col-flex text" data-layout="col">
+						<h1>{{ article.title }}</h1>
+						<h2>{{ article.metafields.profile.subline }}</h2>
+						<div class="wysiwyg">
+							<p>{{ article.content }}</p>
+							{% if article.metafields.profile.quote.size %}<blockquote>"{{ article.metafields.profile.quote }}</blockquote>{% endif %}
+						</div><!-- /.wysiwyg -->
+						<div class="user-actions">
+							<strong>Share</strong>
+							<div class="left">
+								<ul class="social-icons">
+									<li><a href="https://twitter.com/intent/tweet?url={{shop.url}}{{ article.url }}"><i class="fa fa-twitter"></i></a>
+									<li><a href="http://www.facebook.com/sharer/sharer.php?u={{shop.url}}{{ article.url }}"><i class="fa fa-facebook"></i></a>
+									<li><a href="https://plus.google.com/share?url={{shop.url}}{{ article.url }}"><i class="fa fa-google-plus"></i></a>
+									<li><a href="https://www.linkedin.com/shareArticle?mini=true&url={{shop.url}}{{ article.url }}&title={{ article.title }}"><i class="fa fa-linkedin-square"></i></a>
+								</ul><!-- /.share-icons -->
+							</div><!-- /.left -->
+						</div><!-- /.user-actions -->
+					</div><!-- /.col-fixed -->
+				</div><!-- /.flex-columns -->
+			</div><!-- /.contain -->
+			
+			<!-- KENNY REMOVED UNTIL RECEIVED CONTENT -->
+			<div class="cta-video dark">
+				<div class="contain">
+					<div class="cta-video-inner flex-columns" data-layout="balance">
+                        {% if article.metafields.profile.media_packet %}
+						{% capture download_image %}profile_download_image-{{ article.title | handleize }}.jpg{% endcapture %}
+                      	
+						<div class="cta col-fixed" data-layout="col" style="background-image: url('{{ download_image | file_url }}');">
+							<span>
+								<strong>
+									<em>Motivational Artwork From {{ article.title }}</em>
+									{% capture download_url %}pob_motivational-artwork-{{ article.title | handleize }}.pdf{% endcapture %}
+									<a href="{{ article.metafields.profile.media_packet | asset_url }}" class="button" download>Download</a>
+								</strong>
+							</span>
+						</div><!-- /.cta -->
+                      	{% endif %}
+						{% if article.metafields.profile.youtubeid %}
+                      	<div class="video col-flex" data-layout="col">
+							<div class="video-contain">
+								<iframe src="https://www.youtube.com/embed/{{ article.metafields.profile.youtubeid }}?autohide=1&modestbranding=0&playsinline=1&showinfo=0" frameborder="0" allowfullscreen></iframe>
+							</div><!-- /.video-contain -->
+						</div><!-- /.video -->
+                      	{% endif %}
+					</div><!-- /.cta-video-inner -->
+				</div><!-- /.contain -->
+			</div><!-- /.cta-video -->
+		
+			<div class="interviewees dark">
+				<strong>Interviewee Circle</strong>
+				<div class="slider circle-slider">
+					{% for article in blogs.profiles.articles %}
+					<div class="slide">
+						<a href="{{ article.url }}" class="image" style="background-image: url('{{ article.image | img_url: 'grande' }}');"></a>
+					</div><!-- /.slide -->
+					{% endfor %}
+				</div><!-- /.slider -->
+			</div><!-- /.interviewees -->
+		</div><!-- /.content -->
+		
+		{% include 'sidebar' %}
+		
+	</div><!-- /.contain -->
+</div><!-- /.content-columns -->
+
+{% include 'pob-footer' %}

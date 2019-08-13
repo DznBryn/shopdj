@@ -1,0 +1,90 @@
+{% comment %}
+<!--
+Copyright (c) 2017-2018 Single, LLC
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+-->
+{% endcomment %}
+
+{% capture trackReleaseDateString %}{{ track.metafields.track.release_date }}{% endcapture %}
+{% assign trackDateParts =  trackReleaseDateString | split: "/" %}
+{% capture trackReleaseDateFormatted %}{{ trackDateParts[2] }}-{{ trackDateParts[0] }}-{{ trackDateParts[1] }}{% endcapture %}
+{% assign trackReleaseDate = trackReleaseDateFormatted | date: "%s" | plus: 0 %}
+{% capture trackOnSale %}{% if trackReleaseDate <= now %}true{% endif %}{% endcapture %}
+{% capture previewAvailable %}{% if track.metafields.track.preview == "true" %}true{% endif %}{% endcapture %}
+{% assign previewLink = track.metafields.track.preview_link %}
+{% capture albumOnly %}{% if track.metafields.track.album_only == "true" %}true{% endif %}{% endcapture %}
+{% capture previewClickEvent %}{% if trackOnSale == "true" and previewAvailable == "true" %}onclick="togglePlayingTrack('{{ track.id }}', '{{ previewLink }}')"{% endif %}{% endcapture %}
+{% capture trackTime %}{% if track.metafields.track.track_time != '' %}<span class="single-track-time">{{track.metafields.track.track_time}}</span>{% endif %}{% endcapture %}
+{% capture previewClass %}{% if previewAvailable == "true" %} single-track-preview{% endif %}{% endcapture %}
+{% capture availableClass %}{% if trackOnSale == "true" %} single-track-available{% endif %}{% endcapture %}
+{% capture explicitTrack %}
+  {% if track.metafields.track.explicit == "true" %}
+    <div class="single-track-explicit">
+      <span>e</span>
+    </div>
+  {% endif %}
+{% endcapture %}
+
+<div class="single-track{{previewClass}}{{availableClass}}" data-track-id="{{ track.id }}">
+  <div class="single-track-order" {{ previewClickEvent }}>
+    <p>
+      <span class="single-track-number">{{ track.metafields.track.track_order }}.</span>
+      <span class="single-play-icon">
+        <i class="material-icons">play_circle_outline</i>
+      </span>
+    </p>
+  </div>
+  <div class="single-track-title" {{ previewClickEvent }}>
+    {% if track.metafields.track.featured_artist_names %}
+        <span>{{ track.title }} (feat. {{track.metafields.track.featured_artist_names}} )</span>
+    {% else %}
+        <span>{{ track.title }}</span>
+    {% endif %}
+    {% if track.metafields.track.additional_artist_names %}
+        <span class="single-track-artist">{{track.metafields.track.additional_artist_names}}</span>
+    {% endif %}
+    {% if trackOnSale == "true" %}
+      {{trackTime}}
+    {% endif %}
+  </div>
+  {{explicitTrack}}
+  {% if track.metafields.track.album_only == "true" or trackOnSale != "true" %}
+  <div class="single-album-only">
+    <p>Album Only</p>
+  </div>
+  {% else %}
+  {% for variant in track.variants %}
+    {% if variant.available %}
+      {% if variant == track.selected_or_first_available_variant %}
+        {% assign track_variant = variant.id %}
+      {% endif %}
+    {% endif %}
+  {% endfor %}
+  {% if presale != "true" or trackOnSale == "true" %}
+    <div class="single-track-price">
+      <p>{{ track.price | money }}</p>
+    </div>
+    <div class="single-track-add-to-cart">
+      <i class="material-icons" id="single-add-track-to-cart-icon-{{track.id}}"
+      onclick="addTrackToCart({{ track_variant }}, {{ track.id }});">add_shopping_cart</i>
+    </div>
+  {% endif %}
+  {% endif %}
+</div>

@@ -1,0 +1,278 @@
+
+
+<div>
+  {% for block in section.blocks %}
+  <div  {{ block.shopify_attributes }}>
+      {% case block.type %}
+
+      {% when 'Title' %}
+      <div class="container">
+      {% include 'title-header-text-section' %}
+      </div>
+      {% when 'image' %}
+      <div class="container">
+      {% include 'full-image-banner' %}
+      </div>
+
+      {% when 'page-content' %}
+
+      {% include 'page-content' %}
+
+      {% when 'Double' %}
+
+      {% include 'double-images'%}
+
+      {% when 'Book' %}
+
+      {% include 'books'%}
+
+      {% when 'Influencers' %}
+
+      {% include 'influencers'%}
+
+      {% endcase %}
+
+
+
+  </div>
+  {% endfor %}
+</div>
+
+
+{% schema %}
+{
+    "blocks": [
+
+    {
+      "type": "Title",
+      "name": "Title Text Header",
+      "settings": [
+        {
+
+          "id": "title",
+          "type": "text",
+          "label": "Title",
+          "default": "RISE and GRIND"
+
+        },
+        {
+            "type": "color",
+            "id": "headercolor",
+            "label": "Text Color",
+            "default": "#000"
+        }
+      ]
+    },
+    {
+      "type": "image",
+      "name": "Full-Image",
+      "settings":[
+        {
+
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Link",
+          "info": "Optional"
+        }
+        ]
+      },
+      {
+        "type": "page-content",
+        "name": "Move Page Content",
+        "settings":[
+          {
+            "type": "text",
+            "id": "more-page-text",
+            "label": "More page text",
+            "info": "Optional"
+          }
+        ]
+      },
+      {
+        "type": "Double",
+        "name": "Double section",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "image2",
+            "label": "Image"
+          },
+          {
+            "type": "text",
+            "id": "button_label_1",
+            "label": "Button label"
+          },
+          {
+            "type": "select",
+            "id": "button-placement-1",
+            "label": "Button Placement",
+            "options": [
+              {
+                "value": "placement-left",
+                "label": "Left"
+              },
+              {
+                "value": "placement-right",
+                "label": "Right"
+              },
+              {
+                "value": "placement-middle",
+                "label": "Middle"
+              }
+            ],
+            "default": "placement-middle"
+          },
+          {
+            "type": "color",
+            "id": "button_border_1",
+            "label": "Button Border",
+            "default": "#ffffff"
+          },
+          {
+            "type": "url",
+            "id": "button_link_1",
+            "label": "Button link",
+            "info": "Required to show the button"
+          },
+          {
+            "type": "image_picker",
+            "id": "image3",
+            "label": "Image"
+          },
+          {
+            "type": "text",
+            "id": "button_label_2",
+            "label": "Button label"
+          },
+          {
+            "type": "select",
+            "id": "button-placement-2",
+            "label": "Button Placement",
+            "options": [
+              {
+                "value": "placement-left",
+                "label": "Left"
+              },
+              {
+                "value": "placement-right",
+                "label": "Right"
+              },
+              {
+                "value": "placement-middle",
+                "label": "Middle"
+              }
+            ],
+            "default": "placement-middle"
+          },
+          {
+            "type": "color",
+            "id": "button_border_2",
+            "label": "Button Border",
+            "default": "#ffffff"
+          },
+          {
+            "type": "url",
+            "id": "button_link_2",
+            "label": "Button link",
+            "info": "Required to show the button"
+          }
+
+        ]
+      },
+      {
+        "type": "Book",
+        "name": "Book",
+        "settings": [
+          {
+            "type": "url",
+            "id": "download_button_link",
+            "label": "Download Button link",
+            "info": "Required to show the button"
+          }
+        ]
+      },
+      {
+        "type": "Influencers",
+        "name": "Influencers",
+        "settings": [
+
+        {
+          "type": "image_picker",
+          "id": "sliderimage",
+          "label": "Image"
+        },
+        {
+          "type": "url",
+          "id": "slide_link",
+          "label": "Link",
+          "info": "Link to influencer page"
+        },
+        {
+          "type": "image_picker",
+          "id": "sliderimage2",
+          "label": "Image"
+        },
+        {
+          "type": "url",
+          "id": "slide2_link",
+          "label": "Link",
+          "info": "Link to influencer page"
+        },
+        {
+          "type": "image_picker",
+          "id": "sliderimage3",
+          "label": "Image"
+        },
+        {
+          "type": "url",
+          "id": "slide3_link",
+          "label": "Link",
+          "info": "Link to influencer page"
+        },
+        {
+          "type": "image_picker",
+          "id": "sliderimage4",
+          "label": "Image"
+        },
+        {
+          "type": "url",
+          "id": "slide4_link",
+          "label": "Link",
+          "info": "Link to influencer page"
+        },
+        {
+          "type": "image_picker",
+          "id": "sliderimage5",
+          "label": "Image"
+        },
+        {
+          "type": "url",
+          "id": "slide5_link",
+          "label": "Link",
+          "info": "Link to influencer page"
+        },
+        {
+          "type": "image_picker",
+          "id": "sliderimage6",
+          "label": "Image"
+        },
+        {
+          "type": "url",
+          "id": "slide6_link",
+          "label": "Link",
+          "info": "Link to influencer page"
+        }
+
+        ]
+      }
+
+  ]
+}
+
+{% endschema %}

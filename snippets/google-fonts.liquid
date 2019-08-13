@@ -1,0 +1,20 @@
+{% if settings.paragraphFont contains 'Google' %}
+  
+	{%- assign type_base_parts = settings.paragraphFont | split: '_' -%}
+
+      {% capture baseGoogleUrl %}
+          {{ type_base_parts[1] }} : 400,700
+      {% endcapture %}
+
+	{{ '//fonts.googleapis.com/css?family=' | append: baseGoogleUrl | stylesheet_tag }}
+
+{% endif %}
+
+
+{% if settings.headerFont contains 'Google' %}
+  {% unless settings.headerFont contains type_base_parts[1] and settings.headerFont contains '700' %}
+    {%- assign type_header_parts = settings.headerFont | split: '_' -%}
+    {% capture headerGoogleUrl %}{{ type_header_parts[1] }}:{{ type_header_parts[2] }}{% endcapture %}
+    {{ '//fonts.googleapis.com/css?family=' | append: headerGoogleUrl | stylesheet_tag }}
+  {% endunless %}
+{% endif %}

@@ -1,0 +1,115 @@
+{% assign description = product.description | split: '<!-- split -->'  %}
+<header>
+	<div class="row contain no-gutter">
+      
+<!--       <div class="image-main" data-image-main><img src="{{ product.images[0] | img_url: '1024x1024' }}" alt="{{ product.images[0].alt }}" /></div>
+    <div class="image-thumbnails" data-image-thumbnails>{% for image in product.images %}
+      <div class="thumbnail"><img src="{{ image | img_url: 'grande' }}" alt="{{ image.alt | escape }}" /></div>{% endfor %}</div> -->
+      
+		<div class="col-sm-6 product" >
+          <div class="image-main" data-image-main>
+			<img src="{{ product.images[0] | img_url: '1024x1024' }}" alt="{{ product.images[0].alt }}" />
+          </div>
+             <div class="image-thumbnails" data-image-thumbnails>
+               {% for image in product.images %}
+         <div class="image-thumbnail ">
+           <img src="{{ image | img_url: '1024x1024' }}" alt="{{ image.alt | escape }}" />
+         </div>
+         {% endfor %}
+      </div>
+          
+      <script>
+         $(document).on('click', '.col-sm-6.product .image-thumbnail img', function() {
+      $('.col-sm-6.product')
+        .find('.image-main').empty().append($(this).clone()).end()
+        .find('.image-thumbnail').removeClass('is-active');
+      $(this).parent().addClass('is-active');
+    });   
+      </script>
+          
+      
+      </div>
+      
+      
+      <!-- /.col -->
+		<div class="col-sm-6 product-meta">
+			<div class="headlines">
+				<h2>{{ product.type }}</h2>
+				<h1>{{ product.title }}</h1>
+			</div><!-- /.headlines -->
+			<form class="shop-actions">
+				<em>{{ product.price | money }}</em>
+				<span class="quantity">
+					<label>Quantity <input name="add_to_product_quantity" type="number" value="1" min="1"  pattern="\d*" /></label>
+				</span><!-- /.quatnitiy -->
+				{% assign variant = product.selected_or_first_available_variant %}
+				<button type="submit" class="add-to-cart button wide on-light" data-variant-id="{{variant.id}}">Add to Cart</button>
+			</form><!-- /.shop-actions -->
+			
+			<div class="product-description">
+				
+				{% if product.metafields.quote.quote %}
+				<blockquote>
+					<q>{{ product.metafields.quote.quote }}</q>
+					{% if product.metafields.quote.cite %}
+						<cite>{{ product.metafields.quote.cite }}</cite>
+					{% endif %}
+				</blockquote>
+				{% endif %}
+				
+				<strong>{{ product.type }} Description</strong>
+				<div class="wysiwyg">
+					{{ description[0] }}
+				</div><!-- /.wysiwyg -->
+				
+			</div><!-- /.product-description -->
+			
+			<div class="user-actions">
+				<strong>Share</strong>
+				<div class="left">
+					<ul class="social-icons">
+						<li><a href="https://twitter.com/intent/tweet?url={{shop.url}}{{ product.url }}"><i class="fa fa-twitter"></i></a>
+						<li><a href="http://www.facebook.com/sharer/sharer.php?u={{product.url}}{{ article.url }}"><i class="fa fa-facebook"></i></a>
+						<li><a href="https://plus.google.com/share?url={{shop.url}}{{ product.url }}"><i class="fa fa-google-plus"></i></a>
+						<li><a href="https://www.linkedin.com/shareArticle?mini=true&url={{shop.url}}{{ article.url }}&title={{ article.title }}"><i class="fa fa-linkedin-square"></i></a>
+					</ul><!-- /.share-icons -->
+				</div><!-- /.left -->
+			</div><!-- /.user-actions -->
+		</div><!-- /.col -->
+      
+      
+      
+	</div><!-- /.row -->
+</header>
+
+{% if description[1] and description[2]%}
+<div class="tabs contain" id="tab">
+	<ul class="tab-nav">
+		{% if description[1] %}<li class="active"><span>{{ description[1] }}</span></li>{% endif %}
+		{% if description[3] %}<li><span>{{ description[3] }}</span></li>{% endif %}
+		{% if description[5] %}<li><span>{{ description[5] }}</span></li>{% endif %}
+	</ul><!-- /.tab-nav -->
+	<div class="tabs-contain">
+		{% if description[1] and description[2] %}
+		<div class="tab active">
+			<span class="tab-header">{{ description[1] }}</span>
+			{{ description[2] }}
+		</div><!-- /.tab -->
+		{% endif %}
+		{% if description[3] and description[4] %}
+		<div class="tab slide-right">
+			<span class="tab-header">{{ description[3] }}</span>
+			{{ description[4] }}
+		</div><!-- /.tab -->
+		{% endif %}
+		{% if description[5] and description[6] %}
+		<div class="tab slide-right">
+			<span class="tab-header">{{ description[5] }}</span>
+			{{ description[6] }}
+		</div><!-- /.tab -->
+		{% endif %}
+	</div><!-- /.tab-content -->
+</div><!-- /.tabs -->
+{% endif %}
+
+{% include 'social-footer' %}

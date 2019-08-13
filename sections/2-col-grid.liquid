@@ -1,0 +1,58 @@
+<!-- speaking-section -->
+
+
+<section id="speaking" class="hidden-xs" style="background-image: url('{{ 'bkg_speaking.jpg' | asset_url}}'); background-repeat: no-repeat;">
+	<div class="row">
+		<div class="col-xs-12 col-sm-6 photo-half slave-col"></div><!-- /.col -->
+		<div class="col-xs-12 col-sm-6 text-half master-col">
+			<div class="contain-half pad-right">
+				<div class="inner">
+					<h2 style="color:{{ settings.fifth-slide-text-color}};">{{settings.fifth-slide-title}}</h2>
+					<div class="content">
+						<p style="color:{{ settings.fifth-slide-text-color}};">{{settings.fifth-slide-text-1}}</p>
+                      <p style="color:{{ settings.fifth-slide-text-color}};">{{settings.fifth-slide-text-2}}</p>
+					</div><!-- /.content -->
+					<a href="{{ settings.fifth-slide-button-1-link }}" class="button on-light">{{settings.fifth-slide-button-1-text}}</a>
+					<a href="{{ settings.fifth-slide-button-2-link }}" class="button on-light">{{settings.fifth-slide-button-2-text}}</a>
+				</div><!-- /.inner -->
+			</div><!-- /.contain-half -->
+		</div><!-- /.col -->
+	</div><!-- /.row -->
+</section><!-- /#speaking -->
+
+
+
+<!-- MOBILE ONLY -->
+
+<section id="speaking" style="background-image: url('{{ 'bkg_speaking.jpg' | asset_url}}'); background-repeat: no-repeat; min-height:400px;">
+	<div class="row">
+		<div class="col-xs-12 col-sm-6 photo-half slave-col"></div><!-- /.col -->
+		<div class="col-xs-12 col-sm-6 text-half master-col">
+			<div class="contain-half pad-right">
+				<div class="inner">
+					<h2 style="color:{{ settings.fifth-slide-text-color}};">{{settings.fifth-slide-title}}</h2>
+					<div class="content">
+						<p style="color:{{ settings.fifth-slide-text-color}};">{{settings.fifth-slide-text-1}}</p>
+                      <p style="color:{{ settings.fifth-slide-text-color}};">{{settings.fifth-slide-text-2}}</p>
+					</div><!-- /.content -->
+					<a href="{{ settings.fifth-slide-button-1-link }}" class="button on-light">{{settings.fifth-slide-button-1-text}}</a>
+					<a href="{{ settings.fifth-slide-button-2-link }}" class="button on-light">{{settings.fifth-slide-button-2-text}}</a>
+				</div><!-- /.inner -->
+			</div><!-- /.contain-half -->
+		</div><!-- /.col -->
+	</div><!-- /.row -->
+</section><!-- /#speaking -->
+
+
+{% schema %}
+  {
+    "name": "Section name",
+    "settings": []
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

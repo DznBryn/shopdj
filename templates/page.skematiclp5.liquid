@@ -1,0 +1,267 @@
+{% layout none %}
+{% if template contains 'article' and blog.metafields.blogfeeder.use_canonical == 'yes' %}{% assign canonical_url = article.metafields.blogfeeder.canonical %}{% endif %}
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- Google Tag Manager -->
+	<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+	new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+	j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+	'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-5W92XZD');</script>
+<!-- End Google Tag Manager -->
+{% if template == 'index' %}
+<title>{{ shop.name }} | {{ page_title }}</title>
+{% elsif template == '404' %}
+<title>Nothing Found | {{ shop.name }}</title>
+{% elsif template == 'cart' %}
+<title>Cart | {{ shop.name }}</title>
+{% elsif template == 'search' %}
+<title>Search | {{ shop.name }}</title>
+{% elsif template == 'list-collections'%}
+<title>Shop | {{ shop.name }}</title>
+{% elsif template contains 'register' %}
+<title>Register | {{ shop.name }}</title>
+{% elsif template contains 'login' %}
+<title>Login | {{ shop.name }}</title>
+{% elsif template contains 'address' %}
+<title>Manage Addresses | {{ shop.name }}</title>
+{% elsif template contains 'account' %}
+<title>Account | {{ shop.name }}</title>
+{% elsif template contains 'order' %}
+<title>Order - {{ order.name }} | {{ shop.name }}</title>
+{% else %}
+<title>{{ page_title }} | {{ shop.name }}</title>
+{% endif %}
+{% if page_description %}
+<meta name="description" content="{{ page_description }}" />
+{% endif %}
+
+{% if settings.facebookComments == '1' %}
+{% if settings.facebookCommentsAdmin != '' %}
+<meta property="fb:admins" content="{{ settings.facebookCommentsAdmin }}"/>
+{% endif %}
+{% endif %}
+<meta property="og:title" content="{{ page_title }}" />
+<meta property="og:site_name" content="{{ shop.name }}" />
+{% if page_description %}
+<meta property="og:description" content="{{ page_description }}" />
+{% endif %}
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@TheSharkDaymond">
+<meta name="twitter:creator" content="@TheSharkDaymond">
+<meta name="twitter:title" content="{{ page_title }}">
+<meta name="twitter:description" content="{{ page_description }}">
+<meta name="twitter:image" content="{{ 'og_image.png' | asset_url }}">
+{% if template contains 'product' %}
+<meta property="og:type" content="product" />
+<meta property="og:brand" content="{{ product.vendor }}" />
+<meta property="og:url" content="{{ shop.url }}{{ product.url }}" />
+<meta property="og:image" content="{{ product.featured_image | product_img_url: 'large' }}" />
+<meta property="og:price:amount" content="{{ product.price | money_without_currency }}" />
+<meta property="og:price:currency" content="{{ shop.currency }}" />
+{% if product.available %}
+<meta property="og:availability" content="instock" />
+{% else %}
+<meta property="og:availability" content="out of stock" />
+{% endif %}
+{% elsif template contains 'article' %}
+<meta property="og:type" content="article" />
+<meta property="og:url" content="{{ shop.url }}{{ article.url }}" />
+{% if article.content contains 'img' %}
+{% assign src = article.content | split: 'src="' %}
+{% assign src = src[1] | split: '"' | first | replace: '//cdn', 'http://cdn' | replace: 'http:http://', 'http://' | remove: 'https:'  %}
+{% if src %}<meta property="og:image" content="{{ src }}" />{% endif %}
+{% endif %}
+{% else %}
+<meta property="og:image" content="{{ 'og_image.png' | asset_url }}" />
+{% endif %}
+
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<meta http-equiv="imagetoolbar" content="no" />
+<meta name="title" content="{{ shop.name }}"/>
+<meta name="copyright" content="Copyright (c) {{ "now" | date: "%Y" }} {{ shop.name }}" />
+
+<!--[if lt IE 9]>
+<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+
+{% if template contains 'customers' %}
+{{ "shopify_common.js" | shopify_asset_url | script_tag }}
+{{ "customer_area.js"  | shopify_asset_url | script_tag }}
+{% endif %}
+
+<link href="{{'apple-touch-icon-57x57.png' | asset_url }}" sizes="57x57" rel="apple-touch-icon">
+<link href="{{'apple-touch-icon-72x72.png' | asset_url }}" sizes="72x72" rel="apple-touch-icon">
+<link href="{{'apple-touch-icon-114x114.png' | asset_url }}" sizes="114x114" rel="apple-touch-icon">
+<link href="{{'apple-touch-icon-144x144.png' | asset_url }}" sizes="144x144" rel="apple-touch-icon">
+<link href="{{'apple-touch-startup-image-320x460.png' | asset_url }}" media="(device-width: 320px)" rel="apple-touch-startup-image">
+<link href="{{'apple-touch-startup-image-640x920.png' | asset_url }}" media="(device-width: 320px) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image">
+<link href="{{'apple-touch-startup-image-768x1004.png' | asset_url }}" media="(device-width: 768px) and (orientation: portrait)" rel="apple-touch-startup-image">
+<link href="{{'apple-touch-startup-image-748x1024.png' | asset_url }}" media="(device-width: 768px) and (orientation: landscape)" rel="apple-touch-startup-image">
+<link href="{{'apple-touch-startup-image-1536x2008.png' | asset_url }}" media="(device-width: 1536px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image">
+<link href="{{'apple-touch-startup-image-1496x2048.png' | asset_url }}" media="(device-width: 1536px)  and (orientation: landscape) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image">
+
+{% if settings.useFavicon == true %}
+<link rel="shortcut icon" type="image/x-icon" href="{{ 'favicon.ico' | asset_url }}" />
+{% endif %}
+
+<link rel="canonical" href="{{ canonical_url }}" />
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, minimal-ui=0">
+
+<link rel="shortcut icon" href="{{ 'favicon.png' | asset_url }}" type="image/x-icon" />
+<link rel="icon" href="{{ 'favicon.png' | asset_url }}" type="image/x-icon" />
+
+{% if template contains "skematiclp5" %}
+{{ 'foundation.scss.css' | asset_url | stylesheet_tag }}
+{{ 'app2.scss.css' | asset_url | stylesheet_tag }}
+
+<script src="{{ 'jquery.js' | asset_url }}" type="text/javascript"></script>
+<script src="{{ 'foundation.js' | asset_url }}" type="text/javascript"></script>
+<script src="{{ 'scrollreveal.min.js' | asset_url }}" type="text/javascript"></script>
+<script src="{{ 'app.js' | asset_url }}" type="text/javascript"></script>
+{% else %}
+<link rel="stylesheet" href="{{ 'owl.carousel.css' | asset_url }}" type="text/css" />
+<link rel="stylesheet" href="{{ 'main.css' | asset_url }}" type="text/css" />
+{{ 'assets.scss.css' | asset_url | stylesheet_tag }}
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/ScrollMagic.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.0/TweenMax.min.js"></script>
+<script src="{{ 'cart.min.js' | asset_url }}" type="text/javascript"></script>
+<script src="{{ 'scripts.min.js' | asset_url }}" type="text/javascript"></script>
+{% endif %}
+
+{{content_for_header}}
+</head>
+
+<body>
+	<div id="content" class="group">
+		<div class="top-bar">
+			<div class="text-center">
+				<img src="{{ 'page-logo5.jpg' | asset_url }}" style="max-height:100px;"/>
+			</div>
+		</div>
+
+		<div id="section1" class="row expanded">
+			<div class="section-container row">
+				<div class="small-12 columns text-center">
+					<h4>{{settings.skematiclp5_1_header}}</h4>
+				</div>
+				<div class="small-12 large-6 columns">
+						{% if settings.skematiclp5_1_show_image == true %}
+							<img class="" src="{{ settings.skematiclp5_1_main_image | img_url: "grande" }}" style="display: block; max-width: 100%; height: auto; margin-bottom:20px;"/>
+						{% else %}
+							<div class="responsive-embed widescreen">
+							{{settings.skematiclp5-video}}
+							</div>
+						{% endif %}
+				</div>
+				<div class="medium-6 columns show-for-large">
+					{{page.content}}
+				</div>
+				<div class="small-12 columns">
+					<div class="row">
+							<div class="small-12 columns">
+								{{ settings.skematiclp5_1_btn_embed }}
+							</div>
+						</div>
+				</div>
+				<div class="small-12 columns hide-for-large">
+					<br/>
+					{{page.content}}
+				</div>
+			</div>
+		</div>
+
+		<section id="section2" class="expanded row">
+			<div class="section-container row">
+				<div class="small-1 columns">&nbsp;</div>
+				<div class="small-2 columns">
+					<div class="text-center">
+						<img src="{{ 'partner5-1-image.png' | asset_img_url: '250x' }}" />
+					</div>
+				</div>
+				<div class="small-2 columns">
+					<div class="text-center">
+						<img src="{{ 'partner5-2-image.png' | asset_img_url: '250x' }}" />
+					</div>
+				</div>
+				<div class="small-2 columns">
+					<div class="text-center">
+						<img src="{{ 'partner5-3-image.png' | asset_img_url: '250x' }}" />
+					</div>
+				</div>
+				<div class="small-2 columns">
+					<div class="text-center">
+						<img src="{{ 'partner5-4-image.png' | asset_img_url: '250x' }}" />
+					</div>
+				</div>
+				<div class="small-2 columns">
+					<div class="text-center">
+						<img src="{{ 'partner5-5-image.png' | asset_img_url: '250x' }}" />
+					</div>
+				</div>
+				<div class="small-1 columns">&nbsp;</div>
+			</div>
+		</section>
+
+		<section id="section3" class="expanded row">
+			<div class="section-container row">
+				<div class="medium-6 columns show-for-large">
+					<br/>
+					<h5>{{settings.skematiclp5_2_header}}</h5>
+					<p>{{settings.skematiclp5_2_textarea}}</p>
+				</div>
+				<div class="small-12 large-6 columns">
+					<div class="text-center">
+						<img src="{{ 'welcome5_image.png' | asset_img_url: 'large' }}" />
+					</div>
+				</div>
+				<div class="clearfix"></div>
+				<div class="small-12 large-6 columns">
+
+					  <!-- <div class="row">
+					    <div class="medium-6 columns">
+				        <input type="text" name="inf_field_FirstName" placeholder="Full Name" required>
+					    </div>
+					    <div class="medium-6 columns">
+				        <input type="email" name="inf_field_Email" placeholder="Email Address" required>
+					    </div>
+					  </div> -->
+					  <div class="row">
+							<!-- <div class="small-12 columns">
+								{{ settings.skematiclp5_1_btn_embed }}
+							</div> -->
+						</div>
+
+				</div>
+				<div class="small-12 large-12 columns">
+					<div class="big-btn-container">
+						<a href="{{settings.skematiclp5_enroll_link}}" class="button submit-btn gradient-btn enroll-btn">{{settings.skematiclp5_enroll_text}}</a>
+					</div>
+				</div>
+				<div class="small-12 large-6 columns hide-for-large">
+					<br/>
+					<h5>{{settings.skematiclp5_2_header}}</h5>
+					<p>{{settings.skematiclp5_2_textarea}}</p>
+				</div>
+			</div>
+		</section>
+	</div><!-- content -->
+	<script src="//static.leadpages.net/leadboxes/current/embed.js" async defer></script>
+	<script type="text/javascript">
+	var vglnk = { key: '2f23705922d7f6c7a9ea7c54be7f7742' };
+	(function(d, t) {
+		var s = d.createElement(t); s.type = 'text/javascript'; s.async = true;
+		s.src = '//cdn.viglink.com/api/vglnk.js';
+		var r = d.getElementsByTagName(t)[0]; r.parentNode.insertBefore(s, r);
+	}(document, 'script'));
+	</script>
+<script type="text/javascript" src="https://daymondjohn.infusionsoft.com/app/webTracking/getTrackingCode"></script>
+<script type="text/javascript" src="https://www.lansrv090.com/js/90224.js" ></script>
+<noscript><img alt="" src="https://www.lansrv090.com/90224.png" style="display:none;" /></noscript>
+</body>
+</html>

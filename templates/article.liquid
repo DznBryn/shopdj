@@ -1,0 +1,63 @@
+<div class="content-columns">
+	<div class="contain wide no-mobile-adjust" data-layout="balance">
+		<div class="content" data-layout="col">
+			<div class="post-content">
+				<header>
+                  
+                    {% for link in linklists.main-menu.links %}
+                        {% if link.active %}
+                            <h2>
+                             {{ link.title }}
+                            </h2>
+                        {% endif %}
+                    {% endfor %}
+					<h1>{{ article.title }}</h1>
+				</header>
+				<div class="user-actions">
+					{% include 'social-share' %}
+					<!--
+					<div class="right">
+						<a href="#@TODO">Comment</a>
+					</div><!-- /.right -->
+				</div><!-- /.user-actions -->
+				<div class="wysiwyg" style="margin-bottom: 20px;">
+                  	
+                  {% if article.content contains '<img' %}	
+					{{ article.content }}
+                  {% else %}
+                  	<img src="{{ article.image.src | img_url : '1024x'}}">
+                    {{ article.content }}
+                  {% endif %}
+                  
+                 
+				</div><!-- /.wysiwyg -->
+              	
+				<span class="related-header">Additional Articles</span>
+			</div><!-- /.post-content -->
+		</div><!-- /.content -->
+		{% section 'sidebar' %}
+	</div><!-- /.contain -->
+</div><!-- /.content-columns -->
+<div class="link-grid no-hover">
+	<div class="row no-gutter">
+		{% for article in blog.articles limit: 4 %}
+		<div class="col-md-3 col-sm-6 col-xs-6">
+		{%comment%}kenny logic for populating article images. feel free to refactor. {%endcomment%}
+		{% if article.image %}
+			<a href="{{ article.url }}" style="background-image: url({{ article.image | img_url: 'original' }});">
+		{%elsif article.content contains "<img" %}
+		{% assign src = article.content | split: 'src="' %}
+		{% assign src = src[1] | split: '"' | first | replace: '//cdn', 'http://cdn';; | replace: 'http:http://';;, 'http://';; | remove: 'https:' %}
+			<a href="{{ article.url }}" style="background-image: url({{src}});">
+		{%else%}
+			<a href="{{ article.url }}" style="background-image: url({{ 'blog-imagenotfound.jpg' | asset_url }});">
+		{% endif %}
+				<span><strong>{{ article.title }}</strong></span></a>
+		</div><!-- /.col -->
+		{% endfor %}
+	</div><!-- / .row -->
+</div><!-- /.link-grid -->
+
+
+{% include 'social-footer' %}
+      

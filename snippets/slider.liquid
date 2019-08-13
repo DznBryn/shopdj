@@ -1,0 +1,40 @@
+<div id="billboardWrapper">
+    <div id="billboard" class="theme-default">
+        {% if settings.slideOneStatus == '1' %}<a href="{{ settings.slideOneLinkURL }}" title="{{ settings.slideOneLinkText }}"><img style="display:none;" src="{{ 'slideOne.jpg' | asset_url }}" alt="{{ settings.slideOneLinkText }}" {% if settings.slideOneTextStatus == '1' %}title="#slideOneCaption"{% endif %}></a>{% endif %}
+        {% if settings.slideTwoStatus == '1' %}<a href="{{ settings.slideTwoLinkURL }}" title="{{ settings.slideTwoLinkText }}"><img style="display:none;" src="{{ 'slideTwo.jpg' | asset_url }}" alt="{{ settings.slideTwoLinkText }}" {% if settings.slideTwoTextStatus == '1' %}title="#slideTwoCaption"{% endif %}></a>{% endif %}
+        {% if settings.slideThreeStatus == '1' %}<a href="{{ settings.slideThreeLinkURL }}" title="{{ settings.slideThreeLinkText }}"><img style="display:none;" src="{{ 'slideThree.jpg' | asset_url }}" alt="{{ settings.slideThreeLinkText }}" {% if settings.slideThreeTextStatus == '1' %}title="#slideThreeCaption"{% endif %}></a>{% endif %}
+        {% if settings.slideFourStatus == '1' %}<a href="{{ settings.slideFourLinkURL }}" title="{{ settings.slideFourLinkText }}"><img style="display:none;" src="{{ 'slideFour.jpg' | asset_url }}" alt="{{ settings.slideFourLinkText }}" {% if settings.slideFourTextStatus == '1' %}title="#slideFourCaption"{% endif %}></a>{% endif %}
+    </div><!-- billboard -->
+    {% if settings.slideOneStatus == '1' %}
+        {% if settings.slideOneTextStatus == '1' %}
+        <div id="slideOneCaption" class="nivo-html-caption">
+            <h3>{{ settings.slideOneHeading }}</h3>
+            <span>{{ settings.slideOneSubHeading }}</span>
+        </div><!-- slideOneCaption -->
+        {% endif %}
+    {% endif %}
+    {% if settings.slideTwoStatus == '1' %}
+        {% if settings.slideTwoTextStatus == '1' %}
+        <div id="slideTwoCaption" class="nivo-html-caption">
+            <h3>{{ settings.slideTwoHeading }}</h3>
+            <span>{{ settings.slideTwoSubHeading }}</span>
+        </div><!-- slideTwoCaption -->
+        {% endif %}
+    {% endif %}
+    {% if settings.slideThreeStatus == '1' %}
+        {% if settings.slideThreeTextStatus == '1' %}
+        <div id="slideThreeCaption" class="nivo-html-caption">
+            <h3>{{ settings.slideThreeHeading }}</h3>
+            <span>{{ settings.slideThreeSubHeading }}</span>
+        </div><!-- slideThreeCaption -->
+        {% endif %}
+    {% endif %}    
+    {% if settings.slideFourStatus == '1' %}
+        {% if settings.slideFourTextStatus == '1' %}
+        <div id="slideFourCaption" class="nivo-html-caption">
+            <h3>{{ settings.slideFourHeading }}</h3>
+            <span>{{ settings.slideFourSubHeading }}</span>
+        </div><!-- slideFourCaption -->
+        {% endif %}
+    {% endif %}    
+</div><!-- billboardWrapper -->

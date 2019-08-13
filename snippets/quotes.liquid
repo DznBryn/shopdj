@@ -1,0 +1,96 @@
+
+<style>
+  #QuotesSection-{{ section.id }} .quotes-slider {
+    background-color: {{ section.settings.color_bg }};
+  }
+  #QuotesSection-{{ section.id }} .quote,
+  #QuotesSection-{{ section.id }} .quote-author {
+    color: {{ section.settings.color_text }};
+  }
+
+
+.quotes-slider {
+  height: 300px;
+  /*background-color: $settings-color-main-bg;*/
+  position: relative;
+  overflow: hidden;
+
+  @include media-query(970px) {
+    height: 200px;
+  }
+}
+
+.quotes-slide {
+  padding: 0 50px;
+  position: relative;
+  max-width: 100%;
+  top: 45%;
+  opacity: 0;
+  z-index: 0;
+  pointer-events: none;
+  @include transform(translate(-50%, -50%));
+  transition: opacity 0.5s ease-out;
+}
+
+.quotes-slide--visible {
+  opacity: 1;
+  z-index: 1;
+}
+
+.quote {
+  /*margin-bottom: $gutter;*/
+}
+
+.quote-author {
+  letter-spacing: 1px;
+}
+
+</style>
+{% if section.blocks.size > 0 %}
+  <div >
+    <div class="quotes-slider text-center" >
+      {% for block in section.blocks %}
+        <div class="quotes-slide quotes-slide--{{ forloop.index0 }} quotes-slide--{{ block.id }}{% if forloop.first == true %} quotes-slide--visible{% endif %}" {{ block.shopify_attributes }}>
+          {% if block.settings.quote != blank %}
+            <div class="h4 quote rte-setting">{{ block.settings.quote }}</div>
+          {% endif %}
+          {% if block.settings.author != blank %}
+            <span class="quote-author">{{ block.settings.author | escape }}</span>
+          {% endif %}
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+{% else %}
+  {% include 'no-blocks' %}
+{% endif %}
+
+
+<script>
+
+$(function(){
+
+      var $slides	= $(".quotes-slide");
+      var currentSlide = 0;
+
+				TweenLite.set($slides.filter(":gt(0)"), {left:"960px"});
+				TweenLite.delayedCall(4, nextSlide);
+
+				function nextSlide(){
+						TweenLite.to( $slides.eq(currentSlide), 1, {left:"-960px"} );
+
+						if (currentSlide < $slides.length - 1) {
+							currentSlide++;
+						}
+						else {
+							currentSlide = 0;
+						}
+
+						TweenLite.fromTo( $slides.eq(currentSlide), 1, {left: "960px"}, {left:"0px"} );
+						TweenLite.delayedCall(4, nextSlide);
+				}
+
+
+			});
+
+</script>

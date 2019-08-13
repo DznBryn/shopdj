@@ -1,0 +1,62 @@
+{% layout 'theme' %}
+
+<div id="customer-account" class="account-layout backend">
+	<div class="contain">
+		<div class="logout">
+			<span>Logged in as {{ customer.name }}<a href="/account/logout">(Logout)</a></span>
+		</div><!-- /.logout -->
+		<div class="row">
+			<div class="col-md-3" id="customer_sidebar">
+				<h2 class="title">Account Details</h2>
+					<hgroup>
+						<h4>{{ customer.name }}</h4>
+						<p class="email note">{{ customer.email }}</p>
+					</hgroup>
+					<hgroup> 
+						 <div class="address note">
+							{% if customer.default_address != nil %}
+								<p> {{ customer.default_address.address1 }}<br/>
+								{% if customer.default_address.address2 != "" %}
+									{{ customer.default_address.address2 }}<br/>
+								{% endif %}
+								{{ customer.default_address.city}}, {% if address.province_code %}{{customer.default_address.province_code}}, {% endif %}{{customer.default_address.country}}
+								{{ customer.default_address.zip}}<br/>
+								{{ customer.default_address.phone }}</p>
+							{% endif %}
+							<a id="view_address" href="/account/addresses">{{ 'customer.account.view_addresses' | t }}</a>
+						</div><!-- /.address -->
+					</hgroup>
+			</div><!-- /.col -->
+			
+			<div id="customer_orders" class="col-md-9">
+				<h2 class="title">Order History</h2>
+				
+				{% if customer.orders.size != 0 %}
+					<table>
+						<tbody>
+							{% for order in customer.orders %}
+								<tr class="{% cycle 'odd', 'even' %} {% if order.cancelled %}cancelled_order{% endif %}">
+									<td><label>Order Number</label><a href="{{order.customer_url}}" class="button on-light">{{order.name}}</a></td>
+									<td><label>Order Created</label><span class="note">{{ order.created_at | date: format: 'short' }}</span></td>
+									<td><label>Payment Status</label><span class="status_{{ order.financial_status }}">{{ order.financial_status_label }}</span></td>
+									<td><label>Shipping Status</label><span class="status_{{ order.fulfillment_status }}">{{ order.fulfillment_status_label }}</span></td>
+									<td><label>Order Total</label><span class="total money">{{ order.total_price | money }}</span></td>
+								</tr>	
+							{% endfor %}
+						</tbody> 
+					</table>
+					{% else %}
+					<p>{{ 'customer.orders.none' | t }}</p>
+				{% endif %}
+		
+			</div><!-- /.col -->
+
+		</div><!-- /.row -->
+
+
+		<div class="account-footer">
+			<a class="go-shopping-account button wide on-light" href="/collections/bra">Go Shopping</a>
+		</div><!-- /.account-footer -->
+
+	</div><!-- /.contain -->
+</div><!-- /.account-layout -->

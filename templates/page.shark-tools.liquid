@@ -1,0 +1,44 @@
+<style>
+.content-columns .content{
+	width: calc( 100% );
+}
+@media screen and (min-width: 768px){
+
+	.content-columns .content{
+		padding: 0; 
+	}
+
+}
+.content-columns .content .post-content{
+	float: none ;
+	margin: 0 auto;
+}
+
+</style>
+
+
+
+<div class="content-columns dark">
+	<div class="contain wide no-mobile-adjust" data-layout="balance">
+		<div class="content" data-layout="col">
+			<div class="post-content">
+				<header>
+					<h1>{{ page.title }}</h1>
+				</header>
+				<div class="wysiwyg">
+					{{ page.content }}
+				</div><!-- /.wysiwyg -->
+				<div class="signed">
+					<img style=" width: 15em; " src="{{'dj-signature-white.gif' | asset_url }}" />
+					<strong>"The People's Shark",</strong>
+					<em>Daymond John</em>
+				</div><!-- /.signed -->
+			</div><!-- /.post-content -->
+			{% section 'resource-tools' %}  
+            {% section 'shark-tool' %}			
+			
+		</div><!-- /.content -->
+	</div><!-- /.contain -->
+</div><!-- /.content-columns -->
+
+{% include 'social-footer' %}
