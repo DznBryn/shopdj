@@ -225,7 +225,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </nav><!-- /nav.header -->
 
 {{content_for_layout}}
-
+<nav class="header">
+	<div class="main">
+		{% include 'sub-footer'%}
+	</div>
+</nav>
 <footer>
 	<div class="contain">
 		<a href="#hero" class="logo">Daymond John - The Peoples Shark</a>
@@ -320,7 +324,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 	</span>
 </div>{% endcomment %}
 
-{{ 'tsdig-smf.js' | asset_url | script_tag }}
 <script type="text/javascript">
     jQuery(function() {
         CartJS.init({{ cart | json }});

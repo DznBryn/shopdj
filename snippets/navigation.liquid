@@ -17,8 +17,11 @@
   }
   .sub-main-links li{
   	margin-left: 0px !important;
+	height: 4em;
   }
-  
+  .sub-main-links li a{
+  	bottom: 15px;
+  }
   .show{
   	display: grid !important ;
   }
@@ -59,6 +62,16 @@
   <li><a href="{{ pages.shark-tools.url }}" {% if template == 'page.shark-tools' %}class="active"{% endif %}>Shark Tools</a></li>
   {%endcomment%}
 </ul>
+
+
+
+<!-- <ul class="main-links">
+				{% for link in linklists.main-menu.links %}
+					  	<li>
+				     	 <a href="{{ link.url }}" {% if link.active%}class="active"{%endif%}>{{ link.title }}</a>
+				     </li>
+				{% endfor %}
+		</ul> -->
 
 <script>
   
