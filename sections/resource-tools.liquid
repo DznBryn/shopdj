@@ -1,14 +1,33 @@
 <style>
 .hero-{{ section.id }}{
     width: 100%;
-    min-height: 600px;
     padding: 1em 0 45em;
-    background: none ;
+    min-height: 600px;
+
 }
+{% for block in section.blocks %} 
+    {% if block.settings.background_image != blank %}
+        .section-{{ block.id }}{
+            width: 100%;
+            min-height: 600px;
+            background-image:  url("{{ block.settings.background_image | img_url : 'master' }}");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+    {% else %}
+        .section-{{ block.id }}{
+            width: 100%;
+            min-height: 600px;
+            background-color: inhert;
+        }
+    {% endif %}
+{% endfor %}
 .section-title{
     width: fit-content;
     margin: 0 auto;
     padding: 2em 0;
+    text-align: center;
 }
 .col-container{
     width: 100%;
@@ -24,14 +43,14 @@
 @media screen and (min-width: 480px){
     .hero-{{ section.id }}{
         padding: 1em 0 0em;
-        margin: 0 0 3em;
+        /* margin: 0 0 3em; */
     }
     .col{
         max-width: 50%;
         padding: 2em 1em 2em 0em;
     }
     .col-container{
-        width: 1000px;
+        width: 85%;
         
     }
 }
@@ -45,6 +64,7 @@
     padding-left: 5%;
     margin-bottom: .5em;
     min-height: 100px;
+    overflow: auto;
 
 }
 
@@ -59,6 +79,9 @@
     width: 100%;
     padding: 2em 0;
 }
+.icon-title h2{
+    font-size: 24px;
+}
 .col-2 div img{
     width: 80px;
 }
@@ -71,11 +94,27 @@
     padding-left: 1em;
     width: 75%;
 }
+
+.col-2 .button{
+    display: block;
+    width: fit-content;
+    margin: 0 auto;
+    margin-top: 2em;
+}
+.col-2 .button a{
+    color: #fff;
+    text-decoration: none;
+
+}
 @media screen and (min-width: 480px){
     .col-2 .icon-content-area{
         width: 80%;
     }
 }
+
+
+
+
 .hide{
     display: none;
 }
@@ -86,46 +125,70 @@
 
 <div class="hero hero-{{ section.id }}">
     {% for block in section.blocks %}
-    <div class="section-title">
-        <h2>{{ block.settings.section_title }}</h2>
-    </div>
-    <div class="col-container">
-        <div class="col col-1">
-            <div class="image-container">
-                <img src="{{ block.settings.section_image | img_url: 'master' }}">
-            </div>
+    <div class="section-container section-{{ block.id }}">
+        <div class="section-title">
+            <h2>{{ block.settings.section_title }}</h2>
         </div>
-        <div class="col col-2">
-            {% for num in (1..4) %}
-                {% capture show_icon %}show_{{ num }}_icon{% endcapture %}
-                {% capture icon %}icon_{{ num }}_image{% endcapture %}
-                {% capture icon_title %}icon_{{ num }}_title{% endcapture %}
-                {% capture icon_text %}icon_{{ num }}_text{% endcapture %}
-                {% if block.settings[show_icon] %}
-                <div class="icon-container">
-                    <div class="icon-img-container">
-                        <img src="{{ block.settings[icon] | img_url: 'small' }}">
-                    </div>
-                    <div class="icon-content-area">
-                        <div class="icon-title"><h2>{{ block.settings[icon_title] }}</h2></div>
-                        <div class="icon-body-text"><p>{{ block.settings[icon_text] }}</p></div>
-                    </div>
+        <div class="col-container">
+            <div class="col col-1">
+                <div class="image-container">
+                    <img src="{{ block.settings.section_image | img_url: 'master' }}">
                 </div>
-                {% else %}
-                <div class="icon-container hide">
+            </div>
+            <div class="col col-2">
+                {% for num in (1..4) %}
+                    {% capture show_icon %}show_{{ num }}_icon{% endcapture %}
+                    {% capture icon %}icon_{{ num }}_image{% endcapture %}
+                    {% capture icon_title %}icon_{{ num }}_title{% endcapture %}
+                    {% capture icon_text %}icon_{{ num }}_text{% endcapture %}
+                    {% if block.settings[show_icon] %}
+                    <div class="icon-container">
                         <div class="icon-img-container">
                             <img src="{{ block.settings[icon] | img_url: 'small' }}">
                         </div>
-                        <div class="icon-title">{{ block.settings[icon_text] }}</div>
+                        <div class="icon-content-area">
+                            <div class="icon-title"><h2>{{ block.settings[icon_title] }}</h2></div>
+                            <div class="icon-body-text"><p>{{ block.settings[icon_text] }}</p></div>
+                        </div>
                     </div>
+                    {% else %}
+                    <div class="icon-container hide">
+                            <div class="icon-img-container">
+                                <img src="{{ block.settings[icon] | img_url: 'small' }}">
+                            </div>
+                            <div class="icon-title">{{ block.settings[icon_text] }}</div>
+                        </div>
+                    {% endif %}
+                {% endfor %}
+                {% if block.settings.button_url != blank %}
+                <div class="button">
+                    <a href="{{ block.settings.button_url }}">{{ block.settings.button_text }}</a>
+                </div>
                 {% endif %}
-            {% endfor %}
+            </div>
         </div>
     </div>
     {% endfor %}
 </div>
 
+<script>
+    (function(){
+        let section_background = $(`.section-container`)
+        let column_2_of_section_height = $('.col-2').height() + 70
+        let column_1_of_section_height = $('.col-1').height() + 70
+        let section_title_height = $('.section-title').height() + $('.section-title h2').height()
 
+        $(document).ready(function(){
+            if( column_1_of_section_height >= column_2_of_section_height ){
+                section_background.css('minHeight','calc(' + column_1_of_section_height + 'px + ' + section_title_height + 'px + 100px )')
+            } else {
+                section_background.css('minHeight','calc(' + column_2_of_section_height + 'px + ' + section_title_height + 'px + 100px )')
+                console.log(section_title_height)
+            }
+        });
+
+    })();
+</script>
 
 {% schema %}
     {
@@ -234,6 +297,18 @@
                         "type": "url",
                         "id": "cta_button",
                         "label": "CTA Button"
+                    },{
+                        "type" : "header",
+                        "content": "Section Button Link"
+                    },{
+                        "type" : "text",
+                        "id" : "button_text",
+                        "label" : "Button Text",
+                        "default": "Button Text Here"
+                    },{
+                        "type": "url",
+                        "id" : "button_url",
+                        "label" : "Button Url"
                     }
                     
                 ]
