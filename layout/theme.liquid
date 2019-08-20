@@ -316,13 +316,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </nav>
 
 {% include 'modals' %}
-
-{% comment %}<div class="copyright">
-	<span class="street-cred">
-		<a href="#" class="cred-link">Site Credit</a>
-		<a href="http://www.bvaccel.com" target="_blank" class="bva"></a>
-	</span>
-</div>{% endcomment %}
+{{ 'ajaxinate.min.js' | asset_url | script_tag }}
 
 <script type="text/javascript">
     jQuery(function() {

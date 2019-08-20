@@ -22,12 +22,18 @@
             background-color: inhert;
         }
     {% endif %}
-{% endfor %}
+
 .section-title{
     width: fit-content;
     margin: 0 auto;
     padding: 2em 0;
     text-align: center;
+}
+.section-{{ block.id }} h2{
+    color: {{ block.settings.text_color }};
+}
+.section-{{ block.id }} p{
+    color: {{ block.settings.icon_text_color }};
 }
 .col-container{
     width: 100%;
@@ -111,7 +117,7 @@
         width: 80%;
     }
 }
-
+{% endfor %}
 
 
 
@@ -205,6 +211,11 @@
                         "label": "Section Title",
                         "default": "Section Title goes here..."
                     },{
+                        "type": "color",
+                        "id": "text_color",
+                        "label": "Text Color",
+                        "default": "#ffffff"
+                    },{
                         "type" : "header",
                         "content": "Background"
                     },{
@@ -221,6 +232,11 @@
                     },{
                         "type" : "header",
                         "content": "Icon Section"
+                    },{
+                        "type": "color",
+                        "id": "icon_text_color",
+                        "label": "Text Color",
+                        "default": "#ffffff"
                     },{
                         "type": "checkbox",
                         "id": "show_1_icon",

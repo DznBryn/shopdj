@@ -1,12 +1,8 @@
-<style>
-.no-show{
-	display: none;
-}
-</style>
+{% paginate blog.articles by 8 %}
 <div class="content-columns dark">
 	<div class="contain wide no-mobile-adjust" data-layout="balance">
 		<div class="content" data-layout="col">
-			<ul class="post-list no-show">
+			<ul  class="post-list AjaxinateLoop">
 				{% for article in blog.articles %}
 				<li class="post" data-layout="balance">
 					{% if article.image %}
@@ -29,12 +25,13 @@
 				</li>
 				{% endfor %}
 			</ul><!-- /.post-list -->
-			<ul class="post-list show-post"></ul>
+			
 		</div><!-- /.content -->
 		{% section 'sidebar' %}
 	</div><!-- /.contain -->
 </div><!-- /.content-columns -->
 
+{% endpaginate %}
 
 
 
@@ -42,32 +39,10 @@
 
 
 <script type="text/javascript">
-  (function(){
-	let win = $(window)
-	let blog_container = $('.content-columns')
-	let posts = []
-	let post_list = $('.post').each(function(){
-		posts.push($(this))
-	})
-	let max_post = 4;
-	
-	for(var post = 0; post <= max_post; post++){
-		
-		$('.show-post').append(posts[post][0])
-	
-	}
-while(max_post == posts.length){
-	win.scroll(function(){
-        if(win.scrollTop() >= blog_container.height() - win.height() ){
-			max_post += 4   
-			for(var post = 0; post <= max_post; post++){
-				$('.show-post').append(posts[post][0])
-			}
-			
-        }
-        
-    }) 
-}
-  })();
+
+	document.addEventListener("DOMContentLoaded", function() {
+		var endlessScroll = new Ajaxinate();
+	});
+
 
 </script>
