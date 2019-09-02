@@ -1,0 +1,176 @@
+
+<style>
+
+.section-container{
+    width: 100%;
+}
+.collection-title-container{
+    width: fit-content;
+    margin: 0 auto;
+    padding-bottom: 3em;
+}
+.collection-title-container header{
+    padding-top: 20px;
+}
+.collection-title-container header h2{
+    text-align: center;
+}
+.collection-container{
+    width: 100%;
+    margin-bottom: 3em;
+}
+.product-image-wrapper,
+.product-description{
+    max-width: 100%;
+
+}
+.product-description{
+    padding-left: 0;
+}
+.product-description header{
+    padding-top: 2em;
+}
+.product-description header h2{
+    margin-bottom: 5px;
+}
+.product-description .product-title{
+    font-size: 20px;
+    margin-bottom: 1em;
+}
+.product-description blockquote {
+    margin: 1.5em 0;
+}
+.product-description .description{
+    font-size: 14px;
+    line-height: 20px;
+    margin-bottom: 2em;
+}
+.product-description .button{
+    color: #000;
+}
+.product-description .button:hover{
+    color: #fff;
+}
+@media screen and (min-width: 768px){
+    .category-wrapper {
+        max-width: 100%;
+    }
+    .collection-title-container header{
+        padding-top: 60px;
+    }
+    .collection-container{
+        width: 50%;
+        float:left;
+        margin-bottom: 6em;
+    }
+    .product-description header{
+        padding-top: 0em;
+    }
+    .product-image-wrapper{
+        width: 40%;
+    }
+    .product-description{
+        width: 60%;
+        padding:0 2.5em 0 1em;
+    }
+    .product-image-wrapper,
+    .product-description{
+        float: left;
+    }
+    
+    {% for block in section.blocks %}
+    {% if block.settings.num_of_products == 1 %}
+    .collection-container{
+        width: 80%;
+    }
+    
+    {% endif %}
+    {% endfor %}
+    
+}
+.collection-container .product-image-container{
+    max-width: 100%;
+}
+.collection-container .product-image-container img{
+    max-width: 100%;
+}
+
+.divider{
+    width: 80%;
+    padding: 1px 0;
+    background-color: #eaeaea;
+    margin: 0 auto;
+    clear: both;
+
+}
+</style>
+
+{% for block in section.blocks %}
+    <div class="section-container collection">
+        <div class="collection-title-container">
+            <header><h2>Category</h2></header>
+            <h2 class="collection-title">{{ block.settings.collection_title }}</h2>
+        </div>
+
+        {% for product in collections[block.settings.product_collection].products limit: block.settings.num_of_products  %}
+            <div class="collection-container">
+                <div class="product-image-wrapper">
+                    <div class="product-image-container"> 
+                        {% for image in product.images limit: 1 %}
+                            <img src="{{ image.src | img_url: 'master' }}">
+                        {% endfor %}
+                    </div>
+                </div>
+                <div class="product-description">
+                    <header><h2>{{ block.settings.product_collection }}</h2></header>
+                    <h2 class="product-title">{{ product.title }}</h2>
+                    <div class="description">
+                        {{ product.description | truncatewords: 50, '...' }}
+                    </div>
+                    <div class="button">{{ product.price | money }}</div>
+                </div>
+            </div>
+       {% endfor %}
+
+    </div>
+    <div class="divider"></div>
+{% endfor %}
+
+{% schema %}
+  {
+    "name": "Product Category",
+    "settings": [],
+    "blocks":[
+        {
+            "type": "collection",
+            "name": "Category",
+            "settings": [
+                {
+                    "type":"text",
+                    "id": "collection_title",
+                    "label": "Category Title"
+                },
+                {
+                    "type": "collection",
+                    "id": "product_collection",
+                    "label": "Product Category"
+                },
+                {
+                    "type": "range",
+                    "id": "num_of_products",
+                    "min": 1,
+                    "max": 4,         
+                    "label": "Number of Products",
+                    "default": 2
+                },
+                {
+                    "type": "url",
+                    "id": "collection_url_page",
+                    "label": "Button to Collection Page"
+                }
+            ]
+        }
+    ]
+  }
+{% endschema %}
+
