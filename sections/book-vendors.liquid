@@ -1,0 +1,79 @@
+<style media="screen">
+    .wrapper{
+        padding-bottom:20px;
+    }
+    .vendor-header-container{
+        margin-bottom: 1em !important;
+    }
+    .hardcover{
+        padding:0px 20px;
+        list-style: none;
+        margin: 0px;
+    }
+    .hardcover li{
+        max-width: 130px;
+        float: left;
+    }
+    .img-size{
+        width: 100%; 
+        min-width: 72px;
+    }
+    
+    
+    
+</style>
+
+
+{% if section.blocks != blank %}
+<div class="container">
+    <div class="vendor-header-container section-header-container">
+        <header><h2>{{ section.settings.subtitle_header }}</h2></header>
+    </div>
+    <div class="row">
+        <ul class="hardcover col-md-12" >
+            {% for block in section.blocks %}
+            <li class="">
+                {% if block.settings.vendor_icon != blank %}
+                    <a href="{{ block.settings.vendor_icon_url }}">
+                        <img src="{{ block.settings.vendor_icon | img_url: '600x' }}" class="img-size img-responsive">
+                    </a>
+                {% endif %}
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>
+{% endif %}
+
+
+{% schema %}
+{
+    "name": "Book Vendors",
+    "settings": [
+        {
+            "type": "text",
+            "id": "subtitle_header",
+            "label": "Subtitle"
+        }
+    ],
+    "blocks": [
+        {
+            "type": "hardcover",
+            "name": "Vendor",
+            "settings": [
+                {
+                    "type" : "image_picker",
+                    "id": "vendor_icon",
+                    "label": "Vendor Icon"
+                },
+                {
+                    "type": "url",
+                    "id": "vendor_icon_url",
+                    "label": "URL to the Product"
+                }
+                
+            ]            
+        }
+    ]    
+}
+{% endschema %}

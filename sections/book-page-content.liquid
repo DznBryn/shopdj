@@ -1,0 +1,38 @@
+<section class="page-container">
+    <div class="section-header-container">
+        <header><h2>{{ page.title }} Book</h2></header>
+        {% if section.settings.page_title != blank %}
+            <h2>{{ section.settings.page_title }}</h2>
+        {% else %}
+            <h2>{{ page.title }}</h2>
+        {% endif %}
+    </div>
+    <article>
+        {% if section.settings.page_content != blank %}
+        {{ pages[section.settings.page_content].content }}
+        {% else %}
+        {{ page.content }}
+        {% endif %}
+    </article>
+</section>
+
+
+{% schema %}
+{
+    "name": "Page Content",
+    "settings": [
+        {
+            "type": "text",
+            "id": "page_title",
+            "label": "Page Title",
+            "info": "This section is a substitute to Page Title. By default, if left blank it will generate its the page content title in 'Pages'"
+        },
+        {
+            "type": "page",
+            "id": "page_content",
+            "label": "Page Content",
+            "info": "By default, the page will generate its own content from 'Pages'. If you want to change the content with another from Pages, select a page you would like to grab"
+        }
+    ]
+}
+{% endschema %}

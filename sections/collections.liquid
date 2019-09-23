@@ -4,6 +4,9 @@
 .section-container{
     width: 100%;
 }
+body.collections .collection{
+    padding: 0px ;
+}
 .collection-title-container{
     width: fit-content;
     margin: 0 auto;
@@ -51,17 +54,40 @@
 .product-description .button:hover{
     color: #fff;
 }
+
+.collection-container .product-image-container{
+    max-width: 100%;
+}
+.collection-container .product-image-container img{
+    max-width: 100%;
+}
+
+.divider{
+    width: 80%;
+    padding: 1px 0;
+    background-color: #eaeaea;
+    margin: 0 auto;
+    clear: both;
+
+}
+@media screen and (min-width: 480px) {
+    
+}
+
 @media screen and (min-width: 768px){
     .category-wrapper {
         max-width: 100%;
     }
+   
     .collection-title-container header{
         padding-top: 60px;
     }
     .collection-container{
-        width: 50%;
-        float:left;
-        margin-bottom: 6em;
+        width: 45%;
+        float: left;
+        margin: 1em;
+        margin-bottom: 3em;
+        display: table;
     }
     .product-description header{
         padding-top: 0em;
@@ -88,20 +114,11 @@
     {% endfor %}
     
 }
-.collection-container .product-image-container{
-    max-width: 100%;
-}
-.collection-container .product-image-container img{
-    max-width: 100%;
-}
 
-.divider{
-    width: 80%;
-    padding: 1px 0;
-    background-color: #eaeaea;
-    margin: 0 auto;
-    clear: both;
-
+@media screen and (min-width: 1100px){
+    body.collections .collection{
+        padding: 0 75px 0 60px;
+    }
 }
 </style>
 
@@ -113,25 +130,26 @@
         </div>
 
         {% for product in collections[block.settings.product_collection].products limit: block.settings.num_of_products  %}
-            <div class="collection-container">
-                <div class="product-image-wrapper">
-                    <div class="product-image-container"> 
-                        {% for image in product.images limit: 1 %}
-                            <img src="{{ image.src | img_url: 'master' }}">
-                        {% endfor %}
-                    </div>
-                </div>
-                <div class="product-description">
-                    <header><h2>{{ block.settings.product_collection }}</h2></header>
-                    <h2 class="product-title">{{ product.title }}</h2>
-                    <div class="description">
-                        {{ product.description | truncatewords: 50, '...' }}
-                    </div>
-                    <div class="button">{{ product.price | money }}</div>
+        <div class="collection-container">
+            <div class="product-image-wrapper">
+                <div class="product-image-container"> 
+                    {% for image in product.images limit: 1 %}
+                        <img src="{{ image.src | img_url: 'master' }}">
+                    {% endfor %}
                 </div>
             </div>
-       {% endfor %}
-
+            <div class="product-description">
+                <header><h2>{{ block.settings.product_collection }}</h2></header>
+                <h2 class="product-title">{{ product.title | truncate: 35, '...' }}</h2>
+                <div class="description">
+                    {{ product.description | truncatewords: 50, '...' }}
+                </div>
+                {% if product.available %}
+                <a href="{{ product.url }}" class="button">{{ product.price | money }}</a>
+                {% endif %}
+            </div>
+        </div>
+        {% endfor %}
     </div>
     <div class="divider"></div>
 {% endfor %}
@@ -159,14 +177,9 @@
                     "type": "range",
                     "id": "num_of_products",
                     "min": 1,
-                    "max": 4,         
+                    "max": 100,         
                     "label": "Number of Products",
                     "default": 2
-                },
-                {
-                    "type": "url",
-                    "id": "collection_url_page",
-                    "label": "Button to Collection Page"
                 }
             ]
         }
