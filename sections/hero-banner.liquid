@@ -15,7 +15,9 @@
 </style>
 
 <div class="hero hero-{{section.id}}" data-section-id="{{ section.id }}">
-    <img src="{{ section.settings.background_image | img_url: 'master' }}">
+   <a href="{{ section.settings.img_url }}">
+       <img src="{{ section.settings.background_image | img_url: 'master' }}">
+    </a>
 </div>
 {% schema %}
     {
@@ -25,6 +27,10 @@
                 "type": "image_picker",
                 "id": "background_image",
                 "label": "Background Image"
+            },{
+                "type": "url",
+                "id": "img_url",
+                "label": "Banner URL"
             }
         
         ]

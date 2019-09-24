@@ -1,0 +1,100 @@
+<style>
+    #section-container{
+        max-width: 100%;
+        margin: 0 auto;
+    }
+    #section-container .collection-container{
+        width: 100%;
+    }
+@media screen and (min-width: 900px) {
+    #section-container{
+        max-width: 900px;
+    }
+
+    #section-container .collection-container{
+        width: 440px;
+    }
+}
+@media screen and (min-width: 1060px) {
+    #section-container{
+        max-width: 1060px;
+    }
+
+    #section-container .collection-container{
+        width: 530px;
+    }
+}
+</style>
+{% if section.blocks != blank %}
+<div class="section-container collection">
+    <div class="collection-title-container">
+        <header><h2>Category</h2></header>
+        <h2 class="collection-title">{{ section.settings.collection_title }}</h2>
+    </div>
+</div>
+<div id="section-container"> 
+    {% for block in section.blocks %}
+    {% assign product = all_products[block.settings.external_product] %}
+            <div class="collection-container">
+                <div class="product-image-wrapper">
+                    <div class="product-image-container"> 
+                        {% for image in product.images limit: 1 %}
+                            <img src="{{ image.src | img_url: 'master' }}">
+                        {% endfor %}
+                    </div>
+                </div>
+                <div class="product-description">
+                    <header><h2>{{ product.collections[1] }}</h2></header>
+                    <h2 class="product-title">{{ block.settings.product_title | truncate: 35, '...' }}</h2>
+                    <div class="description">
+                        {{ product.description | truncatewords: 40, '...' }}
+                    </div>
+                    
+                    <a href="{{ block.settings.external_product_url }}" class="button">{{ block.settings.button_text }}</a>
+                    
+                </div>
+            </div>
+        
+    {% endfor %} 
+</div>
+<div class="divider"></div>
+{% endif %}
+
+{% schema %}
+    {
+    "name": "External Products",
+    "settings": [
+        {
+            "type":"text",
+            "id": "collection_title",
+            "label": "Category Title"
+        }
+    ],
+    "blocks":[
+        {
+            "type": "external-products",
+            "name": "Product",
+            "settings": [
+                {
+                    "type": "text",
+                    "id": "product_title",
+                    "label": "Product Title"
+                },{
+                    "type": "product",
+                    "id": "external_product",
+                    "label": "Product"
+                },{
+                    "type": "url",
+                    "id": "external_product_url",
+                    "label": "External URL"
+                },{
+                    "type": "text",
+                    "id": "button_text",
+                    "label": "Button Text",
+                    "default": "Buy Now"
+                }
+            ]
+        }
+    ]
+    }
+{% endschema %}

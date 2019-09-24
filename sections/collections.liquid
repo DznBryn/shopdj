@@ -83,9 +83,8 @@ body.collections .collection{
         padding-top: 60px;
     }
     .collection-container{
-        width: 45%;
+        width: 50%;
         float: left;
-        margin: 1em;
         margin-bottom: 3em;
         display: table;
     }
@@ -97,7 +96,7 @@ body.collections .collection{
     }
     .product-description{
         width: 60%;
-        padding:0 2.5em 0 1em;
+        padding:0 1.5em 0 1em;
     }
     .product-image-wrapper,
     .product-description{
@@ -115,44 +114,46 @@ body.collections .collection{
     
 }
 
-@media screen and (min-width: 1100px){
-    body.collections .collection{
-        padding: 0 75px 0 60px;
-    }
+@media screen and (min-width: 900px){
+
 }
 </style>
 
 {% for block in section.blocks %}
+{% if collections[block.settings.product_collection].products.size > 0 %}
     <div class="section-container collection">
         <div class="collection-title-container">
             <header><h2>Category</h2></header>
             <h2 class="collection-title">{{ block.settings.collection_title }}</h2>
         </div>
-
-        {% for product in collections[block.settings.product_collection].products limit: block.settings.num_of_products  %}
-        <div class="collection-container">
-            <div class="product-image-wrapper">
-                <div class="product-image-container"> 
-                    {% for image in product.images limit: 1 %}
-                        <img src="{{ image.src | img_url: 'master' }}">
-                    {% endfor %}
+        <div id="section-container">
+            {% for product in collections[block.settings.product_collection].products limit: block.settings.num_of_products  %}
+            <div class="collection-container">
+                <div class="product-image-wrapper">
+                    <div class="product-image-container"> 
+                        {% for image in product.images limit: 1 %}
+                            <img src="{{ image.src | img_url: 'master' }}">
+                        {% endfor %}
+                    </div>
+                </div>
+                <div class="product-description">
+                    <header><h2>{{ block.settings.product_collection }}</h2></header>
+                    <h2 class="product-title">{{ product.title | truncate: 35, '...' }}</h2>
+                    <div class="description">
+                        {{ product.description | truncatewords: 50, '...' }}
+                    </div>
+                    {% if product.available %}
+                    <a href="{{ product.url }}" class="button">{{ product.price | money }}</a>
+                    {% endif %}
                 </div>
             </div>
-            <div class="product-description">
-                <header><h2>{{ block.settings.product_collection }}</h2></header>
-                <h2 class="product-title">{{ product.title | truncate: 35, '...' }}</h2>
-                <div class="description">
-                    {{ product.description | truncatewords: 50, '...' }}
-                </div>
-                {% if product.available %}
-                <a href="{{ product.url }}" class="button">{{ product.price | money }}</a>
-                {% endif %}
-            </div>
+            {% endfor %}
         </div>
-        {% endfor %}
     </div>
     <div class="divider"></div>
+{% endif %}
 {% endfor %}
+
 
 {% schema %}
   {
