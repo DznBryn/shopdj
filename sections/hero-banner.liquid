@@ -13,12 +13,14 @@
         } 
     }
 </style>
-
+{% if section.settings.background_image != blank %}
 <div class="hero hero-{{section.id}}" data-section-id="{{ section.id }}">
    <a href="{{ section.settings.img_url }}">
        <img src="{{ section.settings.background_image | img_url: 'master' }}">
     </a>
 </div>
+{% endif %}
+
 {% schema %}
     {
         "name": "Hero Banner",
