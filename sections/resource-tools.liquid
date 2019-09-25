@@ -1,15 +1,9 @@
 <style>
-.hero-{{ section.id }}{
-    width: 100%;
-    padding: 1em 0 45em;
-    min-height: 600px;
-
-}
 {% for block in section.blocks %} 
     {% if block.settings.background_image != blank %}
         .section-{{ block.id }}{
             width: 100%;
-            min-height: 600px;
+            
             background-image:  url("{{ block.settings.background_image | img_url : 'master' }}");
             background-size: cover;
             background-position: center;
@@ -17,8 +11,7 @@
         }
     {% else %}
         .section-{{ block.id }}{
-            width: 100%;
-            min-height: 600px;
+            width: 100%;            
             background-color: inhert;
         }
     {% endif %}
@@ -30,36 +23,21 @@
     text-align: center;
 }
 .section-{{ block.id }} h2{
-    color: {{ block.settings.text_color }};
+    font-size: 18px;
+    line-height: 1.5;
 }
-.section-{{ block.id }} p{
-    color: {{ block.settings.icon_text_color }};
-}
+
 .col-container{
     width: 100%;
     margin: 0 auto;
 }
 .col{
     max-width: 100%;
-    max-height: 100%;
     padding: 1em 0;
-    float: left;
+    
 
 }
-@media screen and (min-width: 480px){
-    .hero-{{ section.id }}{
-        padding: 1em 0 0em;
-        /* margin: 0 0 3em; */
-    }
-    .col{
-        max-width: 50%;
-        padding: 2em 1em 2em 0em;
-    }
-    .col-container{
-        width: 85%;
-        
-    }
-}
+
 .col div{
     width: 100%;
 }
@@ -67,7 +45,6 @@
     width: 100%;
 }
 .col .icon-container{
-    padding-left: 5%;
     margin-bottom: .5em;
     min-height: 100px;
     overflow: auto;
@@ -79,26 +56,29 @@
     overflow: hidden;
 }
 .col-1 .image-container{
-    float: right;
+    width: 80%;
+    margin: 0 auto;
 }
 .col-2{
     width: 100%;
-    padding: 2em 0;
+    padding: 0 0 3em;
 }
 .icon-title h2{
     font-size: 24px;
 }
 .col-2 div img{
     width: 80px;
+    display: none;
 }
+
 .col-2 .icon-img-container,
 .col-2 .icon-content-area{
-    float: left;
     width: fit-content;
 }
+
 .col-2 .icon-content-area{
     padding-left: 1em;
-    width: 75%;
+    width: 100%;
 }
 
 .col-2 .button{
@@ -107,14 +87,49 @@
     margin: 0 auto;
     margin-top: 2em;
 }
-.col-2 .button a{
-    color: #fff;
-    text-decoration: none;
 
+.col-2 .button a{
+    text-decoration: none;
 }
+
+.section-{{ block.id }} h2,
+.section-{{ block.id }} p,
+.section-{{ block.id }} .col-2 .button a{
+    color: {{ block.settings.icon_text_color }};
+}
+
 @media screen and (min-width: 480px){
+    .section-{{ block.id }} h2{
+        font-size: 24px;
+    }
+    .hero-{{ section.id }}{
+        padding: 1em 0 0em;
+    }
+    .col{
+        width: 100%;
+    }
+    .col-container{
+        width: 90%;
+        
+    }
     .col-2 .icon-content-area{
-        width: 80%;
+        width: 100%;
+    }
+}
+
+@media screen and (min-width: 768px){
+    .section-{{ block.id }} h2{
+        font-size: 20px;
+    }
+    .col {
+        width: 50%;
+        float: left;
+    }
+}
+
+@media screen and (min-width: 1200px){
+    .col-container{
+        width: 1110px;
     }
 }
 {% endfor %}
@@ -125,11 +140,9 @@
     display: none;
 }
 
-
 </style>
 
 
-<div class="hero hero-{{ section.id }}">
     {% for block in section.blocks %}
     <div class="section-container section-{{ block.id }}">
         <div class="section-title">
@@ -173,28 +186,9 @@
                 {% endif %}
             </div>
         </div>
+        <div class="divider"></div>
     </div>
     {% endfor %}
-</div>
-
-<script>
-    (function(){
-        let section_background = $(`.section-container`)
-        let column_2_of_section_height = $('.col-2').height() + 70
-        let column_1_of_section_height = $('.col-1').height() + 70
-        let section_title_height = $('.section-title').height() + $('.section-title h2').height()
-
-        $(document).ready(function(){
-            if( column_1_of_section_height >= column_2_of_section_height ){
-                section_background.css('minHeight','calc(' + column_1_of_section_height + 'px + ' + section_title_height + 'px + 100px )')
-            } else {
-                section_background.css('minHeight','calc(' + column_2_of_section_height + 'px + ' + section_title_height + 'px + 100px )')
-                console.log(section_title_height)
-            }
-        });
-
-    })();
-</script>
 
 {% schema %}
     {
