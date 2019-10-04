@@ -1,0 +1,134 @@
+<style>
+header{
+    padding-top: 0.5em;
+}
+header h2{
+    line-height: 15px;
+}
+#section-container{
+    max-width: 100%; 
+    margin-top: 3em;
+    margin-bottom: 3em;
+}
+
+#section-container .col {
+    width: 100%;
+}
+
+#section-container .col.interviewee-col-1{}
+
+#section-container .col.interviewee-col-1 .image-container{
+    width: 100%;
+}
+
+#section-container .col.interviewee-col-1 .image-container img{
+    width: 100%;
+}
+
+#section-container .col.interviewee-col-2{
+    margin: 1em auto;
+}
+
+#section-container .col.interviewee-col-2 .interviewee-header-container{
+    margin: 1em auto;
+}
+
+#section-container .col.interviewee-col-2 .interviewee-header-container .interviewee-name{
+    color: #000;
+    font-size: 24px;
+}
+
+#section-container .col.interviewee-col-2 .interviewee-header-container header h2{
+    line-height: 20px;
+    font-size: 12px;
+}
+
+#section-container .col.interviewee-col-2 .interviewee-description{}
+
+#section-container .col.interviewee-col-2 .interviewee-description .interviewee-page-content{}
+
+#section-container .col.interviewee-col-3{
+    margin: 3em auto;
+}
+
+#section-container .col.interviewee-col-3 blockquote{
+    font-family: "Gotham bold", serif;
+    
+}
+
+@media screen and (min-width: 768px){
+    #section-container .col.interviewee-col-1{
+        float: left;
+        width: 50%;
+        margin-right: 2em;
+    }
+    
+    #section-container .col.interviewee-col-3 blockquote{
+        font-family: "Gotham bold", serif;
+        font-size: 28px;
+        line-height: 1.4;
+        text-align: center;
+    }
+}
+
+@media screen and (min-width: 1800px){
+    #section-container{
+        width: 1170px;
+        margin: 3em auto;
+    }
+}
+
+</style>
+
+<div id="section-container">
+    {% if section.settings.interviewee_image != blank %}
+    <div class="col interviewee-col-1">
+        <div class="image-container">
+            <img src="{{ section.settings.interviewee_image | img_url: 'master'}}">
+        </div>
+    </div>
+    {% endif %}
+    <div class="col interviewee-col-2 interviewee-description-container">
+        <div class="interviewee-header-container">
+            <h2 class="interviewee-name">{{ section.settings.interviewee_name }}</h2>
+            <header><h2>{{ section.settings.interviewee_title }}</h2></header>
+        </div>
+        <div class="interviewee-description">
+            <p class="interviewee-page-content">{{ pages[section.settings.interview_page_content].content }}</p>
+        </div>
+    </div>
+    <div class="divider"></div>
+    <div class="col interviewee-col-3">
+        <blockquote><strong>"{{ section.settings.interviewee_quote }}"</strong></blockquote>
+    </div>
+</div>
+
+{% schema %}
+{
+    "name": "Interviewee Page",
+    "settings": [
+       {
+           "type": "text",
+           "id": "interviewee_name",
+           "label": "Interviewee Name"
+       },{
+           "type": "text",
+           "id": "interviewee_title",
+           "label": "Interviewee Title"
+       },{
+           "type": "image_picker",
+           "id": "interviewee_image",
+           "label": "Interviewee Image"
+       },{
+           "type": "page",
+           "id": "interview_page_content",
+           "label": "Interviewee Bio"
+       },{
+           "type": "textarea",
+           "id": "interviewee_quote",
+           "label": "Interviewee Quote"
+
+       } 
+    ]
+}
+{% endschema %}

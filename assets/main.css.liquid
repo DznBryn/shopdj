@@ -4817,16 +4817,20 @@ body.front-page {
     body.front-page #social .inner.twitter .content {
       text-align: center; }
       body.front-page #social .inner.twitter .content iframe {
-        width: 100% !important;
     	height: 720px !important;
-
         display: block !important;
         margin: 0 auto !important;
-        max-width: 100%; }
+      }
         @media (max-width: 480px) {
           body.front-page #social .inner.twitter .content iframe {
-            height: 350px !important; } }
-
+            height: 350px !important; 
+          }
+        }
+        @media screen and (min-width: 768px){
+          body.front-page #social .inner.twitter .content iframe {
+            width: 100% !important; 
+          }
+        }          
     body.front-page #social .inner.instagram .header {
       background: #C2B174; }
       body.front-page #social .inner.instagram .header h2 {
@@ -5474,14 +5478,21 @@ body.power-of-broke .testimonials {
       padding-bottom: 20px; }
   body.power-of-broke .profile-grid {
     padding-top: 50px;
-    padding-bottom: 0px; } }
+    padding-bottom: 0px; } 
+  
+  .content-columns.dark {
+    background: #000;
+  	margin-top: 2em;
+  }
+}
 
 .content-columns {
   overflow: hidden;
   background: #FFF;
   position: relative; }
   .content-columns.dark {
-    background: #000; }
+    background: #000;
+  }
   .content-columns:before {
     content: "";
     display: block;

@@ -30,13 +30,26 @@
 		{% section 'sidebar' %}
 	</div><!-- /.contain -->
 </div><!-- /.content-columns -->
+  
+<div class="pagination dark">
+  <div class="contain narrow">
+    {% if paginate.previous.is_link %}
+    <span class="prev-link left"><a href="{{ paginate.previous.url }}">Previous</a></span>
+    {% endif %}
+    {% if paginate.next.is_link %}
+    <span class="next-link right"><a href="{{ paginate.next.url }}">Next</a></span>
+    {% endif %}
+    <ul class="page-links">
+      {% for part in paginate.parts %}
+      {% if part.is_link %}
+      <li>{{ part.title | link_to: part.url}}</li>
+      {% endif %}
+      {% endfor %}
+    </ul><!-- ./page-links -->
+  </div><!-- /.contain -->
+</div><!-- /.pagination -->
 
 {% endpaginate %}
-
-
-
-
-
 
 <script type="text/javascript">
 

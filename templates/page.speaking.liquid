@@ -1,3 +1,20 @@
+<style>
+.post-content .button-wrapper{
+	width: 100%; 
+	margin: 0 auto 2em;
+}
+
+.post-content .button-wrapper span.button {
+	width: 100%;
+}
+
+@media screen and (min-width: 480px){
+	.post-content .button-wrapper{
+		width: fit-content;
+	}
+}
+</style>
+
 {% assign content = page.content | split: '<!-- split -->'  %}
 <header>
 	<div class="contain narrow">
@@ -14,47 +31,11 @@
 </header>
 <div>
 	<div class="post-content contain narrow">
-      <div style="width: fit-content; margin: 0 auto 2em;"><span class="button on-light open-modal" data-modal="book" style="" >
-        Book Daymond for you speaking engagment</span></div>
+		<div class="button-wrapper">
+			<span class="button on-light open-modal" data-modal="book">Book Daymond for your speaking engagment</span>
+		</div>
 		{{ content[0] }}
-		
 	</div><!-- .post-content -->
 </div><!-- /.contain -->
-
-{%comment%}
-<div style="overflow: hidden;">
-	{% if content[1] and content[2]%}
-	<div class="tabs contain" id="tab">
-		<ul class="tab-nav">
-			{% if content[1] %}<li class="active"><span>{{ content[1] }}</span></li>{% endif %}
-			{% if content[3] %}<li><span>{{ content[3] }}</span></li>{% endif %}
-			{% if content[5] %}<li><span>{{ content[5] }}</span></li>{% endif %}
-		</ul><!-- /.tab-nav -->
-		<div class="tabs-contain">
-			{% if content[1] and content[2] %}
-			<div class="tab active">
-				<span class="tab-header">{{ content[1] }}</span>
-				{{ content[2] }}
-			</div><!-- /.tab -->
-			{% endif %}
-			{% if content[3] and content[4] %}
-			<div class="tab slide-right">
-				<span class="tab-header">{{ content[3] }}</span>
-				{{ content[4] }}
-			</div><!-- /.tab -->
-			{% endif %}
-			{% if content[5] and content[6] %}
-			<div class="tab slide-right">
-				<span class="tab-header">{{ content[5] }}</span>
-				{{ content[6] }}
-			</div><!-- /.tab -->
-			{% endif %}
-		</div><!-- /.tab-content -->
-	</div><!-- /.tabs -->
-	{% endif %}
-</div>
-{%endcomment%}
-
 {% section 'partners' %}
-
 {% include 'social-footer' %}

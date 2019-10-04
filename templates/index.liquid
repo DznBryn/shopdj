@@ -1,32 +1,29 @@
 <body class="front-page">
   <div class="site-wrap">
-      <section id="hero" >
-        <div class="dj-banner"></div>
-          <div class="split parallax" style="background-color:{{ 'spilt' | asset_url}};" data-layer="1"><h1 class="logo parallax" data-layer="2">Daymond John</h1></div>
+    <section id="hero" >
+    <div class="dj-banner"></div>
+        <div class="split parallax" style="background-color:{{ 'spilt' | asset_url}};" data-layer="1"><h1 class="logo parallax" data-layer="2">Daymond John</h1></div>
+        <div class="contain">
+            <span class="daymond parallax" style="background-image: ('{{ 'image_daymond-hero.png' | asset_url}}')" data-layer="3"></span>
+        </div><!-- /.contain -->
+        <span class="vignette"></span>
+        <div class="cta parallax" data-layer="4">
             <div class="contain">
-                <span class="daymond parallax" style="background-image: ('{{ 'image_daymond-hero.png' | asset_url}}')" data-layer="3"></span>
-            </div><!-- /.contain -->
-          <span class="vignette"></span>
-          <div class="cta parallax" data-layer="4">
-              <div class="contain">
-                  <div class="cta-inner">
-                      <div class="left">
-                          <h2 class="open-modal">{{settings.cta_first}}</h2>
-                          <a href="{{settings.cta_first_button_link}}" class="button">{{settings.cta_first_button}}</a>
-                      </div><!-- /.left -->
-                      <div class="right">
-                          <img src="{{ 'img-power-of-broke-thumb.jpg' | asset_url}}" alt="Display of Power" title="Download Display of Power" id="keybizterm" data-modal="downloadNew" />
-                      </div><!-- /.right -->
-                  </div><!-- /.cta-inner -->
-              </div><!-- /.contian -->
-          </div><!-- /.cta -->
-          <a href="#bio" class="arrow bounce parallax" data-layer="5">r</a>
-      </section><!-- /#hero -->
-
-      <span id="bio-top"></span>
-
+                <div class="cta-inner">
+                    <div class="left">
+                        <h2 class="open-modal">{{settings.cta_first}}</h2>
+                        <a href="{{settings.cta_first_button_link}}" class="button">{{settings.cta_first_button}}</a>
+                    </div><!-- /.left -->
+                    <div class="right">
+                        <img src="{{ 'img-power-of-broke-thumb.jpg' | asset_url}}" alt="Display of Power" title="Download Display of Power" id="keybizterm" data-modal="downloadNew" />
+                    </div><!-- /.right -->
+                </div><!-- /.cta-inner -->
+            </div><!-- /.contian -->
+        </div><!-- /.cta -->
+        <a href="#bio" class="arrow bounce parallax" data-layer="5">r</a>
+    </section><!-- /#hero -->
+    <span id="bio-top"></span>
     {% section 'bio' %}
-
 	{% section 'partners' %}
 
 
