@@ -1,25 +1,44 @@
 <style>
-  #promo-sidebar{
+
+.content-columns .content {
+	width: 100%;
+}
+#promo-sidebar{
     background: inherit;
-    width: 100%;
-    padding: 25px 0px 30px;
+    max-width: 100%;
+	padding: 25px 0px 30px;
+	height: 100vh;
     
   }
-  #promo-sidebar h6{
-    padding: 0px 35px;
-  }
-  .fixed-promo-bar{
-  	position: fixed;
-    top: 0;
-  }
-  .ad-container{
-  	width: 100%;
-  }
-  .ad-container a img{
-  	width: 324px;
-  	max-width: 100%;
-  }
+#promo-sidebar h6{
+	padding: 0px 35px;
+	line-height: 1.5;
+}
+.ad-container{
+	width: 100%;
+}
+.ad-container a img{
+	width: 324px;
+	max-width: 100%;
+}
   
+@media screen and (min-width: 991px) {
+	.content-body-wrapper{
+	width: calc( 100% - 325px );
+	float: left;
+	}
+	.post-list > li .image-header {
+		background-size: cover;
+	}
+	.fixed-promo-bar{
+		position: fixed;
+		top: 0;
+		height: 100vh;
+		overflow: scroll; 
+	}
+}
+
+
 </style>
 
 
@@ -91,15 +110,15 @@
   (function(){
     const sidebar = $('#promo-sidebar');
     const sidebarTop = sidebar.offset();
-
-    function handleScroll(){
+	
+	const handleScroll = () => {
       if(window.scrollY > sidebarTop.top ){
-        sidebar.addClass('fixed-promo-bar')     
+        sidebar.addClass('fixed-promo-bar')
+		
       }else{
         sidebar.removeClass('fixed-promo-bar')
       }
     }
-
 
     window.addEventListener('scroll', handleScroll);
   })(jQuery);
