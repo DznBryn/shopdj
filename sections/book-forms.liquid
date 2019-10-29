@@ -1,0 +1,68 @@
+{{ 'foundation.scss.css' | asset_url | stylesheet_tag }}
+{{ 'page-styles.scss.css' | asset_url | stylesheet_tag }}
+{{ 'main.css' | asset_url | stylesheet_tag }}
+<style >
+    .formwrapper{
+        max-width:600px;
+        margin:0 auto;
+        padding:20px;
+        display: block;
+
+    }
+    .container{margin-bottom: 30px!important;}
+    h4{
+        color:black;
+        margin:10px;
+    }
+    button{background:black;}
+    .infusion-field-input-container{width:100%!important;}
+    .plyr--video .plyr__controls{z-index:0!important;}
+</style>
+
+<div class="container">
+    <div class="formwrapper">
+        {% for block in section.blocks %}
+        {% assign form_id = block.settings.form_id | downcase | split: ' '| join: '-' %}
+        {% if page.handle == form_id %}
+        <h4 class="text-center">{{ block.settings.form_title }}</h4>
+        {% if form.posted_successfully? %}
+            Comment posted successfully!
+        {% else %}
+            {{ form.errors | default_errors }}
+        {% endif %}
+        {{ block.settings.form_html }}
+        {% endif %}
+        {% endfor %}
+
+    </div>
+</div>
+
+{% schema %}
+{
+    "name": "Book Form",
+    "settings": [],
+    "blocks": [
+        {
+            "name": "Form",
+            "type": "form",
+            "settings": [
+                {
+                    "type": "text",
+                    "id": "form_id",
+                    "label": "Form ID"
+                },
+                {
+                    "type": "text",
+                    "id": "form_title",
+                    "label": "Form Title"
+                },
+                {
+                    "type": "html",
+                    "id": "form_html",
+                    "label": "HTML Forms"
+                }
+            ]
+        }
+    ]
+}
+{% endschema %}
