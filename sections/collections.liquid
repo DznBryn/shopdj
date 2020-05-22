@@ -1,4 +1,3 @@
-
 <style>
 
 .section-container{
@@ -101,6 +100,7 @@ body.collections .collection{
     .product-image-wrapper,
     .product-description{
         float: left;
+        height: 330px;
     }
     
     {% for block in section.blocks %}
@@ -120,71 +120,74 @@ body.collections .collection{
 </style>
 
 {% for block in section.blocks %}
-{% if collections[block.settings.product_collection].products.size > 0 %}
-    <div class="section-container collection">
-        <div class="collection-title-container">
-            <header><h2>Category</h2></header>
-            <h2 class="collection-title">{{ block.settings.collection_title }}</h2>
-        </div>
-        <div id="section-container">
-            {% for product in collections[block.settings.product_collection].products limit: block.settings.num_of_products  %}
-            <div class="collection-container">
-                <div class="product-image-wrapper">
-                    <div class="product-image-container"> 
-                        {% for image in product.images limit: 1 %}
-                            <img src="{{ image.src | img_url: 'master' }}">
-                        {% endfor %}
-                    </div>
-                </div>
-                <div class="product-description">
-                    <header><h2>{{ block.settings.product_collection }}</h2></header>
-                    <h2 class="product-title">{{ product.title | truncate: 35, '...' }}</h2>
-                    <div class="description">
-                        {{ product.description | truncatewords: 50, '...' }}
-                    </div>
-                    {% if product.available %}
-                    <a href="{{ product.url }}" class="button">{{ product.price | money }}</a>
-                    {% endif %}
-                </div>
+    {% if collections[block.settings.product_collection].products.size > 0 %}
+        <div class="section-container collection">
+            <div class="collection-title-container">
+                <header>
+                    <h2>Category</h2>
+                </header>
+                <h2 class="collection-title">{{ block.settings.collection_title }}</h2>
             </div>
-            {% endfor %}
+            <div id="section-container">
+                {% for product in collections[block.settings.product_collection].products limit: block.settings.num_of_products  %}
+                    <div class="collection-container">
+                        <div class="product-image-wrapper">
+                            <div class="product-image-container">
+                                {% for image in product.images limit: 1 %}
+                                    <img src="{{ image.src | img_url: 'master' }}">
+                                {% endfor %}
+                            </div>
+                        </div>
+                        <div class="product-description">
+                            <header>
+                                <h2>{{ block.settings.product_collection }}</h2>
+                            </header>
+                            <h2 class="product-title">{{ product.title | truncate: 35, '...' }}</h2>
+                            <div class="description">
+                                {{ product.description | truncatewords: 50, '...' }}
+                            </div>
+                            {% if product.available %}
+                                <a href="{{ product.url }}" class="button">{{ product.price | money }}</a>
+                            {% endif %}
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
         </div>
-    </div>
-    <div class="divider"></div>
-{% endif %}
+        <div class="divider"></div>
+    {% endif %}
 {% endfor %}
 
 
 {% schema %}
-  {
+
+{
     "name": "Product Category",
     "settings": [],
-    "blocks":[
+    "blocks": [
         {
             "type": "collection",
             "name": "Category",
             "settings": [
                 {
-                    "type":"text",
+                    "type": "text",
                     "id": "collection_title",
                     "label": "Category Title"
-                },
-                {
+                }, {
                     "type": "collection",
                     "id": "product_collection",
                     "label": "Product Category"
-                },
-                {
+                }, {
                     "type": "range",
                     "id": "num_of_products",
                     "min": 1,
-                    "max": 100,         
+                    "max": 100,
                     "label": "Number of Products",
                     "default": 2
                 }
             ]
         }
     ]
-  }
-{% endschema %}
+}
 
+{% endschema %}

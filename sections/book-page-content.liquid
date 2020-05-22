@@ -1,6 +1,10 @@
+<style>
+.section-header-container.page-content-container{
+    margin: 1.7em 0 !important;
+}
+</style>
 <section class="page-container">
-    <div class="section-header-container">
-        <header><h2>{{ page.title }} Book</h2></header>
+    <div class="section-header-container page-content-container">
         {% if section.settings.page_title != blank %}
             <h2>{{ section.settings.page_title }}</h2>
         {% else %}
@@ -9,9 +13,9 @@
     </div>
     <article>
         {% if section.settings.page_content != blank %}
-        {{ pages[section.settings.page_content].content }}
+            {{ pages[section.settings.page_content].content }}
         {% else %}
-        {{ page.content }}
+            {{ page.content }}
         {% endif %}
     </article>
 </section>

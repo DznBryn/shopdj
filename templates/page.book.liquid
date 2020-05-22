@@ -1,18 +1,45 @@
 <style>
- #content{
-     padding: 0 5px;
- }
+  #content{
+    padding: 0 5px;
+  }
+  div.container{
+    margin-top: 0em;
+  }
+  div.button-wrapper{
+    max-width: max-content; 
+    margin: 2em auto 1em;
+  }
+  a.button{
+    color: #000000;
+    white-space: normal;
+  }
+  .slick-slide:focus, .slick-slide img:focus {
+    outline: 0;
+  }
 </style>
 
 <section>
-    <div id="content" class="group">
+    <div class="group" id="content">
         <div class="container content-container">
-            {% section 'book-page-content' %}
+            {% section 'powershift-banner'%}
             {% section 'book-vendors' %}
-            {% section 'book-forms' %}
+            <div class="button-wrapper">
+                <a class="button" href="https://powershift.daymondjohn.com/chapter-1">
+                    <span>Start laying the foundation to achieve success today: click here to for an exclusive Powershift preview!</span>
+                </a>
+            </div>
+            {% section 'book-page-content' %}
+
+            <div class="button-wrapper">
+                <a class="button" href="https://powershift.daymondjohn.com/bulk-buy">
+                    <span>Already ordered your copy? Check out this extra Powershift content that will help you reach (and surpass!) your goals</span>
+                </a>
+            </div>
+            {% include 'powershift-form' %}
             <div class="carousel-container">
                 {% section 'book-carousel'%}
             </div>
         </div>
     </div>
 </section>
+

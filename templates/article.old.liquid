@@ -1,0 +1,194 @@
+<div id="content" class="group">
+    <article id="mainContent" class="articleWrapper floatLeft" itemscope itemtype="http://schema.org/Article">
+    	<header id="articleHeader">
+			{% include 'breadcrumbs' %}
+        	<time class="articleDate" pubdate="{{ article.created_at | date: "%B %d, %Y" }}"  itemprop="datePubished"><span class="dateMonth">{{ article.created_at | date: "%b" }}</span><span class="dateDay">{{ article.created_at | date: "%d" }}</span></time>
+			<h1 itemprop="name">{{article.title}}</h1>
+        	<p class="articleMeta">posted by <span itemprop="author">{{ article.author }}</span> {% for tag in article.tags %}{% if forloop.first %}in {% endif %}<a href="{{ shop.url}}/blogs/{{ blog.handle }}/tagged/{{ tag | handleize }}">{{ tag }}</a>{% unless forloop.last %},&nbsp;{% endunless %}{% endfor %}{% if blog.comments_enabled? %}
+				{% if settings.use_disqus_comments == true %}
+            &nbsp;&nbsp;|&nbsp;&nbsp;<a class="articleComments" href="{{shop.url}}{{article.url}}#disqus_thread" data-disqus-identifier="{{ article.id }}"></a>
+					<script type="text/javascript">
+					    var disqus_shortname = '{{ settings.disqus_username }}';
+					    /* * * DON'T EDIT BELOW THIS LINE * * */
+					    (function () {
+					        var s = document.createElement('script'); s.async = true;
+					        s.type = 'text/javascript';
+					        s.src = 'http://' + disqus_shortname + '.disqus.com/count.js';
+					        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+					    }());
+					</script>	
+				{% else %}
+					&nbsp;&nbsp;|&nbsp;&nbsp;<a class="articleComments" href="{{article.url}}#comments">{{ article.comments_count }} Comments</a>
+				{% endif %}
+			{% endif %}</p>
+		</header><!-- articleHeader -->
+        <div id="articleBody" class="textile" itemprop="articleBody">
+            {{ article.content }}
+        </div><!-- articleBody -->
+      	<div id="articleSharing">
+          <span id="shareThisTitle">Share</span>
+					<span class='st_fblike_hcount' displayText='Facebook Like'></span>
+					<span class='st_twitter_hcount' displayText='Tweet'></span>
+					<span class='st_pinterest_hcount' displayText='Pinterest'></span>
+					<span class='st_plusone_hcount' displayText='Google +1'></span>
+          <script type="text/javascript" src="//w.sharethis.com/button/buttons.js"></script>
+					<script type="text/javascript">stLight.options({publisher: "ur-ea8e87a2-d1b4-5985-cc3c-89ddc6418cb"});</script>
+	      </div><!-- articleSharing -->
+        <ul id="articleTags" class="group" itemprop="keywords">
+            {% for tag in article.tags %}
+            <li><a href="{{ shop.url}}/blogs/{{ blog.handle }}/tagged/{{ tag | handleize }}">{{ tag }}</a></li>
+            {% endfor %}
+        </ul><!-- articleTags -->
+		{% if blog.comments_enabled? %}
+        {% if settings.use_disqus_comments == true %}
+        <section id="comments">
+			<h2 id="commentsTitle">Comments</h2>
+            <div id="disqus_thread"></div>
+            <script type="text/javascript">
+                var disqus_shortname = '{{ settings.disqus_username }}';
+                var disqus_identifier = '{{ article.id }}';
+                var disqus_url = '{{ shop.url}}{{ article.url }}';
+
+                /* * * DON'T EDIT BELOW THIS LINE * * */
+                (function() {
+                    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                    dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+                    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                })();
+            </script>
+            <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+        </section><!-- disqusWrapper -->
+        {% else %}
+        <section id="comments">
+        {% paginate article.comments by 10 %}
+        {% if comment and comment.created_at %}
+        {% assign a_comment_was_just_published_successfully = true %}
+            <h2 id="commentsTitle">{{ article.comments_count | plus: 1 }} {{ article.comments_count | plus: 1 | pluralize: "Comment", "Comments" }}</h2>
+        {% elsif article.comments_count > 0 %}
+            <h2 id="commentsTitle">{{ article.comments_count }} {{ article.comments_count | pluralize: "Comment", "Comments" }}</h2>
+        {% else %}
+            <h2 id="commentsTitle">No Comments Yet</h2>
+        {% endif %}
+        {% if article.comments_count > 0 or comment.created_at %}
+            <div id="commentsList">
+                {% if comment and comment.created_at %}
+                <article id="comment-{{ comment.id }}" class="{{ comment.status }} not-yet-published last">
+                    <img class="commentGravatar" src="//www.gravatar.com/avatar/{{comment.email | md5}}.jpg?s=40" alt="" class="gravatar" />
+                    <div class="commentBody">
+                        {{ comment.content }}
+                    </div><!-- commentBody -->
+                    <div class="commentDetails">
+                        <p>Posted by <span class="commentAuthor">{{ comment.author }}</span> on <span class="commentDate">{{ comment.created_at | date: "%B %d, %Y" }}</span></p>
+                    </div><!-- commentDetails -->
+                </article>
+                {% endif %}
+                {% for comment in article.comments %}
+                <article class="comment {% cycle 'even', 'odd' %}">
+                    <img class="commentGravatar" src="//www.gravatar.com/avatar/{{comment.email | md5}}.jpg?s=40" alt="" class="gravatar" />
+                    <div class="commentBody">
+                        {{ comment.content }}
+                    </div><!-- commentBody -->
+                    <div class="commentDetails">
+                        <p>Posted by <span class="commentAuthor">{{ comment.author }}</span> on <span class="commentDate">{{ comment.created_at | date: "%B %d, %Y" }}</span></p>
+                    </div><!-- commentDetails -->
+                </article>
+                {% endfor %}
+            </div><!-- commentsList-->
+            {% if paginate.pages > 1 %}
+            <div id="pagination" class="blogPagination">
+        	{% if paginate.previous %}
+		    <span id="paginationPrev">{{ 'Previous' | link_to: paginate.previous.url }}</span>
+            {% else %}
+            <span id="paginationNoPrev">Previous</span>
+			{% endif %}
+    	    {% for part in paginate.parts %}
+		    {% if part.is_link %}
+	        <span class="paginationLink">{{ part.title | link_to: part.url }}</span>
+		    {% else %}
+	        <span id="paginationCurrent">{{ part.title }}</span>
+		    {% endif %}        
+			{% endfor %}
+			{% if paginate.next %}
+		    <span id="paginationNext">{{ 'Next' | link_to: paginate.next.url }}</span>
+		    {% else %}
+            <span id="paginationNoNext">Next</span>
+    		{% endif %}
+		    </div><!-- pagination -->
+            {% endif %}
+        {% endif %}
+            <div id="commentForm" class="textile">
+            {% form article %}
+                <h2>Leave a comment</h2>
+                {% if form.posted_successfully? %}
+                {% if blog.moderated? %}
+                <div class="noticeSuccess">
+                    <p>Your comment was successfully posted.<br />It will have to be approved before showing up.</p>
+                </div><!-- noticeSuccess -->
+                {% else %}
+                <div class="noticeSuccess">
+                    <p>Your comment was successfully posted.</p>
+                </div><!-- noticeSuccess -->
+                {% endif %}
+                {% endif %}
+                {% if form.errors %}
+                    <div class="noticeError">
+                        <p>Not all the fields have been filled out correctly!</p>
+                    </div><!-- noticeError -->
+                {% endif %}
+                <div id="commentFormFields">
+                    <p class="commentFieldRow {% if form.errors contains 'author' %}error{% endif %}">
+                        <label for="commentAuthor">Your Name</label><br/>
+                        <input type="text" id="commentAuthor" name="comment[author]" size="40" value="{% if shop.customer_accounts_enabled %}{% if customer  %}{{customer.name}}{% else %}{{form.author}}{% endif %}{% endif %}" class="{% if form.errors contains 'author' %}input-error{% endif %}" />
+                        <div class="clearFix"></div>
+                    </p>
+                    <p class="commentFieldRow {% if form.errors contains 'email' %}error{% endif %}">
+                        <label for="commentEmail">Your Email</label><br/>
+                        <input type="text" id="commentEmail" name="comment[email]" size="40" value="{% if shop.customer_accounts_enabled %}{% if customer  %}{{customer.email}}{% else %}{{form.email}}{% endif %}{% endif %}" class="{% if form.errors contains 'email' %}input-error{% endif %}" />
+                        <div class="clearFix"></div>
+                    </p>
+                    <p class="commentFieldRow {% if form.errors contains 'body' %}error{% endif %}">
+                        <label for="commentBody">Your Comment</label><br/>
+                        <textarea id="commentBody" name="comment[body]" cols="75" rows="15" class="{% if form.errors contains 'body' %}input-error{% endif %}">{{form.body}}</textarea>
+                        <div class="clearFix"></div>
+                    </p>
+                </div><!-- commentFormFields -->
+                {% if blog.moderated? %}
+                    <p class="hint">Comments have to be approved before showing up</p>
+                {% endif %}
+                <input type="submit" value="Submit" id="commentSubmit" class="pieMe btnStyle" />
+            {% endform %}
+            </div><!-- commentForm -->
+            {% endpaginate %}
+        </section><!-- comments -->
+        {% endif %}
+        {% endif %}
+        {% if blog.previous_article or blog.next_article %}       
+        <div id="pagination" class="blogPagination">
+        	{% if blog.previous_article %}
+		    <span id="paginationPrev">{{ 'Previous' | link_to: blog.previous_article }}</span>
+            {% else %}
+            <span id="paginationNoPrev">Previous</span>
+			{% endif %}
+			{% if blog.next_article %}
+		    <span id="paginationNext">{{ 'Next' | link_to: blog.next_article }}</span>
+		    {% else %}
+            <span id="paginationNoNext">Next</span>
+    		{% endif %}
+		</div><!-- pagination -->
+        {% endif %}
+    </article><!-- mainCol -->
+	<aside id="sidebar" class="floatRight">
+		<span id="topBar">&nbsp;</span>
+		<div id="sidebarBkgd">
+            {% unless settings.blogWidget == '' %}
+        		{% include settings.blogWidget %}
+    		{% endunless %}
+    		{% unless settings.blogWidgetTwo == '' %}
+    			{% include settings.blogWidgetTwo %}
+    		{% endunless %}
+        	{% unless settings.blogWidgetThree == '' %}
+    			{% include settings.blogWidgetThree %}
+    		{% endunless %}
+		</div><!-- sidebarBkgd -->	
+	</aside><!-- rightCol -->
+</div><!-- content -->

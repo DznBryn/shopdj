@@ -1,7 +1,37 @@
 <section>
-    <div id="content" class="group">
+    <div class="group" id="content">
         <div class="container content-container">
-            {% section 'book-interviewee-page'%}
+            {% if page.handle contains 'mark-cuban' | downcase %}
+                {% section 'ps-mc-page'%}
+            {% elsif page.handle contains 'bethenny-frankel' | downcase %}
+                {% section 'ps-bf-page'%}
+            {% elsif page.handle contains 'billie-jean-king' | downcase %}
+                {% section 'ps-bjk-page'%}
+            {% elsif page.handle contains 'billy-gene-shaw' | downcase %}
+                {% section 'ps-bgs-page'%}
+            {% elsif page.handle contains 'charlynda-scales' | downcase %}
+                {% section 'ps-cs-page'%}
+            {% elsif page.handle contains 'clay-newbill' | downcase %}
+                {% section 'ps-cn-page'%}
+            {% elsif page.handle contains 'crystal-volinchak' | downcase %}
+                {% section 'ps-cv-page'%}
+            {% elsif page.handle contains 'david-heath-randy-goldberg' | downcase %}
+                {% section 'ps-dhrg-page'%}
+            {% elsif page.handle contains 'kris-jenner' | downcase %}
+                {% section 'ps-kj-page'%}
+            {% elsif page.handle contains 'lindsey-vonn' | downcase %}
+                {% section 'ps-lv-page'%}
+            {% elsif page.handle contains 'pitbull' | downcase %}
+                {% section 'ps-pit-page'%}
+            {% elsif page.handle contains 'steph-korey' | downcase %}
+                {% section 'ps-sk-page'%}
+            {% else %}
+                <h1>
+                    Page Not Found.
+                </h1>
+            {% endif %}
+
+
         </div>
-    </div> 
+    </div>
 </section>

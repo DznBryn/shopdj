@@ -1,0 +1,54 @@
+<div class="content-wrapper">
+  <div class="content-container">
+    {% for block in section.blocks %}
+    {% if block.type == 'logo-section'%}
+      <div class="content-col content-col-1">
+        <img src="{{ block.settings.logo_img | img_url: 'master'}}"/>
+      </div>
+    {% endif %}
+    {% if block.type == 'image-section'%}
+      <div class="content-col content-col-2">
+        <img src="{{ block.settings.content_img | img_url: 'master'}}"/>    
+      </div>
+    {% endif %}
+    {% endfor %}
+  </div>
+</div>
+
+
+{% schema %}
+  {
+    "name": "Page Content",
+    "settings": [],
+	"blocks": [
+		{
+			"type": "logo-section",
+			"name": "Logo Image",
+			"settings":[
+				{
+					"type": "image_picker",
+					"id": "logo_img",
+					"label":"Logo"
+				}
+			]
+		},
+		{
+			"type": "image-section",
+			"name": "Fixed-Width Image",
+			"settings":[
+				{
+					"type": "image_picker",
+					"id": "content_img",
+					"label":"Content Image"
+				}
+			]
+		}
+	]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

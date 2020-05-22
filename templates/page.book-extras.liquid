@@ -1,0 +1,38 @@
+<style>
+div.button-wrapper{
+    max-width: max-content; 
+    margin: 4em auto 5em;
+}
+a.button{
+    color: #000000;
+    white-space: normal;
+}
+.container {
+    margin-top: 2em;
+}
+@media screen and (min-width: 768px){
+    .container {
+        margin-top: 0;
+    }
+    .psextras-container h2.psextras-title{
+        font-size: 50px;
+    }
+}
+</style>
+
+<section>
+    <div class="group" id="content">
+        <div class="container content-container psextras-container">
+            <h2 class="psextras-title" style="text-align: center; margin: 1em auto;">
+                <span style="color:#c12e37;">POWER</span>SHIFT EXCLUSIVE CONTENT
+            </h2>
+            {% section 'powershift-extras-hero' %}
+            {% section 'powershift-extras-products' %}
+            <div class="button-wrapper">
+                <a class="button" href="https://www.dropbox.com/sh/mgnc4s88uokj97a/AADKcOX8XASsBBEdYdWBHBC6a?dl=0">
+                    <span>Click Here To Download Motivational Powershift Artwork!</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>

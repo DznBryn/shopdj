@@ -1,0 +1,40 @@
+<style>
+    .hero-{{ section.id }}{
+      width:100%;
+    }
+    .hero-{{ section.id }} img{
+        width: 100%;
+        margin: 0 auto;
+        margin-top: 2.2em;
+    }
+    @media screen and (min-width: 768px){
+        .hero-{{ section.id }} img{
+            margin-top: 0em;
+        } 
+    }
+</style>
+{% if section.settings.background_image != blank %}
+    <div class="hero hero-{{section.id}}" data-section-id="{{ section.id }}">
+        <a href="{{ section.settings.img_url }}">
+            <img src="{{ section.settings.background_image | img_url: 'master' }}">
+        </a>
+    </div>
+{% endif %}
+
+{% schema %}
+{
+        "name": "Hero Banner",
+        "settings": [
+            {
+                "type": "image_picker",
+                "id": "background_image",
+                "label": "Background Image"
+            },{
+                "type": "url",
+                "id": "img_url",
+                "label": "Banner URL"
+            }
+        
+        ]
+    }
+{% endschema %}

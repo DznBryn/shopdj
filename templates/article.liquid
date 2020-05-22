@@ -1,3 +1,11 @@
+<style>
+.content-columns .content {
+	width: 100%;
+}
+
+</style>
+
+
 <div class="content-columns">
 	<div class="contain wide no-mobile-adjust" data-layout="balance">
 		<div class="content" data-layout="col">
@@ -15,23 +23,18 @@
 				</header>
 				<div class="user-actions">
 					{% include 'social-share' %}
-					<!--
-					<div class="right">
-						<a href="#@TODO">Comment</a>
-					</div><!-- /.right -->
 				</div><!-- /.user-actions -->
 				<div class="wysiwyg" style="margin-bottom: 20px;">
                   	
                   {% if article.content contains '<img' %}	
 					{{ article.content }}
                   {% else %}
-                  	<img src="{{ article.image.src | img_url : '1024x'}}">
                     {{ article.content }}
                   {% endif %}
                   
                  
 				</div><!-- /.wysiwyg -->
-              	
+              	{% section 'article-extra' %}
 				<span class="related-header">Additional Articles</span>
 			</div><!-- /.post-content -->
 		</div><!-- /.content -->
@@ -59,4 +62,3 @@
 
 
 {% include 'social-footer' %}
-      

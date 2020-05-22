@@ -1,0 +1,208 @@
+<style>
+    #section-container{
+        max-width: 100%;
+        margin: 0 auto;
+    }
+    #section-container .collection-container{
+        width: 100%;
+    }
+    #section-container .collection-container img{
+        width: 100%;
+    }
+    .section-container{
+        width: 100%;
+    }
+    body.collections .collection{
+        padding: 0px ;
+    }
+    .collection-title-container{
+        width: fit-content;
+        margin: 0 auto;
+        padding-bottom: 3em;
+    }
+    .collection-title-container header{
+        padding-top: 20px;
+    }
+    .collection-title-container header h2{
+        text-align: center;
+    }
+    .collection-container{
+        width: 100%;
+        margin-bottom: 3em;
+    }
+    .product-image-wrapper,
+    .product-description{
+        max-width: 100%;
+
+    }
+    .product-description{
+        padding-left: 0;
+    }
+    .product-description header{
+        padding-top: 2em;
+    }
+    .product-description header h2{
+        margin-bottom: 5px;
+    }
+    .product-description .product-title{
+        font-size: 20px;
+        margin-bottom: 1em;
+    }
+    .product-description blockquote {
+        margin: 1.5em 0;
+    }
+    .product-description .description{
+        font-size: 14px;
+        line-height: 20px;
+        margin-bottom: 2em;
+    }
+    .product-description .button{
+        color: #000;
+    }
+    .product-description .button:hover{
+        color: #fff;
+    }
+    .collection-container .product-image-container{
+        max-width: 100%;
+    }
+    .collection-container .product-image-container img{
+        max-width: 100%;
+    }
+    .divider{
+        width: 80%;
+        padding: 1px 0;
+        background-color: #eaeaea;
+        margin: 0 auto;
+        clear: both;
+    }
+    @media screen and (min-width: 768px){
+        .category-wrapper {
+            max-width: 100%;
+        }
+    
+        .collection-title-container header{
+            padding-top: 60px;
+        }
+        .collection-container{
+            width: 50%;
+            float: left;
+            margin-bottom: 3em;
+            display: table;
+        }
+        .product-description header{
+            padding-top: 0em;
+        }
+        .product-image-wrapper{
+            width: 40%;
+        }
+        .product-description{
+            width: 60%;
+            padding:0 1.5em 0 1em;
+        }
+        .product-image-wrapper,
+        .product-description{
+            float: left;
+        }
+        
+        {% for block in section.blocks %}
+        {% if block.settings.num_of_products == 1 %}
+        .collection-container{
+            width: 80%;
+        }
+        
+        {% endif %}
+        {% endfor %}
+        
+    }
+    
+    @media screen and (min-width: 900px) {
+      #section-container{
+        max-width: 900px;
+      }
+  
+      #section-container .collection-container{
+        width: 440px;
+      }
+    }
+    @media screen and (min-width: 1060px) {
+      #section-container{
+        max-width: 1060px;
+      }
+  
+      #section-container .collection-container{
+        width: 530px;
+      }
+    }
+  </style>
+{% if section.blocks != blank %}
+    <div class="section-container collection">
+        <div class="collection-title-container">
+            <h2 class="collection-title">{{ section.settings.collection_title }}</h2>
+        </div>
+    </div>
+    <div id="section-container">
+        {% for block in section.blocks %}
+
+            <div class="collection-container">
+                <div class="product-image-wrapper">
+                    <div class="product-image-container">
+                        <img src="{{ block.settings.external_product | img_url: 'master' }}">
+                    </div>
+                </div>
+                <div class="product-description">
+                    <header>
+                        <h2>{{ product.collections[1] }}</h2>
+                    </header>
+                    <h2 class="product-title">{{ block.settings.product_title | truncate: 75, '...' }}</h2>
+                    <div class="description">
+                        <p>{{ block.settings.product_description | truncatewords: 40, '...' }}</p>
+                    </div>
+
+                    <a class="button open-modal" data-modal="ps-part{{forloop.index0}}" href="javascript:;">{{ block.settings.button_text }}</a>
+
+                </div>
+            </div>
+
+        {% endfor %}
+    </div>
+    <div class="divider"></div>
+{% endif %}
+
+{% schema %}
+{
+    "name": "Powershift Products",
+    "settings": [
+        {
+            "type":"text",
+            "id": "collection_title",
+            "label": "Category Title"
+        }
+    ],
+    "blocks":[
+        {
+            "type": "external-products",
+            "name": "Product",
+            "settings": [
+                {
+                    "type": "text",
+                    "id": "product_title",
+                    "label": "Product Title"
+                },{
+                    "type": "image_picker",
+                    "id": "external_product",
+                    "label": "Product"
+                },{
+                    "type": "textarea",
+                    "id": "product_description",
+                    "label": "Product Description"
+                },{
+                    "type": "text",
+                    "id": "button_text",
+                    "label": "Button Text",
+                    "default": "Buy Now"
+                }
+            ]
+        }
+    ]
+}
+{% endschema %}

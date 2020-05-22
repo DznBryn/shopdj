@@ -137,6 +137,13 @@ p.single-album-artist {
 
 .single-select-field {
   margin-bottom: 1em;
+  display: block;
+  width: 100%;
+}
+
+.single-album-add-to-cart .btn {
+  display: block;
+  width: 100%;
 }
 
 .single-presale-note {

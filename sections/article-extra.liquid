@@ -1,0 +1,203 @@
+<style>
+{% for block in section.blocks %}
+{% for number in (1..3) %}
+{% capture isColumnOn %}isColumnOn_{{ number }}{% endcapture %}
+.resource-container{
+    width: 100%;
+}
+.resource-container .column-wrapper{
+    max-width: 100%;
+}
+
+{% if block.settings[isColumnOn] and number > 1 %}
+.resource-container .column-wrapper .col.col-{{ block.id }}{
+    width: 48%;
+    float: left;
+    margin-left: 2%;
+    margin-bottom: 2em;
+}
+{% endif %}
+{% if block.settings[isColumnOn] and number == 1 %}
+.resource-container .column-wrapper .col.col-{{ block.id }}{
+    width: 50%;
+    margin: 0 auto;
+    margin-bottom: 2em;
+}
+{% endif %}
+.resource-container .column-wrapper .col .image-container{
+    width: 100%;
+    margin: 0em auto;
+}
+.resource-container .column-wrapper .col .image-container img{
+    width: 100%;
+}
+.resource-container .column-wrapper .col .button{
+    width: 100%;
+    text-align: center;
+    color: #000;
+}
+.resource-container .column-wrapper .col .button a{
+    color: #000;
+    text-decoration: none;
+}
+
+.resource-container .banner-wrapper{
+    width: 100%;
+}
+
+.resource-container .banner-wrapper a img{
+    width: 100%;
+    margin: 30px auto;
+}
+
+    @media screen and (min-width: 768px){
+        {% if block.settings[isColumnOn] and number > 1 %}
+        .resource-container .column-wrapper .col.col-{{ block.id }}{
+            width: 48%;
+            float: left;
+            margin-left: 2%;
+        }
+        {% endif %}
+        {% if block.settings[isColumnOn] and number > 2 %}
+        .resource-container .column-wrapper .col.col-{{ block.id }}{
+            width: 31%;
+            float: left;
+            margin-left: 2%;
+        }
+        {% endif %}
+    }
+
+{% endfor %}
+{% endfor %}
+</style>
+
+<div class="resource-container">
+    {% for block in section.blocks %}
+        {% if block.type == 'columns' %}
+            <div class="column-wrapper">
+                {% for number in (1..3) %}
+                    {% capture isColumnOn %}isColumnOn_{{ number }}{% endcapture %}
+                    {% capture column_image %}column_image_{{ number }}{% endcapture %}
+                    {% capture image_url %}image_url_{{ number }}{% endcapture %}
+                    {% capture button_text %}button_text_{{ number }}{% endcapture %}
+                        {% if block.settings[isColumnOn] and block.settings[column_image] != blank %}
+                            <div class="col col-{{ block.id }}">
+                                <div>
+                                    <div class="image-container">
+                                        <a href="{{ number }}">
+                                            <img src="{{ block.settings[column_image] | img_url: 'master' }}">
+                                        </a>
+                                    </div>
+                                    <a class="button" href="{{ block.settings[image_url] }}">{{ block.settings[button_text] }}</a>
+                                    
+                                </div>
+                            </div>
+                        {% endif %}
+                {% endfor %}
+            </div>
+        {% endif %}
+        {% if block.type == 'banner_image' %}
+            <div class="banner-wrapper">
+                <a href="{{ block.settings.banner_url }}"><img src="{{ block.settings.banner_image | img_url: 'master' }}"></a>
+            </div>
+        {% endif %}
+        <div class="divider"></div>
+    {% endfor %}
+</div>
+
+
+{% schema %}
+{
+    "name": "Article Resource",
+    "settings": [
+        
+    ],
+    "blocks": [
+        {
+            "name": "Column Section",
+            "type": "columns",
+            "settings":[
+                {
+                    "type": "checkbox",
+                    "id": "isColumnOn_1",
+                    "label": "Turn On Column",
+                    "default": false
+                },
+                {
+                    "type": "image_picker",
+                    "id": "column_image_1",
+                    "label": "Image area"
+                },
+                {
+                    "type": "url",
+                    "id": "image_url_1",
+                    "label": "URL"
+                },
+                {
+                    "type": "text",
+                    "id": "button_text_1",
+                    "label": "CTA Button"
+                },
+                {
+                    "type": "checkbox",
+                    "id": "isColumnOn_2",
+                    "label": "Turn On Column",
+                    "default": false
+                },
+                {
+                    "type": "image_picker",
+                    "id": "column_image_2",
+                    "label": "Image area"
+                },
+                {
+                    "type": "url",
+                    "id": "image_url_2",
+                    "label": "URL"
+                },
+                {
+                    "type": "text",
+                    "id": "button_text_2",
+                    "label": "CTA Button"
+                },
+                {
+                    "type": "checkbox",
+                    "id": "isColumnOn_3",
+                    "label": "Turn On Column",
+                    "default": false
+                },
+                {
+                    "type": "image_picker",
+                    "id": "column_image_3",
+                    "label": "Image area"
+                },
+                {
+                    "type": "url",
+                    "id": "image_url_3",
+                    "label": "URL"
+                },
+                {
+                    "type": "text",
+                    "id": "button_text_3",
+                    "label": "CTA Button"
+                }
+            ]
+        },
+        {
+            "name": "Banner",
+            "type": "banner_image",
+            "settings": [
+                {
+                    "type": "image_picker",
+                    "id": "banner_image",
+                    "label": "Banner AD"
+                },
+                {
+                    "type": "url",
+                    "id": "banner_url",
+                    "label": "URL"
+                }
+            ]
+        }
+    ]
+}
+{% endschema %}

@@ -8,9 +8,10 @@
     "footerNavigation": "",
     "useSubPageNavigation": false,
     "spilt": "",
-    "cta_first": "Become a shark with my key business terms",
+    "cta_first": "Copy my Email Marketing Strategy",
     "cta_first_button": "Download for free here",
-    "cta_first_button_link": "https:\/\/go.daymondjohn.com\/keybusinessterms-2\/",
+    "cta_first_button_link": "https:\/\/go.daymondondemand.com\/email-marketing-map?utm_source=website&utm_medium=DJ&utm_campaign=Header",
+    "keybizterm_link": "https:\/\/go.daymondondemand.com\/email-marketing-map?utm_source=website&utm_medium=DJ&utm_campaign=Header",
     "first-slide-cat": "",
     "first-slide-title": "ENTREPRENEUR",
     "first-slide-text": "Daymond John has come a long way from turning a $40 budget into FUBU, a $6 billion fashion game-changer. Throughout his career, Daymond has continued to be an entrepreneur in every sense of the word. He is not only a pioneer in the fashion industry but a Shark on the 4-time Emmy Award winning Shark Tank, a New York Times best-selling author, branding guru, and highly sought-after motivational speaker.",
@@ -35,7 +36,7 @@
     "fourth-slide-text-2": "With a unique “music inspired” keynote and his famous fireside chat, Daymond has the unique ability to step out of the tank and give you a look behind the curtain and the secrets he used to become a massive success.",
     "fourth-slide-text-color": "#ffffff",
     "fourth-slide-button-text": "WORK WITH Daymond",
-    "fourth-slide-content-position": "left",
+    "fourth-slide-content-position": "right",
     "fifth-slide-title": "SPEAKING AND CONSULTING",
     "fifth-slide-text-1": "As a consultant, Daymond will examine the needs of your business, dissect the problems, and create manageable solutions for brand growth. He will also help improve your business' profitability by enhancing the marketing structure and strategy.",
     "fifth-slide-text-2": "As a motivational speaker, Daymond's quintessential rags-to-riches success story of sacrifice, hard work, and perseverance as well as the unique and charismatic way he communicates it, will inspire any audience.",
@@ -50,7 +51,7 @@
     "section-three-bubble": "PARTNERS",
     "section-four-bubble": "SOCIAL",
     "partner-1-link": "http:\/\/bit.ly\/2AAdQ7T",
-    "partner-2-link": "http:\/\/www.daymondjohnssuccessformula.com\/",
+    "partner-2-link": "https:\/\/fubu.com",
     "partner-3-link": "https:\/\/www.Shopify.com",
     "partner-4-link": "https:\/\/Daymondondemand.com",
     "partner-5-link": "https:\/\/www.aarp.org\/",
@@ -1560,78 +1561,6 @@
         ],
         "settings": {}
       },
-      "shark-tool": {
-        "type": "shark-tool",
-        "blocks": {
-          "1529095280089": {
-            "type": "url",
-            "settings": {
-              "custom_url": "https:\/\/daymondondemand.com\/",
-              "article": "shark-tools\/daymond-on-demand1"
-            }
-          },
-          "1529336487768": {
-            "type": "url",
-            "settings": {
-              "custom_url": "https:\/\/www.sixthdivision.com\/",
-              "article": "shark-tools\/sixthdivision"
-            }
-          },
-          "1529360310060": {
-            "type": "url",
-            "settings": {
-              "custom_url": "http:\/\/www.thesharkgroup.com\/",
-              "article": "shark-tools\/84036228-shark-branding"
-            }
-          },
-          "1529425599103": {
-            "type": "url",
-            "settings": {
-              "custom_url": "http:\/\/bit.ly\/2AAdQ7T",
-              "article": ""
-            }
-          },
-          "1529425730003": {
-            "type": "url",
-            "settings": {
-              "custom_url": "https:\/\/www.gamechangermeetings.com\/collections\/game-changers\/products\/daymond-john",
-              "article": "shark-tools\/84034052-infusionsoft"
-            }
-          },
-          "1529425791707": {
-            "type": "url",
-            "settings": {
-              "custom_url": "https:\/\/www.gamechangermeetings.com\/collections\/game-changers\/products\/daymond-john",
-              "article": "shark-tools\/84032836-game-changer-meetings"
-            }
-          },
-          "1529426580181": {
-            "type": "url",
-            "settings": {
-              "custom_url": "https:\/\/daymondjohnssuccessformula.com\/",
-              "article": "shark-tools\/84031556-daymond-johns-launch-academy"
-            }
-          },
-          "1529427120392": {
-            "type": "url",
-            "settings": {
-              "custom_url": "https:\/\/www.shopify.com\/?ref=TheSharkDaymond",
-              "article": "shark-tools\/84029508-shopify"
-            }
-          }
-        },
-        "block_order": [
-          "1529095280089",
-          "1529336487768",
-          "1529360310060",
-          "1529425599103",
-          "1529425730003",
-          "1529425791707",
-          "1529426580181",
-          "1529427120392"
-        ],
-        "settings": {}
-      },
       "bio": {
         "type": "bio",
         "settings": {}
@@ -1672,21 +1601,21 @@
       "partners": {
         "type": "partners",
         "settings": {
-          "partner-1-link": "https:\/\/creditcards.chase.com\/explore\/business-products?jp_cmp=bb\/Business+Homepage_Brand_BMM_xLOB_SEM_US_xLOB_Standard_DeskTab\/sea\/p29840149736\/Chase+-+Only&gclid=EAIaIQobChMIrp-i27jR3AIVhoKzCh1nUwrBEAAYASAAEgLywPD_BwE&gclsrc=aw.ds",
+          "partner-1-link": "https:\/\/www.chase.com\/news\/051418-daymond-john-roundup",
           "logo_1": "shopify:\/\/shop_images\/logo_chase.png",
-          "partner-2-link": "https:\/\/daymondjohnssuccessformula.com\/",
-          "logo_2": "shopify:\/\/shop_images\/logo_successformula.png",
-          "partner-3-link": "https:\/\/www.shopify.com\/",
+          "partner-2-link": "https:\/\/fubu.com\/",
+          "logo_2": "shopify:\/\/shop_images\/fubu.png",
+          "partner-3-link": "https:\/\/www.shopify.com\/academy\/courses\/daymond-john-goal-setting",
           "logo_3": "shopify:\/\/shop_images\/logo_shopify.png",
           "partner-4-link": "https:\/\/www.daymondondemand.com\/",
           "logo_4": "shopify:\/\/shop_images\/logo_dod.png",
-          "partner-5-link": "https:\/\/www.aarp.org\/",
+          "partner-5-link": "https:\/\/webservices.lightspeedvt.net\/client\/aarp\/login.ashx",
           "logo_5": "shopify:\/\/shop_images\/aarp-png-aarp-red-png-1976.png",
-          "partner-6-link": "https:\/\/www.starkeyhearingfoundation.org\/",
+          "partner-6-link": "https:\/\/www.starkey.com\/blog\/2020\/01\/Daymond-John-QandA",
           "logo_6": "shopify:\/\/shop_images\/logo_starkey.png",
           "partner-7-link": "https:\/\/www.thesharkgroup.com\/",
           "logo_7": "shopify:\/\/shop_images\/logo_tsg.png",
-          "partner-8-link": "https:\/\/www.audible.com\/",
+          "partner-8-link": "https:\/\/www.audible.com\/author\/Daymond-John\/B001JPAF46",
           "logo_8": "shopify:\/\/shop_images\/logo_audiblie.png",
           "partner-9-link": "",
           "logo_9": "",
@@ -1700,8 +1629,1014 @@
       },
       "sidebar": {
         "type": "sidebar",
+        "blocks": {
+          "1569267110043": {
+            "type": "text",
+            "settings": {
+              "ad_image": "shopify:\/\/shop_images\/side_bar_ad_2.png",
+              "ad_link": "http:\/\/bit.ly\/2lNo3GU"
+            }
+          },
+          "1570138829981": {
+            "type": "text",
+            "settings": {
+              "ad_image": "shopify:\/\/shop_images\/FF_sidebar.png",
+              "ad_link": "http:\/\/bit.ly\/2ImPboH"
+            }
+          }
+        },
+        "block_order": [
+          "1569267110043",
+          "1570138829981"
+        ],
         "settings": {
-          "ad_title": ""
+          "ad_title": "Have a Business Idea But Don't know how to Start?"
+        }
+      },
+      "resource-tools": {
+        "type": "resource-tools",
+        "blocks": {
+          "1565301569402": {
+            "type": "block_section",
+            "settings": {
+              "section_title": "The 8 Musts Business Needs for Success",
+              "text_color": "#ffffff",
+              "background_image": "shopify:\/\/shop_images\/8-musts-bg.jpg",
+              "section_image": "shopify:\/\/shop_images\/screen.png",
+              "icon_text_color": "#ffffff",
+              "show_1_icon": true,
+              "icon_1_image": "shopify:\/\/shop_images\/8.png",
+              "icon_1_title": "THE 8 Musts",
+              "icon_1_text": "These 8 items have been used successfully with thousands of businesses to increase revenue and maximize profits",
+              "show_2_icon": true,
+              "icon_2_image": "shopify:\/\/shop_images\/stepbystep.png",
+              "icon_2_title": "STEP BY STEP VIDEO TRAINING",
+              "icon_2_text": "These 8 items have been used successfully with thousands of businesses to increase revenue and maximize profits",
+              "show_3_icon": true,
+              "icon_3_image": "shopify:\/\/shop_images\/printable.png",
+              "icon_3_title": "PRINTABLE SCORECARD",
+              "icon_3_text": "Print out this scorecard and worksheet and follow along in real time.",
+              "show_4_icon": false,
+              "icon_4_image": "",
+              "icon_4_title": "Title goes here...",
+              "icon_4_text": "Body text in a short summary",
+              "cta_button": "shopify:\/\/blogs\/profiles",
+              "button_text": "FREE INSTANT ACCESS",
+              "button_url": "https:\/\/go.daymondondemand.com\/8-musts-guide"
+            }
+          },
+          "1565893455719": {
+            "type": "block_section",
+            "settings": {
+              "section_title": "Identifying Your Target Market",
+              "text_color": "#323131",
+              "background_image": "shopify:\/\/shop_images\/target_market_bg.jpg",
+              "section_image": "shopify:\/\/shop_images\/target_market.png",
+              "icon_text_color": "#000000",
+              "show_1_icon": true,
+              "icon_1_image": "shopify:\/\/shop_images\/identify.png",
+              "icon_1_title": "How to identify your target market",
+              "icon_1_text": "Learn who your ideal customer is, how to serve them, and what gets them to buy",
+              "show_2_icon": true,
+              "icon_2_image": "shopify:\/\/shop_images\/video_training-1.png",
+              "icon_2_title": "Video Training",
+              "icon_2_text": "Video training explaining how to find that perfect customer",
+              "show_3_icon": true,
+              "icon_3_image": "shopify:\/\/shop_images\/communication_skills.png",
+              "icon_3_title": "COMMUNICATION SKILLS",
+              "icon_3_text": "Learn how to better communicate with your target customer",
+              "show_4_icon": false,
+              "icon_4_image": "",
+              "icon_4_title": "Title goes here...",
+              "icon_4_text": "Body text in a short summary",
+              "cta_button": "",
+              "button_text": "Free Instant Access",
+              "button_url": "https:\/\/daymondondemand.com\/identify-your-target-market\/"
+            }
+          },
+          "1566929123577": {
+            "type": "block_section",
+            "settings": {
+              "section_title": "A Step-by-Step Guide to Product Validation",
+              "text_color": "#ffffff",
+              "background_image": "shopify:\/\/shop_images\/8-musts-bg.jpg",
+              "section_image": "shopify:\/\/shop_images\/product_validation.png",
+              "icon_text_color": "#ffffff",
+              "show_1_icon": true,
+              "icon_1_image": "shopify:\/\/shop_images\/keys.png",
+              "icon_1_title": "KEYS TO PRODUCT VALIDATION",
+              "icon_1_text": "The key points to consider when creating and validating a product\/service or idea",
+              "show_2_icon": true,
+              "icon_2_image": "shopify:\/\/shop_images\/video_training.png",
+              "icon_2_title": "Video Training",
+              "icon_2_text": "Video training explaining how and why this is such a vital part of your product journey",
+              "show_3_icon": true,
+              "icon_3_image": "shopify:\/\/shop_images\/checklist.png",
+              "icon_3_title": "Product Validation Checklist",
+              "icon_3_text": "A printable checklist to get you started on your product validation journey",
+              "show_4_icon": false,
+              "icon_4_image": "",
+              "icon_4_title": "Title goes here...",
+              "icon_4_text": "Body text in a short summary",
+              "cta_button": "",
+              "button_text": "Free Instant Access",
+              "button_url": "https:\/\/go.daymondondemand.com\/product-validation-download"
+            }
+          },
+          "1570222647399": {
+            "type": "block_section",
+            "settings": {
+              "section_title": "",
+              "text_color": "#0a0a0a",
+              "background_image": "shopify:\/\/shop_images\/target_market_bg.jpg",
+              "section_image": "shopify:\/\/shop_images\/set_goals.png",
+              "icon_text_color": "#000000",
+              "show_1_icon": true,
+              "icon_1_image": "",
+              "icon_1_title": "Set Goals Like A Shark",
+              "icon_1_text": "I created this guide to be an endless source of motivation for you. From identifying your why and defining your version of success, to setting goals and putting a plan in place to achieve them, this will be your roadmap to success. Remember, you are in control of your success.",
+              "show_2_icon": false,
+              "icon_2_image": "",
+              "icon_2_title": "Title goes here...",
+              "icon_2_text": "Body text in a short summary",
+              "show_3_icon": false,
+              "icon_3_image": "",
+              "icon_3_title": "Title goes here...",
+              "icon_3_text": "Body text in a short summary",
+              "show_4_icon": false,
+              "icon_4_image": "",
+              "icon_4_title": "Title goes here...",
+              "icon_4_text": "Body text in a short summary",
+              "cta_button": "",
+              "button_text": "Free Instant Access",
+              "button_url": "https:\/\/www.daymondondemand.com\/set-goals-like-a-shark\/"
+            }
+          },
+          "1570222790474": {
+            "type": "block_section",
+            "settings": {
+              "section_title": "",
+              "text_color": "#ffffff",
+              "background_image": "shopify:\/\/shop_images\/8-musts-bg.jpg",
+              "section_image": "shopify:\/\/shop_images\/Speak_Like.png",
+              "icon_text_color": "#ffffff",
+              "show_1_icon": true,
+              "icon_1_image": "",
+              "icon_1_title": "SPEAK LIKE A SHARK",
+              "icon_1_text": "Have you ever heard a business term and thought to yourself, “What the heck does that mean?” Or was watching Shark Tank and had to ask someone to clarify what the deal means? Don’t worry, we’ve all been there before. But now, with this guide, there’s no excuse for you to cautiously nod your head as if you know what the other person is talking about.",
+              "show_2_icon": false,
+              "icon_2_image": "",
+              "icon_2_title": "Title goes here...",
+              "icon_2_text": "Body text in a short summary",
+              "show_3_icon": false,
+              "icon_3_image": "",
+              "icon_3_title": "Title goes here...",
+              "icon_3_text": "Body text in a short summary",
+              "show_4_icon": false,
+              "icon_4_image": "",
+              "icon_4_title": "Title goes here...",
+              "icon_4_text": "Body text in a short summary",
+              "cta_button": "",
+              "button_text": "FREE INSTANT ACCESS",
+              "button_url": "https:\/\/go.daymondjohn.com\/keybusinessterms-2\/"
+            }
+          },
+          "1570222948673": {
+            "type": "block_section",
+            "settings": {
+              "section_title": "",
+              "text_color": "#000000",
+              "background_image": "shopify:\/\/shop_images\/target_market_bg.jpg",
+              "section_image": "shopify:\/\/shop_images\/SHARK.png",
+              "icon_text_color": "#000000",
+              "show_1_icon": true,
+              "icon_1_image": "",
+              "icon_1_title": "Shark Points Guide",
+              "icon_1_text": "As an entrepreneur, it is so important to understand you must never stop learning. My SHARK Points Guide is a great step in the right direction towards that goal. Learn as much as you can every day because once you stop challenging yourself, you will stop using the power of broke mindset and become stagnant in all facets.",
+              "show_2_icon": false,
+              "icon_2_image": "",
+              "icon_2_title": "Title goes here...",
+              "icon_2_text": "Body text in a short summary",
+              "show_3_icon": false,
+              "icon_3_image": "",
+              "icon_3_title": "Title goes here...",
+              "icon_3_text": "Body text in a short summary",
+              "show_4_icon": false,
+              "icon_4_image": "",
+              "icon_4_title": "Title goes here...",
+              "icon_4_text": "Body text in a short summary",
+              "cta_button": "",
+              "button_text": "FREE INSTANT ACCESS",
+              "button_url": "https:\/\/daymondjohn.lpages.co\/shark-points\/"
+            }
+          },
+          "1587062280964": {
+            "type": "block_section",
+            "settings": {
+              "section_title": "",
+              "text_color": "#ffffff",
+              "background_image": "shopify:\/\/shop_images\/8-musts-bg.jpg",
+              "section_image": "shopify:\/\/shop_images\/email_marketing.png",
+              "icon_text_color": "#ffffff",
+              "show_1_icon": true,
+              "icon_1_image": "",
+              "icon_1_title": "Email Marketing Map",
+              "icon_1_text": "Email marketing is important for building relationships with potential customers, leads, current customers, and even past customers. Email marketing gives you a chance to speak directly to them, in their inbox, at a time that is convenient for them. Using my Email Marketing Strategy Map, marketing through email will become an integral part of your overall business marketing plan.",
+              "show_2_icon": false,
+              "icon_2_image": "",
+              "icon_2_title": "Title goes here...",
+              "icon_2_text": "Body text in a short summary",
+              "show_3_icon": false,
+              "icon_3_image": "",
+              "icon_3_title": "Title goes here...",
+              "icon_3_text": "Body text in a short summary",
+              "show_4_icon": false,
+              "icon_4_image": "",
+              "icon_4_title": "Title goes here...",
+              "icon_4_text": "",
+              "cta_button": "",
+              "button_text": "Free instant access",
+              "button_url": "https:\/\/go.daymondondemand.com\/email-marketing-map"
+            }
+          },
+          "1587062809508": {
+            "type": "block_section",
+            "settings": {
+              "section_title": "",
+              "text_color": "#ffffff",
+              "background_image": "shopify:\/\/shop_images\/target_market_bg.jpg",
+              "section_image": "shopify:\/\/shop_images\/social_media_guide.png",
+              "icon_text_color": "#000000",
+              "show_1_icon": true,
+              "icon_1_image": "",
+              "icon_1_title": "Social Media Marketing Guide",
+              "icon_1_text": "Social media is an essential piece of your business marketing strategy. Different social platforms help you connect with your customers, increase awareness about your brand, and boost your leads and sales. More than three billion people around the world use social media and are subjected to advertisements and new businesses every month. Using my Social Media Marketing Guide, you will learn what social media platforms to use, what and how to post, when to post content, how to connect with influencers, build a community and drive engagement.",
+              "show_2_icon": false,
+              "icon_2_image": "",
+              "icon_2_title": "Title goes here...",
+              "icon_2_text": "Body text in a short summary",
+              "show_3_icon": false,
+              "icon_3_image": "",
+              "icon_3_title": "Title goes here...",
+              "icon_3_text": "Body text in a short summary",
+              "show_4_icon": false,
+              "icon_4_image": "",
+              "icon_4_title": "Title goes here...",
+              "icon_4_text": "Body text in a short summary",
+              "cta_button": "",
+              "button_text": "Free instant access",
+              "button_url": "https:\/\/go.daymondondemand.com\/social-media-pdfesl1jdkf"
+            }
+          },
+          "1587063172831": {
+            "type": "block_section",
+            "settings": {
+              "section_title": "",
+              "text_color": "#ffffff",
+              "background_image": "shopify:\/\/shop_images\/8-musts-bg.jpg",
+              "section_image": "shopify:\/\/shop_images\/sales_pitch.png",
+              "icon_text_color": "#ffffff",
+              "show_1_icon": true,
+              "icon_1_image": "",
+              "icon_1_title": "Sales Pitch Script",
+              "icon_1_text": "As an entrepreneur and businessperson, you will always need to pitch your business, products and services to potential clients and investors. Using my Sales Pitch Script, I will teach you how to make a strong first impression, get past gatekeepers, and pitch decision makers to potential clients and investors that will make them think (in a good way) and help ensure they want to invest in you and your business. This guide walks you through, step-by-step, on how to make the right first impression, explain your product\/service and briefly explain why you and your business are worth investing in.",
+              "show_2_icon": false,
+              "icon_2_image": "",
+              "icon_2_title": "Title goes here...",
+              "icon_2_text": "Body text in a short summary",
+              "show_3_icon": false,
+              "icon_3_image": "",
+              "icon_3_title": "Title goes here...",
+              "icon_3_text": "Body text in a short summary",
+              "show_4_icon": false,
+              "icon_4_image": "",
+              "icon_4_title": "Title goes here...",
+              "icon_4_text": "Body text in a short summary",
+              "cta_button": "",
+              "button_text": "Free Instant Access",
+              "button_url": "https:\/\/go.daymondondemand.com\/sales-script4dx42wus"
+            }
+          }
+        },
+        "block_order": [
+          "1565301569402",
+          "1565893455719",
+          "1566929123577",
+          "1570222647399",
+          "1570222790474",
+          "1570222948673",
+          "1587062280964",
+          "1587062809508",
+          "1587063172831"
+        ],
+        "settings": {}
+      },
+      "collections": {
+        "type": "collections",
+        "blocks": {
+          "1567018184764": {
+            "type": "collection",
+            "settings": {
+              "collection_title": "BOOKS",
+              "product_collection": "books",
+              "num_of_products": 20
+            }
+          },
+          "1567549376809": {
+            "type": "collection",
+            "settings": {
+              "collection_title": "Rise and Grind Collection",
+              "product_collection": "rise-and-grind-collection",
+              "num_of_products": 8
+            }
+          },
+          "1567018194898": {
+            "type": "collection",
+            "settings": {
+              "collection_title": "Audio Products",
+              "product_collection": "digital-albums",
+              "num_of_products": 8
+            }
+          },
+          "1567548472726": {
+            "type": "collection",
+            "settings": {
+              "collection_title": "Daymond on Demand",
+              "product_collection": "online-mentorship",
+              "num_of_products": 12
+            }
+          }
+        },
+        "block_order": [
+          "1567018184764",
+          "1567549376809",
+          "1567018194898",
+          "1567548472726"
+        ],
+        "settings": {}
+      },
+      "hero-banner": {
+        "type": "hero-banner",
+        "settings": {
+          "background_image": "shopify:\/\/shop_images\/PS-FBPreorder-white_1ab3f231-33ff-4209-9c5a-f2ffa2f45096.jpg",
+          "img_url": "https:\/\/t.co\/3DTXqyzTAf"
+        }
+      },
+      "book-carousel": {
+        "type": "book-carousel",
+        "blocks": {
+          "1567722930359": {
+            "type": "image",
+            "settings": {
+              "carousel_image": "shopify:\/\/shop_images\/Mark-Cuban-headshot.jpg",
+              "carousel_url": "shopify:\/\/pages\/powershift-mark-cuban"
+            }
+          },
+          "1567722887716": {
+            "type": "image",
+            "settings": {
+              "carousel_image": "shopify:\/\/shop_images\/Kris-Jenner-Headshot.jpg",
+              "carousel_url": "shopify:\/\/pages\/powershift-kris-jenner"
+            }
+          },
+          "1567623555744": {
+            "type": "image",
+            "settings": {
+              "carousel_image": "shopify:\/\/shop_images\/Billie-Jean-King.jpg",
+              "carousel_url": "shopify:\/\/pages\/powershift-billie-jean-king"
+            }
+          },
+          "1567722982770": {
+            "type": "image",
+            "settings": {
+              "carousel_image": "shopify:\/\/shop_images\/Pitbull-Headshot.jpg",
+              "carousel_url": "shopify:\/\/pages\/powershift-pitbull"
+            }
+          },
+          "1567722907843": {
+            "type": "image",
+            "settings": {
+              "carousel_image": "shopify:\/\/shop_images\/Lindsey-Vonn-Headshot.jpg",
+              "carousel_url": "shopify:\/\/pages\/powershift-lindsey-vonn"
+            }
+          },
+          "1567623479438": {
+            "type": "image",
+            "settings": {
+              "carousel_image": "shopify:\/\/shop_images\/Bethenny-Frankel.jpg",
+              "carousel_url": "shopify:\/\/pages\/powershift-bethenny-frankel"
+            }
+          },
+          "1567623508925": {
+            "type": "image",
+            "settings": {
+              "carousel_image": "shopify:\/\/shop_images\/Billy-Gene-Shaw.jpg",
+              "carousel_url": "shopify:\/\/pages\/powershift-billy-gene-shaw"
+            }
+          },
+          "1567723003427": {
+            "type": "image",
+            "settings": {
+              "carousel_image": "shopify:\/\/shop_images\/Steph-Korey.jpg",
+              "carousel_url": "shopify:\/\/pages\/powershift-steph-korey"
+            }
+          },
+          "1567623605752": {
+            "type": "image",
+            "settings": {
+              "carousel_image": "shopify:\/\/shop_images\/Charlynda-Scales-Headshot.jpg",
+              "carousel_url": "shopify:\/\/pages\/powershift-charlynda-scales"
+            }
+          },
+          "1567623633295": {
+            "type": "image",
+            "settings": {
+              "carousel_image": "shopify:\/\/shop_images\/Clay-Newbill.jpg",
+              "carousel_url": "shopify:\/\/pages\/powershift-clay-newbill"
+            }
+          },
+          "1567722868900": {
+            "type": "image",
+            "settings": {
+              "carousel_image": "shopify:\/\/shop_images\/David-Heath-and-Randy-Goldberg.jpg",
+              "carousel_url": "shopify:\/\/pages\/powershift-david-heath-randy-goldberg"
+            }
+          },
+          "1567623677890": {
+            "type": "image",
+            "settings": {
+              "carousel_image": "shopify:\/\/shop_images\/Crystal-Volinchak_ff17dca9-ed64-4128-92a2-9384199b3e74.jpg",
+              "carousel_url": "shopify:\/\/pages\/powershift-crystal-volinchak"
+            }
+          }
+        },
+        "block_order": [
+          "1567722930359",
+          "1567722887716",
+          "1567623555744",
+          "1567722982770",
+          "1567722907843",
+          "1567623479438",
+          "1567623508925",
+          "1567723003427",
+          "1567623605752",
+          "1567623633295",
+          "1567722868900",
+          "1567623677890"
+        ],
+        "settings": {
+          "carousel_header": "Whose #powershift stories You'll Discover:"
+        }
+      },
+      "book-page-content": {
+        "type": "book-page-content",
+        "settings": {
+          "page_title": "What is PowerShift?",
+          "page_content": "powershift"
+        }
+      },
+      "book-vendors": {
+        "type": "book-vendors",
+        "blocks": {
+          "1567707910426": {
+            "type": "hardcover",
+            "settings": {
+              "vendor_icon": "shopify:\/\/shop_images\/Amazon_bbbd246a-59a4-4c7b-b0df-d2cf665f9dd9.png",
+              "vendor_icon_url": "http:\/\/links.penguinrandomhouse.com\/type\/affiliate\/isbn\/9780593136232\/siteID\/8001\/retailerid\/7\/trackingcode\/randohouseinc30946-20"
+            }
+          },
+          "1567720771648": {
+            "type": "hardcover",
+            "settings": {
+              "vendor_icon": "shopify:\/\/shop_images\/iBoooks.png",
+              "vendor_icon_url": "http:\/\/links.penguinrandomhouse.com\/type\/affiliate\/isbn\/9780593136249\/siteID\/8001\/retailerid\/3\/trackingcode\/PRH245F8FB5D9"
+            }
+          },
+          "1567720870750": {
+            "type": "hardcover",
+            "settings": {
+              "vendor_icon": "shopify:\/\/shop_images\/Barnes_And_Nobels.png",
+              "vendor_icon_url": "http:\/\/links.penguinrandomhouse.com\/type\/affiliate\/isbn\/9780593136232\/siteID\/8001\/retailerid\/2\/trackingcode\/PRH245F8FB5D9"
+            }
+          },
+          "1567720948549": {
+            "type": "hardcover",
+            "settings": {
+              "vendor_icon": "shopify:\/\/shop_images\/BAM_0a7dd902-aa4f-4610-a6bf-89febbec6c33.png",
+              "vendor_icon_url": "http:\/\/links.penguinrandomhouse.com\/type\/affiliate\/isbn\/9780593136232\/siteID\/8001\/retailerid\/5\/trackingcode\/PRH245F8FB5D9"
+            }
+          },
+          "1567721003606": {
+            "type": "hardcover",
+            "settings": {
+              "vendor_icon": "shopify:\/\/shop_images\/INDIEBOOKS.png",
+              "vendor_icon_url": "http:\/\/links.penguinrandomhouse.com\/type\/affiliate\/isbn\/9780593136232\/siteID\/8001\/retailerid\/6\/trackingcode\/penguinrandom"
+            }
+          },
+          "1567721417063": {
+            "type": "hardcover",
+            "settings": {
+              "vendor_icon": "shopify:\/\/shop_images\/bt-hudsonbooksellers-logo-350x207_bt-retailer-hudsonbooksellers-3D454D_2626ecce-7a52-4385-bbe3-3f7caa1a31b0.png",
+              "vendor_icon_url": "http:\/\/links.penguinrandomhouse.com\/type\/affiliate\/isbn\/9780593136232\/siteID\/8001\/retailerid\/25\/trackingcode\/PRH245F8FB5D9"
+            }
+          },
+          "1567721127392": {
+            "type": "hardcover",
+            "settings": {
+              "vendor_icon": "shopify:\/\/shop_images\/Target_f1a3caba-6c3a-475f-9337-9c6fde739f17.png",
+              "vendor_icon_url": "http:\/\/links.penguinrandomhouse.com\/type\/affiliate\/isbn\/9780593136232\/siteID\/8001\/retailerid\/23\/trackingcode\/PRH245F8FB5D9"
+            }
+          }
+        },
+        "block_order": [
+          "1567707910426",
+          "1567720771648",
+          "1567720870750",
+          "1567720948549",
+          "1567721003606",
+          "1567721417063",
+          "1567721127392"
+        ],
+        "settings": {
+          "subtitle_header": "Where to order your copy:"
+        }
+      },
+      "collections-external": {
+        "type": "collections-external",
+        "blocks": {
+          "1569346714100": {
+            "type": "external-products",
+            "settings": {
+              "product_title": "Rise & Grind",
+              "external_product": "rise-and-grind-amazon",
+              "external_product_url": "https:\/\/www.amazon.com\/Rise-Grind-Outperform-Outhustle-Successful\/dp\/0804189951\/ref=sr_1_1?ie=UTF8&qid=1535034302&sr=8-1&keywords=rise+and+grind",
+              "button_text": "Buy Now"
+            }
+          },
+          "1569346751160": {
+            "type": "external-products",
+            "settings": {
+              "product_title": "Power of Broke",
+              "external_product": "power-of-broke-amazon",
+              "external_product_url": "https:\/\/www.amazon.com\/Power-Broke-Greatest-Competitive-Advantage\/dp\/1101903619\/ref=sr_1_1?s=books&ie=UTF8&qid=1535049742&sr=1-1&keywords=Power+of+broke",
+              "button_text": "Buy Now"
+            }
+          }
+        },
+        "block_order": [
+          "1569346714100",
+          "1569346751160"
+        ],
+        "settings": {
+          "collection_title": "Books on Amazon"
+        }
+      },
+      "our-partner-shark-tools": {
+        "type": "our-partner-shark-tools",
+        "blocks": {
+          "1569430315085": {
+            "type": "shark-tool-partner",
+            "settings": {
+              "partner_logo": "shopify:\/\/shop_images\/DOD_shark_tools_grande_a49bae52-ca91-4464-b7b2-fc86bb96cf13.png",
+              "partner_name": "Daymond on Demand",
+              "partner_url": "https:\/\/www.daymondondemand.com\/"
+            }
+          },
+          "1569433775763": {
+            "type": "shark-tool-partner",
+            "settings": {
+              "partner_logo": "shopify:\/\/shop_images\/Untitled_design_1_grande_26d2023b-1d07-4f14-b96e-9df16608d82e.png",
+              "partner_name": "Game Changer Meetings",
+              "partner_url": "https:\/\/www.apply.gamechangermeetings.com\/"
+            }
+          },
+          "1569438917404": {
+            "type": "shark-tool-partner",
+            "settings": {
+              "partner_logo": "shopify:\/\/shop_images\/shopify_logo_grande_104a75d3-26f4-4670-89d9-79b3c957fc54.png",
+              "partner_name": "SHOPIFY",
+              "partner_url": "https:\/\/www.shopify.com\/academy\/courses\/daymond-john-goal-setting"
+            }
+          },
+          "1569434477801": {
+            "type": "shark-tool-partner",
+            "settings": {
+              "partner_logo": "shopify:\/\/shop_images\/chaseforbusiness_grande_ee95e709-2f7a-4689-bbff-2d66530a2a34.png",
+              "partner_name": "CHASE FOR BUSINESS",
+              "partner_url": "https:\/\/www.chase.com\/news\/051418-daymond-john-roundup"
+            }
+          },
+          "1569437958247": {
+            "type": "shark-tool-partner",
+            "settings": {
+              "partner_logo": "shopify:\/\/shop_images\/audible.png",
+              "partner_name": "Audible",
+              "partner_url": "https:\/\/www.audible.com\/author\/Daymond-John\/B001JPAF46"
+            }
+          },
+          "1570565409476": {
+            "type": "shark-tool-partner",
+            "settings": {
+              "partner_logo": "shopify:\/\/shop_images\/Starky.png",
+              "partner_name": "Starkey",
+              "partner_url": "https:\/\/www.starkey.com\/blog\/2020\/01\/Daymond-John-QandA"
+            }
+          },
+          "1570565607608": {
+            "type": "shark-tool-partner",
+            "settings": {
+              "partner_logo": "shopify:\/\/shop_images\/belay-1.png",
+              "partner_name": "BELAY",
+              "partner_url": "https:\/\/belaysolutions.com\/"
+            }
+          },
+          "1581711350056": {
+            "type": "shark-tool-partner",
+            "settings": {
+              "partner_logo": "shopify:\/\/shop_images\/AARP_official.png",
+              "partner_name": "AARP",
+              "partner_url": "https:\/\/webservices.lightspeedvt.net\/client\/aarp\/login.ashx"
+            }
+          }
+        },
+        "block_order": [
+          "1569430315085",
+          "1569433775763",
+          "1569438917404",
+          "1569434477801",
+          "1569437958247",
+          "1570565409476",
+          "1570565607608",
+          "1581711350056"
+        ],
+        "settings": {}
+      },
+      "book-interviewee-page": {
+        "type": "book-interviewee-page",
+        "settings": {
+          "interviewee_name": "Mark Cuban",
+          "interviewee_title": "Dallas Mavericks Owner, Shark, Experienced Investor and Business Maven",
+          "interviewee_image": "shopify:\/\/shop_images\/Mark-Cuban-headshot.jpg",
+          "interview_page_content": "powershift-mark-cuban",
+          "interviewee_quote": "Culture is important in any and every company. Culture gives people guidance in how to\napproach and solve problems. It’s a guiding light when it comes to dealing with fans and\ncustomers. It’s the foundation for who we are in the community."
+        }
+      },
+      "collections-external-dod": {
+        "type": "collections-external-dod",
+        "blocks": {
+          "1570826545238": {
+            "type": "external-products",
+            "settings": {
+              "product_title": "Finding Funding",
+              "external_product": "shopify:\/\/shop_images\/Finding_Funding.jpg",
+              "product_description": "There are various sources of money out there, but finding the right ones for your business is important. This online training course includes equity and debt financing, crowdfunding, asset based loans, venture capital and private (Angel) Investors, lines of credit,",
+              "external_product_url": "https:\/\/go.daymondondemand.com\/sources-of-moneymax7wj1m",
+              "button_text": "Access Now"
+            }
+          },
+          "1571064071826": {
+            "type": "external-products",
+            "settings": {
+              "product_title": "Building Business Credit",
+              "external_product": "shopify:\/\/shop_images\/DOD_single_Artboard_1_copy_11.png",
+              "product_description": "Once you’ve registered your business entity you’re ready to apply for business credit, right? Wrong. This course will show you the additional steps needed before you’re ready to apply.",
+              "external_product_url": "https:\/\/go.daymondondemand.com\/building-business-creditfodxw1nq",
+              "button_text": "Access Now"
+            }
+          },
+          "1571064424759": {
+            "type": "external-products",
+            "settings": {
+              "product_title": "Crafting Your Business Plan",
+              "external_product": "shopify:\/\/shop_images\/DOD_single_Artboard_1_copy_6.png",
+              "product_description": "Learn why you need a business plan and what must be included in your plan for it to get attention. This course includes why you need a business plan, the musts haves of a business plan, and what an investor looks for in a business plan.",
+              "external_product_url": "https:\/\/go.daymondondemand.com\/crafting-your-business-plandwlehyw8",
+              "button_text": "Access Now"
+            }
+          },
+          "1571064549309": {
+            "type": "external-products",
+            "settings": {
+              "product_title": "Validating Your Product or Service",
+              "external_product": "shopify:\/\/shop_images\/DOD_single_Artboard-1-copy-4-1.png",
+              "product_description": "Validating your product, service or idea is a major step in bringing it to market and getting it out there. In this 9-part course, you'll learn the steps you need to take in the validation and branding process.",
+              "external_product_url": "https:\/\/go.daymondondemand.com\/validating-your-product-or-services6sw3m8w",
+              "button_text": "Access Now"
+            }
+          },
+          "1571064691696": {
+            "type": "external-products",
+            "settings": {
+              "product_title": "Developing Your Marketing Plan",
+              "external_product": "shopify:\/\/shop_images\/DOD_single_Artboard_1_copy_7.png",
+              "product_description": "A marketing plan is one of the key components that is necessary to start, maintain and grow a successful business and you need to understand what's involved. Learn how to advertise, build a marketing strategy, website, blogs, social media, email marketing",
+              "external_product_url": "https:\/\/go.daymondondemand.com\/developing-your-marketing-planzixtzof6",
+              "button_text": "Access Now"
+            }
+          },
+          "1579123368670": {
+            "type": "external-products",
+            "settings": {
+              "product_title": "Business Fundamentals",
+              "external_product": "shopify:\/\/shop_images\/DOD_single_Artboard_1_copy.png",
+              "product_description": "The fundamentals of business are the foundation on which a successful business is built. In this course, I'll share what you need to know to lay your business foundation.",
+              "external_product_url": "https:\/\/go.daymondondemand.com\/business-fundamentals689jgdyh",
+              "button_text": "Access Now"
+            }
+          },
+          "1571065494886": {
+            "type": "external-products",
+            "settings": {
+              "product_title": "Full Curriculum",
+              "external_product": "shopify:\/\/shop_images\/full_course.jpg",
+              "product_description": "Join the thousands of entrepreneurs who have learned from Daymond’s 25 years of successes and failures! Daymond on Demand students have taken their knowledge and applied it to their business generating 6 - 7 figures in revenue.",
+              "external_product_url": "https:\/\/go.daymondondemand.com\/checkout-1595",
+              "button_text": "Access Now"
+            }
+          },
+          "1579123938594": {
+            "type": "external-products",
+            "settings": {
+              "product_title": "Start Up Blueprint",
+              "external_product": "shopify:\/\/shop_images\/Bundle_DJ.com.png",
+              "product_description": "Daymond on Demand Start Up Blueprint is my digital training program for people who want to start their own businesses but don't know where to begin. This is the perfect course to get started as soon as possible!",
+              "external_product_url": "https:\/\/go.daymondondemand.com\/business-blueprint",
+              "button_text": "Access Now"
+            }
+          }
+        },
+        "block_order": [
+          "1570826545238",
+          "1571064071826",
+          "1571064424759",
+          "1571064549309",
+          "1571064691696",
+          "1579123368670",
+          "1571065494886",
+          "1579123938594"
+        ],
+        "settings": {
+          "collection_title": "Daymond on demand"
+        }
+      },
+      "article-extra": {
+        "type": "article-extra",
+        "settings": {}
+      },
+      "content-section": {
+        "type": "content-section",
+        "blocks": {
+          "1576175975005": {
+            "type": "image-section",
+            "settings": {
+              "content_img": "shopify:\/\/shop_images\/Final_Version_of_Cover.jpg"
+            }
+          },
+          "1576175733709": {
+            "type": "logo-section",
+            "settings": {
+              "logo_img": "shopify:\/\/shop_images\/powershift_logo.png"
+            }
+          }
+        },
+        "block_order": [
+          "1576175975005",
+          "1576175733709"
+        ],
+        "settings": {}
+      },
+      "powershift-banner": {
+        "type": "powershift-banner",
+        "settings": {
+          "background_image": "shopify:\/\/shop_images\/PS-FBPreorder-white_1ab3f231-33ff-4209-9c5a-f2ffa2f45096.jpg",
+          "img_url": "https:\/\/www.penguinrandomhouse.com\/books\/617044\/powershift-by-daymond-john-with-daniel-paisner\/"
+        }
+      },
+      "ps-mc-page": {
+        "type": "ps-mc-page",
+        "settings": {
+          "interviewee_name": "Mark Cuban",
+          "interviewee_title": "DALLAS MAVERICKS OWNER, SHARK, EXPERIENCED INVESTOR AND BUSINESS MAVEN",
+          "interviewee_image": "shopify:\/\/shop_images\/Mark-Cuban-headshot.jpg",
+          "interview_page_content": "powershift-mark-cuban",
+          "interviewee_quote": "Culture is important in any and every company. Culture gives people guidance in how to approach and solve problems. It’s a guiding light when it comes to dealing with fans and customers. It’s the foundation for who we are in the community.",
+          "bttn_1_label": "Download My Artwork",
+          "bttn_1_url": "https:\/\/www.dropbox.com\/s\/v7b11esfpu6gr7r\/PS-QuoteMarkCuban%20%282%29.jpg?dl=0",
+          "bttn_2_label": "Call to Action",
+          "bttn_2_url": ""
+        }
+      },
+      "ps-kj-page": {
+        "type": "ps-kj-page",
+        "settings": {
+          "interviewee_name": "Kris Jenner",
+          "interviewee_title": "Executive TV Producer, Manager of the Kardashian Empire, Momager Extraordinaire",
+          "interviewee_image": "shopify:\/\/shop_images\/Kris-Jenner-Headshot.jpg",
+          "interview_page_content": "powershift-kris-jenner",
+          "interviewee_quote": "We showed ourselves as we truly were. We showed our lives and our loves and shared the things that truly mattered to us, without filter. That’s what people responded to, and all of a sudden people all over the world were really invested in us and what we’re up to as a family. It changed everything.",
+          "bttn_1_label": "Download my artwork",
+          "bttn_1_url": "https:\/\/www.dropbox.com\/s\/xt91r94f5dbvcj3\/PS-QuoteKrisJenner%20%282%29.jpg?dl=0",
+          "bttn_2_label": "Call to Action",
+          "bttn_2_url": ""
+        }
+      },
+      "ps-bjk-page": {
+        "type": "ps-bjk-page",
+        "settings": {
+          "interviewee_name": "Billie Jean King",
+          "interviewee_title": "World #1 Ranked Tennis Player from 1966-68, 1971-72, and 1974, International Tennis Hall of Fame Inductee, Dedicated Driver for Equality",
+          "interviewee_image": "shopify:\/\/shop_images\/Billie-Jean-King_00aa4c80-cee9-45ff-8841-333e172b54b8.jpg",
+          "interview_page_content": "powershift-billie-jean-king",
+          "interviewee_quote": "When I was 13, I was at the Los Angeles Tennis Club and I started daydreaming, and I started thinking about my sport. And everyone wore white shoes, white socks, black clothes, played with white balls. And I asked myself, ‘Where is everybody else?’ So that was my moment where I decided I would fight for equality and inclusion.",
+          "bttn_1_label": "Download my artwork",
+          "bttn_1_url": "https:\/\/www.dropbox.com\/s\/3czinx005t13i49\/PS-QuoteBillieJeanKing%20%281%29.jpg?dl=0",
+          "bttn_2_label": "Call to Action",
+          "bttn_2_url": ""
+        }
+      },
+      "ps-bgs-page": {
+        "type": "ps-bgs-page",
+        "settings": {
+          "interviewee_name": "Billy Gene Shaw",
+          "interviewee_title": "Founder and CEO of Billy Gene Is Marketing, Social Media Advertising Expert, Marketing Influencer with Unwavering Resolve",
+          "interviewee_image": "shopify:\/\/shop_images\/Billy-Gene-Shaw.jpg",
+          "interview_page_content": "powershift-billy-gene-shaw",
+          "interviewee_quote": "I finally realized like, look, as long as I have my superpower, which is this whole marketing and advertising thing, I can sit at the table with whoever...at the end of the day, it’s not who you know. Everyone says this, ‘well it depends on who you know.’ No. It’s who knows you.",
+          "bttn_1_label": "Download my artwork",
+          "bttn_1_url": "https:\/\/www.dropbox.com\/s\/ix6eklkh9f98ats\/PS-QuoteBillyGeneShaw%20%281%29.jpg?dl=0",
+          "bttn_2_label": "Call to Action",
+          "bttn_2_url": ""
+        }
+      },
+      "ps-cs-page": {
+        "type": "ps-cs-page",
+        "settings": {
+          "interviewee_name": "Charlynda Scales",
+          "interviewee_title": "Founder and CEO of Mutt’s Sauce, Fourth Generation Service Member, Devoted to Family and Inspiring Others",
+          "interviewee_image": "shopify:\/\/shop_images\/Charlynda-Scales-Headshot.jpg",
+          "interview_page_content": "powershift-charlynda-scales",
+          "interviewee_quote": "I do it because my grandfather sacrificed so much for his family. Because I’m fourth-generation military, and that means something. Because my mother gave up everything so I could get an education. Because everything is connected and things happen for a reason. I tell people all the time they need to spend some time understanding that reason, to harness that why, so that they can know their purpose.",
+          "bttn_1_label": "Download my artwork",
+          "bttn_1_url": "https:\/\/www.dropbox.com\/s\/qhhqcnvroifhndi\/PS-QuoteCharlynda%20Scales%20%281%29.jpg?dl=0",
+          "bttn_2_label": "Call to Action",
+          "bttn_2_url": ""
+        }
+      },
+      "ps-cn-page": {
+        "type": "ps-cn-page",
+        "settings": {
+          "interviewee_name": "Clay Newbill",
+          "interviewee_title": "Primetime Emmy Award Winner, Shark Tank Executive Producer, Creator of Opportunity",
+          "interviewee_image": "shopify:\/\/shop_images\/Clay-Newbill.jpg",
+          "interview_page_content": "powershift-clay-newbill",
+          "interviewee_quote": "The Sharks keep doing Shark Tank because they love sharing their knowledge, knowing they are helping entrepreneurs and viewers who were just like them. The viewers realize that at one point in the Sharks’ lives, they were in the same position as the entrepreneur standing on the rug pitching the Sharks, someone with little more than a dream.",
+          "bttn_1_label": "Download my artwork",
+          "bttn_1_url": "https:\/\/www.dropbox.com\/s\/6b46wgn70ohcpcb\/PS-QuoteClayNewbill.jpg?dl=0",
+          "bttn_2_label": "Call to Action",
+          "bttn_2_url": ""
+        }
+      },
+      "ps-cv-page": {
+        "type": "ps-cv-page",
+        "settings": {
+          "interviewee_name": "Crystal Volinchak",
+          "interviewee_title": "Mother, Digital Manager, Virtual Work Force Aficionado",
+          "interviewee_image": "shopify:\/\/shop_images\/Crystal-Volinchak_ff17dca9-ed64-4128-92a2-9384199b3e74.jpg",
+          "interview_page_content": "powershift-crystal-volinchak",
+          "interviewee_quote": "It was a lot of hard work and I sacrificed a lot in the short-term. I was terrified of that risk but I’m so proud of where it has led me now. Some days I still work A LOT, but I get to see my family all day, I like what I do and I love our clients. I think that’s part of finding success in the virtual workforce - you have to show up harder, be more dedicated and have a desire to serve.",
+          "bttn_1_label": "Download my artwork",
+          "bttn_1_url": "https:\/\/www.dropbox.com\/s\/v6mbkqr3kxtho3c\/PS-QuoteCrystalVolinchak.jpg?dl=0",
+          "bttn_2_label": "Call to Action",
+          "bttn_2_url": ""
+        }
+      },
+      "ps-dhrg-page": {
+        "type": "ps-dhrg-page",
+        "settings": {
+          "interviewee_name": "David Heath & Randy Goldberg",
+          "interviewee_title": "Co-founders and Chief Officers at Shark Tank’s Most Successful Business, Bombas, Passionate Humanitarians",
+          "interviewee_image": "shopify:\/\/shop_images\/David-Heath-and-Randy-Goldberg.jpg",
+          "interview_page_content": "powershift-david-heath-randy-goldberg",
+          "interviewee_quote": "The idea of being able to give back and pay it forward so that one day maybe they will do the same, I think there’s a lot of pride in that.” (Dave)\n\n“People are just kind of hungry for opportunities to give back, I think it’s human nature. (Randy)",
+          "bttn_1_label": "Download my artwork",
+          "bttn_1_url": "https:\/\/www.dropbox.com\/sh\/c45nhuytucdei6f\/AAC-Xvs-EDkupkGgiiC8evpUa?dl=0",
+          "bttn_2_label": "Call to Action",
+          "bttn_2_url": ""
+        }
+      },
+      "ps-lv-page": {
+        "type": "ps-lv-page",
+        "settings": {
+          "interviewee_name": "Lindsey Vonn",
+          "interviewee_title": "Decorated Olympic Athlete, Philanthropist, Fierce Competitor",
+          "interviewee_image": "shopify:\/\/shop_images\/Lindsey-Vonn-Headshot.jpg",
+          "interview_page_content": "powershift-lindsey-vonn",
+          "interviewee_quote": "I think that women want to look to someone to give them determination, to keep going as well..I think to a lot of women I give that aspiration to them because I never stay down. I always get back up and they want to do the same thing.",
+          "bttn_1_label": "Download My Artwork",
+          "bttn_1_url": "https:\/\/www.dropbox.com\/s\/wkp9wblw5q6ijnm\/PS-QuoteLindseyVonn%20%281%29.jpg?dl=0",
+          "bttn_2_label": "Call to Action",
+          "bttn_2_url": ""
+        }
+      },
+      "ps-pit-page": {
+        "type": "ps-pit-page",
+        "settings": {
+          "interviewee_name": "Pitbull",
+          "interviewee_title": "International Grammy Award Winning Artist, Education-Focused Philanthropist, Global Music and Entertainment Sensation",
+          "interviewee_image": "shopify:\/\/shop_images\/Pitbull-Headshot.jpg",
+          "interview_page_content": "powershift-pitbull",
+          "interviewee_quote": "If there’s anything that my family taught me, being a first-generation Cuban American, anything worth fighting for is freedom. And to me, that’s what entrepreneurship is about, that’s what Powershift is about. You’re really fighting for independence, to be able to maneuver and navigate the way you want to.",
+          "bttn_1_label": "Download my artwork",
+          "bttn_1_url": "https:\/\/www.dropbox.com\/s\/ut64wr1sqv6yud4\/PS-QuotePitbull%20%282%29.jpg?dl=0",
+          "bttn_2_label": "Call to Action",
+          "bttn_2_url": ""
+        }
+      },
+      "ps-sk-page": {
+        "type": "ps-sk-page",
+        "settings": {
+          "interviewee_name": "Steph Korey",
+          "interviewee_title": "Co-Founder of Away, 2016 Forbes 30 Under 30 Recipient, Savvy Businesswoman with an Entrepreneurial Spirit",
+          "interviewee_image": "shopify:\/\/shop_images\/Steph-Korey.jpg",
+          "interview_page_content": "powershift-steph-korey",
+          "interviewee_quote": "Even if we only launched with a few customers, we took care to nurture each of those relationships, making sure their feedback was heard and we included them in the conversation every step of the way.",
+          "bttn_1_label": "Download my artwork",
+          "bttn_1_url": "https:\/\/www.dropbox.com\/s\/1va0xk6sc0ofr99\/PS-QuoteStephKorey.jpg?dl=0",
+          "bttn_2_label": "Call to Action",
+          "bttn_2_url": ""
+        }
+      },
+      "powershift-extras-hero": {
+        "type": "powershift-extras-hero",
+        "settings": {
+          "img": "shopify:\/\/shop_images\/Final_Version_of_Cover_3.jpg",
+          "img_url": "#",
+          "video_url": "https:\/\/www.youtube-nocookie.com\/embed\/2Rm4591dVjo?controls=0",
+          "page_content": "powershiftextras"
+        }
+      },
+      "powershift-extras-products": {
+        "type": "powershift-extras-products",
+        "blocks": {
+          "1582059835518": {
+            "type": "external-products",
+            "settings": {
+              "product_title": "Getting Started: What's Your Why",
+              "external_product": "shopify:\/\/shop_images\/POWERSHIFT_workbook.jpg",
+              "product_description": "",
+              "button_text": "Download now"
+            }
+          },
+          "1582059873979": {
+            "type": "external-products",
+            "settings": {
+              "product_title": "Part 1: Influence - Make An Impression",
+              "external_product": "shopify:\/\/shop_images\/POWERSHIFT_part1.jpg",
+              "product_description": "",
+              "button_text": "Download Now"
+            }
+          },
+          "1582059923817": {
+            "type": "external-products",
+            "settings": {
+              "product_title": "Part 2: Negotiation - Make A Deal",
+              "external_product": "shopify:\/\/shop_images\/POWERSHIFT_part2.jpg",
+              "product_description": "",
+              "button_text": "Download Now"
+            }
+          },
+          "1582059987694": {
+            "type": "external-products",
+            "settings": {
+              "product_title": "Part 3: Relationships – Make a  Connection Last",
+              "external_product": "shopify:\/\/shop_images\/POWERSHIFT_part3.jpg",
+              "product_description": "",
+              "button_text": "Download Now"
+            }
+          }
+        },
+        "block_order": [
+          "1582059835518",
+          "1582059873979",
+          "1582059923817",
+          "1582059987694"
+        ],
+        "settings": {
+          "collection_title": "Powershift Workbooks"
+        }
+      },
+      "ps-bf-page": {
+        "type": "ps-bf-page",
+        "settings": {
+          "interviewee_name": "Bethenny Frankel",
+          "interviewee_title": "Founder and CEO of SkinnyGirl, Founder of B Strong Foundation, Steadfast Businesswoman",
+          "interviewee_image": "shopify:\/\/shop_images\/Bethenny-Frankel.jpg",
+          "interview_page_content": "powershift-bethenny-frankel",
+          "interviewee_quote": "I was totally broke and I just could feel a wave cresting. I didn’t know what it was, I couldn’t understand it, I couldn’t see where the pieces were gunna lie. But I could feel a wave cresting. I knew it was coming. You have to be quiet enough to hear that. And then you know that you’re on a rocket ship and you have to stay on.",
+          "bttn_1_label": "DOWNLOAD MY ARTWORK",
+          "bttn_1_url": "https:\/\/www.dropbox.com\/s\/5aiwayfily7whoe\/PS-QuoteBethennyFrankel%20%282%29.jpg?dl=0",
+          "bttn_2_label": "Call to Action",
+          "bttn_2_url": ""
         }
       }
     },

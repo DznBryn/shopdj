@@ -144,7 +144,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.0/TweenMax.min.js"></script>
   <script src="{{ 'cart.min.js' | asset_url }}" type="text/javascript"></script>
   <script src="{{ 'scripts.min.js' | asset_url }}" type="text/javascript"></script>
+  
 {% endif %}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
 
 {% if template contains 'book' %}
 <!-- Add the slick-theme.css if you want default styling -->
@@ -155,7 +158,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 {{content_for_header}}
   
 {% include 'google-fonts' %}
-
+{{ 'infinite-scroll.pkgd.min.js' | asset_url | script_tag }}
   <!-- Hotjar Tracking Code for www.daymondjohn.com -->
 <script>
     (function(h,o,t,j,a,r){
@@ -167,7 +170,26 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         a.appendChild(r);
     })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
 </script>
+
   
+  
+  <!-- Facebook Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '617251108815041');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=617251108815041&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Facebook Pixel Code -->
   
 </head>
 
@@ -239,13 +261,18 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <footer>
 	<div class="contain">
 		<a href="#hero" class="logo">Daymond John - The Peoples Shark</a>
-		<form id="form1" name="form1" class="wufoo topLabel page email-signup" accept-charset="UTF-8" autocomplete="off" enctype="multipart/form-data" method="post" novalidate action="https://daymondjohn.wufoo.com/forms/zpfdsam12b876k/#public">
-			<label for="Field1">{{settings.mailOptinText}}</label>
-			<input id="Field1" name="Field1" type="email" spellcheck="false" class="field text medium" placeholder="Enter Email" maxlength="255" tabindex="1" required />
-			<input type="hidden" id="idstamp" name="idstamp" value="oe+GPnmAGbJx9LCn1EN55lVBizr3Dowb61tj/Tvl3fQ=" />
-		<input type="submit" class="button" value="Submit" />
+		<form accept-charset="UTF-8" action="https://daymondjohn.infusionsoft.com/app/form/process/b411b64831d778899248efff8084e5aa" class="infusion-form topLabel page email-signup" id="inf_form_b411b64831d778899248efff8084e5aa" method="POST">
+			<input name="inf_form_xid" type="hidden" value="b411b64831d778899248efff8084e5aa" />
+			<input name="inf_form_name" type="hidden" value="Web Form submitted" />
+			<input name="infusionsoft_version" type="hidden" value="1.70.0.133700" />
+				<input class="infusion-field-input field text medium" id="inf_field_FirstName" name="inf_field_FirstName" placeholder="Name" type="text" />			
+				<input class="infusion-field-input field text medium" id="inf_field_Email" name="inf_field_Email" placeholder="Email" type="email" />
+			<input type="submit" id="submitForm" class="button" value="Submit" />
 		</form>
-
+		{% include 'redirect-forms' %}
+		<script type="text/javascript" src="https://daymondjohn.infusionsoft.app/app/webTracking/getTrackingCode"></script>
+		<script type="text/javascript" src="https://daymondjohn.infusionsoft.com/app/timezone/timezoneInputJs?xid=b411b64831d778899248efff8084e5aa"></script>
+		
 	</div><!-- /.contain -->
 </footer>
 </div>
@@ -327,8 +354,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </nav>
 
 {% include 'modals' %}
-{{ 'ajaxinate.js' | asset_url | script_tag }}
-{{ 'ajaxinate.min.js' | asset_url | script_tag }}
+
 
 <script type="text/javascript">
     jQuery(function() {
@@ -424,6 +450,14 @@ $(window).load(function() {
 
 <!--   <---pop-up embed from unbounce--->
 <script src="https://7ec764cdf9e24256ab56bdf92e4e1723.js.ubembed.com" async></script>
+<script type="text/javascript">
+/* curator-feed-default-layout */
+(function(){
+var i, e, d = document, s = "script";i = d.createElement("script");i.async = 1;
+i.src = "https://cdn.curator.io/published/8715098a-b09c-4706-b4f0-ff4affdd83d0.js";
+e = d.getElementsByTagName(s)[0];e.parentNode.insertBefore(i, e);
+})();
+</script>
   
 </body>
 

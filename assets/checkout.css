@@ -1,0 +1,213 @@
+
+
+
+
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700);
+#tagline .title {font-family:'Open Sans' !important;font-size:40px !important;line-height:40px;}
+
+
+
+/* ----------------------------------------------------------------
+Custom Reset
+-----------------------------------------------------------------*/
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,
+code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,
+table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent;}
+table{border-collapse:collapse;border-spacing:0;}
+address,caption,cite,code,dfn,em,strong,th,var,optgroup{font-style:inherit;font-weight:inherit;}
+del,ins{text-decoration:none;}
+ol,ul,li{list-style:none;}
+caption,th{text-align:left;}
+h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal;}
+q:before,q:after{content:'';}
+abbr,acronym{border:0;font-variant:normal;}
+sup{vertical-align:baseline;}
+sub{vertical-align:baseline;}
+legend{color:#000;}
+input,button,textarea,select,optgroup,option{font-family:inherit;font-size:inherit;font-style:inherit;font-weight:inherit;}
+input,button,textarea,select{font-size:100%;}
+body{font-size:13px;font-family:arial,helvetica,clean,sans-serif;font-size:small;}
+select,input,button,textarea,button{font:99% arial,helvetica,clean,sans-serif;}
+table{font-size:inherit;}
+pre,code,kbd,samp,tt{font-family:monospace;font-size:108%;line-height:100%;}
+:focus{outline:0;}
+blockquote,q{quotes:none;}
+blockquote:before,blockquote:after,
+q:before,q:after{content:none;}
+a{outline:0;text-decoration:none;}
+input[type=text],
+input[type=password],
+textarea{padding:6px;border:1px solid #bbb;}
+input[type=text]:focus,
+input[type=password]:focus,
+textarea:focus{border:1px solid #444;box-shadow:0 0 6px #444;-webkit-box-shadow:0 0 6px #444;-mox-box-shadow:0 0 6px #444;}
+
+
+
+
+
+
+
+
+body{font-size:13px;font-weight:normal;color:#eaeaea;text-rendering: optimizeLegibility;}
+p{font-size:108%;line-height:18px;color:#eaeaea;text-rendering: optimizeLegibility;margin-bottom:30px;}
+h1,h2,h3,h4,h5,h6{font-weight:normal;text-rendering: optimizeLegibility;}
+h1{font-size:28px;color:#fff;margin-bottom:15px;}
+h2{font-size:26px;color:#fff;margin-bottom:15px;}
+h3{font-size:24px;color:#fff;margin-bottom:12px;}
+h4{font-size:22px;color:#fff;margin-bottom:10px;}
+h5{font-size:20px;color:#fff;margin-bottom:8px;}
+h6{font-size:18px;color:#fff;margin-bottom:6px;}
+a,a:active,a:link{color:#bbb467;text-decoration:none;outline:none;}
+a:visited{color:#a7a05b;text-decoration:none;outline:none;}
+a:hover,
+a:focus{color:#ffffff;text-decoration:none;outline:none;-webkit-transition:color .2s linear;}
+em,i{font-style:italic;}
+strong,b{font-weight:bold;}
+input[type=text],
+input[type=password],
+input[type=telephone],
+input[type=tel],
+input[type=email],
+textarea {color:#aaa;max-width:100%;padding:10px;background:#111;font-weight:bold;font-size:12px;border:1px solid #272727;-webkit-box-shadow: inset 0px 1px 4px 0px rgba(0, 0, 0, 0.7);-moz-box-shadow: inset 0px 1px 4px 0px rgba(0, 0, 0, 0.7);box-shadow: inset 0px 1px 4px 0px rgba(0, 0, 0, 0.7);outline:0;}
+input[type=text]:focus,
+input[type=password]:focus,
+input[type=telephone]:focus,
+input[type=tel]:focus,
+input[type=email]:focus,
+textarea:focus  {background:#000;font-weight:bold;font-size:12px;border:1px solid #333;outline:0;}
+
+body, p, button {font-family:'Droid Sans', 'Helvetica Neue', Arial, Helvetica, sans-serif;}
+
+html {min-height:100%;min-width:100%;}
+* html{height:100%;}
+
+html {min-height:100%;min-width:100%;background:#fff;}
+body {min-height:100%;min-width:100%;background: #fff ;}
+
+body {padding:66px 0 0;}
+#container{font-size:92% !important;width:100%;position:relative;padding:0;margin:0 auto;}
+#header{width:960px;height:130px;background:#202020;margin:0 auto;padding:0;}
+#main {background:#202020;width:960px;margin:0 auto;padding:0;}
+#addresses {background:#202020; border:0;}
+#email {background:#111; border:1px solid #000;}
+#overview h2{border:0px;color:#333;font-family:Georgia,'Times New Roman',serif;font-size:116%;font-style:italic;font-weight:bold;margin:0px;padding:0px;text-align:left;}
+#footer{background:0;}
+#buttons {border-top: 1px solid #000;border-bottom: 1px solid #000;background: #111;padding: 20px 10px;}
+.group h3,
+.pgroup h3{border-bottom:1px solid #333;color:#fff;font-size:130%;font-weight:bold;margin-bottom:10px;padding-bottom:5px;text-transform:uppercase;text-shadow:0 -1px 0px #000;}
+#email label{text-transform:uppercase;}
+#info-bar{font-weight:bold;color:#111;height:35px;line-height:35px;border-bottom:1px solid #FEFCE9;-moz-box-shadow: 0 0 10px #000000;-webkit-box-shadow: 0 0 10px #000000;box-shadow: 0 0 10px #000000;} background:-moz-linear-gradient(top,#FFFBE5 0%,#EDE4BB 100%);/* firefox */background:-webkit-gradient(linear,left top,left bottom,color-stop(0%,#FFFBE5),color-stop(100%,#EDE4BB));/* webkit */filter:progid:DXImageTransform.Microsoft.gradient( startColorstr='#FFFBE5',endColorstr='#EDE4BB',GradientType=0 );/* ie */background:-o-linear-gradient(top,#FFFBE5 0%,#EDE4BB 100%);/* opera */}
+#thumbs div{height:auto;}
+#thumbs h3 {color:#000;}
+#thumbs img {float:left;margin:0 6px 0 0;}
+#products{border-right:1px solid #F1E551;}
+#steps {color:#000;}
+#commit-button,
+#complete-purchase{-webkit-appearance: none;opacity: 1.0;-moz-opacity: 1.0;filter:alpha(opacity=100);cursor:pointer;text-align:center;padding:0 15px;line-height:36px;height:40px;background:#9d6348 url(//cdn.shopify.com/s/files/1/0274/9575/t/17/assets/btnStyleGradient.png?10126) repeat-x 0 0;color:#ffffff;outline:0;margin:0 0 0 6px;border:1px solid #9d6348;-webkit-border-radius: 4px;-moz-border-radius: 4px;border-radius: 4px;background-clip:padding-box;text-transform:uppercase;}
+#complete-purchase:focus,
+#complete-purchase:hover {background-color:#bb7656;}
+#commit-button:active,
+#complete-purchase:active  {background:#9d6348;}
+#cancel-purchase a:hover{background:#990000;color:#fff;border-bottom:0;text-decoration:none;}
+.hint {margin-bottom:20px;}
+#shipping-same {padding:20px;border:1px solid #333;background:#eee;}
+#container.slim {font-size:92% !important;width:960px;position:relative;padding:0;margin:66px auto 0;}
+#container.slim #main {background:#202020 !important;width:960px !important;margin:0 auto !important;padding:0;}
+#container.slim #header{background:#202020 !important;width:960px !important;margin:0 auto !important;padding:0 !important;height:140px !important;}
+#container.slim #footer{background:0 !important;}
+h4.active-customer {color:#ddd;}
+.group {border:0;background:#202020;}
+
+#tagline{display: block;height: 130px;width: auto;position: absolute;top: opx;left: 50%;margin-left: -470px;}
+.subtitle{display:none;}
+#tagline .title {margin-top:30px !important;display:block !important;}
+
+/* ----------------------------------------------------------------
+Screen widths 959px - 768px | Target is iPad in Portrait
+-----------------------------------------------------------------*/
+@media screen and (max-width:959px) and (min-width: 768px) {
+#main {background:#202020;width:720px;margin:0 auto;padding:0;}
+#container.slim {font-size:92% !important;width:720px;position:relative;padding:0;margin: 0 auto;}
+#container.slim #main {width:720px !important;}
+#header,
+#container.slim #header {width:720px !important;}
+#products {width:450px;}
+#wallet {margin-left: 441px;}
+#footer {width:100%;padding:8px 0 !important;}
+.form td input {width: 160px;}
+
+#tagline{display: block;height: 130px;width: auto;position: absolute;top: 0;left: 50%;margin-left: -350px;}
+.subtitle{display:none;}
+#tagline .title {margin-top:30px !important;display:block !important;}
+
+}
+/* ----------------------------------------------------------------
+Screen widths 767px - 600px | Target is Kindle
+---------------------------------------------------------------- */
+@media screen and (max-width:767px) and (min-width: 600px) {
+#main {background:#202020;width:580px;margin:0 auto;padding:0;}
+#container.slim {font-size:92% !important;width:580px;position:relative;padding:0;margin:0 auto;}
+#container.slim #main {width:580px !important;}
+#container.slim #header,
+#header {width:580px !important;background:#202020;}
+#products {width:280px;}
+#products td {display:block;width:100%;}
+#wallet {margin-left: 301px;}
+#footer {width:100%;padding:8px 0 !important;}
+.form td input {width: 160px;}
+#products td {display: inline-block;width: 100%;padding-bottom: 10px;}
+
+#tagline{display: block;height: 130px;width: auto;position: absolute;top: 0;left: 50%;margin-left: -290px;}
+.subtitle{display:none;}
+#tagline .title {margin-top:30px !important;display:block !important;}
+
+}
+
+
+.shopify-dialog-content{color:#000;}
+
+#header {
+  background:#fff !important;
+}
+
+#overview {
+  background:#fff !important;
+}
+
+#email {
+  background:#ccc !important;
+}
+
+#email input{
+  background:#f1f1f1 !important;
+}
+
+#email label {
+  color:#000;
+}
+
+#addresses {
+  background:#ccc !important;
+}
+
+.form td input {
+  background: #f1f1f1 !important;
+}
+
+#thumbs div {
+  border: none !important;
+}
+
+#products {
+  	border-right:none !important;
+}
+
+.form td.lbl, .form td, .form ul.inline li label {
+  color: #000
+}
+
+.group h3, .pgroup h3 {
+  color:#000;
+  text-shadow:0 0 0 !important;
+}

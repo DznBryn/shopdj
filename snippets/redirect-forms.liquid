@@ -1,0 +1,34 @@
+<style>
+    #thankyou-container{
+        width: 400px;
+        float: right;
+        display: none;
+    }
+    #thankyou-container p{
+        text-align: center;
+        color: #cecece;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        font: 15px/100px 'Gotham Bold', sans-serif;
+        opacity: .75;
+        line-height: 2;
+    }
+</style>
+<div id="thankyou-container">
+    <p>
+        <b>Welcome! Check Your Inbox For Confirmation.</b>
+    </p>
+</div>
+<script>
+    (function () {
+
+        document.getElementById("submitForm").addEventListener("click", (e) => {
+            e.preventDefault();
+            if ($("footer .contain form #inf_field_FirstName").val() != "" && $("footer .contain form #inf_field_EMAIL").val() != "") {
+                $("footer .contain form").css("display", "none")
+                $("#thankyou-container").css("display", "block")
+            }
+        }, false)
+
+    })(jQuery)
+</script>

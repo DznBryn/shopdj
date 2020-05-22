@@ -1,0 +1,260 @@
+@import url(//cdn.shopify.com/s/files/1/0274/9575/t/17/assets/font-awesome.css?10126);
+
+body.book-promo {
+	section.call-out {
+		.call-out-inner {
+			background-image: url(//cdn.shopify.com/s/files/1/0274/9575/t/17/assets/background_book-promo.jpg?10126 );
+		}
+	}
+}
+
+.logo-dark {
+	span {
+		background-image: url( //cdn.shopify.com/s/files/1/0274/9575/t/17/assets/logo_dark.svg?10126 );
+	}
+}
+
+// ARRROWS
+@font-face {
+  font-family: 'arrrowsregular';
+  src: url(//cdn.shopify.com/s/files/1/0274/9575/t/17/assets/arrrows-regular-webfont.eot?10126);
+  src: url(//cdn.shopify.com/s/files/1/0274/9575/t/17/assets/arrrows-regular-webfont.eot?%23iefix&10126) format('embedded-opentype'),
+       url(//cdn.shopify.com/s/files/1/0274/9575/t/17/assets/arrrows-regular-webfont.svg%23arrrowsregular?10126) format('svg'),
+       url(//cdn.shopify.com/s/files/1/0274/9575/t/17/assets/arrrows-regular-webfont.woff?10126) format('woff'),
+       url(//cdn.shopify.com/s/files/1/0274/9575/t/17/assets/arrrows-regular-webfont.ttf?10126) format('truetype');
+	font-weight: normal!important;
+	font-style: normal!important;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+@font-face {
+  font-family: 'arrrowsbold';
+  src: url(//cdn.shopify.com/s/files/1/0274/9575/t/17/assets/arrrows-bold-webfont.eot?10126);
+  src: url(//cdn.shopify.com/s/files/1/0274/9575/t/17/assets/arrrows-bold-webfont.eot?%23iefix&10126) format('embedded-opentype'),
+       url(//cdn.shopify.com/s/files/1/0274/9575/t/17/assets/arrrows-bold-webfont.svg%23arrrowsregular?10126) format('svg'),
+       url(//cdn.shopify.com/s/files/1/0274/9575/t/17/assets/arrrows-bold-webfont.woff?10126) format('woff'),
+       url(//cdn.shopify.com/s/files/1/0274/9575/t/17/assets/arrrows-bold-webfont.ttf?10126) format('truetype');
+	font-weight: normal!important;
+	font-style: normal!important;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+// Gotham
+@font-face {
+  font-family: 'Gotham Bold';
+  src:	url(//cdn.shopify.com/s/files/1/0274/9575/t/17/assets/Gotham-Bold.eot?%23iefix&10126) format('embedded-opentype'),
+  		url(//cdn.shopify.com/s/files/1/0274/9575/t/17/assets/Gotham-Bold.otf?10126) format('opentype'),
+  		url(//cdn.shopify.com/s/files/1/0274/9575/t/17/assets/Gotham-Bold.woff?10126) format('woff'),
+  		url(//cdn.shopify.com/s/files/1/0274/9575/t/17/assets/Gotham-Bold.ttf?10126) format('truetype'),
+  		url(//cdn.shopify.com/s/files/1/0274/9575/t/17/assets/Gotham-Bold.svg%23Gotham-Bold?10126) format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'FontAwesome';
+  src:	url(//cdn.shopify.com/s/files/1/0274/9575/t/17/assets/fontawesome-webfont.eot?v=4.5.0&10126);
+  src:	url(//cdn.shopify.com/s/files/1/0274/9575/t/17/assets/fontawesome-webfont.eot?%23iefix&v=4.5.0&10126) format('embedded-opentype'),
+  		url(//cdn.shopify.com/s/files/1/0274/9575/t/17/assets/fontawesome-webfont.woff2?v=4.5.0&10126) format('woff2'),
+  		url(//cdn.shopify.com/s/files/1/0274/9575/t/17/assets/fontawesome-webfont.woff?v=4.5.0&10126) format('woff'),
+  		url(//cdn.shopify.com/s/files/1/0274/9575/t/17/assets/fontawesome-webfont.ttf?v=4.5.0&10126) format('truetype'),
+  		url(//cdn.shopify.com/s/files/1/0274/9575/t/17/assets/fontawesome-webfont..svg?v=4.5.0%23fontawesomeregular&10126) format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+body.front-page {
+	#hero {
+        .dj-banner{
+          background-image: url(//cdn.shopify.com/s/files/1/0274/9575/t/17/assets/dj_bg.png?10126);
+        }
+		.logo {
+			background-image: url(//cdn.shopify.com/s/files/1/0274/9575/t/17/assets/logo_daymon_john_large.png?10126);
+		}
+		.vignette {
+			background-image: url(//cdn.shopify.com/s/files/1/0274/9575/t/17/assets/hero_vignette.png?10126);
+		}
+/* 		.daymond {
+			background-image: url(//cdn.shopify.com/s/files/1/0274/9575/t/17/assets/image_daymond-hero.png?10126);
+		} */
+	}
+	#bio {
+		.slide-1 {
+			background-image: url(//cdn.shopify.com/s/files/1/0274/9575/t/17/assets/img_daymond-yellow.jpg?10126);
+		}
+		.slide-2 {
+			background-image: url(//cdn.shopify.com/s/files/1/0274/9575/t/17/assets/img_daymond-speaking.jpg?10126);
+		}
+		.slide-3 {
+			background-image: url(//cdn.shopify.com/s/files/1/0274/9575/t/17/assets/img_daymond-godfather.jpg?10126);
+		}
+		.slide-4 {
+			background-image: url(//cdn.shopify.com/s/files/1/0274/9575/t/17/assets/img_daymond-framing.jpg?10126);
+		}
+	}
+	#speaking {
+		.row > div {
+			&.photo-half {
+				
+			}
+		}
+	}
+}
+
+#partners {
+	ul.logo-list {
+		li {
+			a {
+				&.shark-tank {
+					background-image: url(//cdn.shopify.com/s/files/1/0274/9575/t/17/assets/logo_shark-tank.png?10126);
+				}
+				&.fox-business {
+					background-image: url(//cdn.shopify.com/s/files/1/0274/9575/t/17/assets/logo_fox-business.png?10126);
+				}
+				&.cnn {
+					background-image: url(//cdn.shopify.com/s/files/1/0274/9575/t/17/assets/logo_cnn.png?10126);
+				}
+				&.cnbc {
+					background-image: url(//cdn.shopify.com/s/files/1/0274/9575/t/17/assets/logo_cnbc.png?10126);
+				}
+				&.adweek {
+					background-image: url(//cdn.shopify.com/s/files/1/0274/9575/t/17/assets/logo_adweek.png?10126);
+				}
+				&.new-york-times {
+					background-image: url(//cdn.shopify.com/s/files/1/0274/9575/t/17/assets/logo_new-york-times.png?10126);
+				}
+				&.usa-today {
+					background-image: url(//cdn.shopify.com/s/files/1/0274/9575/t/17/assets/logo_usa-today.png?10126);
+				}
+				&.black-enterprise {
+					background-image: url(//cdn.shopify.com/s/files/1/0274/9575/t/17/assets/logo_black-enterprise.png?10126);
+				}
+				&.babson {
+					background-image: url(//cdn.shopify.com/s/files/1/0274/9575/t/17/assets/logo_babson.png?10126);
+				}
+				&.moguls-mobile {
+					background-image: url(//cdn.shopify.com/s/files/1/0274/9575/t/17/assets/logo_moguls-mobile.png?10126);
+				}
+				&.shark-branding {
+					background-image: url(//cdn.shopify.com/s/files/1/0274/9575/t/17/assets/logo_shartk-branding.png?10126);
+				}
+				&.shopify {
+					background-image: url(//cdn.shopify.com/s/files/1/0274/9575/t/17/assets/logo_shopify.png?10126);
+				}
+			}
+		}
+	}
+}
+
+footer {
+	.logo {
+		background-image: url(//cdn.shopify.com/s/files/1/0274/9575/t/17/assets/logo_daymon_john_large.png?10126);
+	}
+}
+.location {
+	position: relative;
+}
+/*
+***** Navigation hover effect *****
+
+body.front-page .location-indicator li a:hover {
+    position: absolute;
+    width: auto;
+    height: 40px;
+    -webkit-transform: rotate(0);
+  	transform: rotate(0);
+  	overflow: display;
+    text-align: center;
+    left: -16px;
+    line-height: 35px;
+    padding: 0;
+    margin: 0;
+    text-transform: uppercase;
+    text-decoration: none;
+  	background: #fff;
+  	padding: 0 20px;
+    transition: 0s all;
+}  */
+.photo-half {
+  min-height: 650px !important;
+}
+body.book-promo header {
+	background: #000;
+}
+body.profile .content-columns .content .contain {
+	margin-bottom: 20px;
+}
+.testimonials .testimonial blockquote .profile-meta {
+	bottom: auto;
+}
+body.front-page .location-indicator li a {
+	padding: 6px;
+  font: bold 20px "Gotham Bold", sans-serif;
+}
+body.front-page .location-indicator li:after {
+height: 75px;
+}
+.landingBG {
+	background-size: cover;
+  	background-position: center;
+}
+.cta-video-inner {
+	padding: 60px 0;
+}
+
+/*=============Brian's Banner modification=============*/
+
+body.front-page #hero .dj-banner {
+  width: 100%;
+  height: 328px;
+  max-width: 100%;
+  max-height: 100%;
+  z-index: 0;
+  position: absolute;
+  background-size: cover;
+  top: 40px;
+  background-position-y: center;
+}
+
+@media screen and (min-width: 480px) {
+  body.front-page #hero .dj-banner {
+    height: 450px;
+  }
+}
+
+@media only screen and (min-width: 769px) {
+  body.front-page #hero .dj-banner {
+    width: 100%;
+    height: 633px;
+    max-width: 100%;
+    max-height: 100%;
+    z-index: 0;
+    position: absolute;
+    background-size: cover;
+    top: 40px;
+  }
+  body.front-page #hero .logo {
+    top: 40%;
+    width: 65%;
+  }
+  
+}
+@media only screen and (min-width: 992px) {
+  body.front-page #hero .dj-banner {
+    height: 100%;
+    top:0;
+    background-position-y: 20%;
+  }
+  body.front-page #hero .logo {
+    top: 40%;
+    left: 73%;
+    width: 45%;
+   }
+  body.front-page #hero .logo {
+    opacity:1;
+    top: 25%;
+    left: 22%;
+    width: 38%;
+  }
+}

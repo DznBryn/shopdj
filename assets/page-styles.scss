@@ -1,0 +1,20 @@
+
+
+.title-center{
+  text-align: center;
+}
+
+h1{
+  font-size: 2.0em!important;
+}
+
+.page{
+  font-family: "Gotham Book", sans-serif;
+
+}
+
+@media screen and (max-width: 320px) {
+  .page-video-wrapper{
+    padding-top:40px;
+  }
+}

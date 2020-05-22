@@ -430,6 +430,11 @@
         "label": "Header Book Image"
       },
       {
+        "type": "url",
+        "id": "keybizterm_link",
+        "label": "Key Biz Term Box"
+      },
+      {
         "type": "image",
         "id": "dj_bg.png",
         "label": "Banner Background"

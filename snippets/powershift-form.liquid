@@ -1,0 +1,108 @@
+<style media="screen">
+    .formwrapper {
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 20px;
+        display: block;
+
+    }
+
+    .container {
+        margin-bottom: 30px !important;
+    }
+    h4 {
+        color: black;
+        margin: 10px;
+    }
+    button {
+        background: black;
+    }
+    .infusion-field-input-container {
+        width: 100% !important;
+    }
+    .plyr--video .plyr__controls {
+        z-index: 0 !important;
+    }
+    [type="text"],
+    [type="textarea"] {
+        display: block;
+        box-sizing: border-box;
+        width: 100%;
+        height: 2.4375rem;
+        margin: 0 0 1rem;
+        padding: 0.5rem;
+        border: 1px solid #cacaca;
+        border-radius: 3px;
+        background-color: #fefefe;
+        box-shadow: inset 0 1px 2px rgba(10, 10, 10, 0.1);
+        font-size: 1rem;
+        font-weight: normal;
+        color: #0a0a0a;
+        transition: box-shadow 0.5s, border-color 0.25s ease-in-out;
+        -webkit-appearance: none;
+        appearance: none;
+    }
+</style>
+
+<div class="container">
+    <div class="formwrapper">
+        <h3 class="text-center">What is your #Powershift?</h3>
+        {% if form.posted_successfully? %}
+            Comment posted successfully!
+        {% else %}
+            {{ form.errors | default_errors }}
+        {% endif %}
+
+        <form accept-charset="UTF-8" action="https://daymondjohn.infusionsoft.com/app/form/process/75977d735fbf375a857e77e7f5cd4314" class="infusion-form" id="inf_form_75977d735fbf375a857e77e7f5cd4314" method="POST">
+            <input name="inf_form_xid" type="hidden" value="75977d735fbf375a857e77e7f5cd4314"/>
+            <input name="inf_form_name" type="hidden" value="What is your~br~#Powershift"/>
+            <input name="infusionsoft_version" type="hidden" value="1.70.0.139424"/>
+            <div class="infusion-field">
+                <input class="infusion-field-input" id="inf_field_FirstName" name="inf_field_FirstName" placeholder="First Name " type="text"/>
+            </div>
+            <div class="infusion-field">
+                <input class="infusion-field-input" id="inf_field_Email" name="inf_field_Email" placeholder="Email" type="text"/>
+            </div>
+            <div>
+                <textarea class="form-control" class="infusion-field-textarea-container" id="inf_custom_Comment" name="inf_custom_Comment" name="inf_field_Message" placeholder="What's your Powershift?" rows="3" type="textarea"></textarea>
+            </div>
+            <div class="infusion-submit">
+                <button class="infusion-recaptcha" id="recaptcha_75977d735fbf375a857e77e7f5cd4314" type="submit">Submit</button>
+            </div>
+        </form>
+
+    </div>
+</div>
+
+
+<script src="https://daymondjohn.infusionsoft.app/app/webTracking/getTrackingCode" type="text/javascript"></script>
+<script src="https://daymondjohn.infusionsoft.com/resources/external/recaptcha/production/recaptcha.js?b=1.70.0.139424" type="text/javascript"></script>
+<script async="async" defer="defer" src="https://www.google.com/recaptcha/api.js?onload=onloadInfusionRecaptchaCallback&render=explicit"></script>
+<script src="https://daymondjohn.infusionsoft.com/app/timezone/timezoneInputJs?xid=75977d735fbf375a857e77e7f5cd4314" type="text/javascript"></script>
+
+<style media="screen">
+    .formwrapper {
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 20px;
+        display: block;
+
+    }
+
+    .container {
+        margin-bottom: 30px !important;
+    }
+    h4 {
+        color: black;
+        margin: 10px;
+    }
+    button {
+        background: black;
+    }
+    .infusion-field-input-container {
+        width: 100% !important;
+    }
+    .plyr--video .plyr__controls {
+        z-index: 0 !important;
+    }
+</style>

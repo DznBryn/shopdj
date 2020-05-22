@@ -1,0 +1,12 @@
+#footerContact,
+#copyright {font-size:11px;}
+#logo {margin-top:25px;}
+#logoText {display:block;margin-top:40px;}
+.btnStyle,
+.addToCart {line-height:22px;}
+.collectionProductLarge header {bottom: -1px;}
+
+#productImages .productThumb,
+#featuredThumb img,
+.collectionProduct .collectionProductImageWrapper,
+.collectionProductLarge .collectionProductImageWrapper {border:1px solid #000 !important;}

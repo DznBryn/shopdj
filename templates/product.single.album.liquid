@@ -106,7 +106,7 @@ SOFTWARE.
         {% endif %}
         <meta itemprop="priceCurrency" content="{{ shop.currency }}">
         <!-- Add to Cart -->
-        <form action="/cart/add" method="post" enctype="multipart/form-data">
+        {% form 'product', product %}
         {% if product.variants.size > 1 %}
           <div class="single-field-label">Select Format</div>
           <select name="id" class="single-select-field">
@@ -122,11 +122,12 @@ SOFTWARE.
           <input name="id" value="{{ product.variants.first.id }}" type="hidden" />
         {% endif %}
           <div class="single-album-add-to-cart">
-            <button type="submit" name="add" id="AddToCart" class="btn btn--fill btn--regular btn--color">
+            <button type="submit" name="add" id="AddToCart" class="btn btn--secondary-accent">
               <span id="AddToCartText">Add{% if presale == "true" %} Pre-order{% endif %} to Cart</span>
             </button>
+            {{ form | payment_button }}
           </div>
-        </form>
+        {% endform %}
       </div>
       <!-- End Single Header -->
       <!-- Begin Tracklist -->

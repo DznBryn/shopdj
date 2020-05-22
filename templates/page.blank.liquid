@@ -1,0 +1,43 @@
+<style>
+  .textile {
+    margin-bottom: 4em;
+  }
+  .textile h2 strong {
+    font-size: 30px;
+    line-height: 1em;
+    display: block;
+    margin-bottom: 18px;
+    letter-spacing: 2px;
+  }
+  .content-wrapper{
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  .content-wrapper .content-container{
+    width: 100%;
+    margin: 0px auto;
+  }
+  .content-wrapper .content-container .content-col{
+    width:100%;
+    margin: 60px auto;
+  }
+  .content-wrapper .content-container .content-col.content-col-1{
+    width: 460px;
+  }
+  .content-wrapper .content-container .content-col.content-col-2{width: 300px;}
+  .content-wrapper .content-container .content-col img{
+    width:100%;
+  }
+</style>
+
+<div id="content" class="group">
+	<article id="mainContent" class="floatLeft">
+		<div class="textile">
+          {% section 'content-section'%}
+          {{page.content}}	
+		</div><!-- textile -->
+      <div class="clearfix spacer"></div>
+	</article><!-- mainCol -->
+</div><!-- content -->
+<div class="clearfix spacer"></div>

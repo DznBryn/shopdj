@@ -1,0 +1,6 @@
+.collectionProductLarge header {bottom: -1px;}
+
+#productImages .productThumb,
+#featuredThumb img,
+.collectionProduct .collectionProductImageWrapper,
+.collectionProductLarge .collectionProductImageWrapper {border:1px solid #000 !important;}

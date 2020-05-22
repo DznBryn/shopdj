@@ -1,0 +1,118 @@
+<style>
+    section.hero-wrapper-{{ section.id }} .col {
+        width: 100%;
+        margin: .5em 0;
+    }
+    section.hero-wrapper-{{ section.id }} .col .book-container-img,
+    section.hero-wrapper-{{ section.id }} .col .video-container{
+        width: fit-content;
+        margin: 0 auto;
+    }
+    section.hero-wrapper-{{ section.id }} .col .book-container-img img{
+        width: 100%;
+    }
+    section.hero-wrapper-{{ section.id }} .col .video-container iframe {
+        width: 340px;
+        height: 190px;
+    }
+    section.hero-wrapper-{{ section.id }} .col-3{
+        margin-bottom: 2em;
+    }
+    @media screen and (min-width: 480px) {
+        section.hero-wrapper-{{ section.id }} .col .video-container iframe {
+            width: 800px;
+            height: 420px;
+        }
+        section.hero-wrapper-{{ section.id }} .col{
+            float: left;
+        }
+        section.hero-wrapper-{{ section.id }} .col-1{
+            width: 24.4%;
+            margin-right: 40px;
+        }
+        section.hero-wrapper-{{ section.id }} .col-2{
+            width: 60%;     
+        }
+    }
+    @media screen and (min-width: 768px) {
+        section.hero-wrapper-{{ section.id }} {
+            width: 768px;
+            margin: 0 auto;
+        }
+    }
+    @media screen and (min-width: 992px) {
+        section.hero-wrapper-{{ section.id }} {
+            width: 950px;
+            margin: 0 auto;
+        }
+    }
+    @media screen and (min-width: 1200px) {
+        section.hero-wrapper-{{ section.id }} {
+            width: 1140px;
+            margin: 0 auto;
+        }
+        section.hero-wrapper-{{ section.id }} .col-1{
+            width: 278px;
+        }
+        section.hero-wrapper-{{ section.id }} .col-2{
+            width: 820px;     
+        }
+    }
+
+</style>
+
+<section class="hero-wrapper-{{ section.id }}">
+    <div class="col col-1">
+        {% if section.settings.img != blank %}
+            <div class="book-container-img">
+                <a href="{{ section.settings.img_url }}">
+                    <img src="{{ section.settings.img | img_url: 'master'}}"/>
+                </a>
+            </div>
+        {% endif %}
+    </div>
+    <div class="col col-2">
+        <div class="video-container">
+            <iframe src="{{ section.settings.video_url }}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+    </div>
+    <div class="col col-3">
+        <div class="page-content">
+            {{ pages[section.settings.page_content].content }}
+        </div>
+    </div>
+</section>
+
+
+{% schema %}
+
+{
+    "name": "Content",
+    "settings": [
+        {
+            "type": "header",
+            "content": "Header Content"
+        }, {
+            "type": "image_picker",
+            "id": "img",
+            "label": "Image"
+        }, {
+            "type": "url",
+            "id": "img_url",
+            "label": "Image Link"
+        }, {
+            "type": "url",
+            "id": "video_url",
+            "label": "Video URL"
+        }, {
+            "type": "header",
+            "content": "Page Content"
+        }, {
+            "type": "page",
+            "id": "page_content",
+            "label": "Page Content"
+        }
+    ]
+}
+
+{% endschema %}

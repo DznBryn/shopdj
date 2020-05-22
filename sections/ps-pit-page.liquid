@@ -1,0 +1,231 @@
+<style>
+header{
+    padding-top: 0.5em;
+}
+header h2{
+    line-height: 15px;
+}
+#section-container{
+    max-width: 100%; 
+    margin-top: 3em;
+    margin-bottom: 3em;
+}
+
+#section-container .col {
+    width: 100%;
+}
+
+#section-container .col.interviewee-col-1{}
+
+#section-container .col.interviewee-col-1 .image-container-wrapper {
+    max-width: 350px;
+    height: 350px;
+    border: .7em solid #C2B174;
+    border-radius: 50%;
+
+}
+#section-container .col.interviewee-col-1 .image-container-wrapper .image-container{
+    width: 100%;
+    height: 100%;
+    padding: .5em;
+    border: .35em solid #fff;
+    border-radius: 50%;
+    background: url("{{ section.settings.interviewee_image | img_url: '350x'}}") center center no-repeat;
+}
+
+#section-container .col.interviewee-col-1 .image-container-wrapper .image-container img{
+    width: 100%;
+}
+div.button-wrapper{
+	width: max-content; 
+	margin: 4em auto;
+}
+.back{
+    display: none;
+}
+.back .button i {
+    font-size: 21px;
+    margin-top: 9px;
+    padding: 0px;
+}
+ a.button{
+     color: #000000;
+ }
+#section-container .col.interviewee-col-2{
+    margin: 1em auto;
+}
+
+#section-container .col.interviewee-col-2 .interviewee-header-container{
+    margin: 1em auto;
+}
+
+#section-container .col.interviewee-col-2 .interviewee-header-container .interviewee-name{
+    color: #000;
+    font-size: 32px;
+}
+
+#section-container .col.interviewee-col-2 .interviewee-header-container header h2{
+    line-height: 20px;
+    font-size: 12px;
+}
+
+#section-container .col.interviewee-col-2 .interviewee-description{}
+
+#section-container .col.interviewee-col-2 .interviewee-description .interviewee-page-content{}
+
+#section-container .col.interviewee-col-3{
+    margin: 3em auto;
+}
+
+#section-container .col blockquote{
+    margin: 2em auto;
+    font-family: "Gotham bold", serif;
+    
+}
+
+@media screen and (min-width: 768px){
+    #section-container .col.interviewee-col-1{
+        float: left;
+        width: 37%;
+        padding-right: 4em;
+        margin-right: 4em;
+        border-right: 1px solid #a8a8a8;
+    }
+    .back{
+        display: block;
+    }
+    #section-container .col.interviewee-col-2{
+        width: 55%;
+        float: left;
+        margin: 1em auto;
+    }
+    .interviewee-header-container{
+        width: 450px;
+        text-align: center;
+    }
+    #section-container .col blockquote{
+        font-family: "Gotham bold", serif;
+        font-size: 24px;
+        line-height: 1.4;
+        text-align: center;
+    }
+}
+
+@media screen and (min-width: 1800px){
+    #section-container{
+        width: 1170px;
+        margin: 3em auto;
+    }
+}
+
+</style>
+
+<div id="section-container">
+    <div class="col interviewee-col-1">
+        {% if section.settings.interviewee_image != blank %}
+
+            <div class="image-container-wrapper">
+                <div class="image-container"></div>
+            </div>
+        {% endif %}
+        <div class="button-wrapper">
+            {% if section.settings.bttn_1_url != blank %}
+                <a class="button" href="{{section.settings.bttn_1_url}}">
+                    {{ section.settings.bttn_1_label }}
+                </a>
+            {% endif %}
+            <div class="divider"></div>
+            {% if section.settings.bttn_2_url != blank %}
+                <a class="button" href="{{section.settings.bttn_2_url}}">
+                    {{ section.settings.bttn_2_label }}
+                </a>
+            {% endif %}
+        </div>
+        <div class="button-wrapper back">
+            <a class="button" id="backbutton">
+                <i class="fa fa-angle-double-left"></i>
+            </a>
+        </div>
+
+    </div>
+    <div class="col interviewee-col-2 interviewee-description-container">
+        <div class="interviewee-header-container">
+            <h2 class="interviewee-name">{{ section.settings.interviewee_name }}</h2>
+            <header>
+                <h2>{{ section.settings.interviewee_title }}</h2>
+            </header>
+        </div>
+
+        <blockquote>
+            <strong>"{{ section.settings.interviewee_quote }}"</strong>
+        </blockquote>
+
+        <div class="interviewee-description">
+            <p class="interviewee-page-content">{{ pages[section.settings.interview_page_content].content }}</p>
+        </div>
+    </div>
+    <div class="divider"></div>
+</div>
+
+<script>
+
+(function () {
+    $(document).ready(function(){
+        $('#backbutton').on('click', ()=>{
+            parent.history.back()
+            return false
+        })
+    })
+
+})(jQuery)
+</script>
+{% schema %}
+{
+    "name": "Interviewee Page",
+    "settings": [
+       {
+           "type": "text",
+           "id": "interviewee_name",
+           "label": "Interviewee Name"
+       },{
+           "type": "text",
+           "id": "interviewee_title",
+           "label": "Interviewee Title"
+       },{
+           "type": "image_picker",
+           "id": "interviewee_image",
+           "label": "Interviewee Image"
+       },{
+           "type": "page",
+           "id": "interview_page_content",
+           "label": "Interviewee Bio"
+       },{
+           "type": "textarea",
+           "id": "interviewee_quote",
+           "label": "Interviewee Quote"
+
+       },{
+           "type": "text",
+           "id": "bttn_1_label",
+           "label": "CTA 1",
+           "default": "Call to Action"
+       },
+       {
+        "type": "url",
+        "id": "bttn_1_url",
+        "label": "CTA URL 1"
+        },
+       {
+        "type": "text",
+        "id": "bttn_2_label",
+        "label": "CTA 2",
+        "default": "Call to Action"
+       },
+       {
+        "type": "url",
+        "id": "bttn_2_url",
+        "label": "CTA URL 2"
+        }
+    ]
+}
+{% endschema %}
