@@ -71,7 +71,12 @@
 <script>
     (function () {
 
-        $(".post-list").infiniteScroll({path: ".pagination__next", append: ".post", hideNav: ".pagination", scrollThreshold: 10000});
+        $(".post-list").infiniteScroll({
+            path: ".pagination__next",
+            append: ".post",
+            hideNav: ".pagination",
+            scrollThreshold: 10000
+            });
 
     })(jQuery)
 </script>
